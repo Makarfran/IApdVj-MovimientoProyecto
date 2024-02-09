@@ -19,12 +19,12 @@ public class AgentPlayer : Agent
 
         Velocity *= MaxSpeed;  // DESCOMENTA !!
         Vector3 translation = Velocity * Time.deltaTime;
-        transform.Translate(translation, Space.World);
+        transform.Translate(translation, Space.World); 
 
         // Para el jugador usamos el SteeringBehaviour (LookAt)
         // que ya lleva implementado Unity.
         // Notar que al jugador le aplicamos un movimiento no-acelerado.
-        transform.LookAt(transform.position + Velocity);
+        transform.LookAt(transform.position + Velocity); 
         Orientation = transform.rotation.eulerAngles.y; // DESCOMENTA !!
     }
 

@@ -9,12 +9,12 @@ public class rotacion : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //transform.rotation = Quaternion.AngleAxis(valor, Vector3.up);
+        //transform.rotation = Quaternion.AngleAxis(valor, Vector3.up); // crece de x a z o z a x según referencia
 
-        transform.rotation = Quaternion.Euler(0, valor, 0);
+        //transform.rotation = Quaternion.Euler(0, valor, 0); // de x a z o z a x según referencia
 
-        // transform.rotation = new Quaternion(); //Quaternion.identity;
-        // transform.Rotate(Vector3.up, valor);
+         transform.rotation = new Quaternion(); //Quaternion.identity; o z a x según referencia
+         transform.Rotate(Vector3.up, valor);
         valor++;
     }
 }

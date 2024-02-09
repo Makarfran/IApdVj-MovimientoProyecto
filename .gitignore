@@ -72,3 +72,37 @@ crashlytics-build.properties
 # Temporary auto-generated Android Assets
 /[Aa]ssets/[Ss]treamingAssets/aa.meta
 /[Aa]ssets/[Ss]treamingAssets/aa/*
+
+# Carpeta de configuración de usuario de Unity
+/[Tt]emp/
+/[Oo]bj/
+/[Bb]uild/
+/[Bb]uilds/
+/Assets/AssetStoreTools*
+
+# Carpeta de configuración de proyecto de Unity
+/[Ll]ibrary/
+/.vs/
+ExportedObj/
+.consulo/
+*.csproj
+*.unityproj
+*.sln
+*.suo
+*.tmp
+*.user
+*.userprefs
+*.pidb
+*.booproj
+*.svd
+*.pdb
+
+# Archivos meta generados por Unity3D
+*.pidb.meta
+
+# Archivo generado por Unity3D en informes de fallos
+sysinfo.txt
+
+# Builds
+*.apk
+

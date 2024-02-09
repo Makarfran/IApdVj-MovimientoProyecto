@@ -2,11 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Fle : SteeringBehaviour
+public class Flee : SteeringBehaviour
 {
 
     // Declara las variables que necesites para este SteeringBehaviour
-    public Agent pers;
 
     
     void Start()
@@ -21,9 +20,8 @@ public class Fle : SteeringBehaviour
 
         // Calcula el steering.
         steer.angular = 0;
-        steer.linear = pers.transform.position - agent.transform.position;
-        steer.linear.Normalize();
-        steer.linear *= pers.MaxAcceleration;
+        steer.linear = agent.transform.position - target.transform.position;
+        steer.linear = steer.linear.normalized * agent.MaxAcceleration;
 
         // Retornamos el resultado final.
         return steer;

@@ -15,6 +15,7 @@ public class SteeringBehaviour : MonoBehaviour
         get { return nameSteering; }
     }
 
+    public Agent target;
 
     /// <summary>
     /// Cada SteerinBehaviour retornará un Steering=(vector, escalar)

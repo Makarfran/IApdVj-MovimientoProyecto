@@ -6,7 +6,7 @@ public class Seek : SteeringBehaviour
 {
 
     // Declara las variables que necesites para este SteeringBehaviour
-    public Agent pers;
+    
 
     
     void Start()
@@ -20,10 +20,19 @@ public class Seek : SteeringBehaviour
         Steering steer = new Steering();
 
         // Calcula el steering.
-        steer.angular = 0;
-        steer.linear = agent.transform.position - pers.transform.position;
-        steer.linear.Normalize();
-        steer.linear *= pers.MaxAcceleration;
+        //steer.angular = 0;
+        //steer.linear = target.transform.position - agent.transform.position;
+        //steer.linear = steer.linear.normalized * agent.MaxAcceleration;
+        
+
+        //Craig W. reynolds
+        //Vector ditancia
+        Vector3 desired_velocity = target.transform.position - agent.transform.position;
+        desired_velocity.Normalize();
+        //Aplicamos máxima aceleración
+        desired_velocity *= agent.MaxAcceleration;
+        //Calculamos el steering
+        steer.linear = desired_velocity - agent.Velocity;
 
         // Retornamos el resultado final.
         return steer;

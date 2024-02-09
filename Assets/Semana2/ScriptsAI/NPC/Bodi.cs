@@ -42,7 +42,7 @@ public class Bodi : MonoBehaviour
     public Vector3 Velocity
     {
         get { return _velocity;  } // Modifica
-        set { _velocity = new Vector3();}
+        set { _velocity = value;}
     }
     
     public float MaxRotation {
@@ -63,7 +63,7 @@ public class Bodi : MonoBehaviour
     public Vector3 Acceleration
     {
         get { return _acceleration;  } // Modifica
-        set { _acceleration = new Vector3();}
+        set { _acceleration = value;}
     }
 
     public float AngularAcc {
@@ -78,7 +78,7 @@ public class Bodi : MonoBehaviour
     }
 
     public float Orientation {
-        get { return Heading();}
+        get { return _orientation;}
         set { _orientation = value;}
     }
     
@@ -93,13 +93,13 @@ public class Bodi : MonoBehaviour
     // public float Heading()
     //      Retorna el ángulo heading en (-180, 180) en grado o radianes. Lo que consideres
     public float Heading(){ //creo que tiene sentido pero a lo mejor me estoy marcando un triple
-        if(Orientation > 0){
-            int remainder = Mathf.RoundToInt(Orientation) % 360;
+        if(Orientation >= 0){
+            float remainder = Orientation % 360;
             if(0 <= remainder && remainder <= 180 ) {return remainder;}
             else {return remainder-360;}
             
         } else {
-            int remainder = Mathf.RoundToInt(Orientation) % -360;
+            float remainder = Orientation % -360;
             if(0 >= remainder  && remainder >= -180  ) {return remainder;}
             else {return remainder+360;}
         }
