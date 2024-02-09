@@ -66,6 +66,12 @@ public class Bodi : MonoBehaviour
         set { _acceleration = value;}
     }
 
+
+    public float MaxAngularAcc {
+        get { return _maxAngularAcc;}
+        set { _maxAngularAcc = Mathf.Max(0, value);}
+    }
+
     public float AngularAcc {
         get { return _angularAcc;}
         set { _angularAcc = Mathf.Max(0, value);}
@@ -102,6 +108,20 @@ public class Bodi : MonoBehaviour
             float remainder = Orientation % -360;
             if(0 >= remainder  && remainder >= -180  ) {return remainder;}
             else {return remainder+360;}
+        }
+    }
+
+    public static float MapToRangePi(float rotation){
+        const float PI = (float)Mathf.PI;
+        if(rotation > 0){
+            float remainder = rotation % 360;
+            if(0 <= remainder && remainder <= 180 ) {return remainder * PI/180.0f;}
+            else {return (remainder-360) * PI/180.0f;}
+            
+        } else {
+            float remainder = rotation % -360;
+            if(0 >= remainder  && remainder >= -180  ) {return remainder * PI/180.0f;}
+            else {return (remainder+360) * PI/180.0f;}
         }
     }
     // public static float MapToRange(float rotation, Range r)

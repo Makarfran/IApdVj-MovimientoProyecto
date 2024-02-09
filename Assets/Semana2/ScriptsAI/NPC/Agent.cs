@@ -20,7 +20,26 @@ public class Agent : Bodi
     [SerializeField] protected float _exteriorAngle = 8.0f; // ángulo sexagesimal.
 
     
-
+    public float InteriorRadius
+    {
+        get { return _interiorRadius; }
+        set { _interiorRadius = Mathf.Max(0, value); }
+    }
+    public float ArrivalRadius
+    {
+        get { return _arrivalRadius; }
+        set { _arrivalRadius = Mathf.Max(0, value); }
+    }
+    public float InteriorAngle
+    {
+        get { return _interiorAngle; }
+        set { _interiorAngle = value; }
+    }
+    public float ExteriorAngle
+    {
+        get { return _exteriorAngle; }
+        set { _exteriorAngle = value; }
+    }
 
     // AÑADIR LAS PROPIEDADES PARA ESTOS ATRIBUTOS. SI LO VES NECESARIO.
 

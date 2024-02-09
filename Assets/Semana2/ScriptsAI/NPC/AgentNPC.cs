@@ -47,8 +47,15 @@ public class AgentNPC : Agent
         // La actualización de las propiedades se puede hacer en LateUpdate()
         Velocity += Acceleration * deltaTime;
         Rotation = this.steer.angular;
+        
         Orientation += Rotation * deltaTime;
+        transform.rotation = Quaternion.Euler(0,Orientation, 0);
+        
+        
+        
         Position += Velocity * deltaTime;
+
+        
         // Rotation
         // Position
         // Orientation
@@ -66,6 +73,7 @@ public class AgentNPC : Agent
         // Recorremos cada steering
         //Habrá que modificarlo cuando se tenga el actuador
         foreach(SteeringBehaviour b in listSteerings){
+            
             kinematicFinal = b.GetSteering(this);
         }
         //foreach (SteeringBehaviour behavior in listSteerings)
