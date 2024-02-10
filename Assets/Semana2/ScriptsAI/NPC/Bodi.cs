@@ -15,7 +15,7 @@ public class Bodi : MonoBehaviour
     protected Vector3 _velocity; // velocidad lineal
     protected float _rotation;  // velocidad angular
     protected float _speed;  // velocidad escalar
-    protected float _orientation;  // 'posición' angular
+    [SerializeField] protected float _orientation;  // 'posición' angular
     // Se usará transform.position como 'posición' lineal
 
     /// Un ejemplo de cómo construir una propiedad en C#
@@ -52,7 +52,7 @@ public class Bodi : MonoBehaviour
     
     public float Rotation {
         get { return _rotation;}
-        set { _rotation = Mathf.Min(Mathf.Max(0, value), MaxRotation);}
+        set { _rotation = Mathf.Min(value, MaxRotation);}
     }
     public float MaxAcceleration {
         get { return _maxAcceleration;}
@@ -85,7 +85,7 @@ public class Bodi : MonoBehaviour
 
     public float Orientation {
         get { return _orientation;}
-        set { _orientation = value;}
+        set { _orientation = Bodi.mapTo360(value);}
     }
     
     public float Speed {
@@ -108,6 +108,17 @@ public class Bodi : MonoBehaviour
             float remainder = Orientation % -360;
             if(0 >= remainder  && remainder >= -180  ) {return remainder;}
             else {return remainder+360;}
+        }
+    }
+
+    public static float mapTo360(float rotation){ //creo que tiene sentido pero a lo mejor me estoy marcando un triple
+        if(rotation >= 0){
+            float remainder = rotation % 360;
+            return remainder;
+            
+        } else {
+            float remainder = rotation % -360;
+            return remainder+360;
         }
     }
 

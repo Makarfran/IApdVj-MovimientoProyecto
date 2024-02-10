@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -189,19 +189,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: fb85cfdde48292044bcad211cc012b15, type: 3}
   m_PrefabInstance: {fileID: 1049655158}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &183274823
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 183274822}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b7a2ed17f613a8749964588d750da61f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  target: {fileID: 383337063}
 --- !u!114 &183274824
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -215,11 +202,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _mass: 1
-  _maxSpeed: 1
-  _maxRotation: 1
+  _maxSpeed: 5
+  _maxRotation: 360
   _maxAcceleration: 1
-  _maxAngularAcc: 1
+  _maxAngularAcc: 180
   _maxForce: 1
+  _orientation: 0
   _interiorRadius: 1
   _arrivalRadius: 3
   _interiorAngle: 3
@@ -227,6 +215,19 @@ MonoBehaviour:
   steer:
     angular: 0
     linear: {x: 0, y: 0, z: 0}
+--- !u!114 &183274828
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 183274822}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f7f8a22a2a883d43992d7d8463579bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 383337063}
 --- !u!1 &383337062 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: fb85cfdde48292044bcad211cc012b15, type: 3}
@@ -245,13 +246,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _mass: 1
-  _maxSpeed: 1
+  _maxSpeed: 5
   _maxRotation: 1
   _maxAcceleration: 1
   _maxAngularAcc: 1
   _maxForce: 1
+  _orientation: 0
   _interiorRadius: 1
-  _arrivalRadius: 3
+  _arrivalRadius: 1
   _interiorAngle: 3
   _exteriorAngle: 8
 --- !u!1 &705507993
@@ -481,14 +483,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: -10}
+  m_LocalRotation: {x: 0.781199, y: -0, z: -0, w: 0.62428206}
+  m_LocalPosition: {x: 0, y: 14.3, z: 0.51}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 102.741, y: 0, z: 0}
 --- !u!1001 &1049655158
 PrefabInstance:
   m_ObjectHideFlags: 0
