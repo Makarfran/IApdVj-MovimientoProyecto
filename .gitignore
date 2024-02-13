@@ -9,7 +9,7 @@
 /[Bb]uilds/
 /[Ll]ogs/
 /[Uu]ser[Ss]ettings/
-
+Logs/
 UserSettings/
 ProjectSettings/
 Packages/
@@ -29,6 +29,13 @@ Packages/
 
 # Visual Studio cache directory
 .vs/
+.vscode/*
+
+# Local History for Visual Studio Code
+.history/
+
+# Built Visual Studio Code Extensions
+*.vsix
 
 # Gradle cache directory
 .gradle/
