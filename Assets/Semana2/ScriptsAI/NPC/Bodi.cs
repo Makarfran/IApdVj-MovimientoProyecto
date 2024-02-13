@@ -10,9 +10,9 @@ public class Bodi : MonoBehaviour
     [SerializeField] protected float _maxAngularAcc = 1;
     [SerializeField] protected float _maxForce = 1;
 
-    protected Vector3 _acceleration; // aceleración lineal
+    [SerializeField] protected Vector3 _acceleration; // aceleración lineal
     protected float _angularAcc;  // aceleración angular
-    protected Vector3 _velocity; // velocidad lineal
+   [SerializeField] protected Vector3 _velocity; // velocidad lineal
     protected float _rotation;  // velocidad angular
     protected float _speed;  // velocidad escalar
     protected float _orientation;  // 'posición' angular
