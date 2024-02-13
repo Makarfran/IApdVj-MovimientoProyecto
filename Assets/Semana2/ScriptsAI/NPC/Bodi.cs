@@ -12,10 +12,10 @@ public class Bodi : MonoBehaviour
 
     protected Vector3 _acceleration; // aceleración lineal
     protected float _angularAcc;  // aceleración angular
-    [SerializeField] protected Vector3 _velocity; // velocidad lineal
+    protected Vector3 _velocity; // velocidad lineal
     protected float _rotation;  // velocidad angular
     protected float _speed;  // velocidad escalar
-    [SerializeField] protected float _orientation;  // 'posición' angular
+    protected float _orientation;  // 'posición' angular
     // Se usará transform.position como 'posición' lineal
 
     /// Un ejemplo de cómo construir una propiedad en C#
