@@ -7,13 +7,13 @@ public class Arrive : SteeringBehaviour
 
     // Declara las variables que necesites para este SteeringBehaviour
 
-    public float radio;
-    public float slowRadio;
-    public float targetSpeed;
-    public Vector3 targetVelocity;
-    public float timeToTarget;
+    [SerializeField] protected float radio; // radio pequeño;
+    [SerializeField] protected float slowRadio; // radio grande durante el cual se desacelera.
+    protected float targetSpeed;
+    protected Vector3 targetVelocity;
+    [SerializeField] protected float timeToTarget;
 
-    [SerializeField] public float distance; 
+    protected float distance; 
     void Start()
     {
         this.nameSteering = "Arrive";
@@ -29,10 +29,12 @@ public class Arrive : SteeringBehaviour
         distance = direction.magnitude;
 
         // ojo ¿que significa return null -- dejar de moverse?
+        //  si, concretamente hay que despejar una a tal que v = 0
+        //  v = v0 + at; para v = 0, at = -v0  a = (-v0/t)
+        //  
         if(distance < radio){
-            
-            steer.linear = new Vector3(0,0,0);
-            steer.angular = 0;
+            steer.linear = - agent.Velocity;
+            steer.angular = 0;      
             return steer;
             //return null;
         }
