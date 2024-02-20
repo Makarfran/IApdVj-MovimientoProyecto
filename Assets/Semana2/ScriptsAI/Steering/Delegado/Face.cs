@@ -1,0 +1,32 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class Face : Align
+{
+
+    [SerializeField] protected Agent Rtarget;
+    // Start is called before the first frame update
+    void Start()
+    {
+        this.nameSteering = "Face";
+    }
+
+
+    public override Steering GetSteering(Agent agent)
+    {
+        Vector3 direction = Rtarget.transform.position - agent.transform.position;
+
+        if(Vector3.Magnitude(direction) == 0f){
+            Steering steer = new Steering();
+            return steer;
+        }
+        
+
+        this.target = Rtarget;
+        this.target.Orientation = Bodi.sitienesPiyloquieresengradosPeroalreves(Mathf.Atan2(-direction.x, direction.z));
+        Debug.Log(this.target.Orientation);
+
+        return base.GetSteering(agent);
+    }
+}
