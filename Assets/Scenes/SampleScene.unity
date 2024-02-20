@@ -202,11 +202,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _mass: 1
-  _maxSpeed: 20
+  _maxSpeed: 10
   _maxRotation: 360
   _maxAcceleration: 5
   _maxAngularAcc: 180
   _maxForce: 1
+  _orientation: 0
   _interiorRadius: 1
   _arrivalRadius: 3
   _interiorAngle: 3
@@ -214,7 +215,7 @@ MonoBehaviour:
   steer:
     angular: 0
     linear: {x: 0, y: 0, z: 0}
---- !u!114 &183274825
+--- !u!114 &183274827
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -223,11 +224,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 183274822}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4d9655595c54e5245ab0effa4c95e7fd, type: 3}
+  m_Script: {fileID: 11500000, guid: 8261527d478b67046af8e37abdc2c9d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 383337063}
-  Rtarget: {fileID: 0}
+  radio: 3
+  slowRadio: 5
+  timeToTarget: 3
 --- !u!1001 &367813655
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -309,6 +312,7 @@ MonoBehaviour:
   _maxAcceleration: 1
   _maxAngularAcc: 1
   _maxForce: 1
+  _orientation: 0
   _interiorRadius: 1
   _arrivalRadius: 3
   _interiorAngle: 3
@@ -336,6 +340,7 @@ MonoBehaviour:
   _maxAcceleration: 1
   _maxAngularAcc: 1
   _maxForce: 1
+  _orientation: 0
   _interiorRadius: 1
   _arrivalRadius: 1
   _interiorAngle: 3
@@ -572,6 +577,7 @@ MonoBehaviour:
   _maxAcceleration: 1
   _maxAngularAcc: 1
   _maxForce: 1
+  _orientation: 0
   _interiorRadius: 1
   _arrivalRadius: 3
   _interiorAngle: 3
@@ -657,6 +663,7 @@ MonoBehaviour:
   _maxAcceleration: 1
   _maxAngularAcc: 1
   _maxForce: 1
+  _orientation: 0
   _interiorRadius: 1
   _arrivalRadius: 3
   _interiorAngle: 3
@@ -883,6 +890,7 @@ MonoBehaviour:
   _maxAcceleration: 1
   _maxAngularAcc: 1
   _maxForce: 1
+  _orientation: 0
   _interiorRadius: 1
   _arrivalRadius: 3
   _interiorAngle: 3
@@ -968,6 +976,7 @@ MonoBehaviour:
   _maxAcceleration: 1
   _maxAngularAcc: 1
   _maxForce: 1
+  _orientation: 0
   _interiorRadius: 1
   _arrivalRadius: 3
   _interiorAngle: 3
