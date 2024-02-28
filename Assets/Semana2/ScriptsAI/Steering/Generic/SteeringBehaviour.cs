@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-
+// Representa la propuesta de movimiento.
 [RequireComponent(typeof(AgentNPC))]
 public class SteeringBehaviour : MonoBehaviour
 {
@@ -15,7 +15,11 @@ public class SteeringBehaviour : MonoBehaviour
         get { return nameSteering; }
     }
 
+    // Objetivo
     public Agent target;
+
+    //Peso o prioridad para árbitro
+    float wight;
 
     /// <summary>
     /// Cada SteerinBehaviour retornará un Steering=(vector, escalar)
