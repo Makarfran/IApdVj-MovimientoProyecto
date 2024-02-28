@@ -895,6 +895,38 @@ MonoBehaviour:
   _arrivalRadius: 3
   _interiorAngle: 3
   _exteriorAngle: 8
+--- !u!1 &1390766938 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 888546651050671714, guid: 5ce433fbbf184524298b5c427e0c48e2, type: 3}
+  m_PrefabInstance: {fileID: 144881491}
+  m_PrefabAsset: {fileID: 0}
+--- !u!156049354 &1390766943
+Grid:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1390766938}
+  m_Enabled: 1
+  m_CellSize: {x: 1, y: 1, z: 1}
+  m_CellGap: {x: 0, y: 0, z: 0}
+  m_CellLayout: 0
+  m_CellSwizzle: 0
+--- !u!114 &1390766944
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1390766938}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4daaba7c4587edc40b791e2cadf3aaeb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  grid: {fileID: 1390766944}
+  GridWidth: 5
+  GridHeight: 5
 --- !u!1001 &1911860863
 PrefabInstance:
   m_ObjectHideFlags: 0
