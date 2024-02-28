@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -207,6 +207,7 @@ MonoBehaviour:
   _maxAcceleration: 5
   _maxAngularAcc: 180
   _maxForce: 1
+  _velocity: {x: 0, y: 0, z: 0}
   _orientation: 0
   _interiorRadius: 1
   _arrivalRadius: 3
@@ -215,7 +216,7 @@ MonoBehaviour:
   steer:
     angular: 0
     linear: {x: 0, y: 0, z: 0}
---- !u!114 &183274827
+--- !u!114 &183274825
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -224,13 +225,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 183274822}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8261527d478b67046af8e37abdc2c9d4, type: 3}
+  m_Script: {fileID: 11500000, guid: 6bc2890a08bc7fb429435039eb33f2de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 383337063}
-  radio: 3
-  slowRadio: 5
-  timeToTarget: 3
+  target: {fileID: 367813657}
+  jumpPoint: {fileID: 367813658}
+  maxYVelocity: 5
+  maxSpeed: 0
+  totalTime: 0
 --- !u!1001 &367813655
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -312,11 +314,26 @@ MonoBehaviour:
   _maxAcceleration: 1
   _maxAngularAcc: 1
   _maxForce: 1
+  _velocity: {x: 0, y: 0, z: 0}
   _orientation: 0
   _interiorRadius: 1
   _arrivalRadius: 3
   _interiorAngle: 3
   _exteriorAngle: 8
+--- !u!114 &367813658
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 367813656}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 058a798ce2f66034e9fbefe2374954df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  jumpLocation: {x: -4.4, y: 0, z: 4.62}
+  landingLocation: {x: -4.4, y: 0, z: 8.62}
 --- !u!1 &383337062 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: fb85cfdde48292044bcad211cc012b15, type: 3}
@@ -340,6 +357,7 @@ MonoBehaviour:
   _maxAcceleration: 1
   _maxAngularAcc: 1
   _maxForce: 1
+  _velocity: {x: 0, y: 0, z: 0}
   _orientation: 0
   _interiorRadius: 1
   _arrivalRadius: 1
@@ -513,7 +531,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2085874657062927597, guid: ce747666572a26446bae07dbd0d5c9fa, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -9.05
+      value: -4.42
       objectReference: {fileID: 0}
     - target: {fileID: 2085874657062927597, guid: ce747666572a26446bae07dbd0d5c9fa, type: 3}
       propertyPath: m_LocalPosition.y
@@ -521,7 +539,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2085874657062927597, guid: ce747666572a26446bae07dbd0d5c9fa, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -4.34
+      value: 8.62
       objectReference: {fileID: 0}
     - target: {fileID: 2085874657062927597, guid: ce747666572a26446bae07dbd0d5c9fa, type: 3}
       propertyPath: m_LocalRotation.w
@@ -577,6 +595,7 @@ MonoBehaviour:
   _maxAcceleration: 1
   _maxAngularAcc: 1
   _maxForce: 1
+  _velocity: {x: 0, y: 0, z: 0}
   _orientation: 0
   _interiorRadius: 1
   _arrivalRadius: 3
@@ -663,6 +682,7 @@ MonoBehaviour:
   _maxAcceleration: 1
   _maxAngularAcc: 1
   _maxForce: 1
+  _velocity: {x: 0, y: 0, z: 0}
   _orientation: 0
   _interiorRadius: 1
   _arrivalRadius: 3
@@ -765,15 +785,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: fb85cfdde48292044bcad211cc012b15, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -4.4
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: fb85cfdde48292044bcad211cc012b15, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.0000038146973
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: fb85cfdde48292044bcad211cc012b15, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -3.49
+      value: -3.44
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: fb85cfdde48292044bcad211cc012b15, type: 3}
       propertyPath: m_LocalRotation.w
@@ -890,6 +910,7 @@ MonoBehaviour:
   _maxAcceleration: 1
   _maxAngularAcc: 1
   _maxForce: 1
+  _velocity: {x: 0, y: 0, z: 0}
   _orientation: 0
   _interiorRadius: 1
   _arrivalRadius: 3
@@ -1008,6 +1029,7 @@ MonoBehaviour:
   _maxAcceleration: 1
   _maxAngularAcc: 1
   _maxForce: 1
+  _velocity: {x: 0, y: 0, z: 0}
   _orientation: 0
   _interiorRadius: 1
   _arrivalRadius: 3
