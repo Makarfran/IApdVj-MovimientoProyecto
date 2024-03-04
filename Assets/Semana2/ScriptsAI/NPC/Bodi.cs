@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections;
 
 public class Bodi : MonoBehaviour
 {
@@ -146,6 +147,12 @@ public class Bodi : MonoBehaviour
     //      Retorna el ángulo de una posición usando el eje Z como el primer eje
     // public Vector3 OrientationToVector()
     //      Retorna un vector a partir de una orientación usando Z como primer eje
+    public Vector3 OrientationToVector() {
+        float sin = Mathf.Sin(MapToRangePi(Orientation));
+        float cos = Mathf.Cos(MapToRangePi(Orientation));
+        Vector3 vector = new Vector3(sin, 0, cos);
+        return vector;
+    }    
     // public Vector3 VectorHeading()  // Nombre alternativo
     //      Retorna un vector a partir de una orientación usando Z como primer eje
     // public float GetMiniminAngleTo(Vector3 rotation)
