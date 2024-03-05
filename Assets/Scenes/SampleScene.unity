@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -225,14 +225,42 @@ MonoBehaviour:
   m_GameObject: {fileID: 183274822}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6bc2890a08bc7fb429435039eb33f2de, type: 3}
+  m_Script: {fileID: 11500000, guid: 64c1ef18abdb1e04098608d2da1e16b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 367813657}
-  jumpPoint: {fileID: 367813658}
-  maxYVelocity: 5
-  maxSpeed: 0
-  totalTime: 0
+  objetivos:
+  - {fileID: 1911860865}
+  - {fileID: 1192616005}
+  - {fileID: 841616410}
+  - {fileID: 367813657}
+  - {fileID: 810311616}
+--- !u!114 &183274826
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 183274822}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5afadb25a4e8d2141b4adacaf9e27726, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 0}
+  camino: {fileID: 183274825}
+--- !u!114 &183274827
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 183274822}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b7a2ed17f613a8749964588d750da61f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 383337063}
 --- !u!1001 &367813655
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -945,7 +973,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4daaba7c4587edc40b791e2cadf3aaeb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  grid: {fileID: 1390766944}
   GridWidth: 5
   GridHeight: 5
 --- !u!1001 &1911860863
