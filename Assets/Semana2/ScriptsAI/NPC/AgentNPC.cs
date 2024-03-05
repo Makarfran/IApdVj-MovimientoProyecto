@@ -66,7 +66,7 @@ public class AgentNPC : Agent
     public virtual void LateUpdate()
     {
         Steering kinematicFinal = new Steering();
-
+        
         // Reseteamos el steering final.
         this.steer = new Steering();
 
@@ -75,7 +75,9 @@ public class AgentNPC : Agent
         foreach(SteeringBehaviour b in listSteerings){
             
             kinematicFinal = b.GetSteering(this);
+            
         }
+        kinematicFinal =Arbitro.getKinematicFinal(listSteerings, this);
         //foreach (SteeringBehaviour behavior in listSteerings)
         //    Steering kinematic = behavior.GetSteering(this);
         //// La cinemática de este SteeringBehaviour se tiene que combinar
