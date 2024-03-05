@@ -14,12 +14,14 @@ public class Wander : Face // debe heredar de face
     [SerializeField]
     protected float maxAcceleration;
     protected GameObject delegatedAgent;
-
+    [SerializeField]
+    protected float updateTime;
+    protected float lastUpdate;
 
     void Start()
     {
-        delegatedAgent = new GameObject("InvisibleObject");
-        delegatedAgent.hideFlags = HideFlags.HideInHierarchy; // Ocultar en la jerarquía
+        delegatedAgent = GameObject.CreatePrimitive(PrimitiveType.Sphere);
+        //delegatedAgent.hideFlags = HideFlags.HideInHierarchy; // Ocultar en la jerarquía
 
         // Agregar el componente Agent al objeto invisible
         delegatedAgent.AddComponent<Agent>();
@@ -37,9 +39,15 @@ public class Wander : Face // debe heredar de face
     {
         
         // % de wanderRate
-        float rate = Random.value;
+        float rate = Random.Range(-1f, 1f);
         Debug.Log("rate: " +rate);
-        wanderOrientation +=rate * wanderRate;
+        float currentUpdate = Time.time - lastUpdate;
+        if(currentUpdate > updateTime){
+            wanderOrientation =rate * wanderRate;
+            lastUpdate = Time.time;
+        }
+        
+        Debug.Log("WanderOrientation: "+wanderOrientation);
         float targetOrientation = wanderOrientation + agent.Orientation;
 
         // center of the wander circle
