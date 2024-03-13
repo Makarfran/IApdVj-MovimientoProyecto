@@ -241,12 +241,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 183274822}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5afadb25a4e8d2141b4adacaf9e27726, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 0}
+  target: {fileID: 383337063}
   camino: {fileID: 183274825}
 --- !u!114 &183274827
 MonoBehaviour:
@@ -506,7 +506,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: fb85cfdde48292044bcad211cc012b15, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 0.03
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: fb85cfdde48292044bcad211cc012b15, type: 3}
       propertyPath: m_LocalRotation.w
@@ -944,6 +944,61 @@ MonoBehaviour:
   _arrivalRadius: 3
   _interiorAngle: 3
   _exteriorAngle: 8
+--- !u!1 &1295500564
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1295500566}
+  - component: {fileID: 1295500567}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1295500566
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1295500564}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 19.476667, y: -41.99415, z: -1.7937746}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 10
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1295500567
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1295500564}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4daaba7c4587edc40b791e2cadf3aaeb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  a: 3
+  b: 3
+  longLado: 3
+  impasables:
+  - {x: 1, y: 1}
+  - {x: 2, y: 2}
+  coste2:
+  - {x: 0, y: 0}
+  - {x: 1, y: 2}
+  coste3:
+  - {x: 2, y: 1}
 --- !u!1 &1390766938 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 888546651050671714, guid: 5ce433fbbf184524298b5c427e0c48e2, type: 3}
@@ -973,8 +1028,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4daaba7c4587edc40b791e2cadf3aaeb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GridWidth: 5
-  GridHeight: 5
+  a: 3
+  b: 3
+  longLado: 3
+  impasables:
+  - {x: 1, y: 1}
+  coste2:
+  - {x: 2, y: 2}
+  coste3:
+  - {x: 0, y: 0}
 --- !u!1001 &1911860863
 PrefabInstance:
   m_ObjectHideFlags: 0
