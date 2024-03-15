@@ -7,11 +7,12 @@ using UnityEngine;
 [AddComponentMenu("Steering/InteractiveObject/Agent")]
 public class Agent : Bodi
 {
+
     [Tooltip("Radio interior de la IA")]
     [SerializeField] protected float _interiorRadius = 1f;
 
     [Tooltip("Radio de llegada de la IA")]
-    [SerializeField] protected float _arrivalRadius = 3f;
+    [SerializeField] protected float _arrivalRadius = 10f;
 
     [Tooltip("Ángulo interior de la IA")]
     [SerializeField] protected float _interiorAngle = 3.0f; // ángulo sexagesimal.
@@ -55,7 +56,13 @@ public class Agent : Bodi
     // .AddComponent<Agent>();
     // Establece los valores del Bodi y radios/ángulos a los valores adecuados.
     // Esta es solo una de las muchas posiblidades para resolver este problema.
-
+    public static GameObject AgentCreator() 
+    {
+        GameObject newAgent = GameObject.CreatePrimitive(PrimitiveType.Cube);
+        newAgent.AddComponent<Agent>();
+        newAgent.GetComponent<MeshRenderer>().enabled = false;
+        return newAgent;
+    }
 
 
     // AÑADIR LO NECESARIO PARA MOSTRAR LA DEPURACIÓN. Te puede interesar los siguientes enlaces.
