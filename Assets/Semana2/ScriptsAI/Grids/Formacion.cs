@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Formacion : Grid
+public class Formacion : MonoBehaviour
 {
     // Start is called before the first frame update
     

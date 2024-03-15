@@ -1,32 +1,36 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
- 
-public class Grid : MonoBehaviour {
-    // Start is called before the first frame update
+
+public class Grid : MonoBehaviour
+{
     [SerializeField] protected int a;
     [SerializeField] protected int b;
-    [SerializeField] protected float longLado;
+    [SerializeField] protected float lado;
     protected Tile[,] posiciones;
-    [SerializeField] protected List<Vector2> impasables;
-    [SerializeField] protected List<Vector2>  coste2;
-    [SerializeField] protected List<Vector2>  coste3;
-
-    void Start(){
+    
+    // Start is called before the first frame update
+    void Start()
+    {
+        # crea una matriz axb con las casillas
         posiciones = new Tile[a,b];
-        for(int i = 0; i < a; i++ ){ 
-            for(int j = 0; j < b ; j++ ){
-                
-                
-                Vector3 pos = new Vector3(this.transform.position.x + longLado/2f + i*longLado, 0, this.transform.position.z + longLado/2f + j*longLado);
-                posiciones[i,j] = new Tile(pos);
-                
+        for(int i = 0; i < a ; i++){
+            for(int j = 0; j < b; j++){
+                GameObject a = GameObject.Find("Tile " + i + " " + j);
+                posiciones[i,j] = a.GetComponent<Tile>();
+                //esto se asegura que las posiciones de las casillas esten bien
+                posiciones[i,j].setPos(new Vector3(this.transform.position.x + i *lado, 0, this.transform.position.y + j*lado));
             }
         }
-    }  
+    }
 
-    void Update(){
-        
+    // Update is called once per frame
+    void Update()
+    {
+        Debug.Log(getTilePosition(2,1));
+    }
+
+    public Vector3 getTilePosition(int x, int y){
+        return posiciones[x,y].getPosition();
     }
 }
