@@ -12,7 +12,7 @@ public class Grid : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        # crea una matriz axb con las casillas
+        // crea una matriz axb con las casillas
         posiciones = new Tile[a,b];
         for(int i = 0; i < a ; i++){
             for(int j = 0; j < b; j++){

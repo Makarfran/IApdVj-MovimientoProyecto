@@ -19,7 +19,7 @@ public class GridGenerator : MonoBehaviour {
         posiciones = new Tile[a,b];
         for(int i = 0; i < a; i++ ){ 
             for(int j = 0; j < b ; j++ ){
-                Vector3 pos = new Vector3(this.transform.position.x + i*longLado, 0, this.transform.position.z  + j*longLado);
+                Vector3 pos = new Vector3(this.transform.position.x + i*longLado, this.transform.position.y, this.transform.position.z  + j*longLado);
                 var spanw = Instantiate(obj, pos, Quaternion.identity);
                 spanw.name = $"Tile {i} {j}";
                 spanw.GetComponent<Tile>().setPos(pos);
