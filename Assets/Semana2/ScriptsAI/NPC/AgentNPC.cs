@@ -24,7 +24,7 @@ public class AgentNPC : Agent
 
 
     // Use this for initialization
-    void Start()
+    protected void Start()
     {
         this.Velocity = Vector3.zero;
     }
@@ -53,7 +53,7 @@ public class AgentNPC : Agent
         
         
         
-        Position += Velocity * deltaTime;
+        Position += (new Vector3(Mathf.Min(Velocity.x, MaxSpeed),0 ,Mathf.Min(Velocity.z, MaxSpeed))) * deltaTime;
 
         
         // Rotation

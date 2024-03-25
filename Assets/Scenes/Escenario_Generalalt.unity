@@ -123,40 +123,11 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &2422832
+--- !u!1 &3255024 stripped
 GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 41f081d5c6d286c47a33bed3f84de79a, type: 3}
+  m_PrefabInstance: {fileID: 344655510}
   m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2422833}
-  m_Layer: 0
-  m_Name: A
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &2422833
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2422832}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -19.358622, y: 17.786741, z: -3.381866}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1252042230}
-  - {fileID: 767458365}
-  - {fileID: 517662303}
-  m_Father: {fileID: 0}
-  m_RootOrder: 7
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &101684063
 GameObject:
   m_ObjectHideFlags: 0
@@ -259,15 +230,15 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 1252042230}
+    m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 41f081d5c6d286c47a33bed3f84de79a, type: 3}
       propertyPath: m_RootOrder
-      value: 0
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 41f081d5c6d286c47a33bed3f84de79a, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.8850999
+      value: 0.88509995
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 41f081d5c6d286c47a33bed3f84de79a, type: 3}
       propertyPath: m_LocalScale.y
@@ -275,19 +246,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 41f081d5c6d286c47a33bed3f84de79a, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.8850999
+      value: 0.88509995
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 41f081d5c6d286c47a33bed3f84de79a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.3488407
+      value: -19.707462
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 41f081d5c6d286c47a33bed3f84de79a, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.3849545
+      value: 15.401787
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 41f081d5c6d286c47a33bed3f84de79a, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 2.945734
+      value: -0.43613195
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 41f081d5c6d286c47a33bed3f84de79a, type: 3}
       propertyPath: m_LocalRotation.w
@@ -343,25 +314,20 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 12bd93f03376fc64f859657a80a0919f, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 41f081d5c6d286c47a33bed3f84de79a, type: 3}
---- !u!4 &342156904 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 41f081d5c6d286c47a33bed3f84de79a, type: 3}
-  m_PrefabInstance: {fileID: 342156903}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &344655510
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 1477963212}
+    m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 41f081d5c6d286c47a33bed3f84de79a, type: 3}
       propertyPath: m_RootOrder
-      value: 0
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 41f081d5c6d286c47a33bed3f84de79a, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.8850998
+      value: 0.8850999
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 41f081d5c6d286c47a33bed3f84de79a, type: 3}
       propertyPath: m_LocalScale.y
@@ -369,19 +335,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 41f081d5c6d286c47a33bed3f84de79a, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.8850998
+      value: 0.8850999
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 41f081d5c6d286c47a33bed3f84de79a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 43.9
+      value: 24.54138
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 41f081d5c6d286c47a33bed3f84de79a, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.3849545
+      value: 15.401787
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 41f081d5c6d286c47a33bed3f84de79a, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.7800002
+      value: -4.161866
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 41f081d5c6d286c47a33bed3f84de79a, type: 3}
       propertyPath: m_LocalRotation.w
@@ -437,25 +403,48 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: a56facfcff32bb84eaf6af43a503d647, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 41f081d5c6d286c47a33bed3f84de79a, type: 3}
---- !u!4 &344655511 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 41f081d5c6d286c47a33bed3f84de79a, type: 3}
-  m_PrefabInstance: {fileID: 344655510}
+--- !u!114 &344655513
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3255024}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69cb9156e513fc04fbc3cdbae5bfefca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _mass: 1
+  _maxSpeed: 1
+  _maxRotation: 1
+  _maxAcceleration: 1
+  _maxAngularAcc: 1
+  _maxForce: 1
+  _velocity: {x: 0, y: 0, z: 0}
+  _orientation: 0
+  _interiorRadius: 1
+  _arrivalRadius: 10
+  _interiorAngle: 3
+  _exteriorAngle: 8
+  steer:
+    angular: 0
+    linear: {x: 0, y: 0, z: 0}
+  grid: {fileID: 1763973544}
 --- !u!1001 &348751960
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 1477963212}
+    m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 41f081d5c6d286c47a33bed3f84de79a, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 41f081d5c6d286c47a33bed3f84de79a, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.8850998
+      value: 0.8850999
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 41f081d5c6d286c47a33bed3f84de79a, type: 3}
       propertyPath: m_LocalScale.y
@@ -463,19 +452,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 41f081d5c6d286c47a33bed3f84de79a, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.8850998
+      value: 0.8850999
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 41f081d5c6d286c47a33bed3f84de79a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 43.9
+      value: 24.54138
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 41f081d5c6d286c47a33bed3f84de79a, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.3849545
+      value: 15.401787
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 41f081d5c6d286c47a33bed3f84de79a, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -2.19
+      value: -5.571866
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 41f081d5c6d286c47a33bed3f84de79a, type: 3}
       propertyPath: m_LocalRotation.w
@@ -531,25 +520,20 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 12bd93f03376fc64f859657a80a0919f, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 41f081d5c6d286c47a33bed3f84de79a, type: 3}
---- !u!4 &348751961 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 41f081d5c6d286c47a33bed3f84de79a, type: 3}
-  m_PrefabInstance: {fileID: 348751960}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &412147220
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 767458365}
+    m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 41f081d5c6d286c47a33bed3f84de79a, type: 3}
       propertyPath: m_RootOrder
-      value: 0
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 41f081d5c6d286c47a33bed3f84de79a, type: 3}
       propertyPath: m_LocalScale.x
-      value: 1.4773003
+      value: 1.4773011
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 41f081d5c6d286c47a33bed3f84de79a, type: 3}
       propertyPath: m_LocalScale.y
@@ -557,19 +541,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 41f081d5c6d286c47a33bed3f84de79a, type: 3}
       propertyPath: m_LocalScale.z
-      value: 1.4773003
+      value: 1.4773011
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 41f081d5c6d286c47a33bed3f84de79a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.4320431
+      value: -16.65862
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 41f081d5c6d286c47a33bed3f84de79a, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.396741
+      value: 15.39
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 41f081d5c6d286c47a33bed3f84de79a, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 2.367982
+      value: -0.2618661
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 41f081d5c6d286c47a33bed3f84de79a, type: 3}
       propertyPath: m_LocalRotation.w
@@ -625,11 +609,6 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: ffd19ad2f09725f4c88fd48c23bd0f1b, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 41f081d5c6d286c47a33bed3f84de79a, type: 3}
---- !u!4 &412147221 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 41f081d5c6d286c47a33bed3f84de79a, type: 3}
-  m_PrefabInstance: {fileID: 412147220}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &513611401
 GameObject:
   m_ObjectHideFlags: 0
@@ -724,52 +703,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
---- !u!1 &517662302
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 517662303}
-  m_Layer: 0
-  m_Name: Scout
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &517662303
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 517662302}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1086522653}
-  m_Father: {fileID: 2422833}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &577098658
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 1477963212}
+    m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 41f081d5c6d286c47a33bed3f84de79a, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 41f081d5c6d286c47a33bed3f84de79a, type: 3}
       propertyPath: m_LocalScale.x
-      value: 1.4773008
+      value: 1.4773016
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 41f081d5c6d286c47a33bed3f84de79a, type: 3}
       propertyPath: m_LocalScale.y
@@ -777,19 +724,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 41f081d5c6d286c47a33bed3f84de79a, type: 3}
       propertyPath: m_LocalScale.z
-      value: 1.4773008
+      value: 1.4773016
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 41f081d5c6d286c47a33bed3f84de79a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 41.78862
+      value: 22.429998
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 41f081d5c6d286c47a33bed3f84de79a, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.396741
+      value: 15.39
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 41f081d5c6d286c47a33bed3f84de79a, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.021866083
+      value: -3.36
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 41f081d5c6d286c47a33bed3f84de79a, type: 3}
       propertyPath: m_LocalRotation.w
@@ -845,11 +792,6 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: ffd19ad2f09725f4c88fd48c23bd0f1b, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 41f081d5c6d286c47a33bed3f84de79a, type: 3}
---- !u!4 &577098659 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 41f081d5c6d286c47a33bed3f84de79a, type: 3}
-  m_PrefabInstance: {fileID: 577098658}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &585737123
 GameObject:
   m_ObjectHideFlags: 0
@@ -1043,40 +985,54 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
---- !u!1 &767458364
+--- !u!1 &870483309 stripped
 GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 41f081d5c6d286c47a33bed3f84de79a, type: 3}
+  m_PrefabInstance: {fileID: 342156903}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &870483311
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 767458365}
-  m_Layer: 0
-  m_Name: Elites
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &767458365
-Transform:
+  m_GameObject: {fileID: 870483309}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b7a2ed17f613a8749964588d750da61f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 1575956530}
+--- !u!114 &870483312
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 767458364}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 412147221}
-  m_Father: {fileID: 2422833}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_GameObject: {fileID: 870483309}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db593dd15a6badb46a98792eccff241e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _mass: 1
+  _maxSpeed: 1
+  _maxRotation: 1
+  _maxAcceleration: 4
+  _maxAngularAcc: 1
+  _maxForce: 1
+  _velocity: {x: 0, y: 0, z: 0}
+  _orientation: 0
+  _interiorRadius: 1
+  _arrivalRadius: 10
+  _interiorAngle: 3
+  _exteriorAngle: 8
+  steer:
+    angular: 0
+    linear: {x: 0, y: 0, z: 0}
+  grid: {fileID: 1763973544}
 --- !u!1 &1011001390
 GameObject:
   m_ObjectHideFlags: 0
@@ -1174,20 +1130,53 @@ Transform:
   m_Father: {fileID: 1835147754}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+--- !u!1 &1036781322 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 41f081d5c6d286c47a33bed3f84de79a, type: 3}
+  m_PrefabInstance: {fileID: 412147220}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1036781324
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1036781322}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a0967d35ff1cc64ca3567f71c1b48df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _mass: 1
+  _maxSpeed: 1
+  _maxRotation: 1
+  _maxAcceleration: 1
+  _maxAngularAcc: 1
+  _maxForce: 1
+  _velocity: {x: 0, y: 0, z: 0}
+  _orientation: 0
+  _interiorRadius: 1
+  _arrivalRadius: 10
+  _interiorAngle: 3
+  _exteriorAngle: 8
+  steer:
+    angular: 0
+    linear: {x: 0, y: 0, z: 0}
+  grid: {fileID: 1763973544}
 --- !u!1001 &1086522652
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 517662303}
+    m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 41f081d5c6d286c47a33bed3f84de79a, type: 3}
       propertyPath: m_RootOrder
-      value: 0
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 41f081d5c6d286c47a33bed3f84de79a, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.88509977
+      value: 0.8850998
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 41f081d5c6d286c47a33bed3f84de79a, type: 3}
       propertyPath: m_LocalScale.y
@@ -1195,19 +1184,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 41f081d5c6d286c47a33bed3f84de79a, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.88509977
+      value: 0.8850998
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 41f081d5c6d286c47a33bed3f84de79a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.4699993
+      value: -21.82862
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 41f081d5c6d286c47a33bed3f84de79a, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.3849545
+      value: 15.401787
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 41f081d5c6d286c47a33bed3f84de79a, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 2.945734
+      value: -0.43613195
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 41f081d5c6d286c47a33bed3f84de79a, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1263,11 +1252,6 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: d6fedb5b7e2cb214f9e212e358ebbf70, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 41f081d5c6d286c47a33bed3f84de79a, type: 3}
---- !u!4 &1086522653 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 41f081d5c6d286c47a33bed3f84de79a, type: 3}
-  m_PrefabInstance: {fileID: 1086522652}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1177374431
 GameObject:
   m_ObjectHideFlags: 0
@@ -1365,38 +1349,39 @@ Transform:
   m_Father: {fileID: 1835147754}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
---- !u!1 &1252042229
+--- !u!1 &1203993008 stripped
 GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 41f081d5c6d286c47a33bed3f84de79a, type: 3}
+  m_PrefabInstance: {fileID: 577098658}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1203993010
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1252042230}
-  m_Layer: 0
-  m_Name: Infanteria
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1252042230
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1252042229}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 342156904}
-  m_Father: {fileID: 2422833}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_GameObject: {fileID: 1203993008}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a0967d35ff1cc64ca3567f71c1b48df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _mass: 1
+  _maxSpeed: 1
+  _maxRotation: 1
+  _maxAcceleration: 1
+  _maxAngularAcc: 1
+  _maxForce: 1
+  _velocity: {x: 0, y: 0, z: 0}
+  _orientation: 0
+  _interiorRadius: 1
+  _arrivalRadius: 10
+  _interiorAngle: 3
+  _exteriorAngle: 8
+  steer:
+    angular: 0
+    linear: {x: 0, y: 0, z: 0}
+  grid: {fileID: 1763973544}
 --- !u!1 &1263059184
 GameObject:
   m_ObjectHideFlags: 0
@@ -1785,40 +1770,72 @@ Transform:
   m_Father: {fileID: 1835147754}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
---- !u!1 &1477963211
+--- !u!1 &1557063884 stripped
 GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 41f081d5c6d286c47a33bed3f84de79a, type: 3}
+  m_PrefabInstance: {fileID: 1086522652}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1557063886
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1477963212}
-  m_Layer: 0
-  m_Name: B
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1477963212
-Transform:
+  m_GameObject: {fileID: 1557063884}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69cb9156e513fc04fbc3cdbae5bfefca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _mass: 1
+  _maxSpeed: 1
+  _maxRotation: 1
+  _maxAcceleration: 1
+  _maxAngularAcc: 1
+  _maxForce: 1
+  _velocity: {x: 0, y: 0, z: 0}
+  _orientation: 0
+  _interiorRadius: 1
+  _arrivalRadius: 10
+  _interiorAngle: 3
+  _exteriorAngle: 8
+  steer:
+    angular: 0
+    linear: {x: 0, y: 0, z: 0}
+  grid: {fileID: 1763973544}
+--- !u!1 &1575956528 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 41f081d5c6d286c47a33bed3f84de79a, type: 3}
+  m_PrefabInstance: {fileID: 348751960}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1575956530
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1477963211}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -19.358622, y: 17.786741, z: -3.381866}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 344655511}
-  - {fileID: 577098659}
-  - {fileID: 348751961}
-  m_Father: {fileID: 0}
-  m_RootOrder: 8
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_GameObject: {fileID: 1575956528}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db593dd15a6badb46a98792eccff241e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _mass: 1
+  _maxSpeed: 1
+  _maxRotation: 1
+  _maxAcceleration: 1
+  _maxAngularAcc: 1
+  _maxForce: 1
+  _velocity: {x: 0, y: 0, z: 0}
+  _orientation: 0
+  _interiorRadius: 1
+  _arrivalRadius: 10
+  _interiorAngle: 3
+  _exteriorAngle: 8
+  steer:
+    angular: 0
+    linear: {x: 0, y: 0, z: 0}
+  grid: {fileID: 1763973544}
 --- !u!1 &1657244959
 GameObject:
   m_ObjectHideFlags: 0
@@ -2013,6 +2030,26 @@ Transform:
   m_Father: {fileID: 1835147754}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+--- !u!1 &1763973543 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4583437156362067803, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
+  m_PrefabInstance: {fileID: 1905405643}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1763973544
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1763973543}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 766198ec7b72edc47b16d31897bbe66b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  a: 18
+  b: 10
+  lado: 3
 --- !u!1 &1835147753
 GameObject:
   m_ObjectHideFlags: 0
@@ -2052,7 +2089,7 @@ Transform:
   - {fileID: 101684067}
   - {fileID: 1263059188}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1844119921
 GameObject:
@@ -2130,14 +2167,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1844119921}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: -10}
+  m_LocalRotation: {x: 0.6951948, y: -0, z: -0, w: 0.7188215}
+  m_LocalPosition: {x: 0, y: 49.95, z: -1.6}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 88.086, y: 0, z: 0}
 --- !u!1001 &1905405643
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2150,6 +2187,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 18369202931838422, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
+      propertyPath: tipo
+      value: Desierto
+      objectReference: {fileID: 0}
+    - target: {fileID: 18369202931838422, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
       propertyPath: pasable
       value: 1
       objectReference: {fileID: 0}
@@ -2158,24 +2199,56 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 148782750380977223, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
+      propertyPath: tipo
+      value: Desierto
+      objectReference: {fileID: 0}
+    - target: {fileID: 148782750380977223, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
       propertyPath: pasable
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 193269902679141294, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
+      propertyPath: tipo
+      value: Desierto
+      objectReference: {fileID: 0}
+    - target: {fileID: 193269902679141294, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
       propertyPath: pasable
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 210392349067935309, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
+      propertyPath: tipo
+      value: Agua
+      objectReference: {fileID: 0}
+    - target: {fileID: 236066489666693809, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
+      propertyPath: tipo
+      value: Hierba
       objectReference: {fileID: 0}
     - target: {fileID: 236066489666693809, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
       propertyPath: pasable
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 240081158311348046, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
+      propertyPath: tipo
+      value: Desierto
+      objectReference: {fileID: 0}
+    - target: {fileID: 240081158311348046, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
       propertyPath: pasable
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 244942956260111158, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
+      propertyPath: tipo
+      value: Agua
+      objectReference: {fileID: 0}
+    - target: {fileID: 282363128710223004, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
+      propertyPath: tipo
+      value: Hierba
       objectReference: {fileID: 0}
     - target: {fileID: 282363128710223004, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
       propertyPath: pasable
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 343984384721210058, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
+      propertyPath: tipo
+      value: Hierba
       objectReference: {fileID: 0}
     - target: {fileID: 343984384721210058, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
       propertyPath: pasable
@@ -2198,28 +2271,72 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 522015292393075105, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
+      propertyPath: tipo
+      value: Hierba
+      objectReference: {fileID: 0}
+    - target: {fileID: 522015292393075105, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
       propertyPath: pasable
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 544261979849750730, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
+      propertyPath: tipo
+      value: Agua
+      objectReference: {fileID: 0}
+    - target: {fileID: 608647404897959620, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
+      propertyPath: tipo
+      value: Agua
+      objectReference: {fileID: 0}
+    - target: {fileID: 624971944957290645, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
+      propertyPath: tipo
+      value: Hierba
       objectReference: {fileID: 0}
     - target: {fileID: 624971944957290645, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
       propertyPath: pasable
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 691242567730041404, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
+      propertyPath: tipo
+      value: Hierba
+      objectReference: {fileID: 0}
+    - target: {fileID: 691242567730041404, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
       propertyPath: pasable
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 720075826585786031, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
+      propertyPath: tipo
+      value: Hierba
       objectReference: {fileID: 0}
     - target: {fileID: 720075826585786031, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
       propertyPath: pasable
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 733998178084154208, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
+      propertyPath: tipo
+      value: Hierba
+      objectReference: {fileID: 0}
+    - target: {fileID: 733998178084154208, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
       propertyPath: pasable
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 761614763601349047, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
+      propertyPath: tipo
+      value: Agua
+      objectReference: {fileID: 0}
+    - target: {fileID: 787680552411669545, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
+      propertyPath: tipo
+      value: Agua
+      objectReference: {fileID: 0}
+    - target: {fileID: 847091558436849023, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
+      propertyPath: tipo
+      value: Hierba
       objectReference: {fileID: 0}
     - target: {fileID: 847091558436849023, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
       propertyPath: pasable
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1070080371124442187, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
+      propertyPath: tipo
+      value: Desierto
       objectReference: {fileID: 0}
     - target: {fileID: 1070080371124442187, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
       propertyPath: pasable
@@ -2229,25 +2346,57 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1147116477379357366, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
+      propertyPath: tipo
+      value: Agua
+      objectReference: {fileID: 0}
+    - target: {fileID: 1154693694133379580, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
+      propertyPath: tipo
+      value: Desierto
+      objectReference: {fileID: 0}
     - target: {fileID: 1154693694133379580, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
       propertyPath: pasable
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1256746421782368176, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
+      propertyPath: tipo
+      value: Desierto
       objectReference: {fileID: 0}
     - target: {fileID: 1256746421782368176, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
       propertyPath: pasable
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1306426084164213878, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
+      propertyPath: tipo
+      value: Camino
+      objectReference: {fileID: 0}
+    - target: {fileID: 1306426084164213878, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
       propertyPath: pasable
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1340733044507892520, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
+      propertyPath: tipo
+      value: Agua
+      objectReference: {fileID: 0}
+    - target: {fileID: 1360762598157822891, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
+      propertyPath: tipo
+      value: Hierba
       objectReference: {fileID: 0}
     - target: {fileID: 1360762598157822891, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
       propertyPath: pasable
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1363533095172192349, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
+      propertyPath: tipo
+      value: Hierba
+      objectReference: {fileID: 0}
+    - target: {fileID: 1363533095172192349, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
       propertyPath: pasable
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1394447572013703441, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
+      propertyPath: tipo
+      value: Desierto
       objectReference: {fileID: 0}
     - target: {fileID: 1394447572013703441, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
       propertyPath: pasable
@@ -2258,8 +2407,16 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1438698590530951940, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
+      propertyPath: tipo
+      value: Hierba
+      objectReference: {fileID: 0}
+    - target: {fileID: 1438698590530951940, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
       propertyPath: pasable
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1439904813810747334, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
+      propertyPath: tipo
+      value: Hierba
       objectReference: {fileID: 0}
     - target: {fileID: 1439904813810747334, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
       propertyPath: pasable
@@ -2270,8 +2427,16 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1445723537509028887, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
+      propertyPath: tipo
+      value: Hierba
+      objectReference: {fileID: 0}
+    - target: {fileID: 1445723537509028887, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
       propertyPath: pasable
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1516896995153030852, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
+      propertyPath: tipo
+      value: Desierto
       objectReference: {fileID: 0}
     - target: {fileID: 1516896995153030852, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
       propertyPath: pasable
@@ -2281,21 +2446,57 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1611173693709884684, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
+      propertyPath: tipo
+      value: Agua
+      objectReference: {fileID: 0}
+    - target: {fileID: 1711561382203452506, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
+      propertyPath: tipo
+      value: Agua
+      objectReference: {fileID: 0}
+    - target: {fileID: 1811787637601879615, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
+      propertyPath: tipo
+      value: Desierto
+      objectReference: {fileID: 0}
     - target: {fileID: 1811787637601879615, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
       propertyPath: pasable
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1881362107440384023, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
+      propertyPath: tipo
+      value: Hierba
+      objectReference: {fileID: 0}
+    - target: {fileID: 1881362107440384023, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
       propertyPath: pasable
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1883402019791236527, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
+      propertyPath: tipo
+      value: Agua
+      objectReference: {fileID: 0}
+    - target: {fileID: 1958209572202700994, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
+      propertyPath: tipo
+      value: Camino
       objectReference: {fileID: 0}
     - target: {fileID: 1958209572202700994, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
       propertyPath: pasable
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1984701069798522282, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
+      propertyPath: tipo
+      value: Hierba
+      objectReference: {fileID: 0}
+    - target: {fileID: 1984701069798522282, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
       propertyPath: pasable
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1992038335052286633, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
+      propertyPath: tipo
+      value: Agua
+      objectReference: {fileID: 0}
+    - target: {fileID: 2053290384284254766, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
+      propertyPath: tipo
+      value: Agua
       objectReference: {fileID: 0}
     - target: {fileID: 2077712593875943739, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
       propertyPath: m_Enabled
@@ -2304,6 +2505,10 @@ PrefabInstance:
     - target: {fileID: 2081624105616277019, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
       propertyPath: m_Enabled
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2203093775305532177, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
+      propertyPath: tipo
+      value: Agua
       objectReference: {fileID: 0}
     - target: {fileID: 2247422191921114805, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
       propertyPath: m_Enabled
@@ -2318,8 +2523,28 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2296726185310870513, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
+      propertyPath: tipo
+      value: Camino
+      objectReference: {fileID: 0}
+    - target: {fileID: 2296726185310870513, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
       propertyPath: pasable
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2301411006829467896, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
+      propertyPath: tipo
+      value: Agua
+      objectReference: {fileID: 0}
+    - target: {fileID: 2316032905017789173, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
+      propertyPath: tipo
+      value: Agua
+      objectReference: {fileID: 0}
+    - target: {fileID: 2361606359040614816, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
+      propertyPath: tipo
+      value: Agua
+      objectReference: {fileID: 0}
+    - target: {fileID: 2361706123641142793, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
+      propertyPath: tipo
+      value: Camino
       objectReference: {fileID: 0}
     - target: {fileID: 2361706123641142793, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
       propertyPath: pasable
@@ -2330,24 +2555,56 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2521047077434315446, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
+      propertyPath: tipo
+      value: Camino
+      objectReference: {fileID: 0}
+    - target: {fileID: 2521047077434315446, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
       propertyPath: pasable
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2568033045492596218, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
+      propertyPath: tipo
+      value: Camino
+      objectReference: {fileID: 0}
+    - target: {fileID: 2568033045492596218, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
       propertyPath: pasable
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2674672152959484053, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
+      propertyPath: tipo
+      value: Agua
+      objectReference: {fileID: 0}
+    - target: {fileID: 2693565068062850612, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
+      propertyPath: tipo
+      value: Camino
       objectReference: {fileID: 0}
     - target: {fileID: 2693565068062850612, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
       propertyPath: pasable
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2743113916236972260, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
+      propertyPath: tipo
+      value: Hierba
+      objectReference: {fileID: 0}
+    - target: {fileID: 2743113916236972260, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
       propertyPath: pasable
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2751569933477716836, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
+      propertyPath: tipo
+      value: Agua
+      objectReference: {fileID: 0}
+    - target: {fileID: 2852380219120786791, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
+      propertyPath: tipo
+      value: Hierba
       objectReference: {fileID: 0}
     - target: {fileID: 2852380219120786791, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
       propertyPath: pasable
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2879276986420295274, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
+      propertyPath: tipo
+      value: Camino
       objectReference: {fileID: 0}
     - target: {fileID: 2879276986420295274, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
       propertyPath: pasable
@@ -2362,12 +2619,24 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2903168903164457186, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
+      propertyPath: tipo
+      value: Hierba
+      objectReference: {fileID: 0}
+    - target: {fileID: 2903168903164457186, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
       propertyPath: pasable
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2920115452222925934, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
+      propertyPath: tipo
+      value: Hierba
+      objectReference: {fileID: 0}
+    - target: {fileID: 2920115452222925934, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
       propertyPath: pasable
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2948527007807637652, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
+      propertyPath: tipo
+      value: Desierto
       objectReference: {fileID: 0}
     - target: {fileID: 2948527007807637652, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
       propertyPath: pasable
@@ -2382,12 +2651,24 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3003332374001215093, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
+      propertyPath: tipo
+      value: Camino
+      objectReference: {fileID: 0}
+    - target: {fileID: 3003332374001215093, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
       propertyPath: pasable
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3076171876024597940, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
+      propertyPath: tipo
+      value: Desierto
+      objectReference: {fileID: 0}
+    - target: {fileID: 3076171876024597940, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
       propertyPath: pasable
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3087879736392863901, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
+      propertyPath: tipo
+      value: Hierba
       objectReference: {fileID: 0}
     - target: {fileID: 3087879736392863901, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
       propertyPath: pasable
@@ -2398,68 +2679,152 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3139542542608019055, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
+      propertyPath: tipo
+      value: Desierto
+      objectReference: {fileID: 0}
+    - target: {fileID: 3139542542608019055, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
       propertyPath: pasable
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3150028463491044547, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
+      propertyPath: tipo
+      value: Hierba
       objectReference: {fileID: 0}
     - target: {fileID: 3150028463491044547, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
       propertyPath: pasable
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3160425152655183419, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
+      propertyPath: tipo
+      value: Hierba
+      objectReference: {fileID: 0}
+    - target: {fileID: 3160425152655183419, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
       propertyPath: pasable
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3167054372862373237, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
+      propertyPath: tipo
+      value: Camino
       objectReference: {fileID: 0}
     - target: {fileID: 3167054372862373237, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
       propertyPath: pasable
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3187601491762180318, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
+      propertyPath: tipo
+      value: Desierto
+      objectReference: {fileID: 0}
+    - target: {fileID: 3187601491762180318, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
       propertyPath: pasable
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3238018571286291765, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
+      propertyPath: tipo
+      value: Agua
       objectReference: {fileID: 0}
     - target: {fileID: 3274763048828608646, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3310498336780749335, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
+      propertyPath: tipo
+      value: Agua
+      objectReference: {fileID: 0}
     - target: {fileID: 3398966943768609907, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
       propertyPath: m_Enabled
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3502679285192527155, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
+      propertyPath: tipo
+      value: Agua
+      objectReference: {fileID: 0}
+    - target: {fileID: 3506181697544497127, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
+      propertyPath: tipo
+      value: Desierto
       objectReference: {fileID: 0}
     - target: {fileID: 3506181697544497127, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
       propertyPath: pasable
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3518458311191355663, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
+      propertyPath: tipo
+      value: Desierto
+      objectReference: {fileID: 0}
+    - target: {fileID: 3518458311191355663, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
       propertyPath: pasable
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3574732360327600522, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
+      propertyPath: tipo
+      value: Agua
+      objectReference: {fileID: 0}
+    - target: {fileID: 3591790281694715433, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
+      propertyPath: tipo
+      value: Agua
+      objectReference: {fileID: 0}
+    - target: {fileID: 3674247957600448235, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
+      propertyPath: tipo
+      value: Hierba
       objectReference: {fileID: 0}
     - target: {fileID: 3674247957600448235, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
       propertyPath: pasable
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3741069762665920632, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
+      propertyPath: tipo
+      value: Agua
       objectReference: {fileID: 0}
     - target: {fileID: 3745020235784364315, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3757957484915156967, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
+      propertyPath: tipo
+      value: Camino
+      objectReference: {fileID: 0}
+    - target: {fileID: 3757957484915156967, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
       propertyPath: pasable
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3775391711366559034, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
+      propertyPath: tipo
+      value: Agua
+      objectReference: {fileID: 0}
+    - target: {fileID: 3787519765001538933, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
+      propertyPath: tipo
+      value: Camino
       objectReference: {fileID: 0}
     - target: {fileID: 3787519765001538933, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
       propertyPath: pasable
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3812231184389047199, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
+      propertyPath: tipo
+      value: Camino
+      objectReference: {fileID: 0}
+    - target: {fileID: 3812231184389047199, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
       propertyPath: pasable
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3958841463614858650, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
+      propertyPath: tipo
+      value: Hierba
       objectReference: {fileID: 0}
     - target: {fileID: 3958841463614858650, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
       propertyPath: pasable
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3986544638374561477, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
+      propertyPath: tipo
+      value: Camino
+      objectReference: {fileID: 0}
+    - target: {fileID: 3986544638374561477, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
       propertyPath: pasable
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4022850912482225873, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
+      propertyPath: tipo
+      value: Desierto
       objectReference: {fileID: 0}
     - target: {fileID: 4022850912482225873, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
       propertyPath: pasable
@@ -2469,13 +2834,25 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4199512431035990779, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
+      propertyPath: tipo
+      value: Agua
+      objectReference: {fileID: 0}
     - target: {fileID: 4217686357032970562, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4229005496612647127, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
+      propertyPath: tipo
+      value: Hierba
+      objectReference: {fileID: 0}
+    - target: {fileID: 4229005496612647127, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
       propertyPath: pasable
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4260099596491506126, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
+      propertyPath: tipo
+      value: Hierba
       objectReference: {fileID: 0}
     - target: {fileID: 4260099596491506126, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
       propertyPath: pasable
@@ -2493,17 +2870,41 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4407743379730794666, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
+      propertyPath: tipo
+      value: Agua
+      objectReference: {fileID: 0}
     - target: {fileID: 4453606249237672723, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4486081122648856937, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
+      propertyPath: tipo
+      value: Hierba
+      objectReference: {fileID: 0}
+    - target: {fileID: 4486081122648856937, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
       propertyPath: pasable
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4527977933090196185, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
+      propertyPath: tipo
+      value: Agua
       objectReference: {fileID: 0}
     - target: {fileID: 4583437156362067797, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
       propertyPath: m_RootOrder
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4583437156362067797, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.99999994
+      objectReference: {fileID: 0}
+    - target: {fileID: 4583437156362067797, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4583437156362067797, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.99999994
       objectReference: {fileID: 0}
     - target: {fileID: 4583437156362067797, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2523,15 +2924,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4583437156362067797, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 4583437156362067797, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 4583437156362067797, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 4583437156362067797, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -2550,6 +2951,10 @@ PrefabInstance:
       value: gridGeneralAlt
       objectReference: {fileID: 0}
     - target: {fileID: 4585344941069498531, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
+      propertyPath: tipo
+      value: Desierto
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585344941069498531, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
       propertyPath: pasable
       value: 0
       objectReference: {fileID: 0}
@@ -2557,41 +2962,97 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4705559017947857655, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
+      propertyPath: tipo
+      value: Agua
+      objectReference: {fileID: 0}
     - target: {fileID: 4713551883290668487, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
       propertyPath: m_Enabled
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4767840396562710836, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
+      propertyPath: tipo
+      value: Agua
+      objectReference: {fileID: 0}
+    - target: {fileID: 4832923134406393535, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
+      propertyPath: tipo
+      value: Hierba
       objectReference: {fileID: 0}
     - target: {fileID: 4832923134406393535, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
       propertyPath: pasable
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4899485974453361275, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
+      propertyPath: tipo
+      value: Camino
+      objectReference: {fileID: 0}
+    - target: {fileID: 4899485974453361275, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
       propertyPath: pasable
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4946555595591413910, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
+      propertyPath: tipo
+      value: Agua
+      objectReference: {fileID: 0}
+    - target: {fileID: 4955332398373654219, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
+      propertyPath: tipo
+      value: Desierto
       objectReference: {fileID: 0}
     - target: {fileID: 4955332398373654219, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
       propertyPath: pasable
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4970641317225131642, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
+      propertyPath: tipo
+      value: Agua
+      objectReference: {fileID: 0}
+    - target: {fileID: 5015475203391189935, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
+      propertyPath: tipo
+      value: Desierto
       objectReference: {fileID: 0}
     - target: {fileID: 5015475203391189935, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
       propertyPath: pasable
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5052241583330549759, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
+      propertyPath: tipo
+      value: Desierto
+      objectReference: {fileID: 0}
+    - target: {fileID: 5052241583330549759, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
       propertyPath: pasable
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5068560608327046627, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
+      propertyPath: tipo
+      value: Agua
       objectReference: {fileID: 0}
     - target: {fileID: 5138507133775339372, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5144919256926221159, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
+      propertyPath: tipo
+      value: Camino
+      objectReference: {fileID: 0}
+    - target: {fileID: 5144919256926221159, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
       propertyPath: pasable
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5188696368631078757, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
+      propertyPath: tipo
+      value: Agua
+      objectReference: {fileID: 0}
+    - target: {fileID: 5192584432143231442, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
+      propertyPath: tipo
+      value: Camino
       objectReference: {fileID: 0}
     - target: {fileID: 5192584432143231442, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
       propertyPath: pasable
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5257034886100430406, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
+      propertyPath: tipo
+      value: Desierto
       objectReference: {fileID: 0}
     - target: {fileID: 5257034886100430406, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
       propertyPath: pasable
@@ -2601,21 +3062,45 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5288614724148968573, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
+      propertyPath: tipo
+      value: Agua
+      objectReference: {fileID: 0}
+    - target: {fileID: 5363463235257189715, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
+      propertyPath: tipo
+      value: Hierba
+      objectReference: {fileID: 0}
     - target: {fileID: 5363463235257189715, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
       propertyPath: pasable
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5377009822652163524, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
+      propertyPath: tipo
+      value: Desierto
+      objectReference: {fileID: 0}
+    - target: {fileID: 5377009822652163524, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
       propertyPath: pasable
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5411946769722891000, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
+      propertyPath: tipo
+      value: Agua
       objectReference: {fileID: 0}
     - target: {fileID: 5522841462620933188, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5533681913782326707, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
+      propertyPath: tipo
+      value: Desierto
+      objectReference: {fileID: 0}
+    - target: {fileID: 5533681913782326707, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
       propertyPath: pasable
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5610011110144096440, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
+      propertyPath: tipo
+      value: Hierba
       objectReference: {fileID: 0}
     - target: {fileID: 5610011110144096440, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
       propertyPath: pasable
@@ -2624,6 +3109,18 @@ PrefabInstance:
     - target: {fileID: 5610357716016668138, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
       propertyPath: m_Enabled
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5630245899612482123, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
+      propertyPath: tipo
+      value: Agua
+      objectReference: {fileID: 0}
+    - target: {fileID: 5630264531042182757, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
+      propertyPath: tipo
+      value: Agua
+      objectReference: {fileID: 0}
+    - target: {fileID: 5664986526287269099, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
+      propertyPath: tipo
+      value: Agua
       objectReference: {fileID: 0}
     - target: {fileID: 5716658219286464933, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
       propertyPath: m_Enabled
@@ -2634,28 +3131,56 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5745200513654963753, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
+      propertyPath: tipo
+      value: Hierba
+      objectReference: {fileID: 0}
+    - target: {fileID: 5745200513654963753, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
       propertyPath: pasable
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5820657968756785886, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
+      propertyPath: tipo
+      value: Hierba
       objectReference: {fileID: 0}
     - target: {fileID: 5820657968756785886, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
       propertyPath: pasable
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5848366865667876879, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
+      propertyPath: tipo
+      value: Hierba
+      objectReference: {fileID: 0}
+    - target: {fileID: 5848366865667876879, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
       propertyPath: pasable
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5893972164749086182, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
+      propertyPath: tipo
+      value: Hierba
       objectReference: {fileID: 0}
     - target: {fileID: 5893972164749086182, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
       propertyPath: pasable
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5946087918187301689, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
+      propertyPath: tipo
+      value: Hierba
+      objectReference: {fileID: 0}
+    - target: {fileID: 5946087918187301689, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
       propertyPath: pasable
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5950914232604823283, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
+      propertyPath: tipo
+      value: Hierba
+      objectReference: {fileID: 0}
+    - target: {fileID: 5950914232604823283, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
       propertyPath: pasable
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6025848809654237067, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
+      propertyPath: tipo
+      value: Hierba
       objectReference: {fileID: 0}
     - target: {fileID: 6025848809654237067, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
       propertyPath: pasable
@@ -2666,6 +3191,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6077818066411796254, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
+      propertyPath: tipo
+      value: Desierto
+      objectReference: {fileID: 0}
+    - target: {fileID: 6077818066411796254, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
       propertyPath: pasable
       value: 1
       objectReference: {fileID: 0}
@@ -2673,41 +3202,105 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6192332141046679629, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
+      propertyPath: tipo
+      value: Agua
+      objectReference: {fileID: 0}
+    - target: {fileID: 6193717583628679844, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
+      propertyPath: tipo
+      value: Agua
+      objectReference: {fileID: 0}
+    - target: {fileID: 6249827490325512918, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
+      propertyPath: tipo
+      value: Hierba
+      objectReference: {fileID: 0}
     - target: {fileID: 6249827490325512918, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
       propertyPath: pasable
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6278108763887291950, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
+      propertyPath: tipo
+      value: Camino
+      objectReference: {fileID: 0}
+    - target: {fileID: 6278108763887291950, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
       propertyPath: pasable
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6283657240259003777, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
+      propertyPath: tipo
+      value: Agua
+      objectReference: {fileID: 0}
+    - target: {fileID: 6307377453012269083, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
+      propertyPath: tipo
+      value: Agua
+      objectReference: {fileID: 0}
+    - target: {fileID: 6312313072760699881, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
+      propertyPath: tipo
+      value: Hierba
       objectReference: {fileID: 0}
     - target: {fileID: 6312313072760699881, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
       propertyPath: pasable
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6349687391451852681, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
+      propertyPath: tipo
+      value: Agua
+      objectReference: {fileID: 0}
+    - target: {fileID: 6395253556570640694, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
+      propertyPath: tipo
+      value: Hierba
+      objectReference: {fileID: 0}
     - target: {fileID: 6395253556570640694, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
       propertyPath: pasable
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6418312059711357197, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
+      propertyPath: tipo
+      value: Agua
+      objectReference: {fileID: 0}
+    - target: {fileID: 6471709317663006034, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
+      propertyPath: tipo
+      value: Camino
       objectReference: {fileID: 0}
     - target: {fileID: 6471709317663006034, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
       propertyPath: pasable
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6487695686053983525, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
+      propertyPath: tipo
+      value: Camino
+      objectReference: {fileID: 0}
+    - target: {fileID: 6487695686053983525, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
       propertyPath: pasable
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6497695727833325429, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
+      propertyPath: tipo
+      value: Hierba
       objectReference: {fileID: 0}
     - target: {fileID: 6497695727833325429, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
       propertyPath: pasable
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6587967309595475236, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
+      propertyPath: tipo
+      value: Hierba
+      objectReference: {fileID: 0}
+    - target: {fileID: 6587967309595475236, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
       propertyPath: pasable
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6669041547921377624, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
+      propertyPath: tipo
+      value: Hierba
+      objectReference: {fileID: 0}
+    - target: {fileID: 6669041547921377624, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
       propertyPath: pasable
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6736545286009035284, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
+      propertyPath: tipo
+      value: Desierto
       objectReference: {fileID: 0}
     - target: {fileID: 6736545286009035284, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
       propertyPath: pasable
@@ -2721,13 +3314,41 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6836084810319661658, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
+      propertyPath: tipo
+      value: Agua
+      objectReference: {fileID: 0}
+    - target: {fileID: 6887643674414096771, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
+      propertyPath: tipo
+      value: Agua
+      objectReference: {fileID: 0}
+    - target: {fileID: 6905162172315052356, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
+      propertyPath: tipo
+      value: Camino
+      objectReference: {fileID: 0}
     - target: {fileID: 6905162172315052356, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
       propertyPath: pasable
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6957234367615849282, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
+      propertyPath: tipo
+      value: Hierba
+      objectReference: {fileID: 0}
+    - target: {fileID: 6957234367615849282, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
       propertyPath: pasable
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7026363789763177262, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
+      propertyPath: tipo
+      value: Agua
+      objectReference: {fileID: 0}
+    - target: {fileID: 7109524150129297991, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
+      propertyPath: tipo
+      value: Agua
+      objectReference: {fileID: 0}
+    - target: {fileID: 7214186341739284087, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
+      propertyPath: tipo
+      value: Camino
       objectReference: {fileID: 0}
     - target: {fileID: 7214186341739284087, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
       propertyPath: pasable
@@ -2738,40 +3359,100 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7234917070627344441, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
+      propertyPath: tipo
+      value: Hierba
+      objectReference: {fileID: 0}
+    - target: {fileID: 7234917070627344441, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
       propertyPath: pasable
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7252596188723504999, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
+      propertyPath: tipo
+      value: Agua
+      objectReference: {fileID: 0}
+    - target: {fileID: 7253581280978267404, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
+      propertyPath: tipo
+      value: Agua
+      objectReference: {fileID: 0}
+    - target: {fileID: 7273305904162909783, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
+      propertyPath: tipo
+      value: Hierba
       objectReference: {fileID: 0}
     - target: {fileID: 7273305904162909783, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
       propertyPath: pasable
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7310651252444028804, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
+      propertyPath: tipo
+      value: Agua
+      objectReference: {fileID: 0}
+    - target: {fileID: 7316865272748543630, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
+      propertyPath: tipo
+      value: Hierba
       objectReference: {fileID: 0}
     - target: {fileID: 7316865272748543630, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
       propertyPath: pasable
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7332090365303733806, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
+      propertyPath: tipo
+      value: Camino
+      objectReference: {fileID: 0}
+    - target: {fileID: 7332090365303733806, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
       propertyPath: pasable
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7399209158870750498, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
+      propertyPath: tipo
+      value: Agua
       objectReference: {fileID: 0}
     - target: {fileID: 7410645727475870332, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
       propertyPath: m_Enabled
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7410759789725742266, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
+      propertyPath: tipo
+      value: Agua
+      objectReference: {fileID: 0}
+    - target: {fileID: 7419256203499489962, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
+      propertyPath: tipo
+      value: Agua
       objectReference: {fileID: 0}
     - target: {fileID: 7604775051681543403, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7637551713979783987, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
+      propertyPath: tipo
+      value: Desierto
+      objectReference: {fileID: 0}
+    - target: {fileID: 7637551713979783987, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
       propertyPath: pasable
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7654598365626480991, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
+      propertyPath: tipo
+      value: Hierba
       objectReference: {fileID: 0}
     - target: {fileID: 7654598365626480991, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
       propertyPath: pasable
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7727702895108418179, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
+      propertyPath: tipo
+      value: Agua
+      objectReference: {fileID: 0}
+    - target: {fileID: 7824220278057423729, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
+      propertyPath: tipo
+      value: Camino
+      objectReference: {fileID: 0}
     - target: {fileID: 7824220278057423729, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
       propertyPath: pasable
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7870811842872110560, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
+      propertyPath: tipo
+      value: Camino
       objectReference: {fileID: 0}
     - target: {fileID: 7870811842872110560, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
       propertyPath: pasable
@@ -2786,6 +3467,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7967379721321925039, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
+      propertyPath: tipo
+      value: Hierba
+      objectReference: {fileID: 0}
+    - target: {fileID: 7967379721321925039, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
       propertyPath: pasable
       value: 0
       objectReference: {fileID: 0}
@@ -2793,21 +3478,49 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8016803721893226414, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
+      propertyPath: tipo
+      value: Agua
+      objectReference: {fileID: 0}
+    - target: {fileID: 8043900179483845966, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
+      propertyPath: tipo
+      value: Hierba
+      objectReference: {fileID: 0}
     - target: {fileID: 8043900179483845966, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
       propertyPath: pasable
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8072588901762205402, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
+      propertyPath: tipo
+      value: Agua
+      objectReference: {fileID: 0}
+    - target: {fileID: 8073480802253473169, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
+      propertyPath: tipo
+      value: Camino
+      objectReference: {fileID: 0}
     - target: {fileID: 8073480802253473169, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
       propertyPath: pasable
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8110253250545476644, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
+      propertyPath: tipo
+      value: Agua
       objectReference: {fileID: 0}
     - target: {fileID: 8122506910715134104, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8122977460881220048, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
+      propertyPath: tipo
+      value: Desierto
+      objectReference: {fileID: 0}
+    - target: {fileID: 8122977460881220048, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
       propertyPath: pasable
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8260286851263550260, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
+      propertyPath: tipo
+      value: Hierba
       objectReference: {fileID: 0}
     - target: {fileID: 8260286851263550260, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
       propertyPath: pasable
@@ -2818,6 +3531,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8332213004892091479, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
+      propertyPath: tipo
+      value: Camino
+      objectReference: {fileID: 0}
+    - target: {fileID: 8332213004892091479, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
       propertyPath: pasable
       value: 1
       objectReference: {fileID: 0}
@@ -2825,13 +3542,29 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8523868927521273571, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
+      propertyPath: tipo
+      value: Agua
+      objectReference: {fileID: 0}
+    - target: {fileID: 8525093472967952369, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
+      propertyPath: tipo
+      value: Desierto
+      objectReference: {fileID: 0}
     - target: {fileID: 8525093472967952369, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
       propertyPath: pasable
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8552437410453837881, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
+      propertyPath: tipo
+      value: Hierba
+      objectReference: {fileID: 0}
+    - target: {fileID: 8552437410453837881, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
       propertyPath: pasable
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8570457881284426030, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
+      propertyPath: tipo
+      value: Desierto
       objectReference: {fileID: 0}
     - target: {fileID: 8570457881284426030, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
       propertyPath: pasable
@@ -2846,16 +3579,36 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8670395318613989224, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
+      propertyPath: tipo
+      value: Hierba
+      objectReference: {fileID: 0}
+    - target: {fileID: 8670395318613989224, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
       propertyPath: pasable
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8712432856527652097, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
+      propertyPath: tipo
+      value: Agua
+      objectReference: {fileID: 0}
+    - target: {fileID: 8754975319528653172, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
+      propertyPath: tipo
+      value: Camino
       objectReference: {fileID: 0}
     - target: {fileID: 8754975319528653172, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
       propertyPath: pasable
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8781873484880919770, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
+      propertyPath: tipo
+      value: Hierba
+      objectReference: {fileID: 0}
+    - target: {fileID: 8781873484880919770, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
       propertyPath: pasable
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8843200652577436669, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
+      propertyPath: tipo
+      value: Camino
       objectReference: {fileID: 0}
     - target: {fileID: 8843200652577436669, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
       propertyPath: pasable
@@ -2866,6 +3619,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8947406251155723809, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
+      propertyPath: tipo
+      value: Desierto
+      objectReference: {fileID: 0}
+    - target: {fileID: 8947406251155723809, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
       propertyPath: pasable
       value: 1
       objectReference: {fileID: 0}
@@ -2874,70 +3631,32 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8991973627144252295, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
+      propertyPath: tipo
+      value: Hierba
+      objectReference: {fileID: 0}
+    - target: {fileID: 8991973627144252295, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
       propertyPath: pasable
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9017254158296268044, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
+      propertyPath: tipo
+      value: Camino
       objectReference: {fileID: 0}
     - target: {fileID: 9017254158296268044, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
       propertyPath: pasable
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 9145502507154369760, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
+      propertyPath: tipo
+      value: Agua
+      objectReference: {fileID: 0}
     - target: {fileID: 9202746052971286225, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 4583437156362067802, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 4ff7fbf956d483f4b8506fa254ed8661, type: 3}
---- !u!1 &1962800502
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1962800504}
-  - component: {fileID: 1962800503}
-  m_Layer: 0
-  m_Name: GameObject (1)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1962800503
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1962800502}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4daaba7c4587edc40b791e2cadf3aaeb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  a: 18
-  b: 10
-  longLado: 3
-  obj: {fileID: 5985874111700272012, guid: 125dbf30f36c0ea4183801d055cb970f, type: 3}
-  impasables: []
-  coste2: []
-  coste3: []
---- !u!4 &1962800504
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1962800502}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -24.1, y: 15.28584, z: -17.7}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2069556819
 GameObject:
   m_ObjectHideFlags: 0
@@ -3033,5 +3752,5 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

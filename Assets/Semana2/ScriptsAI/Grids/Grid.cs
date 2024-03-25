@@ -22,7 +22,7 @@ public class Grid : MonoBehaviour
                 posiciones[i,j].fila = i;
                 posiciones[i,j].columna = j;
                 //esto se asegura que las posiciones de las casillas esten bien
-                posiciones[i,j].setPos(new Vector3(this.transform.position.x + i *lado, 0, this.transform.position.y + j*lado));
+                posiciones[i,j].setPos(new Vector3(this.transform.position.x + i *lado, 0, this.transform.position.z + j*lado));
 
             }
         }
@@ -31,7 +31,7 @@ public class Grid : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(getTilePosition(2,1));
+        
     }
 
     public Vector3 getTilePosition(int x, int y){
@@ -40,6 +40,17 @@ public class Grid : MonoBehaviour
 
     public Tile getTile(int x, int y){
         return posiciones[x,y];
+    }
+
+    public Tile getTileByVector(Vector3 position){
+        Tile tileInicial = getTile(0,0);
+        float diffX = position.x - tileInicial.pos.x;
+        float diffY = position.z - tileInicial.pos.z;
+        int  coorX = Mathf.FloorToInt(diffX / 3f);
+        int coorY = Mathf.FloorToInt(diffY / 3f);
+
+        return getTile(coorX, coorY);
+
     }
 
     public int getAlto(){
