@@ -443,9 +443,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _mass: 1
   _maxSpeed: 1
-  _maxRotation: 45
+  _maxRotation: 90
   _maxAcceleration: 1
-  _maxAngularAcc: 15
+  _maxAngularAcc: 45
   _maxForce: 1
   _velocity: {x: 0, y: 0, z: 0}
   _orientation: 0
@@ -801,9 +801,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _mass: 1
   _maxSpeed: 1
-  _maxRotation: 45
+  _maxRotation: 90
   _maxAcceleration: 1
-  _maxAngularAcc: 15
+  _maxAngularAcc: 45
   _maxForce: 1
   _velocity: {x: 0, y: 0, z: 0}
   _orientation: 0

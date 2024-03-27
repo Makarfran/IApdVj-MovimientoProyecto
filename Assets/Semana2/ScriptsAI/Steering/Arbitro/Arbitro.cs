@@ -34,6 +34,14 @@ public class Arbitro : MonoBehaviour
                 final.linear.y += 0.2f * temp.linear.y;
                 final.linear.z += 0.2f * temp.linear.z;
             }
+            if(b.NameSteering == "Align"){
+                
+                final.angular = temp.angular;
+            }
+            if(b.NameSteering == "Anti-Align"){
+                
+                final.angular = temp.angular;
+            }
         }
 
         return final;
