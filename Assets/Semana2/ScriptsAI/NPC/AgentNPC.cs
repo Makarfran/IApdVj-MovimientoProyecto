@@ -24,7 +24,7 @@ public class AgentNPC : Agent
 
 
     // Use this for initialization
-    void Start()
+    protected void Start()
     {
         this.Velocity = Vector3.zero;
     }
@@ -54,7 +54,7 @@ public class AgentNPC : Agent
         transform.Rotate(Vector3.up, Orientation);
         
         
-        Position += Velocity * deltaTime;
+        Position += (new Vector3(Mathf.Min(Velocity.x, MaxSpeed),0 ,Mathf.Min(Velocity.z, MaxSpeed))) * deltaTime;
 
         
         // Rotation
@@ -79,7 +79,10 @@ public class AgentNPC : Agent
             kinematicFinal = b.GetSteering(this);
             
         }
+<<<<<<< HEAD
         */
+=======
+>>>>>>> 9219dfa1bda4b8a08f2cc1a1a1c755164ae239c7
         kinematicFinal =Arbitro.getKinematicFinal(listSteerings, this);
 
         //foreach (SteeringBehaviour behavior in listSteerings)

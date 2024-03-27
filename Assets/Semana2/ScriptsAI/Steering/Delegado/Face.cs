@@ -25,14 +25,24 @@ public class Face : Align
         
 
         this.target = Rtarget;
+<<<<<<< HEAD
         this.target.Orientation = Bodi.sitienesPiyloquieresengradosPeroalreves(Mathf.Atan2(direction.x, direction.z));
         Debug.Log(this.target.Orientation);
+=======
+        this.target.Orientation = Bodi.sitienesPiyloquieresengradosPeroalreves(Mathf.Atan2(-direction.x, direction.z));
+        
+>>>>>>> 9219dfa1bda4b8a08f2cc1a1a1c755164ae239c7
 
         return base.GetSteering(agent);
     }
 
+<<<<<<< HEAD
     public void NewTarget(Vector3 newTarget)
     {
         Rtarget = GetNewTarget(newTarget);
+=======
+    public void changeRtarget(Agent agente){
+        this.Rtarget = agente;
+>>>>>>> 9219dfa1bda4b8a08f2cc1a1a1c755164ae239c7
     }
 }

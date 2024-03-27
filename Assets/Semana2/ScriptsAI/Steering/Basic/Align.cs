@@ -26,14 +26,14 @@ public class Align : SteeringBehaviour
         float rotationSize = Mathf.Abs(rotation);
         
 
-        if (rotationSize < 0.2f){
+        if (rotationSize < (target.InteriorRadius)*Mathf.PI/180f){
             steer.linear = Vector3.zero;
             steer.angular = 0;
             return steer;
         }
 
         float targetRotation;
-        if (rotationSize > target.ArrivalRadius){
+        if (rotationSize > (target.ArrivalRadius)*Mathf.PI/180f){
             targetRotation = agent.MaxRotation;
         } else {
             targetRotation = agent.MaxRotation * rotationSize / target.ArrivalRadius;
