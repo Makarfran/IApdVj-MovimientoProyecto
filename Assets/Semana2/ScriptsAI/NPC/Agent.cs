@@ -58,7 +58,7 @@ public class Agent : Bodi
     // Esta es solo una de las muchas posiblidades para resolver este problema.
     public static GameObject AgentCreator() 
     {
-        GameObject newAgent = GameObject.CreatePrimitive(PrimitiveType.Cube);
+        GameObject newAgent = GameObject.CreatePrimitive(PrimitiveType.Sphere);
         newAgent.AddComponent<Agent>();
         newAgent.GetComponent<MeshRenderer>().enabled = false;
         return newAgent;

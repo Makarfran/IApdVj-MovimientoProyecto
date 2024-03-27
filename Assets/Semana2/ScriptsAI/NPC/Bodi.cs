@@ -137,7 +137,7 @@ public class Bodi : MonoBehaviour
     public static float sitienesPiyloquieresengradosPeroalreves(float pitoo){
         float grados = (pitoo * 180) / (float)Mathf.PI;
 
-        return grados*-1;
+        return grados;
     }
     // public static float MapToRange(float rotation, Range r)
     //      Retorna un ángulo de (-180, 180) a (0, 360) expresado en grado or radianes

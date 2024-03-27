@@ -6,7 +6,6 @@ public class Arrive : SteeringBehaviour
 {
 
     // Declara las variables que necesites para este SteeringBehaviour
-
     [SerializeField] protected float radio; // radio pequeño; Modificado para usar el radio interior del agente objetivo
     [SerializeField] protected float slowRadio; // radio grande durante el cual se desacelera. Modificado para usar el radio externo del agente objetivo
     protected float targetSpeed;
@@ -17,6 +16,7 @@ public class Arrive : SteeringBehaviour
     void Start()
     {
         this.nameSteering = "Arrive";
+        this.Weight = 0.7f;
     }
 
 
@@ -73,21 +73,6 @@ public class Arrive : SteeringBehaviour
 
     public void NewTarget(Vector3 newTarget) 
     {
-        Agent agentNewTarget;
-        
-        if (GetComponent<order>().arrivalPoint != null) 
-        {
-            agentNewTarget = GetComponent<order>().arrivalPoint;
-            agentNewTarget.Position = newTarget;
-            target = agentNewTarget; 
-            return;
-        }
-        
-
-        agentNewTarget = Agent.AgentCreator().GetComponent<Agent>();
-        agentNewTarget.gameObject.name = "arrivePoint";
-        agentNewTarget.Position = newTarget;
-        GetComponent<order>().arrivalPoint = agentNewTarget;
-        target = agentNewTarget;
+        target = GetNewTarget(newTarget);
     }
 }

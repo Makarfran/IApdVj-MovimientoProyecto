@@ -104,7 +104,8 @@ public class UnitsSelection : MonoBehaviour
 
                         // Nota 2: En el caso de que solo se tenga una función "NewTarget" para cada NPC, entonces 
                         // puede ser más eficiente algo como:
-                        if (npc.GetComponent<Arrive>() != null) npc.GetComponent<Arrive>().NewTarget(newTarget);
+                        //if (npc.GetComponent<Arrive>() != null) npc.GetComponent<Arrive>().NewTarget(newTarget);
+                        npc.SendMessage("NewTarget", newTarget);
                         // que obtiene la componente del NPC que yo sé que contiene a la función NewTarget(), y la invoca.
                     }
                 }

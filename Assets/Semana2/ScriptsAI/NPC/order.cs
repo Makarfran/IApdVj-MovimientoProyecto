@@ -5,4 +5,5 @@ using UnityEngine;
 public class order : MonoBehaviour
 {
     public Agent arrivalPoint;
+    public Agent alignPoint;
 }

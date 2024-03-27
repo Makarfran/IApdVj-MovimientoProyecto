@@ -49,8 +49,9 @@ public class AgentNPC : Agent
         Rotation = this.steer.angular;
         
         Orientation += Rotation * deltaTime;
-        transform.rotation = Quaternion.Euler(0,Orientation, 0);
-        
+        //transform.rotation = Quaternion.Euler(0,Orientation, 0);
+        transform.rotation = new Quaternion();
+        transform.Rotate(Vector3.up, Orientation);
         
         
         Position += Velocity * deltaTime;
@@ -72,12 +73,14 @@ public class AgentNPC : Agent
 
         // Recorremos cada steering
         //Habrá que modificarlo cuando se tenga el actuador
+        /*
         foreach(SteeringBehaviour b in listSteerings){
             
             kinematicFinal = b.GetSteering(this);
             
         }
-        //kinematicFinal =Arbitro.getKinematicFinal(listSteerings, this);
+        */
+        kinematicFinal =Arbitro.getKinematicFinal(listSteerings, this);
 
         //foreach (SteeringBehaviour behavior in listSteerings)
         //    Steering kinematic = behavior.GetSteering(this);
