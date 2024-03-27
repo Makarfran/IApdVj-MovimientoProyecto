@@ -26,7 +26,7 @@ public class AntiAlign : SteeringBehaviour
         
         
         float rotationSize = Mathf.Abs(rotation);
-        Debug.Log(rotationSize);
+
         
         if (Mathf.Abs(rotationSize - Mathf.PI) < (target.InteriorRadius)*Mathf.PI/180f){
             steer.linear = Vector3.zero;

@@ -25,8 +25,12 @@ public class Face : Align
 
         this.target = Rtarget;
         this.target.Orientation = Bodi.sitienesPiyloquieresengradosPeroalreves(Mathf.Atan2(-direction.x, direction.z));
-        Debug.Log(this.target.Orientation);
+        
 
         return base.GetSteering(agent);
+    }
+
+    public void changeRtarget(Agent agente){
+        this.Rtarget = agente;
     }
 }

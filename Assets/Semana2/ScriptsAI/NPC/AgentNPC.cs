@@ -77,7 +77,7 @@ public class AgentNPC : Agent
             kinematicFinal = b.GetSteering(this);
             
         }
-        //kinematicFinal =Arbitro.getKinematicFinal(listSteerings, this);
+        kinematicFinal =Arbitro.getKinematicFinal(listSteerings, this);
 
         //foreach (SteeringBehaviour behavior in listSteerings)
         //    Steering kinematic = behavior.GetSteering(this);
