@@ -9,6 +9,7 @@ public class Tile : MonoBehaviour
     public Vector3 pos;
     public int gCoste;
     public int hCoste;
+    public int tempHCoste;
     public int fCoste;
     public Tile tilePadre;
     

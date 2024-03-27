@@ -49,4 +49,9 @@ public class Grid : MonoBehaviour
     public int getAncho(){
         return b;
     }
+
+    public Tile[,] getTiles(){
+        return posiciones;
+    }
+
 }
