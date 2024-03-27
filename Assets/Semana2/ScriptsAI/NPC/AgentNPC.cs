@@ -79,10 +79,8 @@ public class AgentNPC : Agent
             kinematicFinal = b.GetSteering(this);
             
         }
-<<<<<<< HEAD
         */
-=======
->>>>>>> 9219dfa1bda4b8a08f2cc1a1a1c755164ae239c7
+
         kinematicFinal =Arbitro.getKinematicFinal(listSteerings, this);
 
         //foreach (SteeringBehaviour behavior in listSteerings)
