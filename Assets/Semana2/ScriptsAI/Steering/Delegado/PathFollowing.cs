@@ -20,7 +20,7 @@ public class PathFollowing : Seek
         if(Mathf.Abs(distancia) < 2f){
             this.target = camino.getSiguiente(this.target);
             if(gameObject.GetComponent("Face") != null){
-                this.GetComponent<Face>().changeRtarget(this.target);
+                this.GetComponent<Face>().NewTarget(this.target.Position);
             }
         }
 
