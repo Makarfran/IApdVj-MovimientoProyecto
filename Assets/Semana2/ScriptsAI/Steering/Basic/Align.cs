@@ -7,10 +7,11 @@ public class Align : SteeringBehaviour
 
     // Declara las variables que necesites para este SteeringBehaviour
 
-    float timeToTarget = 0.1f;
+    float timeToTarget = 1f;
     void Start()
     {
         this.nameSteering = "Align";
+        this.Weight = 1f;
     }
 
 
@@ -26,14 +27,14 @@ public class Align : SteeringBehaviour
         float rotationSize = Mathf.Abs(rotation);
         
 
-        if (rotationSize < 0.2f){
+        if (rotationSize < Bodi.MapToRangePi(target.InteriorRadius)){
             steer.linear = Vector3.zero;
             steer.angular = 0;
             return steer;
         }
 
         float targetRotation;
-        if (rotationSize > target.ArrivalRadius){
+        if (rotationSize > Bodi.MapToRangePi(target.ArrivalRadius)){
             targetRotation = agent.MaxRotation;
         } else {
             targetRotation = agent.MaxRotation * rotationSize / target.ArrivalRadius;
@@ -55,5 +56,10 @@ public class Align : SteeringBehaviour
         // Retornamos el resultado final.
         
         return steer;
+    }
+
+    public void NewTargetOr(float newTarget)
+    {
+        target = GetNewTargetOr(newTarget);
     }
 }

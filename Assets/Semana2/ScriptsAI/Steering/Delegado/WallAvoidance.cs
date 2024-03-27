@@ -48,6 +48,7 @@ public class WallAvoidance : Seek
         //Dibujamos los bigotes
         draw2(origen, direction, anguloNPC, angulo);
 
+        //Para cada bigote comprobamos si hay colisión
         for (int i = 1; i <= nrays; i++)
         {
             float distancia = future.magnitude * lookahead;

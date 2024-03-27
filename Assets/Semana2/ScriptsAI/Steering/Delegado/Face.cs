@@ -10,6 +10,7 @@ public class Face : Align
     void Start()
     {
         this.nameSteering = "Face";
+        this.Weight = 1f;
     }
 
 
@@ -24,9 +25,16 @@ public class Face : Align
         
 
         this.target = Rtarget;
-        this.target.Orientation = Bodi.sitienesPiyloquieresengradosPeroalreves(Mathf.Atan2(-direction.x, direction.z));
-        Debug.Log(this.target.Orientation);
+
+        this.target.Orientation = Bodi.sitienesPiyloquieresengradosPeroalreves(Mathf.Atan2(direction.x, direction.z));
 
         return base.GetSteering(agent);
+    }
+
+
+    public void NewTarget(Vector3 newTarget)
+    {
+        Rtarget = GetNewTarget(newTarget);
+
     }
 }

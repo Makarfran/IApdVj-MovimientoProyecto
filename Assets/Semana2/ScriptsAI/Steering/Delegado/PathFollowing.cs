@@ -19,6 +19,9 @@ public class PathFollowing : Seek
         float distancia = Vector3.Distance(agent.transform.position, target.transform.position);
         if(Mathf.Abs(distancia) < 2f){
             this.target = camino.getSiguiente(this.target);
+            if(gameObject.GetComponent("Face") != null){
+                this.GetComponent<Face>().NewTarget(this.target.Position);
+            }
         }
 
         

@@ -5,15 +5,18 @@ using System;
 public class Tile : MonoBehaviour
 {
     public int fila,columna;
-    public bool pasable = true;
+    public bool pasable;
     public Vector3 pos;
     public int gCoste;
     public int hCoste;
     public int tempHCoste;
     public int fCoste;
     public Tile tilePadre;
+    public String tipo;
     
-
+    public String getTipo(){
+        return tipo;
+    }
 
     public void calcularFCoste(){
         fCoste = gCoste + hCoste;

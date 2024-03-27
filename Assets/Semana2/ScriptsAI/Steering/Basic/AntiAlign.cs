@@ -17,6 +17,8 @@ public class AntiAlign : SteeringBehaviour
     public override Steering GetSteering(Agent agent)
     {
         Steering steer = new Steering();
+        float angularAcceleration;
+        float targetRotation;
         float rotation = agent.Orientation - target.Orientation;
         
 
@@ -24,12 +26,16 @@ public class AntiAlign : SteeringBehaviour
         
         
         float rotationSize = Mathf.Abs(rotation);
-        
 
         
+        if (Mathf.Abs(rotationSize - Mathf.PI) < (target.InteriorRadius)*Mathf.PI/180f){
+            steer.linear = Vector3.zero;
+            steer.angular = 0;
+            return steer;
+        }
 
-        float targetRotation;
-        if (rotationSize > target.ArrivalRadius){
+        
+        if (Mathf.Abs(rotationSize - Mathf.PI) > (target.ArrivalRadius)*Mathf.PI/180f){
             targetRotation = agent.MaxRotation;
         } else {
             targetRotation = agent.MaxRotation * rotationSize / target.ArrivalRadius;
@@ -40,7 +46,7 @@ public class AntiAlign : SteeringBehaviour
         steer.angular = targetRotation - agent.Rotation;
         steer.angular /= timeToTarget;
 
-        float angularAcceleration = Mathf.Abs(steer.angular);
+        angularAcceleration = Mathf.Abs(steer.angular);
         if(angularAcceleration > agent.MaxAngularAcc){
             steer.angular /= angularAcceleration;
             steer.angular *= agent.MaxAngularAcc;
