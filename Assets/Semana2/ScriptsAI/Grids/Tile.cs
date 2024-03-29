@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+using UnityEngine.UI;
 public class Tile : MonoBehaviour
 {
     public int fila,columna;
@@ -13,7 +14,9 @@ public class Tile : MonoBehaviour
     public int fCoste;
     public Tile tilePadre;
     public String tipo;
-    
+
+    public Text textComponent;
+
     public String getTipo(){
         return tipo;
     }
@@ -28,5 +31,9 @@ public class Tile : MonoBehaviour
 
     public Vector3 getPosition(){
         return pos;
+    }
+
+    public void setText(int text){
+        textComponent.text = text.ToString();
     }
 }
