@@ -8,19 +8,13 @@ public class AgentNPCScout : AgentNPC
     [SerializeField] Grid grid;
     
     // Start is called before the first frame update
-    void Awake(){
-        base.Awake();
-    }
-
-    void Start(){
-        base.Start();
-    }
+    
 
     // Update is called once per frame
-    void Update()
+    public override void Update()
     {
         base.Update();
-        /*Tile tile = grid.getTileByVector(this.transform.position);
+        Tile tile = grid.getTileByVector(this.transform.position);
         String tipo = tile.getTipo();
         switch (tipo)
         {
@@ -36,6 +30,6 @@ public class AgentNPCScout : AgentNPC
         case "Agua":
             this.MaxSpeed = 1f;
             break;
-        }*/
+        }
     }
 }

@@ -8,21 +8,22 @@ public class WallAvoidance : Seek
     // Declara las variables que necesites para este SteeringBehaviour
     RaycastHit hit;
 
-    //Distancaia mínima a un obstáculo (como de lejos nos movemos para evitar la colisión)
-    //Distancia de separación
+    //Distancaia mï¿½nima a un obstï¿½culo (como de lejos nos movemos para evitar la colisiï¿½n)
+    //Distancia de separaciï¿½n
     float avoidDistance;
 
     //Distancia del rayo
-    //En función del tiempo (fps) 
+    //En funciï¿½n del tiempo (fps) 
     float lookahead;
 
-    //número de bigotes
+    //nï¿½mero de bigotes
     public int nrays;
 
     // Start is called before the first frame update
     void Start()
     {
         this.nameSteering = "WallAvoidance";
+        this.Weight = 0.8f;
         lookahead = 0.01f * (1.0f / Time.deltaTime);
     }
 
@@ -31,24 +32,24 @@ public class WallAvoidance : Seek
     {
 
         Steering steer = new Steering();
-
-        //Distancia de separación dos veces el ancho del personaje
+        
+        //Distancia de separaciï¿½n dos veces el ancho del personaje
         avoidDistance = 2 * agent.InteriorRadius;
 
-        //Calcula el origen, dirección y tamaño del vector rayo de colisión (bigote)
+        //Calcula el origen, direcciï¿½n y tamaï¿½o del vector rayo de colisiï¿½n (bigote)
         Vector3 origen = agent.transform.position;
         Vector3 direction = agent.Velocity.normalized;
         Vector3 future = direction * agent.MaxAcceleration;
 
-        //Calculamos el ángulo de la velocidad actual
+        //Calculamos el ï¿½ngulo de la velocidad actual
         float anguloNPC = Mathf.Atan2(direction.x, direction.z);
-        //Calculamos el ángulo del primer bigote
+        //Calculamos el ï¿½ngulo del primer bigote
         float angulo = anguloNPC - Mathf.PI / 2 + Mathf.PI / (nrays + 1);
 
         //Dibujamos los bigotes
         draw2(origen, direction, anguloNPC, angulo);
 
-        //Para cada bigote comprobamos si hay colisión
+        //Para cada bigote comprobamos si hay colisiï¿½n
         for (int i = 1; i <= nrays; i++)
         {
             float distancia = future.magnitude * lookahead;
@@ -59,11 +60,12 @@ public class WallAvoidance : Seek
             {
                 distancia = distancia / 3;
             }
-
+            
             bool collision = Physics.Raycast(origen, otraDirection, out hit, distancia);
-            // Si hay colisión delegamos a seek
+            // Si hay colisiï¿½n delegamos a seek
             if (collision)
             {
+                Debug.Log("Piss");
                 //Para ver el bigote que esta colisionando y su normal
                 draw(new Ray(origen, otraDirection), hit);
 
@@ -75,7 +77,7 @@ public class WallAvoidance : Seek
                 steer.linear = desired_velocity - agent.Velocity;
                 return steer;
             }
-            //calculamos el ángulo del siguiente bigote
+            //calculamos el ï¿½ngulo del siguiente bigote
             angulo = angulo + Mathf.PI / (nrays + 1);
         }
 

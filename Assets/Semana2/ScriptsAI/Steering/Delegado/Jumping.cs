@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-//t = t + dt.  El tiempo es la acumulación del delta time cuando esta haceindo el salto
+//t = t + dt.  El tiempo es la acumulaciï¿½n del delta time cuando esta haceindo el salto
 //pt = p0 + v * sm * t + (g*t^2)/2
 
 public class Jumping : VelocityMatching
@@ -10,32 +10,36 @@ public class Jumping : VelocityMatching
 
     const float gravedad = -9.81f;
 
-    //Punto de salto (Normalmente viene dado como un waypoint de la búsqueda de caminos)
+    //Punto de salto (Normalmente viene dado como un waypoint de la bï¿½squeda de caminos)
     public JumpPoint jumpPoint;
 
     // Mantiene si el salto es alcanzable
     bool canAchieve = false;
 
-    //Máxima velocidad de salto 
+    //Mï¿½xima velocidad de salto 
     public float maxYVelocity;
 
-    //Velocidad máxima del personaje
+    //Velocidad mï¿½xima del personaje
     public float maxSpeed;
 
     public float totalTime = 0;
     float accTime = 0;
-    bool saltando = false;
+    public bool saltando = false;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        this.Weight = 0.2f;
+        this.NameSteering = "Jumping";
     }
 
     //Devuelve el steering para el salto
     public override Steering GetSteering(Agent agent) 
     {
         Steering steer = new Steering();
+        if(this.Target == null){
+            return steer;
+        }
 
         if (saltando) 
         {
@@ -43,8 +47,22 @@ public class Jumping : VelocityMatching
             //float posy = agent.Position.y;
             if (accTime >= totalTime)
             {
+                
                 //agent.Position = new Vector3(agent.Position.x, 0, agent.Position.z);
                 saltando = false;
+                accTime = 0;
+                if(this.GetComponent<PathFollowing>() != null){
+                    Agent jp = this.GetComponent<PathBasico>().getSigJP(this.target);
+                    
+                    if(jp != null){
+                        this.Target = jp;
+                        this.jumpPoint = jp.GetComponent<JumpPoint>();
+
+                    } else {
+                        this.Target = null;
+                        this.jumpPoint = null;
+                    }
+                }
             }
             else { agent.Position = new Vector3(agent.Position.x, (0 + maxYVelocity * accTime + gravedad * (accTime * accTime) / 2), agent.Position.z); }
             accTime += Time.deltaTime;
@@ -69,15 +87,16 @@ public class Jumping : VelocityMatching
             //Si no devolvemos un steering con valores 0
             return steer;
         }
-
         //Comprobamos si hemos alcanzado el punto de salto
-        if ((target.Position - agent.Position).magnitude < 0.5 && (target.Velocity - agent.Velocity).magnitude < 0.5) 
+        Debug.Log(jumpPoint.JumpLocation);
+        if ((jumpPoint.JumpLocation - agent.Position).magnitude < 0.5f && (target.Velocity - agent.Velocity).magnitude < 10f) 
         {
+            
             //Si hemos alcanzado el punto de salto realizamos el salto
             saltando = true;
             
             //float posy = agent.Position.y;
-            agent.Position = new Vector3(agent.Position.x, (0 + maxYVelocity * accTime + gravedad * (accTime * accTime) / 2), agent.Position.z);
+            agent.Position = new Vector3(agent.Position.x , (0 + maxYVelocity * accTime + gravedad * (accTime * accTime) / 2), agent.Position.z);
             accTime += Time.deltaTime;
             steer.linear = Vector3.zero;
             return steer;
@@ -86,7 +105,7 @@ public class Jumping : VelocityMatching
         return base.GetSteering(agent);
     }
 
-    //Lleva a cabo el cálculo de la trayectoria
+    //Lleva a cabo el cï¿½lculo de la trayectoria
     public void calculateTarget() 
     {
         //Crear un nuevo agent
@@ -96,11 +115,13 @@ public class Jumping : VelocityMatching
         //Calcula el primer tiempo de salto
         float sqrtTerm = Mathf.Sqrt(2 * gravedad * jumpPoint.DeltaPosition.y + maxYVelocity * maxYVelocity);
         float time = (-maxYVelocity - sqrtTerm) / gravedad;
+        
 
-        //Comprobamos si es la solución correcta de la ecuación de segundo grado
+
+        //Comprobamos si es la soluciï¿½n correcta de la ecuaciï¿½n de segundo grado
         if (!checkJumpTime(time)) 
         {
-            //Si no es la solución correcta probamos con la otra
+            //Si no es la soluciï¿½n correcta probamos con la otra
             time = (-maxYVelocity + sqrtTerm) / gravedad;
             checkJumpTime(time);
         }
@@ -114,10 +135,12 @@ public class Jumping : VelocityMatching
         float vx = jumpPoint.DeltaPosition.x / time;
         float vz = jumpPoint.DeltaPosition.z / time;
         float speedSq = vx * vx + vz * vz;
+        //Debug.Log(speedSq);
 
-        //Comprobamos que no supere a la velocidad máxima 
+        //Comprobamos que no supere a la velocidad mï¿½xima 
         if (time > 0 && speedSq < maxSpeed * maxSpeed)
-        {
+        {   
+            
             target.Velocity = new Vector3(vx, 0, vz);
            
             canAchieve = true;

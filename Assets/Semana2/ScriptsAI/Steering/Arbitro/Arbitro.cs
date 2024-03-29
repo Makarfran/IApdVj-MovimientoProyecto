@@ -14,13 +14,52 @@ public class Arbitro : MonoBehaviour
         foreach (SteeringBehaviour b in steers)
         {
 
-            if (b.NameSteering == "Align" && (agente.Velocity.magnitude > 0.1)) { }
-            else if (b.NameSteering == "Face" && (agente.Velocity.magnitude < 0.5)) { }
-            else
-            {
+            if (b.NameSteering == "Align" && (agente.Velocity.magnitude > 0.1)) {
+             }
+            else if (b.NameSteering == "Face") {
+                
                 temp = b.GetSteering(agente);
                 final.linear += b.Weight * temp.linear;
                 final.angular += b.Weight * temp.angular;
+            } else {
+                temp = b.GetSteering(agente);
+                final.linear += b.Weight * temp.linear;
+                final.angular += b.Weight * temp.angular;
+            }
+            if(b.NameSteering == "Path Following"){
+                
+                temp = b.GetSteering(agente);
+                final.linear += b.Weight * temp.linear;
+                
+            }
+            if(b.NameSteering == "Seek"){
+                
+                temp = b.GetSteering(agente);
+                final.linear += b.Weight * temp.linear;
+                
+            }
+
+            if(b.NameSteering == "Wander"){
+                
+                temp = b.GetSteering(agente);
+                final.linear += b.Weight * temp.linear;
+                final.angular += b.Weight * temp.angular;
+                
+            }
+
+            if(b.NameSteering == "WallAvoidance"){
+                
+                temp = b.GetSteering(agente);
+                final.linear += b.Weight * temp.linear;
+                final.angular += b.Weight * temp.angular;
+                
+            }
+            if(b.NameSteering == "Jumping"){
+                
+                temp = b.GetSteering(agente);
+                final.linear += b.Weight * temp.linear;
+                final.angular += b.Weight * temp.angular;
+                
             }
 
         }
