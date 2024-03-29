@@ -22,7 +22,7 @@ public class GridGenerator : MonoBehaviour {
         int count = 0;
         for(int i = 0; i < a; i++ ){ 
             for(int j = 0; j < b ; j++ ){
-                Vector3 pos = new Vector3(this.transform.position.x + j*longLado, this.transform.position.y + i*longLado, this.transform.position.z  );
+                Vector3 pos = new Vector3(this.transform.position.x + i*longLado, this.transform.position.y , this.transform.position.z + j*longLado  );
                 var spanw = Instantiate(obj, pos, Quaternion.identity);
                 spanw.name = $"Tile {i} {j}";
                 spanw.GetComponent<Tile>().setPos(pos);
@@ -32,7 +32,8 @@ public class GridGenerator : MonoBehaviour {
                                 // Agregar un componente de texto al GameObject
                 
 
-                // Configurar el componente de texto
+                // Configurar el componente de texto 
+                /*
                  spanw.GetComponent<Tile>().textComponent = spanw.AddComponent<Text>();
                spanw.GetComponent<Tile>().textComponent.text = (count).ToString();
                 count++;
@@ -41,7 +42,7 @@ public class GridGenerator : MonoBehaviour {
                 spanw.GetComponent<Tile>().textComponent.color = numberText.color;
                 spanw.GetComponent<Tile>().textComponent.transform.position = pos; 
                 spanw.GetComponent<Tile>().textComponent.transform.SetParent(canvas.transform, false);
-                
+                */
             }
         }
     }  

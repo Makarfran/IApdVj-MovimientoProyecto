@@ -21,7 +21,7 @@ public class PathFinding
         tempValues = new Dictionary<Tile, int>();
         S = new List<Tile>();
         T = new List<Tile>();
-        this.costeMovimientoLineal = 20;
+        this.costeMovimientoLineal = 10;
         this.maxDepth = 1;
         camino = new List<Tile>();
     }
@@ -32,6 +32,7 @@ public class PathFinding
         T.Clear();
         T.Add(goal);
         camino.Add(u);
+        u.CambiarColorARojo();
 
         inicializarHeuristicas(goal);
 
@@ -52,6 +53,7 @@ public class PathFinding
                     break;
                 }
                 camino.Add(u);
+                u.CambiarColorARojo();
             }
             while (S.Contains(u));
         }
@@ -71,7 +73,7 @@ public class PathFinding
             Tile u = S.First(u => hValues[u] == int.MaxValue);
             Tile minSucc = minSuccessor(u);
             hValues[u] = Mathf.Max(tempValues[u], getFCoste(u,minSucc));
-            u.setText(hValues[u]);
+            //u.setText(hValues[u]);
             if (hValues[u] == int.MaxValue)
                 return;
         }
@@ -127,7 +129,7 @@ public class PathFinding
         {   //hValues[tile] = calcularHCoste(tile,goal);
             int coste = calcularHCoste(tile,goal);
             hValues[tile] = coste;
-            tile.setText(coste);
+            //tile.setText(coste);
         }
     }
 

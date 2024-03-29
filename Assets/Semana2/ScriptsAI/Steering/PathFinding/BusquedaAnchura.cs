@@ -71,15 +71,22 @@ public class BusquedaAnchura
 
     private void getVecino(int fila, int columna){
         
-        if(isCeldaValida(fila,columna)){
-            Tile vecino = gird.getTile(fila,columna);
+        
+        if(isCeldaValida(fila,columna) ){
+            Tile vecino = gird.getTile(fila,columna);    
             vecinos.Add(vecino);
         }
         
     }
 
     private bool isCeldaValida(int fila, int columna){
-        return (fila >= 0 && fila < gird.getAncho() && columna >= 0 && columna < gird.getAlto());
+        if (fila >= 0 && fila < gird.getAncho() && columna >= 0 && columna < gird.getAlto()){
+
+            if (gird.getTile(fila,columna).pasable){
+                return true;
+            }
+        }
+        return false;
     }
 
     private void comprobarVecino( int depth, Tile vecino)

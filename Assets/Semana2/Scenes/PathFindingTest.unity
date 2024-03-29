@@ -1502,7 +1502,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fila: 0
   columna: 0
-  pasable: 0
+  pasable: 1
   pos: {x: -13.79, y: 20.16, z: -14.01}
   gCoste: 0
   hCoste: 0
@@ -2760,7 +2760,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fila: 0
   columna: 0
-  pasable: 0
+  pasable: 1
   pos: {x: -3.79, y: 10.16, z: -14.01}
   gCoste: 0
   hCoste: 0

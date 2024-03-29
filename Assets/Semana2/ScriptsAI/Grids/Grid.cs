@@ -12,7 +12,7 @@ public class Grid : MonoBehaviour
   
 
     private List<Tile> camino;
-    private int i = 0;
+    //private int i = 0;
  
     // Start is called before the first frame update
     void Start()
@@ -30,24 +30,24 @@ public class Grid : MonoBehaviour
                 posiciones[i,j].columna = j;
                 //esto se asegura que las posiciones de las casillas esten bien
                 posiciones[i,j].setPos(new Vector3(this.transform.position.x + i *lado, 0, this.transform.position.z + j*lado));
-                Debug.Log(posiciones[i,j].textComponent.text);
+                //Debug.Log(posiciones[i,j].textComponent.text);
             }
         }
 
             path.setGrid(this);
-            camino = path.LRTA(0,0,4,4);
+            //camino = path.LRTA(1,0,9,9);
             //path.inicializarHeuristicas(posiciones[4,4]);
     }
 
     // Update is called once per frame
     void Update()
-    {   
+    {   /*
         //Time.timeScale = 3f;
         if(i < camino.Count){
             Tile tile = camino[i];
             tile.textComponent.text = tile.textComponent.text + "x";
             i++;
-        }
+        }*/
 
 
     }
