@@ -21,8 +21,8 @@ public class PathFinding
         tempValues = new Dictionary<Tile, int>();
         S = new List<Tile>();
         T = new List<Tile>();
-        this.costeMovimientoLineal = 10;
-        this.maxDepth = 2;
+        this.costeMovimientoLineal = 20;
+        this.maxDepth = 1;
         camino = new List<Tile>();
     }
 
@@ -32,20 +32,28 @@ public class PathFinding
         T.Clear();
         T.Add(goal);
         camino.Add(u);
+
         inicializarHeuristicas(goal);
 
         while (!T.Contains(u))
         {
+            
             S = busaAnch.getEspacioLocal(gird,u,maxDepth);
             ValueUpdateStep();
-
+            
             do
             {
-                Tile a = minSuccessor(u);
-                u = a;
+                foreach (Tile successor in minSuccessors(u))
+                {
+                    if(camino.Contains(successor)){
+                        continue;
+                    }
+                    u = successor;
+                    break;
+                }
                 camino.Add(u);
             }
-            while (!S.Contains(u));
+            while (S.Contains(u));
         }
         return camino;
     }
@@ -61,12 +69,10 @@ public class PathFinding
         while (S.Any(u => hValues[u] == int.MaxValue))
         {
             Tile u = S.First(u => hValues[u] == int.MaxValue);
-            Tile minSucc = minSuccessorInS(u);
-            Tile v = (tempValues[u] >= (w(u,minSucc) + hValues[minSucc])) ? u : minSucc;
-
-            hValues[v] = Mathf.Max(tempValues[v], ( w(v,minSuccessor(v)) + hValues[minSuccessor(v)])  );
-            v.setText(hValues[v]);
-            if (hValues[v] == int.MaxValue)
+            Tile minSucc = minSuccessor(u);
+            hValues[u] = Mathf.Max(tempValues[u], getFCoste(u,minSucc));
+            u.setText(hValues[u]);
+            if (hValues[u] == int.MaxValue)
                 return;
         }
     }
@@ -75,11 +81,12 @@ public class PathFinding
 
        List<Tile> neighbors = busaAnch.getNeighbors(tile);
 
-       /* neighbors.Sort((vecino1,vecino2) =>{
-            int cost1 = w(u, vecino1) + hValues[vecino1];
-            int cost2 = w(u, vecino2) + hValues[vecino2];
+        neighbors.Sort((vecino1,vecino2) =>{
+            int cost1 = getFCoste(tile,vecino1);
+            int cost2 = getFCoste(tile,vecino2);
+            
             return cost1.CompareTo(cost2);
-        });*/
+        });
 
         // Devuelve el vecino seleccionado
         return neighbors;
@@ -94,7 +101,7 @@ public class PathFinding
             if(!S.Contains(vecino)){
                 continue;
             }
-            temp = vecino;
+            return vecino;
         }
         return temp;
     }
@@ -108,11 +115,13 @@ public class PathFinding
 
     private int w(Tile u, Tile v)
     {
-        
+        if (u == v){
+            return 0;
+        }
         return costeMovimientoLineal;
     }
 
-    private void inicializarHeuristicas(Tile goal){
+    public void inicializarHeuristicas(Tile goal){
         Tile[,] tiles = gird.getTiles();
         foreach (Tile tile in tiles)
         {   //hValues[tile] = calcularHCoste(tile,goal);
@@ -134,4 +143,18 @@ public class PathFinding
         this.gird = gird;
     }
 
+    private int getFCoste(Tile tile, Tile vecino){
+
+        int coste = hValues[vecino];
+        if (coste == int.MaxValue){
+            coste = tempValues[vecino];
+        }
+        
+        coste += w(tile,vecino);
+        
+        if (coste < 0){
+            coste = int.MaxValue;
+        }
+        return coste;
+    }
 }

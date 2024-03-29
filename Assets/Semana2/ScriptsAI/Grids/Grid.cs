@@ -36,6 +36,7 @@ public class Grid : MonoBehaviour
 
             path.setGrid(this);
             camino = path.LRTA(0,0,4,4);
+            //path.inicializarHeuristicas(posiciones[4,4]);
     }
 
     // Update is called once per frame
