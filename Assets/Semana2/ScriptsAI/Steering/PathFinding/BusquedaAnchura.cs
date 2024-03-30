@@ -14,6 +14,7 @@ public class BusquedaAnchura
     private List<Tile> espacioLocal = new List<Tile>();
 
     private Grid gird;
+    private Tile endTile;
     /*
     Obtiene el espacio local de busqueda por busqueda en anchura.
     */
@@ -21,9 +22,10 @@ public class BusquedaAnchura
     public BusquedaAnchura(){
     }
 
-    public List<Tile> getEspacioLocal(Grid gird, Tile startTile, int depth)
+    public List<Tile> getEspacioLocal(Grid gird, Tile startTile, Tile endTile, int depth)
     {
         this.gird = gird;
+        this.endTile = endTile;
         espacioLocal.Clear();
         cerrados.Clear();
         depthQueue.Clear();
@@ -85,15 +87,18 @@ public class BusquedaAnchura
             if (gird.getTile(fila,columna).pasable){
                 return true;
             }
+            //return true;
         }
         return false;
     }
 
     private void comprobarVecino( int depth, Tile vecino)
     {
-        if (!isCeldaValida(vecino.fila,vecino.columna)){
+        if ( vecino == endTile || !isCeldaValida(vecino.fila,vecino.columna)){
             return;
         }
+
+
 
         if (!visitados.Contains(vecino))
         {

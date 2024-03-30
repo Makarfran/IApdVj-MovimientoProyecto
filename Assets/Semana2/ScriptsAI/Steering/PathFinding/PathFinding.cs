@@ -22,7 +22,7 @@ public class PathFinding
         S = new List<Tile>();
         T = new List<Tile>();
         this.costeMovimientoLineal = 10;
-        this.maxDepth = 1;
+        this.maxDepth = 2;
         camino = new List<Tile>();
     }
 
@@ -39,7 +39,7 @@ public class PathFinding
         while (!T.Contains(u))
         {
             
-            S = busaAnch.getEspacioLocal(gird,u,maxDepth);
+            S = busaAnch.getEspacioLocal(gird,u,goal,maxDepth);
             ValueUpdateStep();
             
             do

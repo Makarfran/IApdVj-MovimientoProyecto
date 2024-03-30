@@ -13,7 +13,7 @@ public class Grid : MonoBehaviour
 
     private List<Tile> camino;
     //private int i = 0;
- 
+    private bool buscar = true;
     // Start is called before the first frame update
     void Start()
     {  
@@ -35,13 +35,18 @@ public class Grid : MonoBehaviour
         }
 
             path.setGrid(this);
-            //camino = path.LRTA(1,0,9,9);
+            //camino = path.LRTA(0,0,3,2);
             //path.inicializarHeuristicas(posiciones[4,4]);
     }
 
     // Update is called once per frame
     void Update()
-    {   /*
+    {   
+        if(buscar){
+            camino = path.LRTA(4,9,8,9);
+            buscar = false;
+        }
+        /*
         //Time.timeScale = 3f;
         if(i < camino.Count){
             Tile tile = camino[i];

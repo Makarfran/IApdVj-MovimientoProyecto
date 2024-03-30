@@ -23,7 +23,7 @@ public class Tile : MonoBehaviour
     {
         // Define el tamaño de la caja de colisión
         Vector3 boxSize = GetComponent<Collider>().bounds.size;
-
+        pasable = true;
         // Verifica si este objeto está en contacto con un obstáculo
         Collider[] colliders = Physics.OverlapBox(transform.position, boxSize / 2, Quaternion.identity);
 
@@ -33,7 +33,7 @@ public class Tile : MonoBehaviour
             {
                 // Si este objeto está en contacto con un obstáculo, invoca setImpasable()
                 Debug.Log("Tile: "+fila +" "+columna+" choca");
-                setPasable(false);
+                pasable = false;
                 break;
             }
         }
