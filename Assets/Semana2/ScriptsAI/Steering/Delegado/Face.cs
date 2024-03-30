@@ -16,7 +16,9 @@ public class Face : Align
 
     public override Steering GetSteering(Agent agent)
     {
+        
         Vector3 direction = Rtarget.transform.position - agent.transform.position;
+        
 
         if(Vector3.Magnitude(direction) == 0f){
             Steering steer = new Steering();
@@ -37,4 +39,7 @@ public class Face : Align
         Rtarget = GetNewTarget(newTarget);
 
     }
+
+    
+
 }

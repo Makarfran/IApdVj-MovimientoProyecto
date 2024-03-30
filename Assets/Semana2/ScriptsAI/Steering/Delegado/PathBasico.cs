@@ -21,4 +21,25 @@ public class PathBasico : MonoBehaviour
         }
         return obj;
     }
+
+    public Agent getSigJP(Agent obj){
+        
+        if(obj.GetComponent("JumpPoint") == null){
+            return obj;
+        }
+        int i;
+        int length = objetivos.Count;
+        int temp = 9999;
+        for(i = 0 ; i < length; i++){
+            if(objetivos[i] == obj){
+                
+                temp = i;
+            }
+            if(objetivos[i].GetComponent("JumpPoint") != null && i > temp){
+                
+                return objetivos[i];
+            }
+        }
+        return null;
+    }
 }

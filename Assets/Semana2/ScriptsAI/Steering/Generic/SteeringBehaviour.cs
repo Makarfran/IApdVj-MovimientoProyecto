@@ -17,6 +17,11 @@ public class SteeringBehaviour : MonoBehaviour
 
     // Objetivo
     public Agent target;
+    public Agent Target
+    {
+        get { return target; }
+        set { target = value; }
+    }
 
     //Peso o prioridad para árbitro
     float weight;
@@ -78,4 +83,6 @@ public class SteeringBehaviour : MonoBehaviour
         GetComponent<order>().alignPoint = agentNewTarget;
         return agentNewTarget;
     }
+
+
 }

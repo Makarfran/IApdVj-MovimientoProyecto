@@ -12,6 +12,7 @@ public class Seek : SteeringBehaviour
     void Start()
     {
         this.nameSteering = "Seek";
+        this.Weight = 1f;
     }
 
 
