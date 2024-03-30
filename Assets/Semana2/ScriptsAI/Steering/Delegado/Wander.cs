@@ -26,7 +26,7 @@ public class Wander : Face // debe heredar de face
         // Agregar el componente Agent al objeto invisible
         delegatedAgent.AddComponent<Agent>();
         this.nameSteering = "Wander";
-        this.Weight = 0.6f;
+        this.Weight = 0.3f;
         if((gameObject.GetComponent("WallAvoidance") != null)){
                 this.GetComponent<WallAvoidance>().target = delegatedAgent.GetComponent<Agent>();
         }
