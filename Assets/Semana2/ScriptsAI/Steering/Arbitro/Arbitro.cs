@@ -13,7 +13,7 @@ public class Arbitro : MonoBehaviour
 
         foreach (SteeringBehaviour b in steers)
         {
-            if(b.enabled != true){
+            if(b.enabled != true || b.Target == null){
                 continue;
             }
 
