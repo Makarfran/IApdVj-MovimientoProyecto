@@ -34,8 +34,8 @@ public class PathFinding : MonoBehaviour
         List<Tile> camino = lrta.run(4, 9, 8, 9);
         PathBasico path = GetComponent<PathBasico>();
         path.setObjetvosFromTiles(camino);
-        //PathFollowing pathFollowing = GetComponent<PathFollowing>();
-        //pathFollowing.setObjetivoInicial();
+        PathFollowing pathFollowing = GetComponent<PathFollowing>();
+        pathFollowing.setObjetivoInicial();
 
     }
 

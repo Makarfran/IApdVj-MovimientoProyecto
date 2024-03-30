@@ -9080,7 +9080,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1098124432}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 21b1f2fb487449649ad2b7c963b72f1a, type: 3}
   m_Name: 
@@ -9159,13 +9159,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64c1ef18abdb1e04098608d2da1e16b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objetivos:
-  - {fileID: 1690732788}
-  - {fileID: 910405087}
-  - {fileID: 2119318535}
-  - {fileID: 653225012}
-  - {fileID: 1983832327}
-  - {fileID: 1874222704}
+  objetivos: []
 --- !u!1 &1099734603
 GameObject:
   m_ObjectHideFlags: 0
@@ -9544,7 +9538,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1123765966
 Transform:
   m_ObjectHideFlags: 0

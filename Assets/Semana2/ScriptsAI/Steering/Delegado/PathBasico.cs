@@ -52,5 +52,6 @@ public class PathBasico : MonoBehaviour
             fakeAgent.GetComponent<AgentNPC>().Position = tile.getPosition();
             objetivos.Add(fakeAgent.GetComponent<AgentNPC>());
         }
+        objetivos.Reverse();
     }
 }
