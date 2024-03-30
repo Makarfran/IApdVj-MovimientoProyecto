@@ -32,7 +32,7 @@ public class Tile : MonoBehaviour
             if (collider.gameObject.CompareTag("Obstaculos"))
             {
                 // Si este objeto está en contacto con un obstáculo, invoca setImpasable()
-                Debug.Log("Tile: "+fila +" "+columna+" choca");
+               // Debug.Log("Tile: "+fila +" "+columna+" choca");
                 pasable = false;
                 break;
             }
