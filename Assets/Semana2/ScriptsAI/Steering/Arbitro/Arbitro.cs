@@ -13,6 +13,9 @@ public class Arbitro : MonoBehaviour
 
         foreach (SteeringBehaviour b in steers)
         {
+            if(b.enabled != true){
+                continue;
+            }
 
             if (b.NameSteering == "Align" && (agente.Velocity.magnitude > 0.1)) {
              }
