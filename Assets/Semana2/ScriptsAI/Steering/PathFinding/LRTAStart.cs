@@ -16,23 +16,7 @@ public class LRTAStart
     private List<Tile> S;
     private Tile u;
     private List<Tile> T;    
-    [SerializeField ]public List<Tile> camino;
-
-/*
-    private bool buscar = false;
-    void Start(){
-
-    }
-
-    void Update(){
-
-        if(buscar){
-            List<Tile> camino = LRTA(0,0,2,3);
-            buscar = false;
-        }
-
-    }
-*/
+    private List<Tile> camino;
 
    public LRTAStart(){
 
