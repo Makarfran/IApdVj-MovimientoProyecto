@@ -82,14 +82,8 @@ public class BusquedaAnchura
     }
 
     private bool isCeldaValida(int fila, int columna){
-        if (fila >= 0 && fila < gird.getAncho() && columna >= 0 && columna < gird.getAlto()){
-
-            if (gird.getTile(fila,columna).pasable){
-                return true;
-            }
-            //return true;
-        }
-        return false;
+        
+        return (fila >= 0 && fila < gird.getAncho() && columna >= 0 && columna < gird.getAlto());
     }
 
     private void comprobarVecino( int depth, Tile vecino)

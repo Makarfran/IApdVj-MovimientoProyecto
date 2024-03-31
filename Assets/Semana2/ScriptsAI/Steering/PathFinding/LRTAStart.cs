@@ -16,35 +16,25 @@ public class LRTAStart
     private List<Tile> S;
     private Tile u;
     private List<Tile> T;    
-    [SerializeField ]public List<Tile> camino;
-
-/*
-    private bool buscar = false;
-    void Start(){
-
-    }
-
-    void Update(){
-
-        if(buscar){
-            List<Tile> camino = LRTA(0,0,2,3);
-            buscar = false;
-        }
-
-    }
-*/
+    private List<Tile> camino;
 
    public LRTAStart(){
+
+  }
+
+    private void resetEstructures(){
         hValues = new Dictionary<Tile, int>();
         tempValues = new Dictionary<Tile, int>();
         S = new List<Tile>();
         T = new List<Tile>();
-        camino = new List<Tile>();
-  }
+        camino = new List<Tile>();        
+    }
 
-    public List<Tile> run(int startFila, int startColumna, int endFila, int endColumna){
-        u = gird.getTile(startFila,startColumna);
-        Tile goal = gird.getTile(endFila,endColumna); 
+    public List<Tile> run(Tile startTile, Tile endTile){
+        
+        resetEstructures();
+        u = startTile;
+        Tile goal = endTile; 
         T.Clear();
         T.Add(goal);
         camino.Add(u);
@@ -57,19 +47,34 @@ public class LRTAStart
             
             S = busaAnch.getEspacioLocal(gird,u,goal,maxDepth);
             ValueUpdateStep();
-            
+            bool bucleDectectado = false;
             do
             {
-                foreach (Tile successor in minSuccessors(u))
+                List<Tile> successors = minSuccessors(u);
+                u = successors[0];
+                foreach (Tile successor in successors)
                 {
-                    if(camino.Contains(successor)){
+                    if(camino.Contains(successor) || hValues[successor] == int.MaxValue){
+                        bucleDectectado = true;
                         continue;
                     }
+                    bucleDectectado = false;
                     u = successor;
                     break;
                 }
+                //u = minSuccessor(u);
                 camino.Add(u);
                 u.CambiarColorARojo();
+                
+                // bucle detectado, hay varios hijos pero el padre es el
+                // mejor nodo del hijo y del hijo el mejor nodo el padre
+                // se opta por volver a actualizar los valores
+                // para que sus heuristicas aumenten y salga del bucle
+                // en el caso de que la unica posibilidad del hijo sea 
+                // volver al padre, no se fuerza a volver a actualizar hvalues.
+                if(bucleDectectado && successors.Count >1){
+                    break;
+                }            
             }
             while (S.Contains(u));
         }
@@ -87,23 +92,30 @@ public class LRTAStart
         while (S.Any(u => hValues[u] == int.MaxValue))
         {
             Tile u = S.First(u => hValues[u] == int.MaxValue);
+            updateSuccessors(u);
             Tile minSucc = minSuccessor(u);
-            hValues[u] = Mathf.Max(tempValues[u], getFCoste(u,minSucc));
+            hValues[u] = Mathf.Max(tempValues[u], hValues[minSucc]);
             //u.setText(hValues[u]);
             if (hValues[u] == int.MaxValue)
                 return;
         }
     }
 
+
+    private void updateSuccessors(Tile tile){
+        List<Tile> successors = busaAnch.getNeighbors(tile);
+        foreach (Tile vecino in successors)
+        {
+            hValues[vecino] = getFCoste(tile,vecino);
+        } 
+    }
+
     private List<Tile> minSuccessors(Tile tile){
 
        List<Tile> neighbors = busaAnch.getNeighbors(tile);
 
-        neighbors.Sort((vecino1,vecino2) =>{
-            int cost1 = getFCoste(tile,vecino1);
-            int cost2 = getFCoste(tile,vecino2);
-            
-            return cost1.CompareTo(cost2);
+        neighbors.Sort((vecino1,vecino2) =>{            
+            return hValues[vecino1].CompareTo(hValues[vecino2]);
         });
 
         // Devuelve el vecino seleccionado
@@ -143,8 +155,13 @@ public class LRTAStart
         Tile[,] tiles = gird.getTiles();
         foreach (Tile tile in tiles)
         {   //hValues[tile] = calcularHCoste(tile,goal);
-            int coste = calcularHCoste(tile,goal);
-            hValues[tile] = coste;
+            if (tile.pasable){
+                int coste = calcularHCoste(tile,goal);
+                hValues[tile] = coste;                
+            }else{
+                hValues[tile] = int.MaxValue;
+            }
+
             //tile.setText(coste);
         }
     }
@@ -164,7 +181,7 @@ public class LRTAStart
     private int getFCoste(Tile tile, Tile vecino){
 
         int coste = hValues[vecino];
-        if (coste == int.MaxValue){
+        if (coste == int.MaxValue && tempValues.ContainsKey(vecino)){
             coste = tempValues[vecino];
         }
         
