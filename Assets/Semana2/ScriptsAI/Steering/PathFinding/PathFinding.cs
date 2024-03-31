@@ -27,11 +27,12 @@ public class PathFinding : MonoBehaviour
     public void NewTarget(Vector3 newTarget){
         Tile goal = gird.getTileByVector(newTarget);
         Tile start = gird.getTileByVector(transform.position);
+       
+        Debug.Log("start: "+start.fila+" "+start.columna);
         Debug.Log("newTarget: " + goal.fila + " " + goal.columna);
-        // Debug.Log("start: "+start.fila+" "+start.columna);
 
-        //List<Tile> camino = lrta.run(start.fila, start.columna, goal.fila, goal.columna);
-        List<Tile> camino = lrta.run(4, 9, 8, 9);
+        List<Tile> camino = lrta.run(start, goal);
+        //List<Tile> camino = lrta.run(8, 9, 6, 9);
         PathBasico path = GetComponent<PathBasico>();
         path.setObjetvosFromTiles(camino);
         PathFollowing pathFollowing = GetComponent<PathFollowing>();

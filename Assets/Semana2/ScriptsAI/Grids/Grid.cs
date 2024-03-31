@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
 
 public class Grid : MonoBehaviour
 {
@@ -66,13 +67,13 @@ public class Grid : MonoBehaviour
     }
 
     public Tile getTileByVector(Vector3 position){
-        Tile tileInicial = getTile(0,0);
-        float diffX = (position.x - tileInicial.pos.x);
-        float diffY = (position.z - tileInicial.pos.z);
-        int  coorX = Mathf.FloorToInt(diffX / 3f);
-        int coorY = Mathf.FloorToInt(diffY / 3f);
 
-        return getTile(coorX, coorY);
+        List<Tile> lista = posiciones.Cast<Tile>().ToList();
+
+        Tile tile = lista
+            .Where(o => o.pasable)
+            .Aggregate((o1, o2) => Vector3.Distance(o1.getPosition(), position) < Vector3.Distance(o2.getPosition(), position) ? o1 : o2);
+        return tile;
 
     }
 
