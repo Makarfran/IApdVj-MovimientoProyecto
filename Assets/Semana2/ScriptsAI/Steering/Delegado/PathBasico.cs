@@ -5,6 +5,7 @@ using UnityEngine;
 public class PathBasico : MonoBehaviour
 {
     public List<Agent> objetivos;
+    public bool resetable;
 
     // Update is called once per frame
     public Agent getObjetivoInicial(){
@@ -18,6 +19,9 @@ public class PathBasico : MonoBehaviour
             if(objetivos[i] == obj && i != length - 1){
                 return objetivos[i+1];
             }
+        }
+        if(resetable){
+            return objetivos[0];
         }
         return obj;
     }

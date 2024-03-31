@@ -19,7 +19,7 @@ public class GridGenerator : MonoBehaviour {
     [SerializeField] public Canvas canvas;
     void Start(){
         posiciones = new Tile[a,b];
-        int count = 0;
+        //int count = 0;
         for(int i = 0; i < a; i++ ){ 
             for(int j = 0; j < b ; j++ ){
                 Vector3 pos = new Vector3(this.transform.position.x + i*longLado, this.transform.position.y , this.transform.position.z + j*longLado  );
