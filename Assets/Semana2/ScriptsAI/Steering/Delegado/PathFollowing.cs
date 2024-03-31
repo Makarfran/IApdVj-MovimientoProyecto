@@ -10,13 +10,16 @@ public class PathFollowing : Seek
     void Start()
     {
         this.nameSteering = "Path Following";
-        this.target = camino.getObjetivoInicial();
+        //this.target = camino.getObjetivoInicial();
         this.Weight = 1f;
     }
 
-
+    public void setObjetivoInicial(){
+        this.target = camino.getObjetivoInicial();
+    }
     public override Steering GetSteering(Agent agent)
     {   
+
         float distancia = Vector3.Distance(agent.transform.position, target.transform.position);
         /*if(this.target.GetComponent<JumpPoint>() != null){
             this.GetComponent<Jumping>().enabled = true;

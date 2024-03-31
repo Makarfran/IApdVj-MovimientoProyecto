@@ -42,4 +42,16 @@ public class PathBasico : MonoBehaviour
         }
         return null;
     }
+
+    public void setObjetvosFromTiles(List<Tile> camino){
+        objetivos = new List<Agent>();
+        foreach (Tile tile in camino)
+        {
+            GameObject fakeAgent = GameObject.CreatePrimitive(PrimitiveType.Sphere);
+            fakeAgent.AddComponent<AgentNPC>();
+            fakeAgent.GetComponent<AgentNPC>().Position = tile.getPosition();
+            objetivos.Add(fakeAgent.GetComponent<AgentNPC>());
+        }
+        objetivos.Reverse();
+    }
 }
