@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
 
 public class Grid : MonoBehaviour
 {
@@ -8,17 +9,11 @@ public class Grid : MonoBehaviour
     [SerializeField] protected int b;
     [SerializeField] protected float lado;
     [SerializeField] public Tile[,] posiciones;
-    //public PathFinding path;
-  
 
-    private List<Tile> camino;
-    //private int i = 0;
-    private bool buscar = true;
     // Start is called before the first frame update
     void Start()
     {  
-         camino = new List<Tile>();
-         //path = new PathFinding();
+
         // crea una matriz axb con las casillas
         posiciones = new Tile[a,b];
         for(int i = 0; i < a ; i++){
@@ -30,30 +25,13 @@ public class Grid : MonoBehaviour
                 posiciones[i,j].columna = j;
                 //esto se asegura que las posiciones de las casillas esten bien
                 posiciones[i,j].setPos(a.transform.position);
-                //Debug.Log(posiciones[i,j].textComponent.text);
             }
         }
-
-           // path.setGrid(this);
-            //camino = path.LRTA(0,0,3,2);
-            //path.inicializarHeuristicas(posiciones[4,4]);
     }
 
     // Update is called once per frame
     void Update()
     {   
-        if(buscar){
-            //camino = path.LRTA(4,9,8,9);
-            buscar = false;
-        }
-        /*
-        //Time.timeScale = 3f;
-        if(i < camino.Count){
-            Tile tile = camino[i];
-            tile.textComponent.text = tile.textComponent.text + "x";
-            i++;
-        }*/
-
 
     }
 
@@ -66,13 +44,13 @@ public class Grid : MonoBehaviour
     }
 
     public Tile getTileByVector(Vector3 position){
-        Tile tileInicial = getTile(0,0);
-        float diffX = (position.x - tileInicial.pos.x);
-        float diffY = (position.z - tileInicial.pos.z);
-        int  coorX = Mathf.FloorToInt(diffX / 3f);
-        int coorY = Mathf.FloorToInt(diffY / 3f);
 
-        return getTile(coorX, coorY);
+        List<Tile> lista = posiciones.Cast<Tile>().ToList();
+
+        Tile tile = lista
+            .Where(o => o.pasable)
+            .Aggregate((o1, o2) => Vector3.Distance(o1.getPosition(), position) < Vector3.Distance(o2.getPosition(), position) ? o1 : o2);
+        return tile;
 
     }
 
