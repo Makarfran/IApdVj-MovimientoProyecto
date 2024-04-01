@@ -43,7 +43,7 @@ public class Wander : Face // debe heredar de face
 
     public override Steering GetSteering(Agent agent)
     {
-        Debug.Log("cACIQUE");
+        
         
         // % de wanderRate
         float rate = Random.Range(-1f, 1f);
