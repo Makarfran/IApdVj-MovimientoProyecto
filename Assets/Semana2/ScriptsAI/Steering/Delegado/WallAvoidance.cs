@@ -70,18 +70,27 @@ public class WallAvoidance : Seek
                 draw(new Ray(origen, otraDirection), hit);
 
                 //Cambiamos el target y delegamos en seek
-                
+                /*
                 Vector3 newTarget = hit.point + (hit.normal * avoidDistance);
                 Vector3 desired_velocity = newTarget - agent.transform.position;
                 desired_velocity = desired_velocity.normalized * agent.MaxAcceleration;
                 steer.linear = desired_velocity - agent.Velocity;
+                */
+                if (target == null) 
+                {
+                    target = GameObject.CreatePrimitive(PrimitiveType.Sphere).AddComponent<Agent>();
+                    target.gameObject.GetComponent<Collider>().enabled = false;
+                }
+                target.Position = hit.point + (hit.normal * avoidDistance);
+                steer = base.GetSteering(agent);
+
                 return steer;
             }
             //calculamos el �ngulo del siguiente bigote
             angulo = angulo + Mathf.PI / (nrays + 1);
         }
 
-        return base.GetSteering(agent);
+        return steer;
     }
 
     //Para debug
