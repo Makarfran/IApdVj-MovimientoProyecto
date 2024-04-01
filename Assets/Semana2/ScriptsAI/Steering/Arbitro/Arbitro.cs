@@ -10,11 +10,11 @@ public class Arbitro : MonoBehaviour
     {
         Steering final = new Steering();
         Steering temp = new Steering();
-
+        
         foreach (SteeringBehaviour b in steers)
         {
-
-            if(b.NameSteering == "Wander" && b.enabled == true){
+            /*
+            if(b.NameSteering == "Wander"){
                 
                 temp = b.GetSteering(agente);
                 final.linear += b.Weight * temp.linear;
@@ -24,28 +24,26 @@ public class Arbitro : MonoBehaviour
             if(b.enabled != true || b.Target == null){
                 continue;
             }
+            */
+            //Puede interesar a�adir a la comprobacion que el steering este desactivado
+            if ((b.NameSteering != "WallAvoidance" && b.NameSteering != "Wander") && b.target == null) { continue; }
 
-            if (b.NameSteering == "Align" && (agente.Velocity.magnitude > 0.1)) {
-                temp = b.GetSteering(agente);
-                final.linear += b.Weight * temp.linear;
-                final.angular += b.Weight * temp.angular;
-             }
-            else if (b.NameSteering == "Face") {
-                
-                temp = b.GetSteering(agente);
-                final.linear += b.Weight * temp.linear;
-                final.angular += b.Weight * temp.angular;
-            } else {
+            if (b.NameSteering == "Align" && (agente.Velocity.magnitude > 0.5)) { }
+            else if (b.NameSteering == "Face" && (agente.Velocity.magnitude < 1)) { }
+            else
+            {
                 temp = b.GetSteering(agente);
                 final.linear += b.Weight * temp.linear;
                 final.angular += b.Weight * temp.angular;
             }
+
+        }
         
 
             
 
             
-        }
+        
         /*
         foreach(SteeringBehaviour b in steers){
             temp = b.GetSteering(agente);

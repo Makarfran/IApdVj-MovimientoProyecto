@@ -38,6 +38,8 @@ public class FormationManager : MonoBehaviour
     //Patrón de la formación
     public FormationPattern pattern;
 
+    float time = 0f;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -47,7 +49,35 @@ public class FormationManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
+        if (slotAssignments.Count > 0 )
+        {
+            Vector3 distancia = slotAssignments[0].Npc.GetComponent<order>().arrivalPoint.Position - slotAssignments[0].Npc.GetComponent<AgentNPC>().Position;
+            if (distancia.magnitude > 1f || slotAssignments[0].Npc.GetComponent<StateMachineManager>().CurrentState == StateMachineManager.wanderState) 
+            { 
+                time = 0;
+                Vector3 vel = slotAssignments[0].Npc.GetComponent<AgentNPC>().Velocity.normalized;
+                vel = vel * 2;
+                Vector3 leaderFollowing = slotAssignments[0].Npc.GetComponent<AgentNPC>().Position - vel;
+                for (int i = 1; i < slotAssignments.Count; i++) 
+                {
+                    slotAssignments[i].Npc.SendMessage("NewTarget", leaderFollowing);
+                }
+            }
+            else
+            {
+                if (time < Time.deltaTime)
+                {
+                    UpdateSlots();
+                }
+                if (time > 10) 
+                {
+                    slotAssignments[0].Npc.GetComponent<StateMachineManager>().SwitchState(StateMachineManager.wanderState);
+                }
+                time += Time.deltaTime; 
+
+            }
+        }
     }
        
     //Actualiza las asignaciones de los npcs a los slots
@@ -77,6 +107,7 @@ public class FormationManager : MonoBehaviour
 
             //Actualizamos la asignación de slots y devolvemos verdadero
             UpdateSlotAssignments();
+            character.GetComponent<StateMachineManager>().SwitchState(StateMachineManager.formationState);
             return true;
         }
 
@@ -105,14 +136,27 @@ public class FormationManager : MonoBehaviour
     {
         //Encontramos el slot del personaje
         SlotAssignment slot = slotAssignments.Find(x => x.Npc == character);
+
         //Eliminamos el slot de la lista ¿Es necesario asegurarnos de que el resultado sea válido?
         slotAssignments.Remove(slot);
         //Actualizamos las asignaciones
         UpdateSlotAssignments();
+        character.GetComponent<StateMachineManager>().SwitchState(StateMachineManager.idleState);
+    }
+
+    public void RemoveAllCharacters() 
+    {
+        foreach (SlotAssignment slot in slotAssignments) 
+        {
+            slot.Npc.GetComponent<StateMachineManager>().SwitchState(StateMachineManager.idleState);
+        }
+
+        slotAssignments.Clear();
     }
 
     public void UpdateSlots() 
     {
+        if (slotAssignments.Count == 0) { return; }
         //Encuentra el punto de anclaje, en este momento uso al líder
         Location anchorLoc = new (slotAssignments[0].Npc.GetComponent<AgentNPC>().Position, slotAssignments[0].Npc.GetComponent<AgentNPC>().Orientation);
         /*
@@ -139,8 +183,9 @@ public class FormationManager : MonoBehaviour
     //Calcula la posición real del slot
     //  eje z   eje x
 
-    //( Cos 0   sin 0)  ( x )
-    //( -sin 0  cos 0)  ( z )
+    //( Cos 0   sin 0)  ( x )        
+    //(              )  (   )    =    (relativeLocX, relativeLocZ)
+    //( -sin 0  cos 0)  ( z )    
     public Vector3 CalcularPosition(Vector3 relativeLoc, float orientation, Vector3 anchorLoc) 
     {
         //Aplicamos el cambio de base a la posición relativa
@@ -150,5 +195,34 @@ public class FormationManager : MonoBehaviour
         relativeLocX = anchorLoc.x + relativeLocX;
         relativeLocZ = anchorLoc.z + relativeLocZ;
         return new Vector3(relativeLocX, 0, relativeLocZ); 
+    }
+
+    //Comprobamos si hay que romper la formación
+
+    public bool BreakFormation()
+    {
+        //Lista auxiliar con los npcs de la formación
+        List<GameObject> npcFormation = new List<GameObject>();
+        foreach (SlotAssignment slot in slotAssignments)
+        {
+            npcFormation.Add(slot.Npc);
+        }
+
+        //Si el npc seleccionado esta en la formación lo eliminamos de la lista auxiliar, si no lo esta se rompe la formación
+        foreach (GameObject npc in UnitsSelection.npcsSelected)
+        {
+            if (npcFormation.Contains(npc)) { npcFormation.Remove(npc); }
+            else
+            {
+                RemoveAllCharacters();
+                return true;
+            }
+        }
+
+        //Eliminamos de la formación aquellos npcs que estan en la formación pero que no han sido seleccionados
+        foreach (GameObject npc in npcFormation) { RemoveCharacter(npc); }
+
+        //La formación se mantiene
+        return false;
     }
 }

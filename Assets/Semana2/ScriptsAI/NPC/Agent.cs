@@ -61,6 +61,7 @@ public class Agent : Bodi
         GameObject newAgent = GameObject.CreatePrimitive(PrimitiveType.Sphere);
         newAgent.AddComponent<Agent>();
         newAgent.GetComponent<MeshRenderer>().enabled = false;
+        newAgent.GetComponent<Collider>().enabled = false;
         return newAgent;
     }
 

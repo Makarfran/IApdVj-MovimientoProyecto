@@ -6,7 +6,7 @@ public class Separacion : SteeringBehaviour
 {
 
     // Declara las variables que necesites para este SteeringBehaviour
-    public List<Agent> targets;
+    public List<Agent> targets = new List<Agent>();
     public float decayCoeficient; // k formula k/d^2
     public float treshold;
 
@@ -15,6 +15,13 @@ public class Separacion : SteeringBehaviour
     void Start()
     {
         this.nameSteering = "Separacion";
+        this.Weight = 0.7f;
+        //Mejor si tenemos una lista con todos los npc en un game manager 
+        foreach (GameObject npc in GameObject.FindGameObjectsWithTag("Npc")) 
+        {
+            if (npc != this.gameObject) { targets.Add(npc.GetComponent<Agent>()); } 
+        }
+        
     }
 
 

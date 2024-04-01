@@ -2073,6 +2073,9 @@ GameObject:
   - component: {fileID: -776616899122506177}
   - component: {fileID: 6599259346912892294}
   - component: {fileID: -7975409499997073604}
+  - component: {fileID: -3346713751247219585}
+  - component: {fileID: -3455836739088008696}
+  - component: {fileID: -8787516188985017717}
   m_Layer: 7
   m_Name: NPC
   m_TagString: Npc
@@ -2236,6 +2239,54 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   arrivalPoint: {fileID: 0}
+  alignPoint: {fileID: 0}
+--- !u!114 &-3346713751247219585
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8875491434603802097}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 856abf34f0fbd5b45b2b70abe75ab94e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 0}
+  targets: []
+  decayCoeficient: 0
+  treshold: 0
+--- !u!114 &-3455836739088008696
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8875491434603802097}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ea996e68626ca04db1ab5f567db6451, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &-8787516188985017717
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8875491434603802097}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9845bb48ac2163e429ca23074f0e282f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 0}
+  Rtarget: {fileID: 0}
+  wanderOffSet: 5
+  wanderRadius: 10
+  wanderRate: 90
+  maxAcceleration: 2
+  updateTime: 2
 --- !u!1 &8879070663206805700
 GameObject:
   m_ObjectHideFlags: 0

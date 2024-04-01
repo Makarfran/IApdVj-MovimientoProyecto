@@ -27,10 +27,11 @@ public class Wander : Face // debe heredar de face
         delegatedAgent.AddComponent<Agent>();
         this.nameSteering = "Wander";
         this.Weight = 0.3f;
+        /*
         if((gameObject.GetComponent("WallAvoidance") != null)){
                 this.GetComponent<WallAvoidance>().target = delegatedAgent.GetComponent<Agent>();
         }
-        
+        */
     }
 
     // Update is called once per frame
@@ -69,11 +70,12 @@ public class Wander : Face // debe heredar de face
         this.Rtarget =  delegatedAgent.GetComponent<Agent>();
         this.Rtarget.Position = target;
         this.Rtarget.Orientation = targetOrientation;
+        /*
         if((gameObject.GetComponent("Face") != null) && (this.target != this.GetComponent<Face>().Target)){
                 Face cara = this.GetComponent<Face>();
                 cara.Target = delegatedAgent.GetComponent<Agent>();
         }
-        
+        */
 
         Steering steering = base.GetSteering(agent); 
         // Set a full aceleration

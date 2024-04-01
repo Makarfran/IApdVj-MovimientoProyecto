@@ -22,7 +22,7 @@ public class OrderFormation : MonoBehaviour
 
             if (formationManager.slotAssignments.Count > 0) 
             {
-                    formationManager.slotAssignments.Clear();
+                    formationManager.RemoveAllCharacters();
             }
 
             List<GameObject> seleccionados = UnitsSelection.npcsSelected;

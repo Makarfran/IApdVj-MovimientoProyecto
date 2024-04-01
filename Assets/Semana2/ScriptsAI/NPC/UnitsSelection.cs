@@ -61,6 +61,7 @@ public class UnitsSelection : MonoBehaviour
             }
         }
         
+<<<<<<< HEAD
         //Utilizamos el bot�n derecho del rat�n para dar �rdenes a los npcs seleccionados
         if (Input.GetMouseButtonUp(1)) 
         {
@@ -115,6 +116,8 @@ public class UnitsSelection : MonoBehaviour
             }       
         }
         
+=======
+>>>>>>> 76d19a085c92211bf2d51cb1bd551463f07b4bf5
     }
 
     public void Select(GameObject npc)
