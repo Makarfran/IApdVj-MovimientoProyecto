@@ -27,7 +27,8 @@ public class PathFinding : MonoBehaviour
     public void NewTarget(Vector3 newTarget){
         Tile goal = gird.getTileByVector(newTarget);
         Tile start = gird.getTileByVector(transform.position);
-
+        
+        
         List<Tile> camino = lrta.run(start, goal);
 
         PathBasico path = GetComponent<PathBasico>();

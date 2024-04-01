@@ -55,11 +55,11 @@ public class Grid : MonoBehaviour
     }
 
     public int getAlto(){
-        return a;
+        return b;
     }
 
     public int getAncho(){
-        return b;
+        return a;
     }
 
     public Tile[,] getTiles(){

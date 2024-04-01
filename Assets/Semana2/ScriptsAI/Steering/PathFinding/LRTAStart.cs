@@ -85,6 +85,7 @@ public class LRTAStart
     {
         foreach (Tile u in S)
         {
+            
             tempValues[u] = hValues[u];
             hValues[u] = int.MaxValue;
         }
@@ -113,6 +114,7 @@ public class LRTAStart
     private List<Tile> minSuccessors(Tile tile){
 
        List<Tile> neighbors = busaAnch.getNeighbors(tile);
+       
 
         neighbors.Sort((vecino1,vecino2) =>{            
             return hValues[vecino1].CompareTo(hValues[vecino2]);

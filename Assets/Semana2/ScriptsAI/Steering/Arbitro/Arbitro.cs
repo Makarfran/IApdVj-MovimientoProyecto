@@ -13,18 +13,13 @@ public class Arbitro : MonoBehaviour
         
         foreach (SteeringBehaviour b in steers)
         {
-            /*
-            if(b.NameSteering == "Wander"){
-                
-                temp = b.GetSteering(agente);
-                final.linear += b.Weight * temp.linear;
-                final.angular += b.Weight * temp.angular;
-                
-            }
-            if(b.enabled != true || b.Target == null){
+            
+            
+            //b.enabled != true ||
+            if( b.Target == null && b.NameSteering != "Wander"){
                 continue;
             }
-            */
+            
             //Puede interesar a�adir a la comprobacion que el steering este desactivado
             if ((b.NameSteering != "WallAvoidance" && b.NameSteering != "Wander") && b.target == null) { continue; }
 
