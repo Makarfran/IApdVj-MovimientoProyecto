@@ -24,8 +24,7 @@ public class UnitsSelection : MonoBehaviour
         // Damos una orden cuando levantemos el bot�n del rat�n.
         //Usamos bot�n izquierdo del rat�n para seleccionar y deseleccionar npcs
         if (Input.GetMouseButtonUp(0))
-        {
-            
+        {       
 
             // Comprobamos si el rat�n golpea a algo en el escenario.
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
@@ -61,7 +60,6 @@ public class UnitsSelection : MonoBehaviour
             }
         }
         
-<<<<<<< HEAD
         //Utilizamos el bot�n derecho del rat�n para dar �rdenes a los npcs seleccionados
         if (Input.GetMouseButtonUp(1)) 
         {
@@ -116,8 +114,6 @@ public class UnitsSelection : MonoBehaviour
             }       
         }
         
-=======
->>>>>>> 76d19a085c92211bf2d51cb1bd551463f07b4bf5
     }
 
     public void Select(GameObject npc)
