@@ -15,10 +15,7 @@ public class Arbitro : MonoBehaviour
         {
             
             
-            //b.enabled != true ||
-            if( b.Target == null && b.NameSteering != "Wander"){
-                continue;
-            }
+          
             
             //Puede interesar a�adir a la comprobacion que el steering este desactivado
             if ((b.NameSteering != "WallAvoidance" && b.NameSteering != "Wander") && b.target == null) { continue; }

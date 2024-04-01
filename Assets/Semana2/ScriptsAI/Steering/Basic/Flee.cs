@@ -11,6 +11,7 @@ public class Flee : SteeringBehaviour
     void Start()
     {
         this.nameSteering = "Flee";
+        this.Weight = 0.5f;
     }
 
 

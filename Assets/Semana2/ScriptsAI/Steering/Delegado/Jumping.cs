@@ -37,9 +37,7 @@ public class Jumping : VelocityMatching
     public override Steering GetSteering(Agent agent) 
     {
         Steering steer = new Steering();
-        if(this.Target == null){
-            return steer;
-        }
+        
 
         if (saltando) 
         {
@@ -47,7 +45,7 @@ public class Jumping : VelocityMatching
             //float posy = agent.Position.y;
             if (accTime >= totalTime)
             {
-                
+                Debug.Log("cacatua");
                 //agent.Position = new Vector3(agent.Position.x, 0, agent.Position.z);
                 saltando = false;
                 accTime = 0;
@@ -80,7 +78,7 @@ public class Jumping : VelocityMatching
 
         maxSpeed = agent.MaxSpeed;
         calculateTarget();
-
+       
         //Comprutrbs si el salto es alcanzable
         if (!canAchieve) 
         {
@@ -88,10 +86,11 @@ public class Jumping : VelocityMatching
             return steer;
         }
         //Comprobamos si hemos alcanzado el punto de salto
-        Debug.Log(jumpPoint.JumpLocation);
-        if ((jumpPoint.JumpLocation - agent.Position).magnitude < 0.5f && (target.Velocity - agent.Velocity).magnitude < 10f) 
+        Debug.Log(target.Velocity.magnitude);
+        Debug.Log(agent.Velocity.magnitude);
+        if ((jumpPoint.JumpLocation - agent.Position).magnitude < 1f && (target.Velocity - agent.Velocity).magnitude < 10f) 
         {
-            
+            Debug.Log("culo");
             //Si hemos alcanzado el punto de salto realizamos el salto
             saltando = true;
             

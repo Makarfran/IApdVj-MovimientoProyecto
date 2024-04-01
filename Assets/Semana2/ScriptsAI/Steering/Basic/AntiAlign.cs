@@ -11,11 +11,13 @@ public class AntiAlign : SteeringBehaviour
     void Start()
     {
         this.nameSteering = "Anti-Align";
+        this.Weight = 1f;
     }
 
 
     public override Steering GetSteering(Agent agent)
     {
+        
         Steering steer = new Steering();
         float angularAcceleration;
         float targetRotation;
@@ -36,6 +38,7 @@ public class AntiAlign : SteeringBehaviour
 
         
         if (Mathf.Abs(rotationSize - Mathf.PI) > (target.ArrivalRadius)*Mathf.PI/180f){
+            
             targetRotation = agent.MaxRotation;
         } else {
             targetRotation = agent.MaxRotation * rotationSize / target.ArrivalRadius;
