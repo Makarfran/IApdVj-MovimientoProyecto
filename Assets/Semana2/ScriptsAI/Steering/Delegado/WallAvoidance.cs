@@ -80,6 +80,7 @@ public class WallAvoidance : Seek
                 {
                     target = GameObject.CreatePrimitive(PrimitiveType.Sphere).AddComponent<Agent>();
                     target.gameObject.GetComponent<Collider>().enabled = false;
+                    target.gameObject.GetComponent<MeshRenderer>().enabled = false;
                 }
                 target.Position = hit.point + (hit.normal * avoidDistance);
                 steer = base.GetSteering(agent);

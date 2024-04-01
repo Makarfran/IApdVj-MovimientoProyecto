@@ -9069,9 +9069,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _mass: 1
-  _maxSpeed: 1
+  _maxSpeed: 6
   _maxRotation: 1
-  _maxAcceleration: 1
+  _maxAcceleration: 6
   _maxAngularAcc: 1
   _maxForce: 1
   _velocity: {x: 0, y: 0, z: 0}
