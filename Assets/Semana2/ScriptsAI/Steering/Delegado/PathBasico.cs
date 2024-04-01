@@ -18,7 +18,7 @@ public class PathBasico : MonoBehaviour
         for(i = 0 ; i < length; i++){
             if(objetivos[i] == obj && i != length - 1){
                 return objetivos[i+1];
-            }
+            } 
         }
         if(resetable){
             return objetivos[0];

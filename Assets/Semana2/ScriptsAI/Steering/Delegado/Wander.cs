@@ -43,6 +43,7 @@ public class Wander : Face // debe heredar de face
 
     public override Steering GetSteering(Agent agent)
     {
+        Debug.Log("cACIQUE");
         
         // % de wanderRate
         float rate = Random.Range(-1f, 1f);
@@ -70,12 +71,12 @@ public class Wander : Face // debe heredar de face
         this.Rtarget =  delegatedAgent.GetComponent<Agent>();
         this.Rtarget.Position = target;
         this.Rtarget.Orientation = targetOrientation;
-        /*
+        
         if((gameObject.GetComponent("Face") != null) && (this.target != this.GetComponent<Face>().Target)){
                 Face cara = this.GetComponent<Face>();
                 cara.Target = delegatedAgent.GetComponent<Agent>();
         }
-        */
+        
 
         Steering steering = base.GetSteering(agent); 
         // Set a full aceleration

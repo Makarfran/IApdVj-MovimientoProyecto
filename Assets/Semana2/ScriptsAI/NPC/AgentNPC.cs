@@ -84,15 +84,19 @@ public class AgentNPC : Agent
         List<SteeringBehaviour> auxList = new List<SteeringBehaviour>();
         foreach (SteeringBehaviour b in listSteerings)
         {
-
-            if (GetComponent<StateMachineManager>().CurrentState == StateMachineManager.wanderState)
-            {
-                if (b.NameSteering == "Wander" || b.NameSteering == "WallAvoidance") { auxList.Add(b); }
+            if (GetComponent<StateMachineManager>() != null){
+                if (GetComponent<StateMachineManager>().CurrentState == StateMachineManager.wanderState)
+                {
+                    if (b.NameSteering == "Wander" || b.NameSteering == "WallAvoidance") { auxList.Add(b); }
+                }
+                else 
+                {
+                    if (b.NameSteering != "Wander") { auxList.Add(b); }
+                } 
+            } else {
+                auxList.Add(b);
             }
-            else 
-            {
-                if (b.NameSteering != "Wander") { auxList.Add(b); }
-            }    
+               
             
         }
         kinematicFinal = Arbitro.getKinematicFinal(auxList, this);
