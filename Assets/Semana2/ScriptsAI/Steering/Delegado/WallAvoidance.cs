@@ -63,7 +63,7 @@ public class WallAvoidance : Seek
             
             bool collision = Physics.Raycast(origen, otraDirection, out hit, distancia);
             // Si hay colisi�n delegamos a seek
-            if (collision)
+            if (collision && (hit.collider.CompareTag("Obstaculo") || hit.collider.CompareTag("Npc") || hit.collider.CompareTag("Pared")))
             {
                 
                 //Para ver el bigote que esta colisionando y su normal
