@@ -23,7 +23,7 @@ public class WallAvoidance : Seek
     void Start()
     {
         this.nameSteering = "WallAvoidance";
-        this.Weight = 10f;
+        this.Weight = 15f;
         lookahead = 0.01f * (1.0f / Time.deltaTime);
     }
 
@@ -65,7 +65,7 @@ public class WallAvoidance : Seek
             // Si hay colisi�n delegamos a seek
             if (collision)
             {
-                Debug.Log("Piss");
+                
                 //Para ver el bigote que esta colisionando y su normal
                 draw(new Ray(origen, otraDirection), hit);
 

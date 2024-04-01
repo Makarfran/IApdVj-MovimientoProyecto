@@ -45,14 +45,14 @@ public class Wander : Face // debe heredar de face
         
         // % de wanderRate
         float rate = Random.Range(-1f, 1f);
-        Debug.Log("rate: " +rate);
+        //Debug.Log("rate: " +rate);
         float currentUpdate = Time.time - lastUpdate;
         if(currentUpdate > updateTime){
             wanderOrientation =rate * wanderRate;
             lastUpdate = Time.time;
         }
         
-        Debug.Log("WanderOrientation: "+wanderOrientation);
+        //Debug.Log("WanderOrientation: "+wanderOrientation);
         float targetOrientation = wanderOrientation + agent.Orientation;
 
         // center of the wander circle

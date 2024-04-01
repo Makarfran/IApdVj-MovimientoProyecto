@@ -510,7 +510,7 @@ MonoBehaviour:
   Rtarget: {fileID: 0}
   wanderOffSet: 5
   wanderRadius: 10
-  wanderRate: 90
+  wanderRate: 360
   maxAcceleration: 2
   updateTime: 2
 --- !u!114 &340832533
@@ -1567,6 +1567,7 @@ MonoBehaviour:
   - {fileID: 1991626064}
   - {fileID: 2004309830}
   - {fileID: 2031932604}
+  resetable: 0
 --- !u!114 &1431405708
 MonoBehaviour:
   m_ObjectHideFlags: 0

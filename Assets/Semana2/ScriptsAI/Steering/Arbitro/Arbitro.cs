@@ -14,7 +14,7 @@ public class Arbitro : MonoBehaviour
         foreach (SteeringBehaviour b in steers)
         {
 
-            if(b.NameSteering == "Wander"){
+            if(b.NameSteering == "Wander" && b.enabled == true){
                 
                 temp = b.GetSteering(agente);
                 final.linear += b.Weight * temp.linear;
@@ -26,6 +26,9 @@ public class Arbitro : MonoBehaviour
             }
 
             if (b.NameSteering == "Align" && (agente.Velocity.magnitude > 0.1)) {
+                temp = b.GetSteering(agente);
+                final.linear += b.Weight * temp.linear;
+                final.angular += b.Weight * temp.angular;
              }
             else if (b.NameSteering == "Face") {
                 
