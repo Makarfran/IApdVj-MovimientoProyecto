@@ -29,6 +29,7 @@ public class OrderFormation : MonoBehaviour
             List<GameObject> seleccionados = UnitsSelection.npcsSelected;
             formationManager.AddCharacters(seleccionados);
             formationManager.UpdateSlots();
+            formationManager.time = Time.deltaTime;
         }
     }
 }

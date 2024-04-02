@@ -41,7 +41,7 @@ public class OrderMove : MonoBehaviour
                      * objetos del escenario con la marca de haber sido seleccionado, 
                      * lo que facilita y agiliza algunas tareas. P.e. para realizar formaciones.
                      */
-                    if ( GameObject.Find("FormationManager").GetComponent<FormationManager>().BreakFormation())
+                    if (GameObject.Find("FormationManager") == null || GameObject.Find("FormationManager").GetComponent<FormationManager>().BreakFormation())
                     {
                         foreach (var npc in UnitsSelection.npcsSelected)
                         {
@@ -61,15 +61,30 @@ public class OrderMove : MonoBehaviour
                             // Nota 2: En el caso de que solo se tenga una función "NewTarget" para cada NPC, entonces 
                             // puede ser más eficiente algo como:
                             //if (npc.GetComponent<Arrive>() != null) npc.GetComponent<Arrive>().NewTarget(newTarget);
-                            npc.SendMessage("NewTarget", newTarget);
+
+                            //npc.SendMessage("NewTarget", newTarget);
+                            if (npc.GetComponent<PathFinding>() == null) { npc.SendMessage("NewTarget", newTarget); }
+                            else { npc.GetComponent<PathFinding>().CalcularCamino(newTarget); }
+
                             // que obtiene la componente del NPC que yo sé que contiene a la función NewTarget(), y la invoca.
                         }
                     }
                     else {
-                        GameObject leader = GameObject.Find("FormationManager").GetComponent<FormationManager>().slotAssignments[0].Npc;
+                        FormationManager formationManager = GameObject.Find("FormationManager").GetComponent<FormationManager>();
+                        GameObject leader = formationManager.slotAssignments[0].Npc;
                         if (leader.GetComponent<StateMachineManager>().CurrentState == StateMachineManager.wanderState) 
-                        { leader.GetComponent<StateMachineManager>().SwitchState(StateMachineManager.formationState); } 
-                        GameObject.Find("FormationManager").GetComponent<FormationManager>().slotAssignments[0].Npc.SendMessage("NewTarget", newTarget); 
+                        { leader.GetComponent<StateMachineManager>().SwitchState(StateMachineManager.formationState); }
+
+                        if (formationManager.criterio)
+                        {
+                            formationManager.slotAssignments[0].Npc.SendMessage("NewTarget", newTarget);
+                        }
+                        else 
+                        {
+                            GameObject.Find("FormationManager").GetComponent<FormationManager>().pathDestination = newTarget;
+                            GameObject.Find("FormationManager").GetComponent<FormationManager>().PathfindingCriterio(newTarget);
+                            //formationManager.gameObject.SendMessage("");
+                        }
                     }
                  
                 }

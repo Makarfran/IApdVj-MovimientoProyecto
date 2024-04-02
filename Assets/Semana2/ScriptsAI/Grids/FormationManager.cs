@@ -38,7 +38,12 @@ public class FormationManager : MonoBehaviour
     //Patrón de la formación
     public FormationPattern pattern;
 
-    float time = 0f;
+    public float time = 0f;
+
+    //Verdadero = criterio1, falso = criterio2
+    [SerializeField] public bool criterio = true;
+
+    public Vector3 pathDestination = Vector3.zero;
 
     // Start is called before the first frame update
     void Start()
@@ -52,31 +57,60 @@ public class FormationManager : MonoBehaviour
 
         if (slotAssignments.Count > 0 )
         {
-            Vector3 distancia = slotAssignments[0].Npc.GetComponent<order>().arrivalPoint.Position - slotAssignments[0].Npc.GetComponent<AgentNPC>().Position;
-            if (distancia.magnitude > 1f || slotAssignments[0].Npc.GetComponent<StateMachineManager>().CurrentState == StateMachineManager.wanderState) 
-            { 
-                time = 0;
-                Vector3 vel = slotAssignments[0].Npc.GetComponent<AgentNPC>().Velocity.normalized;
-                vel = vel * 2;
-                Vector3 leaderFollowing = slotAssignments[0].Npc.GetComponent<AgentNPC>().Position - vel;
-                for (int i = 1; i < slotAssignments.Count; i++) 
+            if (criterio) 
+            {
+                Vector3 distancia = slotAssignments[0].Npc.GetComponent<order>().arrivalPoint.Position - slotAssignments[0].Npc.GetComponent<AgentNPC>().Position;
+                if (distancia.magnitude > 1f || slotAssignments[0].Npc.GetComponent<StateMachineManager>().CurrentState == StateMachineManager.wanderState)
                 {
-                    slotAssignments[i].Npc.SendMessage("NewTarget", leaderFollowing);
+                    time = 0;
+                    Vector3 vel = slotAssignments[0].Npc.GetComponent<AgentNPC>().Velocity.normalized;
+                    vel = vel * 2;
+                    Vector3 leaderFollowing = slotAssignments[0].Npc.GetComponent<AgentNPC>().Position - vel;
+                    for (int i = 1; i < slotAssignments.Count; i++)
+                    {
+                        slotAssignments[i].Npc.SendMessage("NewTarget", leaderFollowing);
+                    }
+                }
+                else
+                {
+                    if (time < Time.deltaTime)
+                    {
+                        UpdateSlots();
+                    }
+                    if (time > 10)
+                    {
+                        slotAssignments[0].Npc.GetComponent<StateMachineManager>().SwitchState(StateMachineManager.wanderState);
+                    }
+                    time += Time.deltaTime;
+
                 }
             }
             else
             {
-                if (time < Time.deltaTime)
-                {
-                    UpdateSlots();
-                }
-                if (time > 10) 
-                {
-                    slotAssignments[0].Npc.GetComponent<StateMachineManager>().SwitchState(StateMachineManager.wanderState);
-                }
-                time += Time.deltaTime; 
 
-            }
+                if (pathDestination != null && (pathDestination - slotAssignments[0].Npc.GetComponent<AgentNPC>().Position).magnitude > 2f)
+                {
+                    time = 0;
+                    if (slotAssignments[0].Npc.GetComponent<StateMachineManager>().CurrentState == StateMachineManager.wanderState) 
+                    {
+                        pathDestination = slotAssignments[0].Npc.GetComponent<Wander>().Target.Position;
+                        PathfindingCriterio(slotAssignments[0].Npc.GetComponent<AgentNPC>().Position); 
+                    }
+                }
+                else 
+                {
+                    
+                    UpdateSlots();
+                    
+                    if (time > 10)
+                    {
+                        slotAssignments[0].Npc.GetComponent<StateMachineManager>().SwitchState(StateMachineManager.wanderState);
+                        
+                    }
+                    time += Time.deltaTime;
+                }
+            }  
+
         }
     }
        
@@ -165,6 +199,7 @@ public class FormationManager : MonoBehaviour
         */
         foreach (SlotAssignment slot in slotAssignments) 
         {
+                
             //Obtenemos la localización relativa del slot al líder
             Location relativeLoc = pattern.GetSlotLocation(slot.SlotNumber);
 
@@ -176,6 +211,16 @@ public class FormationManager : MonoBehaviour
             //Establecemos la localización como objetivo del npc
             slot.Npc.SendMessage("NewTarget", location.Position);
             slot.Npc.SendMessage("NewTargetOr", location.Orientation);
+        }
+
+    }
+
+    public void PathfindingCriterio(Vector3 newTarget) 
+    {
+        
+        foreach (SlotAssignment slot in slotAssignments)
+        {
+            slot.Npc.GetComponent<PathFinding>().CalcularCamino(newTarget);
         }
 
     }

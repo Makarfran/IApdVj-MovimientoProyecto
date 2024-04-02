@@ -63,7 +63,7 @@ public class WallAvoidance : Seek
             
             bool collision = Physics.Raycast(origen, otraDirection, out hit, distancia);
             // Si hay colisi�n delegamos a seek
-            if (collision && (hit.collider.CompareTag("Obstaculos") || hit.collider.CompareTag("Npc") || hit.collider.CompareTag("Pared")))
+            if (collision && (hit.collider.CompareTag("Obstaculos")  || hit.collider.CompareTag("Pared")))
             {
                 
                 //Para ver el bigote que esta colisionando y su normal
@@ -98,15 +98,13 @@ public class WallAvoidance : Seek
     void draw(Ray ray, RaycastHit hit)
     {
         string str = hit.transform.gameObject.name;
-        if (str.Equals("Cube"))
-        {
+       
             ray.origin += Vector3.up;
             hit.point += Vector3.up;
 
             Debug.DrawLine(ray.origin, hit.point, Color.red);
             Debug.DrawLine(hit.point, hit.point + (hit.normal * avoidDistance), Color.blue);
-        }
-
+        
 
     }
 

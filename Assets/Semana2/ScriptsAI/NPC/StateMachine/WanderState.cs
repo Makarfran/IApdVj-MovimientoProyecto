@@ -24,7 +24,10 @@ public class WanderState : BaseState
     {
         if (GameObject.Find("FormationManager") != null && GameObject.Find("FormationManager").GetComponent<FormationManager>().slotAssignments[0].Npc == stateMachine.gameObject)
         {
+
             stateMachine.SwitchState(StateMachineManager.formationState);
+            if (!GameObject.Find("FormationManager").GetComponent<FormationManager>().criterio) 
+            { GameObject.Find("FormationManager").GetComponent<FormationManager>().pathDestination = GameObject.Find("FormationManager").GetComponent<FormationManager>().slotAssignments[0].Npc.GetComponent<AgentNPC>().Position; }
             GameObject.Find("FormationManager").GetComponent<FormationManager>().UpdateSlots();
         }
         else { stateMachine.SwitchState(StateMachineManager.idleState); }
