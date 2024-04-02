@@ -6,6 +6,7 @@ public class PathBasico : MonoBehaviour
 {
     public List<Agent> objetivos;
     public bool resetable;
+    public bool ModoDep;
 
     // Update is called once per frame
     public Agent getObjetivoInicial(){
@@ -54,6 +55,9 @@ public class PathBasico : MonoBehaviour
             GameObject fakeAgent = GameObject.CreatePrimitive(PrimitiveType.Sphere);
             fakeAgent.AddComponent<AgentNPC>();
             fakeAgent.GetComponent<AgentNPC>().Position = tile.getPosition();
+            /*if(!ModoDep){
+                fakeAgent.GetComponent<MeshRenderer>().enabled = false;
+            }*/
             objetivos.Add(fakeAgent.GetComponent<AgentNPC>());
         }
     }

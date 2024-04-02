@@ -15,10 +15,11 @@ public class OrderFormation : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey("f") || Input.GetKey("x")) 
+        if (Input.GetKey("f") || Input.GetKey("x") || Input.GetKey("e")) 
         {
             if (Input.GetKey("f")) {formationManager.pattern = new Frontal();}
             else if (Input.GetKey("x")) { formationManager.pattern = new Formation360(); }
+            else if(Input.GetKey("e")) { formationManager.pattern = new FormationEagle();  }
 
             if (formationManager.slotAssignments.Count > 0) 
             {

@@ -17,10 +17,14 @@ public class Wander : Face // debe heredar de face
     [SerializeField]
     protected float updateTime;
     protected float lastUpdate;
+    public bool ModoDep;
 
     void Start()
     {
         delegatedAgent = GameObject.CreatePrimitive(PrimitiveType.Sphere);
+        if(!ModoDep){
+            delegatedAgent.GetComponent<MeshRenderer>().enabled = false;
+        }
         //delegatedAgent.hideFlags = HideFlags.HideInHierarchy; // Ocultar en la jerarquía
 
         // Agregar el componente Agent al objeto invisible

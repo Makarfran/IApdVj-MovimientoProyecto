@@ -956,6 +956,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objetivos: []
   resetable: 0
+  ModoDep: 0
 --- !u!114 &143926581
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1052,6 +1053,48 @@ MonoBehaviour:
   radio: 1
   slowRadio: 2
   timeToTarget: 0.1
+--- !u!114 &143926590
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 143926574}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 856abf34f0fbd5b45b2b70abe75ab94e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 0}
+  targets:
+  - {fileID: 652509380}
+  - {fileID: 1036781324}
+  - {fileID: 1557063886}
+  - {fileID: 1467225582}
+  - {fileID: 2128671331}
+  - {fileID: 856753708}
+  - {fileID: 2050240625}
+  - {fileID: 143926576}
+  - {fileID: 1032717903}
+  - {fileID: 1510112727}
+  - {fileID: 1633838600}
+  - {fileID: 913492954}
+  - {fileID: 1975255647}
+  - {fileID: 1233011877}
+  - {fileID: 344655513}
+  - {fileID: 1203993010}
+  - {fileID: 379401895}
+  - {fileID: 280528287}
+  - {fileID: 1274613299}
+  - {fileID: 446215331}
+  - {fileID: 368208432}
+  - {fileID: 2051067677}
+  - {fileID: 1745695113}
+  - {fileID: 2133570264}
+  - {fileID: 1638429241}
+  - {fileID: 1683300418}
+  decayCoeficient: 0
+  treshold: 0
 --- !u!1 &180424545
 GameObject:
   m_ObjectHideFlags: 0
@@ -1657,6 +1700,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objetivos: []
   resetable: 0
+  ModoDep: 0
 --- !u!114 &280528291
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1699,6 +1743,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objetivos: []
   resetable: 0
+  ModoDep: 0
 --- !u!65 &280528295
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1781,6 +1826,48 @@ MonoBehaviour:
   radio: 1
   slowRadio: 2
   timeToTarget: 0.1
+--- !u!114 &280528301
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 280528285}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 856abf34f0fbd5b45b2b70abe75ab94e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 0}
+  targets:
+  - {fileID: 652509380}
+  - {fileID: 1036781324}
+  - {fileID: 1557063886}
+  - {fileID: 1467225582}
+  - {fileID: 2128671331}
+  - {fileID: 856753708}
+  - {fileID: 2050240625}
+  - {fileID: 143926576}
+  - {fileID: 1032717903}
+  - {fileID: 1510112727}
+  - {fileID: 1633838600}
+  - {fileID: 913492954}
+  - {fileID: 1975255647}
+  - {fileID: 1233011877}
+  - {fileID: 344655513}
+  - {fileID: 1203993010}
+  - {fileID: 379401895}
+  - {fileID: 280528287}
+  - {fileID: 1274613299}
+  - {fileID: 446215331}
+  - {fileID: 368208432}
+  - {fileID: 2051067677}
+  - {fileID: 1745695113}
+  - {fileID: 2133570264}
+  - {fileID: 1638429241}
+  - {fileID: 1683300418}
+  decayCoeficient: 0
+  treshold: 0
 --- !u!1 &343484464
 GameObject:
   m_ObjectHideFlags: 0
@@ -2071,6 +2158,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objetivos: []
   resetable: 0
+  ModoDep: 0
 --- !u!65 &344655522
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2153,6 +2241,48 @@ MonoBehaviour:
   radio: 1
   slowRadio: 2
   timeToTarget: 0.1
+--- !u!114 &344655528
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3255024}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 856abf34f0fbd5b45b2b70abe75ab94e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 0}
+  targets:
+  - {fileID: 652509380}
+  - {fileID: 1036781324}
+  - {fileID: 1557063886}
+  - {fileID: 1467225582}
+  - {fileID: 2128671331}
+  - {fileID: 856753708}
+  - {fileID: 2050240625}
+  - {fileID: 143926576}
+  - {fileID: 1032717903}
+  - {fileID: 1510112727}
+  - {fileID: 1633838600}
+  - {fileID: 913492954}
+  - {fileID: 1975255647}
+  - {fileID: 1233011877}
+  - {fileID: 344655513}
+  - {fileID: 1203993010}
+  - {fileID: 379401895}
+  - {fileID: 280528287}
+  - {fileID: 1274613299}
+  - {fileID: 446215331}
+  - {fileID: 368208432}
+  - {fileID: 2051067677}
+  - {fileID: 1745695113}
+  - {fileID: 2133570264}
+  - {fileID: 1638429241}
+  - {fileID: 1683300418}
+  decayCoeficient: 0
+  treshold: 0
 --- !u!1 &354617608
 GameObject:
   m_ObjectHideFlags: 0
@@ -2421,6 +2551,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objetivos: []
   resetable: 0
+  ModoDep: 0
 --- !u!114 &368208436
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2463,6 +2594,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objetivos: []
   resetable: 0
+  ModoDep: 0
 --- !u!65 &368208440
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2545,6 +2677,48 @@ MonoBehaviour:
   radio: 1
   slowRadio: 2
   timeToTarget: 0.1
+--- !u!114 &368208446
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 368208431}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 856abf34f0fbd5b45b2b70abe75ab94e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 0}
+  targets:
+  - {fileID: 652509380}
+  - {fileID: 1036781324}
+  - {fileID: 1557063886}
+  - {fileID: 1467225582}
+  - {fileID: 2128671331}
+  - {fileID: 856753708}
+  - {fileID: 2050240625}
+  - {fileID: 143926576}
+  - {fileID: 1032717903}
+  - {fileID: 1510112727}
+  - {fileID: 1633838600}
+  - {fileID: 913492954}
+  - {fileID: 1975255647}
+  - {fileID: 1233011877}
+  - {fileID: 344655513}
+  - {fileID: 1203993010}
+  - {fileID: 379401895}
+  - {fileID: 280528287}
+  - {fileID: 1274613299}
+  - {fileID: 446215331}
+  - {fileID: 368208432}
+  - {fileID: 2051067677}
+  - {fileID: 1745695113}
+  - {fileID: 2133570264}
+  - {fileID: 1638429241}
+  - {fileID: 1683300418}
+  decayCoeficient: 0
+  treshold: 0
 --- !u!1001 &379401891
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2730,6 +2904,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objetivos: []
   resetable: 0
+  ModoDep: 0
 --- !u!114 &379401899
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2772,6 +2947,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objetivos: []
   resetable: 0
+  ModoDep: 0
 --- !u!65 &379401903
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2854,6 +3030,48 @@ MonoBehaviour:
   radio: 1
   slowRadio: 2
   timeToTarget: 0.1
+--- !u!114 &379401909
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 379401893}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 856abf34f0fbd5b45b2b70abe75ab94e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 0}
+  targets:
+  - {fileID: 652509380}
+  - {fileID: 1036781324}
+  - {fileID: 1557063886}
+  - {fileID: 1467225582}
+  - {fileID: 2128671331}
+  - {fileID: 856753708}
+  - {fileID: 2050240625}
+  - {fileID: 143926576}
+  - {fileID: 1032717903}
+  - {fileID: 1510112727}
+  - {fileID: 1633838600}
+  - {fileID: 913492954}
+  - {fileID: 1975255647}
+  - {fileID: 1233011877}
+  - {fileID: 344655513}
+  - {fileID: 1203993010}
+  - {fileID: 379401895}
+  - {fileID: 280528287}
+  - {fileID: 1274613299}
+  - {fileID: 446215331}
+  - {fileID: 368208432}
+  - {fileID: 2051067677}
+  - {fileID: 1745695113}
+  - {fileID: 2133570264}
+  - {fileID: 1638429241}
+  - {fileID: 1683300418}
+  decayCoeficient: 0
+  treshold: 0
 --- !u!1 &389187236
 GameObject:
   m_ObjectHideFlags: 0
@@ -3412,6 +3630,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objetivos: []
   resetable: 0
+  ModoDep: 0
 --- !u!114 &446215335
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3454,6 +3673,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objetivos: []
   resetable: 0
+  ModoDep: 0
 --- !u!65 &446215339
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3536,6 +3756,48 @@ MonoBehaviour:
   radio: 1
   slowRadio: 2
   timeToTarget: 0.1
+--- !u!114 &446215345
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 446215329}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 856abf34f0fbd5b45b2b70abe75ab94e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 0}
+  targets:
+  - {fileID: 652509380}
+  - {fileID: 1036781324}
+  - {fileID: 1557063886}
+  - {fileID: 1467225582}
+  - {fileID: 2128671331}
+  - {fileID: 856753708}
+  - {fileID: 2050240625}
+  - {fileID: 143926576}
+  - {fileID: 1032717903}
+  - {fileID: 1510112727}
+  - {fileID: 1633838600}
+  - {fileID: 913492954}
+  - {fileID: 1975255647}
+  - {fileID: 1233011877}
+  - {fileID: 344655513}
+  - {fileID: 1203993010}
+  - {fileID: 379401895}
+  - {fileID: 280528287}
+  - {fileID: 1274613299}
+  - {fileID: 446215331}
+  - {fileID: 368208432}
+  - {fileID: 2051067677}
+  - {fileID: 1745695113}
+  - {fileID: 2133570264}
+  - {fileID: 1638429241}
+  - {fileID: 1683300418}
+  decayCoeficient: 0
+  treshold: 0
 --- !u!1 &468719317 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100070, guid: 3353e4f866c39d043a315b41717c9bb7, type: 3}
@@ -4396,6 +4658,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objetivos: []
   resetable: 0
+  ModoDep: 0
 --- !u!114 &652509385
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4492,6 +4755,48 @@ MonoBehaviour:
   radio: 1
   slowRadio: 2
   timeToTarget: 0.1
+--- !u!114 &652509394
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 652509379}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 856abf34f0fbd5b45b2b70abe75ab94e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 0}
+  targets:
+  - {fileID: 652509380}
+  - {fileID: 1036781324}
+  - {fileID: 1557063886}
+  - {fileID: 1467225582}
+  - {fileID: 2128671331}
+  - {fileID: 856753708}
+  - {fileID: 2050240625}
+  - {fileID: 143926576}
+  - {fileID: 1032717903}
+  - {fileID: 1510112727}
+  - {fileID: 1633838600}
+  - {fileID: 913492954}
+  - {fileID: 1975255647}
+  - {fileID: 1233011877}
+  - {fileID: 344655513}
+  - {fileID: 1203993010}
+  - {fileID: 379401895}
+  - {fileID: 280528287}
+  - {fileID: 1274613299}
+  - {fileID: 446215331}
+  - {fileID: 368208432}
+  - {fileID: 2051067677}
+  - {fileID: 1745695113}
+  - {fileID: 2133570264}
+  - {fileID: 1638429241}
+  - {fileID: 1683300418}
+  decayCoeficient: 0
+  treshold: 0
 --- !u!1 &667172520
 GameObject:
   m_ObjectHideFlags: 0
@@ -5496,6 +5801,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objetivos: []
   resetable: 0
+  ModoDep: 0
 --- !u!114 &856753713
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5592,6 +5898,48 @@ MonoBehaviour:
   radio: 1
   slowRadio: 2
   timeToTarget: 0.1
+--- !u!114 &856753722
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 856753706}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 856abf34f0fbd5b45b2b70abe75ab94e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 0}
+  targets:
+  - {fileID: 652509380}
+  - {fileID: 1036781324}
+  - {fileID: 1557063886}
+  - {fileID: 1467225582}
+  - {fileID: 2128671331}
+  - {fileID: 856753708}
+  - {fileID: 2050240625}
+  - {fileID: 143926576}
+  - {fileID: 1032717903}
+  - {fileID: 1510112727}
+  - {fileID: 1633838600}
+  - {fileID: 913492954}
+  - {fileID: 1975255647}
+  - {fileID: 1233011877}
+  - {fileID: 344655513}
+  - {fileID: 1203993010}
+  - {fileID: 379401895}
+  - {fileID: 280528287}
+  - {fileID: 1274613299}
+  - {fileID: 446215331}
+  - {fileID: 368208432}
+  - {fileID: 2051067677}
+  - {fileID: 1745695113}
+  - {fileID: 2133570264}
+  - {fileID: 1638429241}
+  - {fileID: 1683300418}
+  decayCoeficient: 0
+  treshold: 0
 --- !u!1 &865298880
 GameObject:
   m_ObjectHideFlags: 0
@@ -5886,6 +6234,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objetivos: []
   resetable: 0
+  ModoDep: 0
 --- !u!114 &913492959
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5982,6 +6331,48 @@ MonoBehaviour:
   radio: 1
   slowRadio: 2
   timeToTarget: 0.1
+--- !u!114 &913492968
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 913492953}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 856abf34f0fbd5b45b2b70abe75ab94e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 0}
+  targets:
+  - {fileID: 652509380}
+  - {fileID: 1036781324}
+  - {fileID: 1557063886}
+  - {fileID: 1467225582}
+  - {fileID: 2128671331}
+  - {fileID: 856753708}
+  - {fileID: 2050240625}
+  - {fileID: 143926576}
+  - {fileID: 1032717903}
+  - {fileID: 1510112727}
+  - {fileID: 1633838600}
+  - {fileID: 913492954}
+  - {fileID: 1975255647}
+  - {fileID: 1233011877}
+  - {fileID: 344655513}
+  - {fileID: 1203993010}
+  - {fileID: 379401895}
+  - {fileID: 280528287}
+  - {fileID: 1274613299}
+  - {fileID: 446215331}
+  - {fileID: 368208432}
+  - {fileID: 2051067677}
+  - {fileID: 1745695113}
+  - {fileID: 2133570264}
+  - {fileID: 1638429241}
+  - {fileID: 1683300418}
+  decayCoeficient: 0
+  treshold: 0
 --- !u!1 &961966804
 GameObject:
   m_ObjectHideFlags: 0
@@ -6023,7 +6414,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 961966804}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cc0e6f638c3070749bc3dfe4d8a452ec, type: 3}
   m_Name: 
@@ -6035,7 +6426,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 961966804}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ed46bad50e81ea04682963c92e59f693, type: 3}
   m_Name: 
@@ -6047,7 +6438,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 961966804}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8764cdcda432a6349ac09c99bac1150a, type: 3}
   m_Name: 
@@ -6445,6 +6836,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objetivos: []
   resetable: 0
+  ModoDep: 0
 --- !u!114 &1032717908
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6541,6 +6933,48 @@ MonoBehaviour:
   radio: 1
   slowRadio: 2
   timeToTarget: 0.1
+--- !u!114 &1032717917
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1032717901}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 856abf34f0fbd5b45b2b70abe75ab94e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 0}
+  targets:
+  - {fileID: 652509380}
+  - {fileID: 1036781324}
+  - {fileID: 1557063886}
+  - {fileID: 1467225582}
+  - {fileID: 2128671331}
+  - {fileID: 856753708}
+  - {fileID: 2050240625}
+  - {fileID: 143926576}
+  - {fileID: 1032717903}
+  - {fileID: 1510112727}
+  - {fileID: 1633838600}
+  - {fileID: 913492954}
+  - {fileID: 1975255647}
+  - {fileID: 1233011877}
+  - {fileID: 344655513}
+  - {fileID: 1203993010}
+  - {fileID: 379401895}
+  - {fileID: 280528287}
+  - {fileID: 1274613299}
+  - {fileID: 446215331}
+  - {fileID: 368208432}
+  - {fileID: 2051067677}
+  - {fileID: 1745695113}
+  - {fileID: 2133570264}
+  - {fileID: 1638429241}
+  - {fileID: 1683300418}
+  decayCoeficient: 0
+  treshold: 0
 --- !u!1 &1036781322 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 41f081d5c6d286c47a33bed3f84de79a, type: 3}
@@ -6621,6 +7055,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objetivos: []
   resetable: 0
+  ModoDep: 0
 --- !u!114 &1036781331
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6717,6 +7152,48 @@ MonoBehaviour:
   radio: 1
   slowRadio: 2
   timeToTarget: 0.1
+--- !u!114 &1036781340
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1036781322}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 856abf34f0fbd5b45b2b70abe75ab94e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 0}
+  targets:
+  - {fileID: 652509380}
+  - {fileID: 1036781324}
+  - {fileID: 1557063886}
+  - {fileID: 1467225582}
+  - {fileID: 2128671331}
+  - {fileID: 856753708}
+  - {fileID: 2050240625}
+  - {fileID: 143926576}
+  - {fileID: 1032717903}
+  - {fileID: 1510112727}
+  - {fileID: 1633838600}
+  - {fileID: 913492954}
+  - {fileID: 1975255647}
+  - {fileID: 1233011877}
+  - {fileID: 344655513}
+  - {fileID: 1203993010}
+  - {fileID: 379401895}
+  - {fileID: 280528287}
+  - {fileID: 1274613299}
+  - {fileID: 446215331}
+  - {fileID: 368208432}
+  - {fileID: 2051067677}
+  - {fileID: 1745695113}
+  - {fileID: 2133570264}
+  - {fileID: 1638429241}
+  - {fileID: 1683300418}
+  decayCoeficient: 0
+  treshold: 0
 --- !u!1 &1037386133
 GameObject:
   m_ObjectHideFlags: 0
@@ -7144,6 +7621,7 @@ MonoBehaviour:
   - {fileID: 1037386134}
   - {fileID: 1078030537}
   resetable: 1
+  ModoDep: 0
 --- !u!4 &1109423210
 Transform:
   m_ObjectHideFlags: 0
@@ -7415,6 +7893,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objetivos: []
   resetable: 0
+  ModoDep: 0
 --- !u!114 &1203993016
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7457,6 +7936,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objetivos: []
   resetable: 0
+  ModoDep: 0
 --- !u!65 &1203993020
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7539,6 +8019,48 @@ MonoBehaviour:
   radio: 1
   slowRadio: 2
   timeToTarget: 0.1
+--- !u!114 &1203993026
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1203993008}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 856abf34f0fbd5b45b2b70abe75ab94e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 0}
+  targets:
+  - {fileID: 652509380}
+  - {fileID: 1036781324}
+  - {fileID: 1557063886}
+  - {fileID: 1467225582}
+  - {fileID: 2128671331}
+  - {fileID: 856753708}
+  - {fileID: 2050240625}
+  - {fileID: 143926576}
+  - {fileID: 1032717903}
+  - {fileID: 1510112727}
+  - {fileID: 1633838600}
+  - {fileID: 913492954}
+  - {fileID: 1975255647}
+  - {fileID: 1233011877}
+  - {fileID: 344655513}
+  - {fileID: 1203993010}
+  - {fileID: 379401895}
+  - {fileID: 280528287}
+  - {fileID: 1274613299}
+  - {fileID: 446215331}
+  - {fileID: 368208432}
+  - {fileID: 2051067677}
+  - {fileID: 1745695113}
+  - {fileID: 2133570264}
+  - {fileID: 1638429241}
+  - {fileID: 1683300418}
+  decayCoeficient: 0
+  treshold: 0
 --- !u!1001 &1233011875
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7689,6 +8211,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objetivos: []
   resetable: 0
+  ModoDep: 0
 --- !u!114 &1233011881
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7731,6 +8254,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objetivos: []
   resetable: 0
+  ModoDep: 0
 --- !u!65 &1233011885
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7813,6 +8337,48 @@ MonoBehaviour:
   radio: 1
   slowRadio: 2
   timeToTarget: 0.1
+--- !u!114 &1233011891
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 468719317}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 856abf34f0fbd5b45b2b70abe75ab94e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 0}
+  targets:
+  - {fileID: 652509380}
+  - {fileID: 1036781324}
+  - {fileID: 1557063886}
+  - {fileID: 1467225582}
+  - {fileID: 2128671331}
+  - {fileID: 856753708}
+  - {fileID: 2050240625}
+  - {fileID: 143926576}
+  - {fileID: 1032717903}
+  - {fileID: 1510112727}
+  - {fileID: 1633838600}
+  - {fileID: 913492954}
+  - {fileID: 1975255647}
+  - {fileID: 1233011877}
+  - {fileID: 344655513}
+  - {fileID: 1203993010}
+  - {fileID: 379401895}
+  - {fileID: 280528287}
+  - {fileID: 1274613299}
+  - {fileID: 446215331}
+  - {fileID: 368208432}
+  - {fileID: 2051067677}
+  - {fileID: 1745695113}
+  - {fileID: 2133570264}
+  - {fileID: 1638429241}
+  - {fileID: 1683300418}
+  decayCoeficient: 0
+  treshold: 0
 --- !u!1001 &1249223637
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7937,8 +8503,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1, y: 1.2929156, z: 1}
+  m_Center: {x: 0, y: -0.07156347, z: 0}
 --- !u!23 &1263059186
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -8286,6 +8852,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objetivos: []
   resetable: 0
+  ModoDep: 0
 --- !u!114 &1274613303
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8328,6 +8895,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objetivos: []
   resetable: 0
+  ModoDep: 0
 --- !u!65 &1274613307
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8410,6 +8978,48 @@ MonoBehaviour:
   radio: 1
   slowRadio: 2
   timeToTarget: 0.1
+--- !u!114 &1274613313
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1274613297}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 856abf34f0fbd5b45b2b70abe75ab94e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 0}
+  targets:
+  - {fileID: 652509380}
+  - {fileID: 1036781324}
+  - {fileID: 1557063886}
+  - {fileID: 1467225582}
+  - {fileID: 2128671331}
+  - {fileID: 856753708}
+  - {fileID: 2050240625}
+  - {fileID: 143926576}
+  - {fileID: 1032717903}
+  - {fileID: 1510112727}
+  - {fileID: 1633838600}
+  - {fileID: 913492954}
+  - {fileID: 1975255647}
+  - {fileID: 1233011877}
+  - {fileID: 344655513}
+  - {fileID: 1203993010}
+  - {fileID: 379401895}
+  - {fileID: 280528287}
+  - {fileID: 1274613299}
+  - {fileID: 446215331}
+  - {fileID: 368208432}
+  - {fileID: 2051067677}
+  - {fileID: 1745695113}
+  - {fileID: 2133570264}
+  - {fileID: 1638429241}
+  - {fileID: 1683300418}
+  decayCoeficient: 0
+  treshold: 0
 --- !u!1 &1311800366
 GameObject:
   m_ObjectHideFlags: 0
@@ -9092,6 +9702,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objetivos: []
   resetable: 0
+  ModoDep: 0
 --- !u!114 &1467225587
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9188,6 +9799,48 @@ MonoBehaviour:
   radio: 1
   slowRadio: 2
   timeToTarget: 0.1
+--- !u!114 &1467225596
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1467225580}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 856abf34f0fbd5b45b2b70abe75ab94e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 0}
+  targets:
+  - {fileID: 652509380}
+  - {fileID: 1036781324}
+  - {fileID: 1557063886}
+  - {fileID: 1467225582}
+  - {fileID: 2128671331}
+  - {fileID: 856753708}
+  - {fileID: 2050240625}
+  - {fileID: 143926576}
+  - {fileID: 1032717903}
+  - {fileID: 1510112727}
+  - {fileID: 1633838600}
+  - {fileID: 913492954}
+  - {fileID: 1975255647}
+  - {fileID: 1233011877}
+  - {fileID: 344655513}
+  - {fileID: 1203993010}
+  - {fileID: 379401895}
+  - {fileID: 280528287}
+  - {fileID: 1274613299}
+  - {fileID: 446215331}
+  - {fileID: 368208432}
+  - {fileID: 2051067677}
+  - {fileID: 1745695113}
+  - {fileID: 2133570264}
+  - {fileID: 1638429241}
+  - {fileID: 1683300418}
+  decayCoeficient: 0
+  treshold: 0
 --- !u!1 &1468881554 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100070, guid: 3353e4f866c39d043a315b41717c9bb7, type: 3}
@@ -9729,6 +10382,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objetivos: []
   resetable: 0
+  ModoDep: 0
 --- !u!114 &1510112732
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9825,6 +10479,48 @@ MonoBehaviour:
   radio: 1
   slowRadio: 2
   timeToTarget: 0.1
+--- !u!114 &1510112741
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 444568202}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 856abf34f0fbd5b45b2b70abe75ab94e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 0}
+  targets:
+  - {fileID: 652509380}
+  - {fileID: 1036781324}
+  - {fileID: 1557063886}
+  - {fileID: 1467225582}
+  - {fileID: 2128671331}
+  - {fileID: 856753708}
+  - {fileID: 2050240625}
+  - {fileID: 143926576}
+  - {fileID: 1032717903}
+  - {fileID: 1510112727}
+  - {fileID: 1633838600}
+  - {fileID: 913492954}
+  - {fileID: 1975255647}
+  - {fileID: 1233011877}
+  - {fileID: 344655513}
+  - {fileID: 1203993010}
+  - {fileID: 379401895}
+  - {fileID: 280528287}
+  - {fileID: 1274613299}
+  - {fileID: 446215331}
+  - {fileID: 368208432}
+  - {fileID: 2051067677}
+  - {fileID: 1745695113}
+  - {fileID: 2133570264}
+  - {fileID: 1638429241}
+  - {fileID: 1683300418}
+  decayCoeficient: 0
+  treshold: 0
 --- !u!1 &1510515731
 GameObject:
   m_ObjectHideFlags: 0
@@ -9957,6 +10653,7 @@ MonoBehaviour:
   - {fileID: 681995163}
   - {fileID: 8104719}
   resetable: 1
+  ModoDep: 0
 --- !u!4 &1528838799
 Transform:
   m_ObjectHideFlags: 0
@@ -10075,6 +10772,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objetivos: []
   resetable: 0
+  ModoDep: 0
 --- !u!65 &1557063895
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -10157,6 +10855,48 @@ MonoBehaviour:
   radio: 1
   slowRadio: 2
   timeToTarget: 0.1
+--- !u!114 &1557063901
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1557063884}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 856abf34f0fbd5b45b2b70abe75ab94e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 0}
+  targets:
+  - {fileID: 652509380}
+  - {fileID: 1036781324}
+  - {fileID: 1557063886}
+  - {fileID: 1467225582}
+  - {fileID: 2128671331}
+  - {fileID: 856753708}
+  - {fileID: 2050240625}
+  - {fileID: 143926576}
+  - {fileID: 1032717903}
+  - {fileID: 1510112727}
+  - {fileID: 1633838600}
+  - {fileID: 913492954}
+  - {fileID: 1975255647}
+  - {fileID: 1233011877}
+  - {fileID: 344655513}
+  - {fileID: 1203993010}
+  - {fileID: 379401895}
+  - {fileID: 280528287}
+  - {fileID: 1274613299}
+  - {fileID: 446215331}
+  - {fileID: 368208432}
+  - {fileID: 2051067677}
+  - {fileID: 1745695113}
+  - {fileID: 2133570264}
+  - {fileID: 1638429241}
+  - {fileID: 1683300418}
+  decayCoeficient: 0
+  treshold: 0
 --- !u!1 &1606374419
 GameObject:
   m_ObjectHideFlags: 0
@@ -10515,6 +11255,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objetivos: []
   resetable: 0
+  ModoDep: 0
 --- !u!114 &1633838605
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10611,6 +11352,48 @@ MonoBehaviour:
   radio: 1
   slowRadio: 2
   timeToTarget: 0.1
+--- !u!114 &1633838614
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 33353135}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 856abf34f0fbd5b45b2b70abe75ab94e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 0}
+  targets:
+  - {fileID: 652509380}
+  - {fileID: 1036781324}
+  - {fileID: 1557063886}
+  - {fileID: 1467225582}
+  - {fileID: 2128671331}
+  - {fileID: 856753708}
+  - {fileID: 2050240625}
+  - {fileID: 143926576}
+  - {fileID: 1032717903}
+  - {fileID: 1510112727}
+  - {fileID: 1633838600}
+  - {fileID: 913492954}
+  - {fileID: 1975255647}
+  - {fileID: 1233011877}
+  - {fileID: 344655513}
+  - {fileID: 1203993010}
+  - {fileID: 379401895}
+  - {fileID: 280528287}
+  - {fileID: 1274613299}
+  - {fileID: 446215331}
+  - {fileID: 368208432}
+  - {fileID: 2051067677}
+  - {fileID: 1745695113}
+  - {fileID: 2133570264}
+  - {fileID: 1638429241}
+  - {fileID: 1683300418}
+  decayCoeficient: 0
+  treshold: 0
 --- !u!4 &1638429240 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400070, guid: 3353e4f866c39d043a315b41717c9bb7, type: 3}
@@ -10672,6 +11455,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objetivos: []
   resetable: 0
+  ModoDep: 0
 --- !u!114 &1638429245
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10714,6 +11498,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objetivos: []
   resetable: 0
+  ModoDep: 0
 --- !u!65 &1638429249
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -10796,6 +11581,48 @@ MonoBehaviour:
   radio: 1
   slowRadio: 2
   timeToTarget: 0.1
+--- !u!114 &1638429255
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 494773245}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 856abf34f0fbd5b45b2b70abe75ab94e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 0}
+  targets:
+  - {fileID: 652509380}
+  - {fileID: 1036781324}
+  - {fileID: 1557063886}
+  - {fileID: 1467225582}
+  - {fileID: 2128671331}
+  - {fileID: 856753708}
+  - {fileID: 2050240625}
+  - {fileID: 143926576}
+  - {fileID: 1032717903}
+  - {fileID: 1510112727}
+  - {fileID: 1633838600}
+  - {fileID: 913492954}
+  - {fileID: 1975255647}
+  - {fileID: 1233011877}
+  - {fileID: 344655513}
+  - {fileID: 1203993010}
+  - {fileID: 379401895}
+  - {fileID: 280528287}
+  - {fileID: 1274613299}
+  - {fileID: 446215331}
+  - {fileID: 368208432}
+  - {fileID: 2051067677}
+  - {fileID: 1745695113}
+  - {fileID: 2133570264}
+  - {fileID: 1638429241}
+  - {fileID: 1683300418}
+  decayCoeficient: 0
+  treshold: 0
 --- !u!1 &1657244959
 GameObject:
   m_ObjectHideFlags: 0
@@ -11051,6 +11878,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objetivos: []
   resetable: 0
+  ModoDep: 0
 --- !u!114 &1683300422
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11093,6 +11921,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objetivos: []
   resetable: 0
+  ModoDep: 0
 --- !u!65 &1683300426
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -11175,6 +12004,48 @@ MonoBehaviour:
   radio: 1
   slowRadio: 2
   timeToTarget: 0.1
+--- !u!114 &1683300432
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 735181067}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 856abf34f0fbd5b45b2b70abe75ab94e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 0}
+  targets:
+  - {fileID: 652509380}
+  - {fileID: 1036781324}
+  - {fileID: 1557063886}
+  - {fileID: 1467225582}
+  - {fileID: 2128671331}
+  - {fileID: 856753708}
+  - {fileID: 2050240625}
+  - {fileID: 143926576}
+  - {fileID: 1032717903}
+  - {fileID: 1510112727}
+  - {fileID: 1633838600}
+  - {fileID: 913492954}
+  - {fileID: 1975255647}
+  - {fileID: 1233011877}
+  - {fileID: 344655513}
+  - {fileID: 1203993010}
+  - {fileID: 379401895}
+  - {fileID: 280528287}
+  - {fileID: 1274613299}
+  - {fileID: 446215331}
+  - {fileID: 368208432}
+  - {fileID: 2051067677}
+  - {fileID: 1745695113}
+  - {fileID: 2133570264}
+  - {fileID: 1638429241}
+  - {fileID: 1683300418}
+  decayCoeficient: 0
+  treshold: 0
 --- !u!1 &1729801758
 GameObject:
   m_ObjectHideFlags: 0
@@ -11430,6 +12301,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objetivos: []
   resetable: 0
+  ModoDep: 0
 --- !u!114 &1745695117
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11472,6 +12344,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objetivos: []
   resetable: 0
+  ModoDep: 0
 --- !u!65 &1745695121
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -11504,6 +12377,7 @@ MonoBehaviour:
   wanderRate: 360
   maxAcceleration: 2
   updateTime: 2
+  ModoDep: 0
 --- !u!114 &1745695124
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11573,6 +12447,48 @@ MonoBehaviour:
   radio: 1
   slowRadio: 2
   timeToTarget: 0.1
+--- !u!114 &1745695129
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1468881554}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 856abf34f0fbd5b45b2b70abe75ab94e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 0}
+  targets:
+  - {fileID: 652509380}
+  - {fileID: 1036781324}
+  - {fileID: 1557063886}
+  - {fileID: 1467225582}
+  - {fileID: 2128671331}
+  - {fileID: 856753708}
+  - {fileID: 2050240625}
+  - {fileID: 143926576}
+  - {fileID: 1032717903}
+  - {fileID: 1510112727}
+  - {fileID: 1633838600}
+  - {fileID: 913492954}
+  - {fileID: 1975255647}
+  - {fileID: 1233011877}
+  - {fileID: 344655513}
+  - {fileID: 1203993010}
+  - {fileID: 379401895}
+  - {fileID: 280528287}
+  - {fileID: 1274613299}
+  - {fileID: 446215331}
+  - {fileID: 368208432}
+  - {fileID: 2051067677}
+  - {fileID: 1745695113}
+  - {fileID: 2133570264}
+  - {fileID: 1638429241}
+  - {fileID: 1683300418}
+  decayCoeficient: 0
+  treshold: 0
 --- !u!1 &1748294761
 GameObject:
   m_ObjectHideFlags: 0
@@ -11768,6 +12684,7 @@ GameObject:
   - component: {fileID: 1844119924}
   - component: {fileID: 1844119923}
   - component: {fileID: 1844119922}
+  - component: {fileID: 1844119925}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -11834,13 +12751,25 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1844119921}
   m_LocalRotation: {x: 0.6951948, y: -0, z: -0, w: 0.7188215}
-  m_LocalPosition: {x: 0, y: 31.9, z: -3.3}
+  m_LocalPosition: {x: 0.7, y: 18.9, z: -4.4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 88.086, y: 0, z: 0}
+--- !u!114 &1844119925
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1844119921}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79ea91a580a558747aeed3d8bcf3b107, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1875440155
 GameObject:
   m_ObjectHideFlags: 0
@@ -14440,6 +15369,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objetivos: []
   resetable: 0
+  ModoDep: 0
 --- !u!114 &1975255652
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14536,6 +15466,48 @@ MonoBehaviour:
   radio: 1
   slowRadio: 2
   timeToTarget: 0.1
+--- !u!114 &1975255661
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1975255646}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 856abf34f0fbd5b45b2b70abe75ab94e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 0}
+  targets:
+  - {fileID: 652509380}
+  - {fileID: 1036781324}
+  - {fileID: 1557063886}
+  - {fileID: 1467225582}
+  - {fileID: 2128671331}
+  - {fileID: 856753708}
+  - {fileID: 2050240625}
+  - {fileID: 143926576}
+  - {fileID: 1032717903}
+  - {fileID: 1510112727}
+  - {fileID: 1633838600}
+  - {fileID: 913492954}
+  - {fileID: 1975255647}
+  - {fileID: 1233011877}
+  - {fileID: 344655513}
+  - {fileID: 1203993010}
+  - {fileID: 379401895}
+  - {fileID: 280528287}
+  - {fileID: 1274613299}
+  - {fileID: 446215331}
+  - {fileID: 368208432}
+  - {fileID: 2051067677}
+  - {fileID: 1745695113}
+  - {fileID: 2133570264}
+  - {fileID: 1638429241}
+  - {fileID: 1683300418}
+  decayCoeficient: 0
+  treshold: 0
 --- !u!1 &2019900193
 GameObject:
   m_ObjectHideFlags: 0
@@ -14817,6 +15789,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objetivos: []
   resetable: 0
+  ModoDep: 0
 --- !u!114 &2050240630
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14913,6 +15886,48 @@ MonoBehaviour:
   radio: 1
   slowRadio: 2
   timeToTarget: 0.1
+--- !u!114 &2050240639
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2050240624}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 856abf34f0fbd5b45b2b70abe75ab94e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 0}
+  targets:
+  - {fileID: 652509380}
+  - {fileID: 1036781324}
+  - {fileID: 1557063886}
+  - {fileID: 1467225582}
+  - {fileID: 2128671331}
+  - {fileID: 856753708}
+  - {fileID: 2050240625}
+  - {fileID: 143926576}
+  - {fileID: 1032717903}
+  - {fileID: 1510112727}
+  - {fileID: 1633838600}
+  - {fileID: 913492954}
+  - {fileID: 1975255647}
+  - {fileID: 1233011877}
+  - {fileID: 344655513}
+  - {fileID: 1203993010}
+  - {fileID: 379401895}
+  - {fileID: 280528287}
+  - {fileID: 1274613299}
+  - {fileID: 446215331}
+  - {fileID: 368208432}
+  - {fileID: 2051067677}
+  - {fileID: 1745695113}
+  - {fileID: 2133570264}
+  - {fileID: 1638429241}
+  - {fileID: 1683300418}
+  decayCoeficient: 0
+  treshold: 0
 --- !u!1 &2051067676 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100070, guid: 3353e4f866c39d043a315b41717c9bb7, type: 3}
@@ -14974,6 +15989,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objetivos: []
   resetable: 0
+  ModoDep: 0
 --- !u!114 &2051067681
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15016,6 +16032,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objetivos: []
   resetable: 0
+  ModoDep: 0
 --- !u!65 &2051067685
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -15098,6 +16115,48 @@ MonoBehaviour:
   radio: 1
   slowRadio: 2
   timeToTarget: 0.1
+--- !u!114 &2051067691
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2051067676}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 856abf34f0fbd5b45b2b70abe75ab94e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 0}
+  targets:
+  - {fileID: 652509380}
+  - {fileID: 1036781324}
+  - {fileID: 1557063886}
+  - {fileID: 1467225582}
+  - {fileID: 2128671331}
+  - {fileID: 856753708}
+  - {fileID: 2050240625}
+  - {fileID: 143926576}
+  - {fileID: 1032717903}
+  - {fileID: 1510112727}
+  - {fileID: 1633838600}
+  - {fileID: 913492954}
+  - {fileID: 1975255647}
+  - {fileID: 1233011877}
+  - {fileID: 344655513}
+  - {fileID: 1203993010}
+  - {fileID: 379401895}
+  - {fileID: 280528287}
+  - {fileID: 1274613299}
+  - {fileID: 446215331}
+  - {fileID: 368208432}
+  - {fileID: 2051067677}
+  - {fileID: 1745695113}
+  - {fileID: 2133570264}
+  - {fileID: 1638429241}
+  - {fileID: 1683300418}
+  decayCoeficient: 0
+  treshold: 0
 --- !u!1 &2056801253
 GameObject:
   m_ObjectHideFlags: 0
@@ -15782,6 +16841,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objetivos: []
   resetable: 0
+  ModoDep: 0
 --- !u!114 &2128671336
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15878,6 +16938,48 @@ MonoBehaviour:
   radio: 1
   slowRadio: 2
   timeToTarget: 0.1
+--- !u!114 &2128671345
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2128671329}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 856abf34f0fbd5b45b2b70abe75ab94e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 0}
+  targets:
+  - {fileID: 652509380}
+  - {fileID: 1036781324}
+  - {fileID: 1557063886}
+  - {fileID: 1467225582}
+  - {fileID: 2128671331}
+  - {fileID: 856753708}
+  - {fileID: 2050240625}
+  - {fileID: 143926576}
+  - {fileID: 1032717903}
+  - {fileID: 1510112727}
+  - {fileID: 1633838600}
+  - {fileID: 913492954}
+  - {fileID: 1975255647}
+  - {fileID: 1233011877}
+  - {fileID: 344655513}
+  - {fileID: 1203993010}
+  - {fileID: 379401895}
+  - {fileID: 280528287}
+  - {fileID: 1274613299}
+  - {fileID: 446215331}
+  - {fileID: 368208432}
+  - {fileID: 2051067677}
+  - {fileID: 1745695113}
+  - {fileID: 2133570264}
+  - {fileID: 1638429241}
+  - {fileID: 1683300418}
+  decayCoeficient: 0
+  treshold: 0
 --- !u!4 &2133570263 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400070, guid: 3353e4f866c39d043a315b41717c9bb7, type: 3}
@@ -15939,6 +17041,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objetivos: []
   resetable: 0
+  ModoDep: 0
 --- !u!114 &2133570268
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15981,6 +17084,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objetivos: []
   resetable: 0
+  ModoDep: 0
 --- !u!65 &2133570272
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -16063,6 +17167,48 @@ MonoBehaviour:
   radio: 1
   slowRadio: 2
   timeToTarget: 0.1
+--- !u!114 &2133570278
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1968849421}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 856abf34f0fbd5b45b2b70abe75ab94e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 0}
+  targets:
+  - {fileID: 652509380}
+  - {fileID: 1036781324}
+  - {fileID: 1557063886}
+  - {fileID: 1467225582}
+  - {fileID: 2128671331}
+  - {fileID: 856753708}
+  - {fileID: 2050240625}
+  - {fileID: 143926576}
+  - {fileID: 1032717903}
+  - {fileID: 1510112727}
+  - {fileID: 1633838600}
+  - {fileID: 913492954}
+  - {fileID: 1975255647}
+  - {fileID: 1233011877}
+  - {fileID: 344655513}
+  - {fileID: 1203993010}
+  - {fileID: 379401895}
+  - {fileID: 280528287}
+  - {fileID: 1274613299}
+  - {fileID: 446215331}
+  - {fileID: 368208432}
+  - {fileID: 2051067677}
+  - {fileID: 1745695113}
+  - {fileID: 2133570264}
+  - {fileID: 1638429241}
+  - {fileID: 1683300418}
+  decayCoeficient: 0
+  treshold: 0
 --- !u!1 &2145080382
 GameObject:
   m_ObjectHideFlags: 0
