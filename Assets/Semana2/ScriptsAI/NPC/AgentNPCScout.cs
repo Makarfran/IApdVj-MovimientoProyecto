@@ -14,6 +14,7 @@ public class AgentNPCScout : AgentNPC
     public override void Update()
     {
         base.Update();
+        
         Tile tile = grid.getTileByVector(this.transform.position);
         String tipo = tile.getTipo();
         switch (tipo)
