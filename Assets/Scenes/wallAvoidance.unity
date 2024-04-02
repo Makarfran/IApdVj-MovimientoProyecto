@@ -383,6 +383,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8764cdcda432a6349ac09c99bac1150a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  time: 0
+  criterio: 1
+  pathDestination: {x: 0, y: 0, z: 0}
 --- !u!4 &614216364
 Transform:
   m_ObjectHideFlags: 0
@@ -2012,7 +2015,7 @@ GameObject:
   - component: {fileID: 2073524160}
   m_Layer: 0
   m_Name: Pared
-  m_TagString: Untagged
+  m_TagString: Pared
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

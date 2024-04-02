@@ -18,7 +18,7 @@ public class Arbitro : MonoBehaviour
             Debug.Log("Caca");
             
             //Puede interesar a�adir a la comprobacion que el steering este desactivado
-            if ((b.NameSteering != "WallAvoidance" && b.NameSteering != "Wander" && b.NameSteering != "Face") && b.target == null) { continue; }
+            if ((b.NameSteering != "WallAvoidance" && b.NameSteering != "Wander" && b.NameSteering != "Face" && b.NameSteering != "Separacion") && b.target == null) { continue; }
 
             if (b.NameSteering == "Align" && (agente.Velocity.magnitude > 0.5)) { }
             else if (b.NameSteering == "Face" && (agente.Velocity.magnitude < 1)) { }
