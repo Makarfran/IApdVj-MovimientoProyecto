@@ -633,11 +633,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1000011035781986, guid: 3d609541b623cc24a85fcc89ee9fa9e6, type: 3}
       propertyPath: m_TagString
-<<<<<<< HEAD
       value: Obstaculos
-=======
-      value: Pared
->>>>>>> bf06c79f4cd481c457dbc65fe586b23a986ad9ec
       objectReference: {fileID: 0}
     - target: {fileID: 4000011095560932, guid: 3d609541b623cc24a85fcc89ee9fa9e6, type: 3}
       propertyPath: m_LocalScale.x
@@ -1419,11 +1415,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1000011035781986, guid: 3d609541b623cc24a85fcc89ee9fa9e6, type: 3}
       propertyPath: m_TagString
-<<<<<<< HEAD
       value: Obstaculos
-=======
-      value: Pared
->>>>>>> bf06c79f4cd481c457dbc65fe586b23a986ad9ec
       objectReference: {fileID: 0}
     - target: {fileID: 4000011095560932, guid: 3d609541b623cc24a85fcc89ee9fa9e6, type: 3}
       propertyPath: m_LocalScale.x
@@ -3596,16 +3588,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1419235986}
   m_Enabled: 1
   m_EditorHideFlags: 0
-<<<<<<< HEAD
   m_Script: {fileID: 11500000, guid: 3a3c8769aa4ba8740af88e9e7345e305, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   matTrans: {fileID: 2100000, guid: a81e3f93b9e17d846a870be24b10a4d6, type: 2}
-=======
-  m_Script: {fileID: 11500000, guid: 8235213fc155fce40a20abb6a7e843eb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
->>>>>>> bf06c79f4cd481c457dbc65fe586b23a986ad9ec
 --- !u!1001 &1431405705
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4314,11 +4300,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1000011035781986, guid: 3d609541b623cc24a85fcc89ee9fa9e6, type: 3}
       propertyPath: m_TagString
-<<<<<<< HEAD
       value: Obstaculos
-=======
-      value: Pared
->>>>>>> bf06c79f4cd481c457dbc65fe586b23a986ad9ec
       objectReference: {fileID: 0}
     - target: {fileID: 4000011095560932, guid: 3d609541b623cc24a85fcc89ee9fa9e6, type: 3}
       propertyPath: m_LocalScale.x
@@ -4493,11 +4475,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1000011035781986, guid: 3d609541b623cc24a85fcc89ee9fa9e6, type: 3}
       propertyPath: m_TagString
-<<<<<<< HEAD
       value: Obstaculos
-=======
-      value: Pared
->>>>>>> bf06c79f4cd481c457dbc65fe586b23a986ad9ec
       objectReference: {fileID: 0}
     - target: {fileID: 4000011095560932, guid: 3d609541b623cc24a85fcc89ee9fa9e6, type: 3}
       propertyPath: m_LocalScale.x
