@@ -65,8 +65,7 @@ public class BusquedaAnchura
     }
     private void getVecinos(Tile tile){
         vecinos.Clear();
-        getVecino(tile.fila - 1, tile.columna);
-       
+        getVecino(tile.fila - 1, tile.columna); // vecino izquierdo
         getVecino(tile.fila + 1, tile.columna); // Vecino derecho
         getVecino(tile.fila, tile.columna - 1); // Vecino arriba
         getVecino(tile.fila, tile.columna + 1); // Vecino abajo   
@@ -93,8 +92,6 @@ public class BusquedaAnchura
         if ( vecino == endTile || !isCeldaValida(vecino.fila,vecino.columna)){
             return;
         }
-
-
 
         if (!visitados.Contains(vecino))
         {

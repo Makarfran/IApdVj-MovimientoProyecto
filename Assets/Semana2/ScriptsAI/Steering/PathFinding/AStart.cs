@@ -77,7 +77,6 @@ public class AStart
             }
         }
 
-        //12:52
         // explorado todo el espacio y no se ha encontrado el objetivo
         return null;
     }
