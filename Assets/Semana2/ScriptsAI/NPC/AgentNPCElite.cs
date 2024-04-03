@@ -25,7 +25,7 @@ public class AgentNPCElite : AgentNPC
             break;
         case "Desierto":
             this.MaxSpeed = 4f;
-            this.MaxAcceleration = 1f;
+            this.MaxAcceleration = 3f;
             break;
         case "Camino":
             this.MaxSpeed = 7f;
