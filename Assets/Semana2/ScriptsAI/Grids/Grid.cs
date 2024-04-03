@@ -66,4 +66,26 @@ public class Grid : MonoBehaviour
         return posiciones;
     }
 
+    public void ActivateGrid(){
+        for(int i = 0; i < a ; i++){
+            for(int j = 0; j < b; j++){
+                
+                posiciones[i,j].GetComponent<MeshRenderer>().enabled = true;
+                
+            }
+        }
+    }
+
+    public void DeactivateGrid(){
+        for(int i = 0; i < a ; i++){
+            for(int j = 0; j < b; j++){
+                
+                posiciones[i,j].GetComponent<MeshRenderer>().enabled = false;
+                
+            }
+        }
+    }
+
+    
+
 }

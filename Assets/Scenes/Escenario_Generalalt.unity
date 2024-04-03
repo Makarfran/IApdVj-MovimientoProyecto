@@ -15977,6 +15977,7 @@ GameObject:
   - component: {fileID: 961966807}
   - component: {fileID: 961966806}
   - component: {fileID: 961966808}
+  - component: {fileID: 961966809}
   m_Layer: 0
   m_Name: ControladorRaycast
   m_TagString: Untagged
@@ -16038,6 +16039,19 @@ MonoBehaviour:
   time: 0
   criterio: 1
   pathDestination: {x: 0, y: 0, z: 0}
+--- !u!114 &961966809
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 961966804}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a3c8769aa4ba8740af88e9e7345e305, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  matTrans: {fileID: 2100000, guid: a81e3f93b9e17d846a870be24b10a4d6, type: 2}
 --- !u!1 &966131502
 GameObject:
   m_ObjectHideFlags: 0

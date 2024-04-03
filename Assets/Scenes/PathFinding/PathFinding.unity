@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.17713617, g: 0.22174884, b: 0.30400884, a: 1}
+  m_IndirectSpecularColor: {r: 0.44242293, g: 0.49148738, b: 0.57134247, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -6831,6 +6831,7 @@ GameObject:
   - component: {fileID: 893807671}
   - component: {fileID: 893807672}
   - component: {fileID: 893807673}
+  - component: {fileID: 893807674}
   m_Layer: 0
   m_Name: ControlRaycast
   m_TagString: Untagged
@@ -6877,6 +6878,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8235213fc155fce40a20abb6a7e843eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &893807674
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 893807670}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a3c8769aa4ba8740af88e9e7345e305, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  matTrans: {fileID: 2100000, guid: a81e3f93b9e17d846a870be24b10a4d6, type: 2}
 --- !u!1001 &899320178
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9102,7 +9116,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   costeMovimientoLineal: 10
   gird: {fileID: 1353633943}
-  posCamino: 0
 --- !u!65 &1098124436
 BoxCollider:
   m_ObjectHideFlags: 0

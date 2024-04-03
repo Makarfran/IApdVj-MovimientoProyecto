@@ -8,6 +8,7 @@ public class AgentNPC : Agent
     [SerializeField] protected Steering steer;
     // Todos los steering que tiene que calcular el agente.
     private List<SteeringBehaviour> listSteerings;
+    private bool ModoDep;
 
 
     protected  void Awake()
@@ -34,6 +35,9 @@ public class AgentNPC : Agent
     {
         // En cada frame se actualiza el movimiento
         ApplySteering(Time.deltaTime);
+        if(ModoDep){
+            Debug.DrawLine(new Vector3(transform.position.x, transform.position.y + 3f, transform.position.z), new Vector3(this.transform.position.x + Acceleration.x, this.transform.position.y + Acceleration.y + 3f , this.transform.position.z + Acceleration.z), Color.blue);
+        }
 
         // En cada frame podría ejecutar otras componentes IA
     }
@@ -118,5 +122,13 @@ public class AgentNPC : Agent
 
         // El resultado final se guarda para ser aplicado en el siguiente frame.
         this.steer = kinematicFinal;
+    }
+
+    public void ActivarDep(){
+        this.ModoDep = true;
+    }
+
+    public void DeactivarDep(){
+        this.ModoDep = false;
     }
 }
