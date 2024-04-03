@@ -86,8 +86,8 @@ public class Jumping : VelocityMatching
             return steer;
         }
         //Comprobamos si hemos alcanzado el punto de salto
-        Debug.Log(target.Velocity.magnitude);
-        Debug.Log(agent.Velocity.magnitude);
+        //Debug.Log(target.Velocity.magnitude);
+        //Debug.Log(agent.Velocity.magnitude);
         if ((jumpPoint.JumpLocation - agent.Position).magnitude < 1f && (target.Velocity - agent.Velocity).magnitude < 10f) 
         {
             
