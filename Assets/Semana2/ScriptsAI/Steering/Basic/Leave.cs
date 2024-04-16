@@ -17,6 +17,7 @@ public class Leave : SteeringBehaviour
     void Start()
     {
         this.nameSteering = "Leave";
+        this.Weight = 0.7f;
     }
 
 

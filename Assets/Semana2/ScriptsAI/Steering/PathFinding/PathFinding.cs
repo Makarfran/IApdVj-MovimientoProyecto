@@ -25,13 +25,15 @@ public class PathFinding : MonoBehaviour
         
         if (camino.Count > 0)
         {
+            /*
             if (posCamino == 0)
             {
                 posCamino += 1;
                 if (posCamino < camino.Count) { SendMessage("NewTarget", camino[posCamino].getPosition()); }
                 
             }
-            else if ((camino[posCamino].getPosition() - GetComponent<AgentNPC>().Position).magnitude < 2)
+            */
+            if ((camino[posCamino].getPosition() - GetComponent<AgentNPC>().Position).magnitude < 2)
             {
                 posCamino += 1;
                 if (posCamino < camino.Count) { SendMessage("NewTarget", camino[posCamino].getPosition()); }

@@ -98,8 +98,8 @@ public class Bodi : MonoBehaviour
     // Añade todos los que sean referentes a la parte física.
 
     // public float Heading()
-    //      Retorna el ángulo heading en (-180, 180) en grado o radianes. Lo que consideres
-    public float Heading(){ //creo que tiene sentido pero a lo mejor me estoy marcando un triple
+    //      Retorna el ángulo heading en (-180, 180) en grado o radianes. 
+    public float Heading(){ 
         if(Orientation >= 0){
             float remainder = Orientation % 360;
             if(0 <= remainder && remainder <= 180 ) {return remainder;}
@@ -112,7 +112,7 @@ public class Bodi : MonoBehaviour
         }
     }
 
-    public static float mapTo360(float rotation){ //creo que tiene sentido pero a lo mejor me estoy marcando un triple
+    public static float mapTo360(float rotation){ 
         
         float remainder = rotation % 360;
         return remainder;
@@ -133,7 +133,7 @@ public class Bodi : MonoBehaviour
         }
     }
 
-    //Abandonad toda esperanza los que entreis aqui
+    
     public static float sitienesPiyloquieresengradosPeroalreves(float pitoo){
         float grados = (pitoo * 180) / (float)Mathf.PI;
 

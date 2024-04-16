@@ -25,6 +25,7 @@ public class WallAvoidance : Seek
         this.nameSteering = "WallAvoidance";
         this.Weight = 20f;
         lookahead = 0.01f * (1.0f / Time.deltaTime);
+        //lookahead = (1f * (1.0f / Time.deltaTime)) / 100;
     }
 
 

@@ -13,6 +13,7 @@ public class VelocityMatching : SteeringBehaviour
     void Start()
     {
         this.nameSteering = "VelocityMatching";
+        this.Weight = 1f;
     }
 
 

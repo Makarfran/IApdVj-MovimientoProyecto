@@ -23,7 +23,6 @@ public class AgentNPC : Agent
         listSteerings = new List<SteeringBehaviour>(steers);
     }
 
-
     // Use this for initialization
     protected void Start()
     {
@@ -41,7 +40,6 @@ public class AgentNPC : Agent
 
         // En cada frame podría ejecutar otras componentes IA
     }
-
 
     private void ApplySteering(float deltaTime)
     {   
@@ -65,8 +63,6 @@ public class AgentNPC : Agent
         // Position
         // Orientation
     }
-
-
 
     public virtual void LateUpdate()
     {
@@ -100,13 +96,9 @@ public class AgentNPC : Agent
             } else {
                 auxList.Add(b);
             }
-               
-            
         }
         kinematicFinal = Arbitro.getKinematicFinal(auxList, this);
         
-      
-
         //foreach (SteeringBehaviour behavior in listSteerings)
         //    Steering kinematic = behavior.GetSteering(this);
         //// La cinemática de este SteeringBehaviour se tiene que combinar

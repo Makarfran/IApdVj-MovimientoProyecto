@@ -28,7 +28,7 @@ public class FormationManager : MonoBehaviour
     }
     
 
-    //Lista de asignaciones ¿mejor array?
+    //Lista de asignaciones 
     public List<SlotAssignment> slotAssignments;
 
     //Posición y orientación para evitar derrapes
@@ -59,56 +59,12 @@ public class FormationManager : MonoBehaviour
         {
             if (criterio) 
             {
-                Vector3 distancia = slotAssignments[0].Npc.GetComponent<order>().arrivalPoint.Position - slotAssignments[0].Npc.GetComponent<AgentNPC>().Position;
-                if (distancia.magnitude > 1f || slotAssignments[0].Npc.GetComponent<StateMachineManager>().CurrentState == StateMachineManager.wanderState)
-                {
-                    time = 0;
-                    Vector3 vel = slotAssignments[0].Npc.GetComponent<AgentNPC>().Velocity.normalized;
-                    vel = vel * 2;
-                    Vector3 leaderFollowing = slotAssignments[0].Npc.GetComponent<AgentNPC>().Position - vel;
-                    for (int i = 1; i < slotAssignments.Count; i++)
-                    {
-                        slotAssignments[i].Npc.SendMessage("NewTarget", leaderFollowing);
-                    }
-                }
-                else
-                {
-                    if (time < Time.deltaTime)
-                    {
-                        UpdateSlots();
-                    }
-                    if (time > 10)
-                    {
-                        slotAssignments[0].Npc.GetComponent<StateMachineManager>().SwitchState(StateMachineManager.wanderState);
-                    }
-                    time += Time.deltaTime;
-
-                }
+                Criterio1();
             }
             else
             {
 
-                if (pathDestination != null && (pathDestination - slotAssignments[0].Npc.GetComponent<AgentNPC>().Position).magnitude > 2f)
-                {
-                    time = 0;
-                    if (slotAssignments[0].Npc.GetComponent<StateMachineManager>().CurrentState == StateMachineManager.wanderState) 
-                    {
-                        pathDestination = slotAssignments[0].Npc.GetComponent<Wander>().Target.Position;
-                        PathfindingCriterio(slotAssignments[0].Npc.GetComponent<AgentNPC>().Position); 
-                    }
-                }
-                else 
-                {
-                    
-                    UpdateSlots();
-                    
-                    if (time > 10)
-                    {
-                        slotAssignments[0].Npc.GetComponent<StateMachineManager>().SwitchState(StateMachineManager.wanderState);
-                        
-                    }
-                    time += Time.deltaTime;
-                }
+                Criterio2();
             }  
 
         }
@@ -269,5 +225,59 @@ public class FormationManager : MonoBehaviour
 
         //La formación se mantiene
         return false;
+    }
+
+    private void Criterio1() 
+    {
+        Vector3 distancia = slotAssignments[0].Npc.GetComponent<order>().arrivalPoint.Position - slotAssignments[0].Npc.GetComponent<AgentNPC>().Position;
+        if (distancia.magnitude > 1f || slotAssignments[0].Npc.GetComponent<StateMachineManager>().CurrentState == StateMachineManager.wanderState)
+        {
+            time = 0;
+            Vector3 vel = slotAssignments[0].Npc.GetComponent<AgentNPC>().Velocity.normalized;
+            vel = vel * 2;
+            Vector3 leaderFollowing = slotAssignments[0].Npc.GetComponent<AgentNPC>().Position - vel;
+            for (int i = 1; i < slotAssignments.Count; i++)
+            {
+                slotAssignments[i].Npc.SendMessage("NewTarget", leaderFollowing);
+            }
+        }
+        else
+        {
+            if (time < Time.deltaTime)
+            {
+                UpdateSlots();
+            }
+            if (time > 10)
+            {
+                slotAssignments[0].Npc.GetComponent<StateMachineManager>().SwitchState(StateMachineManager.wanderState);
+            }
+            time += Time.deltaTime;
+
+        }
+    }
+
+    private void Criterio2() 
+    {
+        if (pathDestination != null && (pathDestination - slotAssignments[0].Npc.GetComponent<AgentNPC>().Position).magnitude > 2f)
+        {
+            time = 0;
+            if (slotAssignments[0].Npc.GetComponent<StateMachineManager>().CurrentState == StateMachineManager.wanderState)
+            {
+                pathDestination = slotAssignments[0].Npc.GetComponent<Wander>().Target.Position;
+                PathfindingCriterio(slotAssignments[0].Npc.GetComponent<AgentNPC>().Position);
+            }
+        }
+        else
+        {
+
+            UpdateSlots();
+
+            if (time > 10)
+            {
+                slotAssignments[0].Npc.GetComponent<StateMachineManager>().SwitchState(StateMachineManager.wanderState);
+
+            }
+            time += Time.deltaTime;
+        }
     }
 }
