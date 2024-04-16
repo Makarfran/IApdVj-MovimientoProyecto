@@ -42,30 +42,6 @@ public class PathFinding : MonoBehaviour
                 camino.Clear();
             }
         }
-        /*
-        if (camino.Count > 0)
-        {
-
-            if (posCamino >= camino.Count)
-            {
-                posCamino = 0;
-                camino.Clear();
-            }
-            else 
-            {
-                if (posCamino == 0)
-                {
-                    posCamino += 1;
-                }
-                else if ((camino[posCamino].getPosition() - GetComponent<AgentNPC>().Position).magnitude < 1f)
-                {
-                    SendMessage("NewTarget", camino[posCamino].getPosition());
-                    posCamino += 1;
-                }
-            }
-        }
-
-        */
     }
 
     public void CalcularCamino(Vector3 newTarget)
@@ -76,6 +52,7 @@ public class PathFinding : MonoBehaviour
         camino = new List<Tile>(lrta.run(start, goal));
         posCamino = 0;
     }
+
     /*
     public void NewTarget(Vector3 newTarget){
         Tile goal = gird.getTileByVector(newTarget);
@@ -90,7 +67,5 @@ public class PathFinding : MonoBehaviour
 
     }
     */
-
-
-
+    
     }

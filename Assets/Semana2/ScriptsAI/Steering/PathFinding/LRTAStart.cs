@@ -62,7 +62,7 @@ public class LRTAStart
                     u = successor;
                     break;
                 }
-                //u = minSuccessor(u);
+                
                 camino.Add(u);
                 u.CambiarColorARojo();
                 
@@ -96,7 +96,7 @@ public class LRTAStart
             updateSuccessors(u);
             Tile minSucc = minSuccessor(u);
             hValues[u] = Mathf.Max(tempValues[u], hValues[minSucc]);
-            //u.setText(hValues[u]);
+            
             if (hValues[u] == int.MaxValue)
                 return;
         }
@@ -115,7 +115,6 @@ public class LRTAStart
 
        List<Tile> neighbors = busaAnch.getNeighbors(tile);
        
-
         neighbors.Sort((vecino1,vecino2) =>{            
             return hValues[vecino1].CompareTo(hValues[vecino2]);
         });
@@ -156,7 +155,7 @@ public class LRTAStart
     public void inicializarHeuristicas(Tile goal){
         Tile[,] tiles = gird.getTiles();
         foreach (Tile tile in tiles)
-        {   //hValues[tile] = calcularHCoste(tile,goal);
+        {   
             if (tile.pasable){
                 int coste = calcularHCoste(tile,goal);
                 hValues[tile] = coste;                
@@ -164,7 +163,7 @@ public class LRTAStart
                 hValues[tile] = int.MaxValue;
             }
 
-            //tile.setText(coste);
+            
         }
     }
 

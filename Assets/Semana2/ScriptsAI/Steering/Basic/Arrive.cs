@@ -33,16 +33,15 @@ public class Arrive : SteeringBehaviour
         Vector3 direction = target.transform.position - agent.transform.position;
         distance = direction.magnitude;
 
-        // ojo ¿que significa return null -- dejar de moverse?
-        //  si, concretamente hay que despejar una a tal que v = 0
-        //  v = v0 + at; para v = 0, at = -v0  a = (-v0/t)
-        //  
+        /*
+        Dejar de mover el npc al llegar al objetivo
+        v = v0 + at; para v = 0, at = -v0  a = (-v0/t)
+        */
         if(distance < radio)
         {
             steer.linear = - agent.Velocity;
             steer.angular = 0;      
             return steer;
-            //return null;
         }
 
         if (distance > slowRadio)
