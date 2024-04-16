@@ -143,7 +143,7 @@ GameObject:
   - component: {fileID: 5970646}
   m_Layer: 0
   m_Name: Tile 10 5
-  m_TagString: Untagged
+  m_TagString: Terrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -790,7 +790,7 @@ GameObject:
   - component: {fileID: 27011156}
   m_Layer: 0
   m_Name: Tile 13 0
-  m_TagString: Untagged
+  m_TagString: Terrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -916,7 +916,7 @@ GameObject:
   - component: {fileID: 34207239}
   m_Layer: 0
   m_Name: Tile 6 1
-  m_TagString: Untagged
+  m_TagString: Terrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1158,7 +1158,7 @@ GameObject:
   - component: {fileID: 43124817}
   m_Layer: 0
   m_Name: Tile 12 1
-  m_TagString: Untagged
+  m_TagString: Terrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1279,7 +1279,7 @@ GameObject:
   - component: {fileID: 57917724}
   m_Layer: 0
   m_Name: Tile 14 9
-  m_TagString: Untagged
+  m_TagString: Terrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1521,7 +1521,7 @@ GameObject:
   - component: {fileID: 69417412}
   m_Layer: 0
   m_Name: Tile 1 1
-  m_TagString: Untagged
+  m_TagString: Terrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1642,7 +1642,7 @@ GameObject:
   - component: {fileID: 74594636}
   m_Layer: 0
   m_Name: Tile 5 2
-  m_TagString: Untagged
+  m_TagString: Terrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1763,7 +1763,7 @@ GameObject:
   - component: {fileID: 83765103}
   m_Layer: 0
   m_Name: Tile 15 5
-  m_TagString: Untagged
+  m_TagString: Terrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2005,7 +2005,7 @@ GameObject:
   - component: {fileID: 91155694}
   m_Layer: 0
   m_Name: Tile 5 4
-  m_TagString: Untagged
+  m_TagString: Terrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2126,7 +2126,7 @@ GameObject:
   - component: {fileID: 100788004}
   m_Layer: 0
   m_Name: Tile 3 8
-  m_TagString: Untagged
+  m_TagString: Terrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2899,7 +2899,7 @@ GameObject:
   - component: {fileID: 157890685}
   m_Layer: 0
   m_Name: Tile 4 2
-  m_TagString: Untagged
+  m_TagString: Terrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3294,8 +3294,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 183723199}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 27.04, y: 0, z: 6}
-  m_LocalScale: {x: 3.6817, y: 14.904742, z: 8.779767}
+  m_LocalPosition: {x: 27.26, y: 0, z: 4.91}
+  m_LocalScale: {x: 6.277667, y: 14.904742, z: 9.377801}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1066316587}
@@ -3378,7 +3378,7 @@ GameObject:
   - component: {fileID: 183807168}
   m_Layer: 0
   m_Name: Tile 5 9
-  m_TagString: Untagged
+  m_TagString: Terrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3803,7 +3803,7 @@ GameObject:
   - component: {fileID: 214076726}
   m_Layer: 0
   m_Name: Tile 1 2
-  m_TagString: Untagged
+  m_TagString: Terrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4166,7 +4166,7 @@ GameObject:
   - component: {fileID: 251535079}
   m_Layer: 0
   m_Name: Tile 11 4
-  m_TagString: Untagged
+  m_TagString: Terrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4408,7 +4408,7 @@ GameObject:
   - component: {fileID: 276278883}
   m_Layer: 0
   m_Name: Tile 12 6
-  m_TagString: Untagged
+  m_TagString: Terrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4856,7 +4856,7 @@ GameObject:
   - component: {fileID: 280697920}
   m_Layer: 0
   m_Name: Tile 9 7
-  m_TagString: Untagged
+  m_TagString: Terrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5362,7 +5362,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 41f081d5c6d286c47a33bed3f84de79a, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 41f081d5c6d286c47a33bed3f84de79a, type: 3}
       propertyPath: m_TagString
@@ -5702,7 +5702,7 @@ GameObject:
   - component: {fileID: 350334340}
   m_Layer: 0
   m_Name: Tile 2 2
-  m_TagString: Untagged
+  m_TagString: Terrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6354,7 +6354,7 @@ GameObject:
   - component: {fileID: 374695833}
   m_Layer: 0
   m_Name: Tile 9 2
-  m_TagString: Untagged
+  m_TagString: Terrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6475,7 +6475,7 @@ GameObject:
   - component: {fileID: 377179005}
   m_Layer: 0
   m_Name: Tile 12 0
-  m_TagString: Untagged
+  m_TagString: Terrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7020,7 +7020,7 @@ GameObject:
   - component: {fileID: 396583018}
   m_Layer: 0
   m_Name: Tile 9 8
-  m_TagString: Untagged
+  m_TagString: Terrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7141,7 +7141,7 @@ GameObject:
   - component: {fileID: 408391210}
   m_Layer: 0
   m_Name: Tile 15 7
-  m_TagString: Untagged
+  m_TagString: Terrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7533,7 +7533,7 @@ GameObject:
   - component: {fileID: 420657222}
   m_Layer: 0
   m_Name: Tile 6 6
-  m_TagString: Untagged
+  m_TagString: Terrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7654,7 +7654,7 @@ GameObject:
   - component: {fileID: 436895216}
   m_Layer: 0
   m_Name: Tile 7 1
-  m_TagString: Untagged
+  m_TagString: Terrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8475,7 +8475,7 @@ GameObject:
   - component: {fileID: 475081169}
   m_Layer: 0
   m_Name: Tile 8 7
-  m_TagString: Untagged
+  m_TagString: Terrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8717,7 +8717,7 @@ GameObject:
   - component: {fileID: 480907728}
   m_Layer: 0
   m_Name: Tile 15 0
-  m_TagString: Untagged
+  m_TagString: Terrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8838,7 +8838,7 @@ GameObject:
   - component: {fileID: 483239248}
   m_Layer: 0
   m_Name: Tile 1 7
-  m_TagString: Untagged
+  m_TagString: Terrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8959,7 +8959,7 @@ GameObject:
   - component: {fileID: 491807231}
   m_Layer: 0
   m_Name: Tile 2 7
-  m_TagString: Untagged
+  m_TagString: Terrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9503,7 +9503,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 542062783}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 32.49, y: 0, z: -16.4}
+  m_LocalPosition: {x: 31.91, y: 0, z: -16.4}
   m_LocalScale: {x: 6.8059907, y: 14.904742, z: 3.7590125}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -9587,7 +9587,7 @@ GameObject:
   - component: {fileID: 543517877}
   m_Layer: 0
   m_Name: Tile 4 1
-  m_TagString: Untagged
+  m_TagString: Terrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9708,7 +9708,7 @@ GameObject:
   - component: {fileID: 556170517}
   m_Layer: 0
   m_Name: Tile 0 9
-  m_TagString: Untagged
+  m_TagString: Terrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10152,7 +10152,7 @@ GameObject:
   - component: {fileID: 598093042}
   m_Layer: 0
   m_Name: Tile 7 8
-  m_TagString: Untagged
+  m_TagString: Terrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10273,7 +10273,7 @@ GameObject:
   - component: {fileID: 619003129}
   m_Layer: 0
   m_Name: Tile 0 7
-  m_TagString: Untagged
+  m_TagString: Terrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10406,8 +10406,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 624778923}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2.4, y: 0, z: -8.76}
-  m_LocalScale: {x: 17.13531, y: 14.904742, z: 2.7292025}
+  m_LocalPosition: {x: -2.5, y: 0, z: -8.37}
+  m_LocalScale: {x: 19.248093, y: 14.904742, z: 7.298706}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1066316587}
@@ -10490,7 +10490,7 @@ GameObject:
   - component: {fileID: 626482118}
   m_Layer: 0
   m_Name: Tile 6 0
-  m_TagString: Untagged
+  m_TagString: Terrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10611,7 +10611,7 @@ GameObject:
   - component: {fileID: 646017287}
   m_Layer: 0
   m_Name: Tile 13 7
-  m_TagString: Untagged
+  m_TagString: Terrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -11476,7 +11476,7 @@ GameObject:
   - component: {fileID: 676723013}
   m_Layer: 0
   m_Name: Tile 10 8
-  m_TagString: Untagged
+  m_TagString: Terrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -11731,8 +11731,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 691358349}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 5.49, y: 0, z: 3.44}
-  m_LocalScale: {x: 1.7541584, y: 14.904742, z: 3.7592037}
+  m_LocalPosition: {x: 5.36, y: 0, z: 1.3}
+  m_LocalScale: {x: 1.9074718, y: 14.904742, z: 11.352317}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1066316587}
@@ -11913,7 +11913,7 @@ GameObject:
   - component: {fileID: 719083777}
   m_Layer: 0
   m_Name: Tile 6 2
-  m_TagString: Untagged
+  m_TagString: Terrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -12034,7 +12034,7 @@ GameObject:
   - component: {fileID: 729150180}
   m_Layer: 0
   m_Name: Tile 9 3
-  m_TagString: Untagged
+  m_TagString: Terrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -12221,7 +12221,7 @@ GameObject:
   - component: {fileID: 741429407}
   m_Layer: 0
   m_Name: Tile 12 9
-  m_TagString: Untagged
+  m_TagString: Terrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -12342,7 +12342,7 @@ GameObject:
   - component: {fileID: 741945834}
   m_Layer: 0
   m_Name: Tile 5 0
-  m_TagString: Untagged
+  m_TagString: Terrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -12560,7 +12560,7 @@ GameObject:
   - component: {fileID: 792088055}
   m_Layer: 0
   m_Name: Tile 12 2
-  m_TagString: Untagged
+  m_TagString: Terrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -13178,7 +13178,7 @@ GameObject:
   - component: {fileID: 812756360}
   m_Layer: 0
   m_Name: Tile 10 2
-  m_TagString: Untagged
+  m_TagString: Terrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -13541,7 +13541,7 @@ GameObject:
   - component: {fileID: 829149592}
   m_Layer: 0
   m_Name: Tile 16 5
-  m_TagString: Untagged
+  m_TagString: Terrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -13795,8 +13795,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 850972900}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -29.02, y: 0, z: 12.28}
-  m_LocalScale: {x: 9.013248, y: 14.904742, z: 4.3945622}
+  m_LocalPosition: {x: -30.82, y: 0, z: 12.28}
+  m_LocalScale: {x: 13.778553, y: 14.904742, z: 8.014803}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1066316587}
@@ -13879,7 +13879,7 @@ GameObject:
   - component: {fileID: 854363885}
   m_Layer: 0
   m_Name: Tile 16 6
-  m_TagString: Untagged
+  m_TagString: Terrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -14312,7 +14312,7 @@ GameObject:
   - component: {fileID: 858305536}
   m_Layer: 0
   m_Name: Tile 2 1
-  m_TagString: Untagged
+  m_TagString: Terrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -15203,7 +15203,7 @@ GameObject:
   - component: {fileID: 917267996}
   m_Layer: 0
   m_Name: Tile 7 7
-  m_TagString: Untagged
+  m_TagString: Terrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -15324,7 +15324,7 @@ GameObject:
   - component: {fileID: 925290448}
   m_Layer: 0
   m_Name: Tile 12 4
-  m_TagString: Untagged
+  m_TagString: Terrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -15566,7 +15566,7 @@ GameObject:
   - component: {fileID: 942205631}
   m_Layer: 0
   m_Name: Tile 14 6
-  m_TagString: Untagged
+  m_TagString: Terrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -15859,7 +15859,7 @@ GameObject:
   - component: {fileID: 956651844}
   m_Layer: 0
   m_Name: Tile 10 0
-  m_TagString: Untagged
+  m_TagString: Terrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -15976,8 +15976,8 @@ GameObject:
   - component: {fileID: 961966805}
   - component: {fileID: 961966807}
   - component: {fileID: 961966806}
-  - component: {fileID: 961966808}
   - component: {fileID: 961966809}
+  - component: {fileID: 961966810}
   m_Layer: 0
   m_Name: ControladorRaycast
   m_TagString: Untagged
@@ -16024,21 +16024,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed46bad50e81ea04682963c92e59f693, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &961966808
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 961966804}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8764cdcda432a6349ac09c99bac1150a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  time: 0
-  criterio: 1
-  pathDestination: {x: 0, y: 0, z: 0}
 --- !u!114 &961966809
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16052,6 +16037,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   matTrans: {fileID: 2100000, guid: a81e3f93b9e17d846a870be24b10a4d6, type: 2}
+--- !u!114 &961966810
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 961966804}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8235213fc155fce40a20abb6a7e843eb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &966131502
 GameObject:
   m_ObjectHideFlags: 0
@@ -16067,7 +16064,7 @@ GameObject:
   - component: {fileID: 966131504}
   m_Layer: 0
   m_Name: Tile 0 8
-  m_TagString: Untagged
+  m_TagString: Terrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -16406,7 +16403,7 @@ GameObject:
   - component: {fileID: 1004997748}
   m_Layer: 0
   m_Name: Tile 13 8
-  m_TagString: Untagged
+  m_TagString: Terrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -16745,7 +16742,7 @@ GameObject:
   - component: {fileID: 1017722127}
   m_Layer: 0
   m_Name: Tile 5 6
-  m_TagString: Untagged
+  m_TagString: Terrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -16866,7 +16863,7 @@ GameObject:
   - component: {fileID: 1023219529}
   m_Layer: 0
   m_Name: Tile 1 3
-  m_TagString: Untagged
+  m_TagString: Terrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -16987,7 +16984,7 @@ GameObject:
   - component: {fileID: 1025571510}
   m_Layer: 0
   m_Name: Tile 6 4
-  m_TagString: Untagged
+  m_TagString: Terrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -17735,7 +17732,7 @@ GameObject:
   - component: {fileID: 1047544125}
   m_Layer: 0
   m_Name: Tile 7 6
-  m_TagString: Untagged
+  m_TagString: Terrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -17856,7 +17853,7 @@ GameObject:
   - component: {fileID: 1054468977}
   m_Layer: 0
   m_Name: Tile 6 3
-  m_TagString: Untagged
+  m_TagString: Terrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -17977,7 +17974,7 @@ GameObject:
   - component: {fileID: 1059148721}
   m_Layer: 0
   m_Name: Tile 5 3
-  m_TagString: Untagged
+  m_TagString: Terrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -18098,7 +18095,7 @@ GameObject:
   - component: {fileID: 1064540674}
   m_Layer: 0
   m_Name: Tile 4 0
-  m_TagString: Untagged
+  m_TagString: Terrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -18244,6 +18241,7 @@ Transform:
   - {fileID: 2019900194}
   - {fileID: 343484465}
   - {fileID: 650619445}
+  - {fileID: 1686532107}
   m_Father: {fileID: 0}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -18489,7 +18487,7 @@ GameObject:
   - component: {fileID: 1098115995}
   m_Layer: 0
   m_Name: Tile 2 8
-  m_TagString: Untagged
+  m_TagString: Terrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -18610,7 +18608,7 @@ GameObject:
   - component: {fileID: 1108759306}
   m_Layer: 0
   m_Name: Tile 11 5
-  m_TagString: Untagged
+  m_TagString: Terrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -18786,7 +18784,7 @@ GameObject:
   - component: {fileID: 1138251013}
   m_Layer: 0
   m_Name: Tile 5 8
-  m_TagString: Untagged
+  m_TagString: Terrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -18907,7 +18905,7 @@ GameObject:
   - component: {fileID: 1146083378}
   m_Layer: 0
   m_Name: Tile 11 9
-  m_TagString: Untagged
+  m_TagString: Terrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -19117,7 +19115,7 @@ GameObject:
   - component: {fileID: 1161853800}
   m_Layer: 0
   m_Name: Tile 13 2
-  m_TagString: Untagged
+  m_TagString: Terrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -19238,7 +19236,7 @@ GameObject:
   - component: {fileID: 1163940285}
   m_Layer: 0
   m_Name: Tile 6 9
-  m_TagString: Untagged
+  m_TagString: Terrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -19456,7 +19454,7 @@ GameObject:
   - component: {fileID: 1178228080}
   m_Layer: 0
   m_Name: Tile 7 2
-  m_TagString: Untagged
+  m_TagString: Terrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -19785,7 +19783,7 @@ GameObject:
   - component: {fileID: 1225154081}
   m_Layer: 0
   m_Name: Tile 5 1
-  m_TagString: Untagged
+  m_TagString: Terrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -19906,7 +19904,7 @@ GameObject:
   - component: {fileID: 1225846219}
   m_Layer: 0
   m_Name: Tile 11 6
-  m_TagString: Untagged
+  m_TagString: Terrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -20561,7 +20559,7 @@ GameObject:
   - component: {fileID: 1242026432}
   m_Layer: 0
   m_Name: Tile 3 2
-  m_TagString: Untagged
+  m_TagString: Terrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -20994,7 +20992,7 @@ GameObject:
   - component: {fileID: 1270059455}
   m_Layer: 0
   m_Name: Tile 9 6
-  m_TagString: Untagged
+  m_TagString: Terrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -21115,7 +21113,7 @@ GameObject:
   - component: {fileID: 1270381955}
   m_Layer: 0
   m_Name: Tile 8 6
-  m_TagString: Untagged
+  m_TagString: Terrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -21781,7 +21779,7 @@ GameObject:
   - component: {fileID: 1289460597}
   m_Layer: 0
   m_Name: Tile 6 7
-  m_TagString: Untagged
+  m_TagString: Terrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -21999,7 +21997,7 @@ GameObject:
   - component: {fileID: 1314014649}
   m_Layer: 0
   m_Name: Tile 3 9
-  m_TagString: Untagged
+  m_TagString: Terrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -22241,7 +22239,7 @@ GameObject:
   - component: {fileID: 1318767304}
   m_Layer: 0
   m_Name: Tile 16 0
-  m_TagString: Untagged
+  m_TagString: Terrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -22483,7 +22481,7 @@ GameObject:
   - component: {fileID: 1348101125}
   m_Layer: 0
   m_Name: Tile 7 3
-  m_TagString: Untagged
+  m_TagString: Terrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -22604,7 +22602,7 @@ GameObject:
   - component: {fileID: 1352531691}
   m_Layer: 0
   m_Name: Tile 12 7
-  m_TagString: Untagged
+  m_TagString: Terrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -22725,7 +22723,7 @@ GameObject:
   - component: {fileID: 1359365265}
   m_Layer: 0
   m_Name: Tile 14 8
-  m_TagString: Untagged
+  m_TagString: Terrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -22859,7 +22857,7 @@ Transform:
   m_GameObject: {fileID: 1375110424}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0.21, y: 0, z: -0.65}
-  m_LocalScale: {x: 19.306578, y: 14.904742, z: 6.012916}
+  m_LocalScale: {x: 22.638893, y: 14.904742, z: 7.3111043}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1066316587}
@@ -22954,8 +22952,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1377094793}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 28.71, y: 0, z: -19.99}
-  m_LocalScale: {x: 6.8059907, y: 14.904742, z: 3.7590125}
+  m_LocalPosition: {x: 29.22, y: 0, z: -19.99}
+  m_LocalScale: {x: 9.54336, y: 14.904742, z: 3.7590125}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1066316587}
@@ -23135,7 +23133,7 @@ GameObject:
   - component: {fileID: 1398447750}
   m_Layer: 0
   m_Name: Tile 9 9
-  m_TagString: Untagged
+  m_TagString: Terrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -23256,7 +23254,7 @@ GameObject:
   - component: {fileID: 1401665812}
   m_Layer: 0
   m_Name: Tile 8 3
-  m_TagString: Untagged
+  m_TagString: Terrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -23377,7 +23375,7 @@ GameObject:
   - component: {fileID: 1413711255}
   m_Layer: 0
   m_Name: Tile 8 8
-  m_TagString: Untagged
+  m_TagString: Terrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -23498,7 +23496,7 @@ GameObject:
   - component: {fileID: 1415674528}
   m_Layer: 0
   m_Name: Tile 8 9
-  m_TagString: Untagged
+  m_TagString: Terrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -23958,7 +23956,7 @@ GameObject:
   - component: {fileID: 1466803201}
   m_Layer: 0
   m_Name: Tile 8 4
-  m_TagString: Untagged
+  m_TagString: Terrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -24485,7 +24483,7 @@ GameObject:
   - component: {fileID: 1475221978}
   m_Layer: 0
   m_Name: Tile 10 1
-  m_TagString: Untagged
+  m_TagString: Terrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -24913,7 +24911,7 @@ GameObject:
   - component: {fileID: 1492065986}
   m_Layer: 0
   m_Name: Tile 9 0
-  m_TagString: Untagged
+  m_TagString: Terrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -25747,7 +25745,7 @@ GameObject:
   - component: {fileID: 1512781311}
   m_Layer: 0
   m_Name: Tile 17 1
-  m_TagString: Untagged
+  m_TagString: Terrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -25868,7 +25866,7 @@ GameObject:
   - component: {fileID: 1515850249}
   m_Layer: 0
   m_Name: Tile 8 5
-  m_TagString: Untagged
+  m_TagString: Terrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -26049,7 +26047,7 @@ GameObject:
   - component: {fileID: 1535024246}
   m_Layer: 0
   m_Name: Tile 6 5
-  m_TagString: Untagged
+  m_TagString: Terrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -26363,7 +26361,7 @@ GameObject:
   - component: {fileID: 1577647600}
   m_Layer: 0
   m_Name: Tile 7 0
-  m_TagString: Untagged
+  m_TagString: Terrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -26484,7 +26482,7 @@ GameObject:
   - component: {fileID: 1586959852}
   m_Layer: 0
   m_Name: Tile 7 4
-  m_TagString: Untagged
+  m_TagString: Terrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -27400,7 +27398,7 @@ GameObject:
   - component: {fileID: 1648888933}
   m_Layer: 0
   m_Name: Tile 16 7
-  m_TagString: Untagged
+  m_TagString: Terrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -27521,7 +27519,7 @@ GameObject:
   - component: {fileID: 1650253214}
   m_Layer: 0
   m_Name: Tile 11 2
-  m_TagString: Untagged
+  m_TagString: Terrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -27957,7 +27955,7 @@ GameObject:
   - component: {fileID: 1681475118}
   m_Layer: 0
   m_Name: Tile 11 0
-  m_TagString: Untagged
+  m_TagString: Terrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -28281,7 +28279,7 @@ GameObject:
   - component: {fileID: 1683960007}
   m_Layer: 0
   m_Name: Tile 7 5
-  m_TagString: Untagged
+  m_TagString: Terrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -28508,6 +28506,102 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1685438368}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1686532106
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1686532107}
+  - component: {fileID: 1686532110}
+  - component: {fileID: 1686532109}
+  - component: {fileID: 1686532108}
+  m_Layer: 0
+  m_Name: Cube (13)
+  m_TagString: Obstaculos
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1686532107
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1686532106}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 13.26, y: 0, z: -2.23}
+  m_LocalScale: {x: 4.0898843, y: 14.904742, z: 3.3391173}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1066316587}
+  m_RootOrder: 12
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &1686532108
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1686532106}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!23 &1686532109
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1686532106}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials: []
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &1686532110
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1686532106}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &1705370170
 GameObject:
   m_ObjectHideFlags: 0
@@ -28644,7 +28738,7 @@ GameObject:
   - component: {fileID: 1723370207}
   m_Layer: 0
   m_Name: Tile 4 9
-  m_TagString: Untagged
+  m_TagString: Terrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -28862,7 +28956,7 @@ GameObject:
   - component: {fileID: 1732881222}
   m_Layer: 0
   m_Name: Tile 4 8
-  m_TagString: Untagged
+  m_TagString: Terrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -29065,6 +29159,53 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1740696418}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1745458341
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1745458343}
+  - component: {fileID: 1745458342}
+  m_Layer: 0
+  m_Name: FormationManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1745458342
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1745458341}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8764cdcda432a6349ac09c99bac1150a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  time: 0
+  criterio: 1
+  pathDestination: {x: 0, y: 0, z: 0}
+--- !u!4 &1745458343
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1745458341}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.7848973, y: -1.5463543, z: 2.8140666}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 11
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1745695111 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400070, guid: 3353e4f866c39d043a315b41717c9bb7, type: 3}
@@ -29425,7 +29566,7 @@ GameObject:
   - component: {fileID: 1755614440}
   m_Layer: 0
   m_Name: Tile 9 5
-  m_TagString: Untagged
+  m_TagString: Terrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -29667,7 +29808,7 @@ GameObject:
   - component: {fileID: 1779190964}
   m_Layer: 0
   m_Name: Tile 1 8
-  m_TagString: Untagged
+  m_TagString: Terrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -29788,7 +29929,7 @@ GameObject:
   - component: {fileID: 1795257130}
   m_Layer: 0
   m_Name: Tile 8 0
-  m_TagString: Untagged
+  m_TagString: Terrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -29909,7 +30050,7 @@ GameObject:
   - component: {fileID: 1796150411}
   m_Layer: 0
   m_Name: Tile 0 2
-  m_TagString: Untagged
+  m_TagString: Terrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -30030,7 +30171,7 @@ GameObject:
   - component: {fileID: 1813243957}
   m_Layer: 0
   m_Name: Tile 16 1
-  m_TagString: Untagged
+  m_TagString: Terrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -30151,7 +30292,7 @@ GameObject:
   - component: {fileID: 1816529430}
   m_Layer: 0
   m_Name: Tile 10 3
-  m_TagString: Untagged
+  m_TagString: Terrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -30393,7 +30534,7 @@ GameObject:
   - component: {fileID: 1834664477}
   m_Layer: 0
   m_Name: Tile 10 9
-  m_TagString: Untagged
+  m_TagString: Terrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -30556,7 +30697,7 @@ GameObject:
   - component: {fileID: 1842985251}
   m_Layer: 0
   m_Name: Tile 2 0
-  m_TagString: Untagged
+  m_TagString: Terrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -30774,7 +30915,7 @@ GameObject:
   - component: {fileID: 1860113709}
   m_Layer: 0
   m_Name: Tile 8 2
-  m_TagString: Untagged
+  m_TagString: Terrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -30895,7 +31036,7 @@ GameObject:
   - component: {fileID: 1871718255}
   m_Layer: 0
   m_Name: Tile 9 1
-  m_TagString: Untagged
+  m_TagString: Terrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -31028,8 +31169,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1875440155}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 29.85, y: 0, z: 7.62}
-  m_LocalScale: {x: 9.448756, y: 14.904742, z: 3.7590125}
+  m_LocalPosition: {x: 29.85, y: 0, z: 5.87}
+  m_LocalScale: {x: 19.513573, y: 14.904742, z: 3.7590125}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1066316587}
@@ -31112,7 +31253,7 @@ GameObject:
   - component: {fileID: 1881508301}
   m_Layer: 0
   m_Name: Tile 10 6
-  m_TagString: Untagged
+  m_TagString: Terrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -31233,7 +31374,7 @@ GameObject:
   - component: {fileID: 1887069062}
   m_Layer: 0
   m_Name: Tile 0 0
-  m_TagString: Untagged
+  m_TagString: Terrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -31354,7 +31495,7 @@ GameObject:
   - component: {fileID: 1912369287}
   m_Layer: 0
   m_Name: Tile 11 3
-  m_TagString: Untagged
+  m_TagString: Terrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -31596,7 +31737,7 @@ GameObject:
   - component: {fileID: 1919186576}
   m_Layer: 0
   m_Name: Tile 4 7
-  m_TagString: Untagged
+  m_TagString: Terrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -31717,7 +31858,7 @@ GameObject:
   - component: {fileID: 1925413738}
   m_Layer: 0
   m_Name: Tile 13 9
-  m_TagString: Untagged
+  m_TagString: Terrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -31838,7 +31979,7 @@ GameObject:
   - component: {fileID: 1930982128}
   m_Layer: 0
   m_Name: Tile 1 9
-  m_TagString: Untagged
+  m_TagString: Terrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -31959,7 +32100,7 @@ GameObject:
   - component: {fileID: 1936103701}
   m_Layer: 0
   m_Name: Tile 8 1
-  m_TagString: Untagged
+  m_TagString: Terrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -32177,7 +32318,7 @@ GameObject:
   - component: {fileID: 1951373127}
   m_Layer: 0
   m_Name: Tile 7 9
-  m_TagString: Untagged
+  m_TagString: Terrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -32310,8 +32451,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1951457075}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2.09, y: 0, z: -3.97}
-  m_LocalScale: {x: 25.299295, y: 14.904742, z: 4.423014}
+  m_LocalPosition: {x: -3.31, y: 0, z: -4.45}
+  m_LocalScale: {x: 25.299295, y: 14.904742, z: 6.8580527}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1066316587}
@@ -32394,7 +32535,7 @@ GameObject:
   - component: {fileID: 1962570372}
   m_Layer: 0
   m_Name: Tile 2 9
-  m_TagString: Untagged
+  m_TagString: Terrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -32515,7 +32656,7 @@ GameObject:
   - component: {fileID: 1966414815}
   m_Layer: 0
   m_Name: Tile 1 0
-  m_TagString: Untagged
+  m_TagString: Terrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -32829,7 +32970,7 @@ GameObject:
   - component: {fileID: 1978993172}
   m_Layer: 0
   m_Name: Tile 17 0
-  m_TagString: Untagged
+  m_TagString: Terrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -32950,7 +33091,7 @@ GameObject:
   - component: {fileID: 1984249696}
   m_Layer: 0
   m_Name: Tile 11 7
-  m_TagString: Untagged
+  m_TagString: Terrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -33071,7 +33212,7 @@ GameObject:
   - component: {fileID: 2008386778}
   m_Layer: 0
   m_Name: Tile 10 7
-  m_TagString: Untagged
+  m_TagString: Terrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -33192,7 +33333,7 @@ GameObject:
   - component: {fileID: 2009022637}
   m_Layer: 0
   m_Name: Tile 9 4
-  m_TagString: Untagged
+  m_TagString: Terrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -33434,7 +33575,7 @@ GameObject:
   - component: {fileID: 2011106263}
   m_Layer: 0
   m_Name: Tile 15 6
-  m_TagString: Untagged
+  m_TagString: Terrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -33772,7 +33913,7 @@ GameObject:
   - component: {fileID: 2043883591}
   m_Layer: 0
   m_Name: Tile 0 3
-  m_TagString: Untagged
+  m_TagString: Terrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -34991,7 +35132,7 @@ GameObject:
   - component: {fileID: 2105363183}
   m_Layer: 0
   m_Name: Tile 17 7
-  m_TagString: Untagged
+  m_TagString: Terrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -35233,7 +35374,7 @@ GameObject:
   - component: {fileID: 2112205357}
   m_Layer: 0
   m_Name: Tile 17 6
-  m_TagString: Untagged
+  m_TagString: Terrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -35354,7 +35495,7 @@ GameObject:
   - component: {fileID: 2113272395}
   m_Layer: 0
   m_Name: Tile 0 1
-  m_TagString: Untagged
+  m_TagString: Terrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -35475,7 +35616,7 @@ GameObject:
   - component: {fileID: 2116826382}
   m_Layer: 0
   m_Name: Tile 10 4
-  m_TagString: Untagged
+  m_TagString: Terrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -36126,7 +36267,7 @@ GameObject:
   - component: {fileID: 2132311497}
   m_Layer: 0
   m_Name: Tile 11 1
-  m_TagString: Untagged
+  m_TagString: Terrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
