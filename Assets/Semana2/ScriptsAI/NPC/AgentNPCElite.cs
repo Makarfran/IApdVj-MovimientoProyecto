@@ -8,6 +8,14 @@ public class AgentNPCElite : AgentNPC
 {
     [SerializeField] Grid grid;
     
+    protected override void Start()
+    {
+        base.Start();
+        this.vida = 12;
+        this.atq = 3;
+        this.range = 2f;
+        
+    }
     // Start is called before the first frame update
     
 

@@ -5,6 +5,15 @@ using System;
 public class AgentNPCInfanteria : AgentNPC
 {
     [SerializeField] Grid grid;
+
+    protected override void Start()
+    {
+        base.Start();
+        this.vida = 8;
+        this.atq = 2;
+        this.range = 7f;
+        
+    }
     
     // Start is called before the first frame update
 

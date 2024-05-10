@@ -10,6 +10,11 @@ public class AgentNPC : Agent
     private List<SteeringBehaviour> listSteerings;
     private bool ModoDep;
 
+    protected int vida;
+    protected int atq;
+    protected float range;
+    
+
 
     protected  void Awake()
     {
@@ -24,7 +29,7 @@ public class AgentNPC : Agent
     }
 
     // Use this for initialization
-    protected void Start()
+    protected virtual void Start()
     {
         this.Velocity = Vector3.zero;
     }
@@ -122,5 +127,10 @@ public class AgentNPC : Agent
 
     public void DeactivarDep(){
         this.ModoDep = false;
+    }
+
+    public void attackEnemy(AgentNPC target){
+        target.vida -= this.atq;
+
     }
 }

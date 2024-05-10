@@ -8,6 +8,14 @@ public class AgentNPCScout : AgentNPC
     [SerializeField] Grid grid;
     
     // Start is called before the first frame update
+    protected override void Start()
+    {
+        base.Start();
+        this.vida = 6;
+        this.atq = 1;
+        this.range = 5f;
+        
+    }
     
 
     // Update is called once per frame
