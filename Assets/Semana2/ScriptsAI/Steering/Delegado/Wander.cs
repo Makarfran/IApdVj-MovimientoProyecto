@@ -50,13 +50,8 @@ public class Wander : Face // debe heredar de face
         
         
         // % de wanderRate
-        float rate = Random.Range(-1f, 1f);
+        wanderOrientation = RandomBinomial() * wanderRate;
         //Debug.Log("rate: " +rate);
-        float currentUpdate = Time.time - lastUpdate;
-        if(currentUpdate > updateTime){
-            wanderOrientation =rate * wanderRate;
-            lastUpdate = Time.time;
-        }
         
         //Debug.Log("WanderOrientation: "+wanderOrientation);
         float targetOrientation = wanderOrientation + agent.Orientation;
@@ -65,11 +60,7 @@ public class Wander : Face // debe heredar de face
         Vector3 target = agent.Position + wanderOffSet * agent.OrientationToVector();
 
         // target location
-        float sin = Mathf.Sin(Bodi.MapToRangePi(targetOrientation));
-        float cos = Mathf.Cos(Bodi.MapToRangePi(targetOrientation));
-        Vector3 targetOrientationAsVector = new Vector3(sin, 0, cos);
-        target += (wanderRadius * targetOrientationAsVector);
-
+        target += (wanderRadius * OrientationToVector(targetOrientation));
         
         // delegation to Face steering
         this.Rtarget =  delegatedAgent.GetComponent<Agent>();
@@ -87,6 +78,19 @@ public class Wander : Face // debe heredar de face
         steering.linear = maxAcceleration * agent.OrientationToVector();
         return steering;
 
+    }
+
+    // Método auxiliar para generar un valor binomial aleatorio
+    private float RandomBinomial()
+    {
+        return Random.value - Random.value;
+    }    
+
+
+    // Método auxiliar para convertir una orientación en un vector
+    private Vector3 OrientationToVector(float orientation)
+    {
+        return new Vector3(Mathf.Cos(Bodi.MapToRangePi(orientation)), 0, Mathf.Sin(Bodi.MapToRangePi(orientation)));
     }
 
 }

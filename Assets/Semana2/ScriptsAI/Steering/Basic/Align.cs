@@ -6,7 +6,8 @@ public class Align : SteeringBehaviour
 {
 
     // Declara las variables que necesites para este SteeringBehaviour
-
+    
+    [SerializeField]
     float timeToTarget = 1f;
     void Start()
     {
