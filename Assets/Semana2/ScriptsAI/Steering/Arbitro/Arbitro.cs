@@ -21,7 +21,10 @@ public class Arbitro : MonoBehaviour
             if ((b.NameSteering != "WallAvoidance" && b.NameSteering != "Wander" && b.NameSteering != "Face" && b.NameSteering != "Separacion") && b.target == null) { continue; }
 
             if (b.NameSteering == "Align" && (agente.Velocity.magnitude > 0.5)) { }
-            else if (b.NameSteering == "Face" && (agente.Velocity.magnitude < 1)) { }
+            else if (b.NameSteering == "Face" && (agente.Velocity.magnitude < 1)) {
+                temp = b.GetSteering(agente);
+                final = temp;
+             }
             else
             {
                 temp = b.GetSteering(agente);

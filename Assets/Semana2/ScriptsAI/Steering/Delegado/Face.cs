@@ -16,12 +16,13 @@ public class Face : Align
 
     public override Steering GetSteering(Agent agent)
     {
-        
+        Debug.Log("hola from FAce");
         Vector3 direction = Rtarget.transform.position - agent.transform.position;
         
-
+        
         if(Vector3.Magnitude(direction) == 0f){
             Steering steer = new Steering();
+            Debug.Log("magnitud igual a 0, steering vacio en face");
             return steer;
         }
         
