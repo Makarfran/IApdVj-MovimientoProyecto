@@ -16,7 +16,7 @@ public class Face : Align
 
     public override Steering GetSteering(Agent agent)
     {
-        Debug.Log("hola from FAce");
+        
         Vector3 direction = Rtarget.transform.position - agent.transform.position;
         
         
