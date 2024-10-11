@@ -66,11 +66,15 @@ public class Arbitro : MonoBehaviour
         */
 
         //Limitamos el resultado y devolvemos 
-        if (final.linear.magnitude > agente.MaxAcceleration)
+        if (final.linear.magnitude > agente.MaxSpeed)
         {
-            final.linear = final.linear.normalized * agente.MaxAcceleration;
+            final.linear = final.linear.normalized * agente.MaxSpeed;
         }
-        final.angular = Mathf.Min(final.angular, agente.MaxRotation);
+        if (final.angular >= 0) 
+        {
+            final.angular = Mathf.Min(final.angular, agente.MaxRotation);
+        }
+        else final.angular = Mathf.Max(final.angular, -agente.MaxRotation);
 
         return final;
 
