@@ -34,6 +34,7 @@ public class Tile : MonoBehaviour
                 // Si este objeto está en contacto con un obstáculo, invoca setImpasable()
                // Debug.Log("Tile: "+fila +" "+columna+" choca");
                 pasable = false;
+                CambiarColorARojo();
                 break;
             }
         }
@@ -71,4 +72,12 @@ public class Tile : MonoBehaviour
         // Cambia el color del material a rojo
         renderer.material.color = Color.red;
     }    
+
+    public void CambiarColorVerde(){
+        // Obtén el Renderer del objeto para acceder a su material
+        Renderer renderer = GetComponent<Renderer>();
+
+        // Cambia el color del material a rojo
+        renderer.material.color = Color.green;        
+    }
 }

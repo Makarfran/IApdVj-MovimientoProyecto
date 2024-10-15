@@ -77,13 +77,15 @@ public class BusquedaAnchura
         if(isCeldaValida(fila,columna) ){
             
             Tile vecino = gird.getTile(fila,columna);    
-            vecinos.Add(vecino);
+            if (vecino.pasable){
+                vecinos.Add(vecino);
+            }
+            
         }
         
     }
 
     private bool isCeldaValida(int fila, int columna){
-        
         return (fila >= 0 && fila < gird.getAncho() && columna >= 0 && columna < gird.getAlto());
     }
 

@@ -7,7 +7,7 @@ public class PathFinding : MonoBehaviour
 {
     [SerializeField] public int costeMovimientoLineal;
     [SerializeField] Grid gird;
-    private int maxDepth;
+    [SerializeField] private int maxDepth;
     private LRTAStart lrta;
     private List<Tile> camino;
     private int posCamino;
@@ -17,7 +17,7 @@ public class PathFinding : MonoBehaviour
         lrta = new LRTAStart();
         lrta.setGrid(gird);
         lrta.costeMovimientoLineal = costeMovimientoLineal;
-        lrta.maxDepth = 1;
+        lrta.maxDepth = maxDepth;
     }
 
     void Update()
@@ -47,7 +47,7 @@ public class PathFinding : MonoBehaviour
     }
 
     public void CalcularCamino(Vector3 newTarget)
-    {
+    {   Debug.Log("CalculandoCamino");
         Tile goal = gird.getTileByVector(newTarget);
         Tile start = gird.getTileByVector(transform.position);
 
@@ -69,5 +69,6 @@ public class PathFinding : MonoBehaviour
 
     }
     */
-    
+
     }
+
