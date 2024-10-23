@@ -47,7 +47,7 @@ public class PathFinding : MonoBehaviour
     }
 
     public void CalcularCamino(Vector3 newTarget)
-    {   Debug.Log("CalculandoCamino");
+    {   
         Tile goal = gird.getTileByVector(newTarget);
         Tile start = gird.getTileByVector(transform.position);
 

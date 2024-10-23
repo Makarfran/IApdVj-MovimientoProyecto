@@ -44,23 +44,19 @@ public class LRTAStart : MonoBehaviour
         inicializarHeuristicas(goal);
 
        while (!T.Contains(u) )
-        {
+        {        
+
             S = busaAnch.getEspacioLocal(gird,u,goal,maxDepth);
             ValueUpdateStep();
 
             do
-            {   
-                if (T.Contains(u)){
-                    Debug.Log("mal! se ha detectado goal dentro del espacio de bsuqueda");
-                    break;
-                }
+            {                 
                 Tile a = minSuccessor(u);
                 a.CambiarColorVerde();
-                u = a;
-                
-                camino.Add(u);
+                u = a; 
+                camino.Add(u);             
             }
-            while (!S.Contains(u));
+            while (S.Contains(u));
             
         }
         return camino;
