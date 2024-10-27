@@ -23,26 +23,29 @@ public class AgentNPCElite : AgentNPC
     public override void Update()
     {
         base.Update();
-        Tile tile = grid.getTileByVector(this.transform.position);
-        String tipo = tile.getTipo();
-        switch (tipo)
-        {
-        case "Hierba":
-            this.MaxSpeed = 4f;
-            this.MaxAcceleration = 3f;
-            break;
-        case "Desierto":
-            this.MaxSpeed = 4f;
-            this.MaxAcceleration = 3f;
-            break;
-        case "Camino":
-            this.MaxSpeed = 7f;
-            this.MaxAcceleration = 4f;
-            break;
-        case "Agua":
-            this.MaxSpeed = 1f;
-            this.MaxAcceleration = 0.1f;
-            break;
+        if(grid != null){
+            Tile tile = grid.getTileByVector(this.transform.position);
+            String tipo = tile.getTipo();
+            switch (tipo)
+            {
+                case "Hierba":
+                    this.MaxSpeed = 4f;
+                    this.MaxAcceleration = 3f;
+                    break;
+                case "Desierto":
+                    this.MaxSpeed = 4f;
+                    this.MaxAcceleration = 3f;
+                    break;
+                case "Camino":
+                    this.MaxSpeed = 7f;
+                    this.MaxAcceleration = 4f;
+                    break;
+                case "Agua":
+                    this.MaxSpeed = 1f;
+                    this.MaxAcceleration = 0.1f;
+                break;
+            }
         }
+        
     }
 }

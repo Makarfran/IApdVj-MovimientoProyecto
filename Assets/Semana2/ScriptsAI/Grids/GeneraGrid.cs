@@ -42,7 +42,7 @@ public class GeneraGrid : MonoBehaviour {
                 plane.transform.parent = gridT.transform;
                 BoxCollider boxer = plane.GetComponent<BoxCollider>();
                 boxer.center = new Vector3(0f,-1f, 0f);
-                Vector3 pos = new Vector3(posIni.x + i*lado + lado/2, 0f , posIni.z + j*lado + lado/2  );
+                Vector3 pos = new Vector3(posIni.x + i*lado + lado/2, -0.5f , posIni.z + j*lado + lado/2  );
                 //plane.tag = "Terrain";
                 
                 

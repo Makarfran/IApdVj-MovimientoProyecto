@@ -35,12 +35,12 @@ public class Tile : MonoBehaviour
                // Debug.Log("Tile: "+fila +" "+columna+" choca");
                 pasable = false;
                 break;
-            } else if(collider.gameObject.CompareTag("camino")){
+            } else if(collider.gameObject.CompareTag("Camino")){
                 tipo = "Camino";
 
-            } else if(collider.gameObject.CompareTag("desierto") && tipo != "Camino"){
+            } else if(collider.gameObject.CompareTag("Desierto") && tipo != "Camino"){
                 tipo = "Desierto";
-            } else if(collider.gameObject.CompareTag("hierba") && (tipo != "Camino" && tipo != "Desierto")){
+            } else if(collider.gameObject.CompareTag("Hierba") && (tipo != "Camino" && tipo != "Desierto")){
                 tipo = "Hierba";
             }
         }

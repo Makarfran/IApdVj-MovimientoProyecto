@@ -22,23 +22,25 @@ public class AgentNPCScout : AgentNPC
     public override void Update()
     {
         base.Update();
-        
-        Tile tile = grid.getTileByVector(this.transform.position);
-        String tipo = tile.getTipo();
-        switch (tipo)
-        {
-        case "Hierba":
-            this.MaxSpeed = 6f;
-            break;
-        case "Desierto":
-            this.MaxSpeed = 4f;
-            break;
-        case "Camino":
-            this.MaxSpeed = 12f;
-            break;
-        case "Agua":
-            this.MaxSpeed = 1f;
-            break;
+        if(grid != null){
+            Tile tile = grid.getTileByVector(this.transform.position);
+            String tipo = tile.getTipo();
+            switch (tipo)
+            {
+            case "Hierba":
+                this.MaxSpeed = 6f;
+                break;
+            case "Desierto":
+                this.MaxSpeed = 4f;
+                break;
+            case "Camino":
+                this.MaxSpeed = 12f;
+                break;
+            case "Agua":
+                this.MaxSpeed = 1f;
+                break;
+            }
         }
+        
     }
 }
