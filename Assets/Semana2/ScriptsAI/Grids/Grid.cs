@@ -25,8 +25,10 @@ public class Grid : MonoBehaviour
                 posiciones[i,j].columna = j;
                 //esto se asegura que las posiciones de las casillas esten bien
                 posiciones[i,j].setPos(a.transform.position);
+                
             }
         }
+        
     }
 
     // Update is called once per frame
@@ -46,6 +48,7 @@ public class Grid : MonoBehaviour
     public Tile getTileByVector(Vector3 position){
 
         List<Tile> lista = posiciones.Cast<Tile>().ToList();
+        
 
         Tile tile = lista
             .Where(o => o.pasable)
@@ -60,6 +63,13 @@ public class Grid : MonoBehaviour
 
     public int getAncho(){
         return a;
+    }
+
+    public void setA(int a){
+        this.a = a;
+    }
+    public void setB(int b){
+        this.b = b;
     }
 
     public Tile[,] getTiles(){

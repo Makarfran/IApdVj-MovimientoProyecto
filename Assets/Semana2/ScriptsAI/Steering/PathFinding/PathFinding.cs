@@ -6,11 +6,15 @@ using System.Linq;
 public class PathFinding : MonoBehaviour
 {
     [SerializeField] public int costeMovimientoLineal;
-    [SerializeField] Grid gird;
+    [SerializeField] public Grid gird;
     private int maxDepth;
     private LRTAStart lrta;
     private List<Tile> camino;
     private int posCamino;
+
+    public void setGrid(Grid g){
+        gird = g;
+    }
 
     void Start(){
         camino = new List<Tile>();

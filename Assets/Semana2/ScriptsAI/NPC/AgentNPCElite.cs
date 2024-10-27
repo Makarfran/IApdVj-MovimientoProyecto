@@ -6,7 +6,7 @@ using System;
 
 public class AgentNPCElite : AgentNPC
 {
-    [SerializeField] Grid grid;
+    
     
     protected override void Start()
     {

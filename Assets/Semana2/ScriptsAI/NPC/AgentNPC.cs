@@ -13,8 +13,28 @@ public class AgentNPC : Agent
     protected int vida;
     protected int atq;
     protected float range;
-    
+    public float tam;
+    [SerializeField] protected Grid grid;
 
+    public float getTam(){
+        return tam;
+    }
+    
+    public void generateGrid(){
+        string name = $"Grid {tam}";
+        GameObject obj = GameObject.Find(name);
+        if(obj ){
+            grid = obj.GetComponent<Grid>();
+        } else{
+            GameObject gridgen = GameObject.Find("GridGenerator");
+            GameObject gridA = gridgen.GetComponent<GeneraGrid>().generameGrid(this);
+            grid = gridA.GetComponent<Grid>();
+
+        }
+        if(this.GetComponent<PathFinding>()){
+            this.GetComponent<PathFinding>().setGrid(grid);
+        }
+    }
 
     protected  void Awake()
     {

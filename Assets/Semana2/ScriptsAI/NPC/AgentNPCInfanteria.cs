@@ -4,7 +4,7 @@ using UnityEngine;
 using System;
 public class AgentNPCInfanteria : AgentNPC
 {
-    [SerializeField] Grid grid;
+    
 
     protected override void Start()
     {

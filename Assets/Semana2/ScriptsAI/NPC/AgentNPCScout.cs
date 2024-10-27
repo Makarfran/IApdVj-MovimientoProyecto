@@ -5,7 +5,7 @@ using System;
 
 public class AgentNPCScout : AgentNPC
 {
-    [SerializeField] Grid grid;
+    
     
     // Start is called before the first frame update
     protected override void Start()
