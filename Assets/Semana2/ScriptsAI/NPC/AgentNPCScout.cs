@@ -12,6 +12,7 @@ public class AgentNPCScout : AgentNPC
     {
         base.Start();
         this.vida = 6;
+        this.maxVida = 6;
         this.atq = 1;
         this.range = 5f;
         

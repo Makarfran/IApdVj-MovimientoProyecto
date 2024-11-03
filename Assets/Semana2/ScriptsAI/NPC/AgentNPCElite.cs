@@ -12,6 +12,7 @@ public class AgentNPCElite : AgentNPC
     {
         base.Start();
         this.vida = 12;
+        this.maxVida = 12;
         this.atq = 3;
         this.range = 2f;
         

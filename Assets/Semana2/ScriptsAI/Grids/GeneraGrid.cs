@@ -36,7 +36,7 @@ public class GeneraGrid : MonoBehaviour {
                 plane.GetComponent<MeshRenderer>().material = matTrans;
                 plane.GetComponent<MeshRenderer>().enabled = false;
                 
-                plane.transform.localScale = new Vector3(plane.transform.localScale.x*lado, 1f ,plane.transform.localScale.x*lado);
+                plane.transform.localScale = new Vector3(plane.transform.localScale.x*lado, 0.1f ,plane.transform.localScale.x*lado);
                 plane.name = $"Tile {i} {j}";
                 plane.AddComponent<Tile>();
                 plane.transform.parent = gridT.transform;
@@ -55,6 +55,7 @@ public class GeneraGrid : MonoBehaviour {
         gridT.AddComponent<Grid>();
         gridT.GetComponent<Grid>().setA(a);
         gridT.GetComponent<Grid>().setB(b);
+        gridT.GetComponent<Grid>().setLado(0.5f);
         return gridT;
     }  
 

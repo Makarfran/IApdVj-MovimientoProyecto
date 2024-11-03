@@ -65,7 +65,8 @@ public class OrderMove : MonoBehaviour
                             //npc.SendMessage("NewTarget", newTarget);
                             if (npc.GetComponent<PathFinding>() == null) { npc.SendMessage("NewTarget", newTarget); }
                             else { 
-                                npc.GetComponent<AgentNPC>().generateGrid();
+                                
+                                
                                 npc.GetComponent<PathFinding>().CalcularCamino(newTarget); 
                             }
 

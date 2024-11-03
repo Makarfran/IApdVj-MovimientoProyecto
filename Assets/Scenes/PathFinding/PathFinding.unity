@@ -757,6 +757,8 @@ MonoBehaviour:
   steer:
     angular: 0
     linear: {x: 0, y: 0, z: 0}
+  tam: 0
+  grid: {fileID: 0}
 --- !u!23 &106973426
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1873,8 +1875,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 2, z: 2}
-  m_Center: {x: 0.00000023841858, y: 1.0352539, z: 0.000000074505806}
+  m_Size: {x: 1, y: 3.2110193, z: 2}
+  m_Center: {x: 0.00000021204544, y: 0.42974436, z: 0.00000011920929}
 --- !u!1 &234278138 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1000012128009412, guid: b667959c85aac0840abd65af9a3e1517, type: 3}
@@ -2269,8 +2271,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 2, z: 2}
-  m_Center: {x: 0.00000023841858, y: 0.69016826, z: 0.000000074505806}
+  m_Size: {x: 1, y: 2.616037, z: 2}
+  m_Center: {x: 0.00000025431316, y: 0.38215026, z: 0.00000011920929}
 --- !u!1 &313826347
 GameObject:
   m_ObjectHideFlags: 0
@@ -3285,8 +3287,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 2, z: 2}
-  m_Center: {x: 0.00000023841858, y: 0.69016826, z: 0.000000074505806}
+  m_Size: {x: 1, y: 2.357697, z: 2}
+  m_Center: {x: 0.00000025431316, y: 0.51132, z: 0.0000001192093}
 --- !u!1 &493664141
 GameObject:
   m_ObjectHideFlags: 0
@@ -3874,8 +3876,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.2796446, y: 2.0666578, z: 1.1568515}
-  m_Center: {x: 0, y: 1.0333289, z: -0.000000029802322}
+  m_Size: {x: 1.2796446, y: 3.340863, z: 1.1568515}
+  m_Center: {x: 0, y: 0.3962263, z: 0}
 --- !u!1 &574916481
 GameObject:
   m_ObjectHideFlags: 0
@@ -4575,8 +4577,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 2, z: 2}
-  m_Center: {x: 0.00000023841858, y: 1.0352539, z: 0.000000074505806}
+  m_Size: {x: 1, y: 3.720922, z: 2}
+  m_Center: {x: 0.00000022269104, y: 0.17479306, z: 0.00000011920929}
 --- !u!1 &653225010
 GameObject:
   m_ObjectHideFlags: 0
@@ -4639,6 +4641,8 @@ MonoBehaviour:
   steer:
     angular: 0
     linear: {x: 0, y: 0, z: 0}
+  tam: 0
+  grid: {fileID: 0}
 --- !u!23 &653225013
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -5316,33 +5320,14 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 691571414}
-  - component: {fileID: 691571413}
+  - component: {fileID: 691571415}
   m_Layer: 0
-  m_Name: GeneraGrids
+  m_Name: GridGenerator
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &691571413
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 691571412}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4daaba7c4587edc40b791e2cadf3aaeb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  a: 10
-  b: 10
-  longLado: 3
-  obj: {fileID: 5985874111700272012, guid: 125dbf30f36c0ea4183801d055cb970f, type: 3}
-  impasables: []
-  coste2: []
-  coste3: []
 --- !u!4 &691571414
 Transform:
   m_ObjectHideFlags: 0
@@ -5351,13 +5336,28 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 691571412}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -13.79, y: 0.16, z: -14.01}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &691571415
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 691571412}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3664fd197bbe05845a59e1bb4fd48a9a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  posIni: {x: -15, y: 0, z: -15.3}
+  posFin: {x: 15.8, y: 0, z: 15.6}
+  matTrans: {fileID: 2100000, guid: a81e3f93b9e17d846a870be24b10a4d6, type: 2}
 --- !u!1 &714503436
 GameObject:
   m_ObjectHideFlags: 0
@@ -5690,8 +5690,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 2, z: 2}
-  m_Center: {x: 0.00000023841858, y: 0.69016826, z: 0.000000074505806}
+  m_Size: {x: 1, y: 2.8300495, z: 2}
+  m_Center: {x: 0.00000025431314, y: 0.27514392, z: 0.00000011920929}
 --- !u!1 &761806927
 GameObject:
   m_ObjectHideFlags: 0
@@ -6364,6 +6364,8 @@ MonoBehaviour:
   steer:
     angular: 0
     linear: {x: 0, y: 0, z: 0}
+  tam: 0
+  grid: {fileID: 0}
 --- !u!23 &804472534
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -6489,6 +6491,8 @@ MonoBehaviour:
   steer:
     angular: 0
     linear: {x: 0, y: 0, z: 0}
+  tam: 0
+  grid: {fileID: 0}
 --- !u!23 &824931469
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -6614,6 +6618,8 @@ MonoBehaviour:
   steer:
     angular: 0
     linear: {x: 0, y: 0, z: 0}
+  tam: 0
+  grid: {fileID: 0}
 --- !u!23 &853883647
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -6693,8 +6699,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.2796446, y: 2.0666578, z: 1.1568515}
-  m_Center: {x: 0, y: 1.0333289, z: -0.000000029802322}
+  m_Size: {x: 1.2796446, y: 3.4051518, z: 1.1568515}
+  m_Center: {x: 0, y: 0.36408192, z: 0}
 --- !u!1 &877826223
 GameObject:
   m_ObjectHideFlags: 0
@@ -6757,6 +6763,8 @@ MonoBehaviour:
   steer:
     angular: 0
     linear: {x: 0, y: 0, z: 0}
+  tam: 0
+  grid: {fileID: 0}
 --- !u!23 &877826226
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -6972,8 +6980,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.2796451, y: 2.0666578, z: 1.1568518}
-  m_Center: {x: -0.00000023841858, y: 1.0333289, z: -0.00000002980233}
+  m_Size: {x: 1.2796451, y: 3.9128158, z: 1.1568518}
+  m_Center: {x: -0.0000002116141, y: 0.11024988, z: -0.000000059604645}
 --- !u!1 &908397976
 GameObject:
   m_ObjectHideFlags: 0
@@ -7157,6 +7165,8 @@ MonoBehaviour:
   steer:
     angular: 0
     linear: {x: 0, y: 0, z: 0}
+  tam: 0
+  grid: {fileID: 0}
 --- !u!23 &910405088
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -7725,8 +7735,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 2, z: 2}
-  m_Center: {x: 0.00000023841858, y: 0.69016826, z: 0.000000074505806}
+  m_Size: {x: 1, y: 2.5612025, z: 2}
+  m_Center: {x: 0.00000025431314, y: 0.4095677, z: 0.00000011920929}
 --- !u!1 &949367139
 GameObject:
   m_ObjectHideFlags: 0
@@ -7789,6 +7799,8 @@ MonoBehaviour:
   steer:
     angular: 0
     linear: {x: 0, y: 0, z: 0}
+  tam: 0
+  grid: {fileID: 0}
 --- !u!23 &949367142
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -7914,6 +7926,8 @@ MonoBehaviour:
   steer:
     angular: 0
     linear: {x: 0, y: 0, z: 0}
+  tam: 0
+  grid: {fileID: 0}
 --- !u!23 &951038949
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -8240,8 +8254,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 2, z: 2}
-  m_Center: {x: 0.00000023841858, y: 1.0352539, z: 0.000000074505806}
+  m_Size: {x: 0.9999999, y: 3.848034, z: 2}
+  m_Center: {x: 0.00000025636405, y: 0.11123711, z: 0.00000011920929}
 --- !u!1 &1008151656
 GameObject:
   m_ObjectHideFlags: 0
@@ -8425,6 +8439,8 @@ MonoBehaviour:
   steer:
     angular: 0
     linear: {x: 0, y: 0, z: 0}
+  tam: 0
+  grid: {fileID: 0}
 --- !u!23 &1015849903
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -8550,6 +8566,8 @@ MonoBehaviour:
   steer:
     angular: 0
     linear: {x: 0, y: 0, z: 0}
+  tam: 0
+  grid: {fileID: 0}
 --- !u!23 &1028043600
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -9115,7 +9133,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   costeMovimientoLineal: 10
-  gird: {fileID: 1353633943}
+  gird: {fileID: 0}
 --- !u!65 &1098124436
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9161,6 +9179,8 @@ MonoBehaviour:
   steer:
     angular: 0
     linear: {x: 0, y: 0, z: 0}
+  tam: 0.5
+  grid: {fileID: 0}
 --- !u!114 &1098124441
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10676,6 +10696,8 @@ MonoBehaviour:
   steer:
     angular: 0
     linear: {x: 0, y: 0, z: 0}
+  tam: 0
+  grid: {fileID: 0}
 --- !u!23 &1235992940
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -11312,7 +11334,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1353633942
 Transform:
   m_ObjectHideFlags: 0
@@ -11962,6 +11984,8 @@ MonoBehaviour:
   steer:
     angular: 0
     linear: {x: 0, y: 0, z: 0}
+  tam: 0
+  grid: {fileID: 0}
 --- !u!23 &1386974714
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -12571,6 +12595,8 @@ MonoBehaviour:
   steer:
     angular: 0
     linear: {x: 0, y: 0, z: 0}
+  tam: 0
+  grid: {fileID: 0}
 --- !u!23 &1425602851
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -12868,8 +12894,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.2796446, y: 2.0666578, z: 1.1568515}
-  m_Center: {x: 0, y: 1.0333289, z: -0.000000029802322}
+  m_Size: {x: 1.2796446, y: 2.894826, z: 1.1568515}
+  m_Center: {x: 0, y: 0.6192448, z: 0}
 --- !u!1 &1464174670
 GameObject:
   m_ObjectHideFlags: 0
@@ -13174,6 +13200,8 @@ MonoBehaviour:
   steer:
     angular: 0
     linear: {x: 0, y: 0, z: 0}
+  tam: 0
+  grid: {fileID: 0}
 --- !u!23 &1510543496
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -13611,6 +13639,8 @@ MonoBehaviour:
   steer:
     angular: 0
     linear: {x: 0, y: 0, z: 0}
+  tam: 0
+  grid: {fileID: 0}
 --- !u!23 &1572378461
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -14220,6 +14250,8 @@ MonoBehaviour:
   steer:
     angular: 0
     linear: {x: 0, y: 0, z: 0}
+  tam: 0
+  grid: {fileID: 0}
 --- !u!23 &1627973813
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -14410,6 +14442,8 @@ MonoBehaviour:
   steer:
     angular: 0
     linear: {x: 0, y: 0, z: 0}
+  tam: 0
+  grid: {fileID: 0}
 --- !u!23 &1633582890
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -14656,6 +14690,8 @@ MonoBehaviour:
   steer:
     angular: 0
     linear: {x: 0, y: 0, z: 0}
+  tam: 0
+  grid: {fileID: 0}
 --- !u!23 &1649348562
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -14934,8 +14970,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 2, z: 2}
-  m_Center: {x: 0.00000023841858, y: 1.0352539, z: 0.000000074505806}
+  m_Size: {x: 1, y: 3.4022331, z: 2}
+  m_Center: {x: 0.0000002311004, y: 0.3341375, z: 0.00000011920929}
 --- !u!1 &1690732786
 GameObject:
   m_ObjectHideFlags: 0
@@ -14998,6 +15034,8 @@ MonoBehaviour:
   steer:
     angular: 0
     linear: {x: 0, y: 0, z: 0}
+  tam: 0
+  grid: {fileID: 0}
 --- !u!23 &1690732789
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -15077,8 +15115,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.2796447, y: 2.0666578, z: 1.1568515}
-  m_Center: {x: 0, y: 1.0333289, z: -0.000000029802322}
+  m_Size: {x: 1.2796447, y: 2.8315089, z: 1.1568515}
+  m_Center: {x: 0, y: 0.65090334, z: 0}
 --- !u!1 &1696565737
 GameObject:
   m_ObjectHideFlags: 0
@@ -15141,6 +15179,8 @@ MonoBehaviour:
   steer:
     angular: 0
     linear: {x: 0, y: 0, z: 0}
+  tam: 0
+  grid: {fileID: 0}
 --- !u!23 &1696565740
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -15527,8 +15567,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.2796446, y: 2.0666578, z: 1.1568515}
-  m_Center: {x: 0, y: 1.0333289, z: -0.000000029802322}
+  m_Size: {x: 1.2796446, y: 3.022725, z: 1.1568515}
+  m_Center: {x: 0, y: 0.55529517, z: 0}
 --- !u!1 &1767695109
 GameObject:
   m_ObjectHideFlags: 0
@@ -15591,6 +15631,8 @@ MonoBehaviour:
   steer:
     angular: 0
     linear: {x: 0, y: 0, z: 0}
+  tam: 0
+  grid: {fileID: 0}
 --- !u!23 &1767695112
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -16228,6 +16270,8 @@ MonoBehaviour:
   steer:
     angular: 0
     linear: {x: 0, y: 0, z: 0}
+  tam: 0
+  grid: {fileID: 0}
 --- !u!23 &1812325264
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -16474,6 +16518,8 @@ MonoBehaviour:
   steer:
     angular: 0
     linear: {x: 0, y: 0, z: 0}
+  tam: 0
+  grid: {fileID: 0}
 --- !u!23 &1823674975
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -16553,8 +16599,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.2796446, y: 2.0666578, z: 1.1568515}
-  m_Center: {x: 0, y: 1.0333289, z: -0.000000029802322}
+  m_Size: {x: 1.2796446, y: 2.9674175, z: 1.1568515}
+  m_Center: {x: 0, y: 0.58294904, z: -0}
 --- !u!1 &1853992020
 GameObject:
   m_ObjectHideFlags: 0
@@ -16617,6 +16663,8 @@ MonoBehaviour:
   steer:
     angular: 0
     linear: {x: 0, y: 0, z: 0}
+  tam: 0
+  grid: {fileID: 0}
 --- !u!23 &1853992023
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -17019,6 +17067,8 @@ MonoBehaviour:
   steer:
     angular: 0
     linear: {x: 0, y: 0, z: 0}
+  tam: 0
+  grid: {fileID: 0}
 --- !u!23 &1874222705
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -17144,6 +17194,8 @@ MonoBehaviour:
   steer:
     angular: 0
     linear: {x: 0, y: 0, z: 0}
+  tam: 0
+  grid: {fileID: 0}
 --- !u!23 &1915268687
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -17390,6 +17442,8 @@ MonoBehaviour:
   steer:
     angular: 0
     linear: {x: 0, y: 0, z: 0}
+  tam: 0
+  grid: {fileID: 0}
 --- !u!23 &1924498714
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -17474,8 +17528,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0.4683314, z: -0.00000008940697}
+  m_Size: {x: 1, y: 1.3664416, z: 1}
+  m_Center: {x: 0, y: 0.28511065, z: -0.00000011920929}
 --- !u!1 &1968878575
 GameObject:
   m_ObjectHideFlags: 0
@@ -17659,6 +17713,8 @@ MonoBehaviour:
   steer:
     angular: 0
     linear: {x: 0, y: 0, z: 0}
+  tam: 0
+  grid: {fileID: 0}
 --- !u!23 &1983832328
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -17905,6 +17961,8 @@ MonoBehaviour:
   steer:
     angular: 0
     linear: {x: 0, y: 0, z: 0}
+  tam: 0
+  grid: {fileID: 0}
 --- !u!23 &1998251164
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -18030,6 +18088,8 @@ MonoBehaviour:
   steer:
     angular: 0
     linear: {x: 0, y: 0, z: 0}
+  tam: 0
+  grid: {fileID: 0}
 --- !u!23 &2004885754
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -18397,6 +18457,8 @@ MonoBehaviour:
   steer:
     angular: 0
     linear: {x: 0, y: 0, z: 0}
+  tam: 0
+  grid: {fileID: 0}
 --- !u!23 &2071275252
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -18541,8 +18603,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.2796451, y: 2.0666578, z: 1.1568518}
-  m_Center: {x: 0, y: 1.0333289, z: -0.0000002682209}
+  m_Size: {x: 1.2796451, y: 3.7878635, z: 1.1568518}
+  m_Center: {x: 1.03408987e-22, y: 0.17272604, z: -0.00000023841858}
 --- !u!1 &2086809102
 GameObject:
   m_ObjectHideFlags: 0
@@ -18605,6 +18667,8 @@ MonoBehaviour:
   steer:
     angular: 0
     linear: {x: 0, y: 0, z: 0}
+  tam: 0
+  grid: {fileID: 0}
 --- !u!23 &2086809105
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -18885,6 +18949,8 @@ MonoBehaviour:
   steer:
     angular: 0
     linear: {x: 0, y: 0, z: 0}
+  tam: 0
+  grid: {fileID: 0}
 --- !u!23 &2112075059
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -19252,6 +19318,8 @@ MonoBehaviour:
   steer:
     angular: 0
     linear: {x: 0, y: 0, z: 0}
+  tam: 0
+  grid: {fileID: 0}
 --- !u!23 &2119318536
 MeshRenderer:
   m_ObjectHideFlags: 0

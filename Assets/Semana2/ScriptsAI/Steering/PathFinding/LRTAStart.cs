@@ -22,6 +22,8 @@ public class LRTAStart
 
   }
 
+    
+
     private void resetEstructures(){
         hValues = new Dictionary<Tile, int>();
         tempValues = new Dictionary<Tile, int>();
@@ -153,6 +155,7 @@ public class LRTAStart
     }
 
     public void inicializarHeuristicas(Tile goal){
+       
         Tile[,] tiles = gird.getTiles();
         foreach (Tile tile in tiles)
         {   

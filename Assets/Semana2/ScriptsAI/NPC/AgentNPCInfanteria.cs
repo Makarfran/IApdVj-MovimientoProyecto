@@ -10,6 +10,7 @@ public class AgentNPCInfanteria : AgentNPC
     {
         base.Start();
         this.vida = 8;
+        this.maxVida = 8;
         this.atq = 2;
         this.range = 7f;
         

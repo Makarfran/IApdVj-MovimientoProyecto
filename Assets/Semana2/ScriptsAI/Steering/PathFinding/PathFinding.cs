@@ -19,9 +19,27 @@ public class PathFinding : MonoBehaviour
     void Start(){
         camino = new List<Tile>();
         lrta = new LRTAStart();
+        this.generateGrid();
         lrta.setGrid(gird);
         lrta.costeMovimientoLineal = costeMovimientoLineal;
         lrta.maxDepth = 1;
+    }
+
+    public void generateGrid(){
+        float tam = this.GetComponent<AgentNPC>().getTam();
+        string name = $"Grid {tam}";
+        GameObject obj = GameObject.Find(name);
+        if(obj ){
+            gird = obj.GetComponent<Grid>();
+        } else{
+            GameObject gridgen = GameObject.Find("GridGenerator");
+            GameObject gridA = gridgen.GetComponent<GeneraGrid>().generameGrid(this.GetComponent<AgentNPC>());
+            gird = gridA.GetComponent<Grid>();
+
+        }
+        if(this.GetComponent<AgentNPC>()){
+            this.GetComponent<AgentNPC>().setGrid(gird);
+        }
     }
 
     void Update()

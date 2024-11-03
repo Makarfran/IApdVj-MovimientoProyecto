@@ -25,6 +25,7 @@ public class Grid : MonoBehaviour
                 posiciones[i,j].columna = j;
                 //esto se asegura que las posiciones de las casillas esten bien
                 posiciones[i,j].setPos(a.transform.position);
+                Debug.Log(posiciones[i,j]);
                 
             }
         }
@@ -34,7 +35,7 @@ public class Grid : MonoBehaviour
     // Update is called once per frame
     void Update()
     {   
-
+        
     }
 
     public Vector3 getTilePosition(int x, int y){
@@ -70,6 +71,9 @@ public class Grid : MonoBehaviour
     }
     public void setB(int b){
         this.b = b;
+    }
+    public void setLado(float b){
+        this.lado = b;
     }
 
     public Tile[,] getTiles(){
