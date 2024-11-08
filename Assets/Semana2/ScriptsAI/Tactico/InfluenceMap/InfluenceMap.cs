@@ -5,7 +5,7 @@ public class InfluenceMap : MonoBehaviour
 {
     public InfluenceGrid grid;  // El Grid predefinido que se asignará desde la UI de Unity
     public int radio = 5;  // El radio de influencia del personaje
-    public float influenciaBase = 1.0f;  // La influencia base I0
+    public float influenciaBase = 10.0f;  // La influencia base I0
     public enum Faccion { Rojo, Azul };  // Facción del personaje
     public Faccion faccion;
 

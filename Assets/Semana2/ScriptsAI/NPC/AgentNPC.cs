@@ -13,7 +13,7 @@ public class AgentNPC : Agent
     protected int vida;
     protected int atq;
     protected float range;
-    public float tam;
+    public float tam = 1;
     [SerializeField] protected Grid grid;
 
     public float getTam(){
