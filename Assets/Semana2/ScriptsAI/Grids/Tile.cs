@@ -36,6 +36,13 @@ public class Tile : MonoBehaviour
                 pasable = false;
                 CambiarColorARojo();
                 break;
+            } else if(collider.gameObject.CompareTag("Camino")){
+                tipo = "Camino";
+
+            } else if(collider.gameObject.CompareTag("Desierto") && tipo != "Camino"){
+                tipo = "Desierto";
+            } else if(collider.gameObject.CompareTag("Hierba") && (tipo != "Camino" && tipo != "Desierto")){
+                tipo = "Hierba";
             }
         }
     }

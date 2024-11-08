@@ -22,6 +22,8 @@ public class LRTAStart : MonoBehaviour
     //resetEstructures();
   }
 
+    
+
     private void resetEstructures(){
         hValues = new Dictionary<Tile, int>();
         tempValues = new Dictionary<Tile, int>();
@@ -151,6 +153,7 @@ public class LRTAStart : MonoBehaviour
     }
 
     public void inicializarHeuristicas(Tile goal){
+       
         Tile[,] tiles = gird.getTiles();
         foreach (Tile tile in tiles)
         {   
