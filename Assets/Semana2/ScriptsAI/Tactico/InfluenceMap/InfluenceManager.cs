@@ -9,11 +9,8 @@ public class InfluenceManager : MonoBehaviour
     public GameObject tileVisualPrefab;
 
     // Diccionarios para almacenar la influencia en cada tile
-    private Dictionary<Vector3, float> influenciaRojo = new Dictionary<Vector3, float>();
-    private Dictionary<Vector3, float> influenciaAzul = new Dictionary<Vector3, float>();
-
-    // Diccionario que almacenará el GameObject visual asociado a cada tile
-    private Dictionary<Vector3, GameObject> visualTiles = new Dictionary<Vector3, GameObject>();
+    private Dictionary<Tile, float> influenciaRojo = new Dictionary<Tile, float>();
+    private Dictionary<Tile, float> influenciaAzul = new Dictionary<Tile, float>();
 
     private void Awake()
     {
@@ -28,7 +25,7 @@ public class InfluenceManager : MonoBehaviour
     }
 
     // Método para agregar influencia a un tile
-    public void AgregarInfluencia(Vector3 position, float influence, InfluenceMap.Faccion faccion)
+    public void AgregarInfluencia(Tile position, float influence, InfluenceMap.Faccion faccion)
     {
         if (faccion == InfluenceMap.Faccion.Rojo)
         {
@@ -50,7 +47,7 @@ public class InfluenceManager : MonoBehaviour
     }
 
     // Método para eliminar influencia de un tile
-    public void EliminarInfluencia(Vector3 position, float influence, InfluenceMap.Faccion faccion)
+    public void EliminarInfluencia(Tile position, float influence, InfluenceMap.Faccion faccion)
     {
         Debug.Log("eliminando tile " + position);
         if (faccion == InfluenceMap.Faccion.Rojo && influenciaRojo.ContainsKey(position))
@@ -71,23 +68,8 @@ public class InfluenceManager : MonoBehaviour
     }
 
     // Método para actualizar el color del tile visual basado en las influencias
-    private void ActualizarVisualTile(Vector3 position)
+    private void ActualizarVisualTile(Tile position)
     {
-        // Ajustar la posición visual del tile para el eje Z como altura y Y constante
-        Vector3 visualPosition = new Vector3(position.x, position.y + 1.5f, position.z  );
-
-        // Obtener o crear el objeto visual asociado al tile
-        if (!visualTiles.ContainsKey(position))
-        {
-            GameObject tileVisual = Instantiate(tileVisualPrefab, visualPosition, Quaternion.Euler(90f, 0f, 0f));
-            visualTiles[position] = tileVisual;
-
-            // Añadimos esto para asegurarnos de que se están creando correctamente
-           // Debug.Log($"Tile visual creado en la posición {visualPosition}");
-        }
-
-        GameObject visual = visualTiles[position];
-        SpriteRenderer renderer = visual.GetComponent<SpriteRenderer>();
 
         // Obtener las influencias de las dos facciones
         float influenciaRojoVal = influenciaRojo.ContainsKey(position) ? influenciaRojo[position] : 0f;
@@ -100,7 +82,7 @@ public class InfluenceManager : MonoBehaviour
 
         // Asignar un color basado en la influencia
         Color color = new Color(rojo, 0f, azul, 0.5f);  // El verde es 0 porque no se usa
-        renderer.color = color;
+        position.setColor(color);
 
         // Añadimos un Debug para asegurarnos de que el color se está asignando correctamente
         //Debug.Log($"Tile en {position} con influencia roja: {rojo}, azul: {azul}, color asignado: {color}");

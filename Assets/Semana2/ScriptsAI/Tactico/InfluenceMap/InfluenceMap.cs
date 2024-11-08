@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 public class InfluenceMap : MonoBehaviour
 {
-    public Grid grid;  // El Grid predefinido que se asignará desde la UI de Unity
+    public InfluenceGrid grid;  // El Grid predefinido que se asignará desde la UI de Unity
     public int radio = 5;  // El radio de influencia del personaje
     public float influenciaBase = 1.0f;  // La influencia base I0
     public enum Faccion { Rojo, Azul };  // Facción del personaje
@@ -13,7 +13,7 @@ public class InfluenceMap : MonoBehaviour
     private bool gridInicializado = false;  // Variable para controlar si el grid está listo
 
     // Diccionario para guardar tiles afectados y su influencia
-    private Dictionary<Vector3, float> tilesInfluenciados = new Dictionary<Vector3, float>();
+    private Dictionary<Tile, float> tilesInfluenciados = new Dictionary<Tile, float>();
 
     void Start()
     {
@@ -65,22 +65,23 @@ public class InfluenceMap : MonoBehaviour
     }
 
     // Método auxiliar para calcular la influencia basada en la posición del agente y del tile
-    private float CalcularInfluencia(Vector3 agentPosition, Vector3 tilePosition)
+    private float CalcularInfluencia(Vector3 agentPosition, Tile tile)
     {
+        Vector3 tilePosition = tile.getPosition();  // Posición del tile en el grid
         float distance = Vector3.Distance(new Vector3(agentPosition.x, 0, agentPosition.z), new Vector3(tilePosition.x, 0, tilePosition.z));
         float influence = distance == 0 ? influenciaBase : (influenciaBase / distance) - 1;
         return Mathf.Max(influence, 0);  // Asegura que la influencia no sea negativa
     }
 
     // Método auxiliar para actualizar la influencia en un tile específico
-    private void ActualizarInfluenciasAux(Vector3 tilePosition, float influence)
+    private void ActualizarInfluenciasAux(Tile tile, float influence)
     {
         // Actualizar el diccionario y añadir la influencia en el InfluenceManager
-        if (tilesInfluenciados.ContainsKey(tilePosition)){
-            InfluenceManager.Instance.EliminarInfluencia(tilePosition,influence,faccion);
+        if (tilesInfluenciados.ContainsKey(tile)){
+            InfluenceManager.Instance.EliminarInfluencia(tile,influence,faccion);
         }
-        tilesInfluenciados[tilePosition] = influence;
-        InfluenceManager.Instance.AgregarInfluencia(tilePosition, influence, faccion);
+        tilesInfluenciados[tile] = influence;
+        InfluenceManager.Instance.AgregarInfluencia(tile, influence, faccion);
     }
 
     // Método para actualizar y aplicar la influencia en el área dentro del radio alrededor de la posición actual
@@ -99,12 +100,12 @@ public class InfluenceMap : MonoBehaviour
 
                 if (tile != null)
                 {   
-                    tilePosition = tile.getPosition();  // Posición del tile en el grid
-                    float influence = CalcularInfluencia(agentPosition, tilePosition);
+                    
+                    float influence = CalcularInfluencia(agentPosition, tile);
                     if (influence > 0)
                     {
                         // Utilizar el método auxiliar para actualizar la influencia en el tile
-                        ActualizarInfluenciasAux(tilePosition, influence);
+                        ActualizarInfluenciasAux(tile, influence);
                     }
                 }
             }

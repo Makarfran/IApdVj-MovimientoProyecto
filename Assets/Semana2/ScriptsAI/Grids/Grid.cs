@@ -20,12 +20,12 @@ public class Grid : MonoBehaviour
             for(int j = 0; j < b; j++){
                 GameObject a = GameObject.Find("Tile " + i + " " + j);
                 posiciones[i,j] = a.GetComponent<Tile>();
-                Debug.Log(posiciones[i,j]);
+                //Debug.Log(posiciones[i,j]);
                 posiciones[i,j].fila = i;
                 posiciones[i,j].columna = j;
                 //esto se asegura que las posiciones de las casillas esten bien
                 posiciones[i,j].setPos(a.transform.position);
-                Debug.Log(posiciones[i,j]);
+                //Debug.Log(posiciones[i,j]);
                 
             }
         }

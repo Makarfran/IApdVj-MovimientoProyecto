@@ -29,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 5985874111700272012}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.7906414, y: 15.53, z: -3.959364}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -110,6 +110,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5162f90ea4191fc419decf7403b789c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fila: 0
+  columna: 0
   pasable: 0
   pos: {x: 0, y: 0, z: 0}
-  coste: 0
+  gCoste: 0
+  hCoste: 0
+  tempHCoste: 0
+  fCoste: 0
+  tilePadre: {fileID: 0}
+  tipo: 
+  textComponent: {fileID: 0}
