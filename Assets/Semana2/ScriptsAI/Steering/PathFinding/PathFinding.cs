@@ -6,18 +6,42 @@ using System.Linq;
 public class PathFinding : MonoBehaviour
 {
     [SerializeField] public int costeMovimientoLineal;
+
     [SerializeField] Grid gird;
     [SerializeField] private int maxDepth;
+
     private LRTAStart lrta;
     private List<Tile> camino;
     private int posCamino;
 
+    public void setGrid(Grid g){
+        gird = g;
+    }
+
     void Start(){
         camino = new List<Tile>();
         lrta = new LRTAStart();
+        this.generateGrid();
         lrta.setGrid(gird);
         lrta.costeMovimientoLineal = costeMovimientoLineal;
         lrta.maxDepth = maxDepth;
+    }
+
+    public void generateGrid(){
+        float tam = this.GetComponent<AgentNPC>().getTam();
+        string name = $"Grid {tam}";
+        GameObject obj = GameObject.Find(name);
+        if(obj ){
+            gird = obj.GetComponent<Grid>();
+        } else{
+            GameObject gridgen = GameObject.Find("GridGenerator");
+            GameObject gridA = gridgen.GetComponent<GeneraGrid>().generameGrid(this.GetComponent<AgentNPC>());
+            gird = gridA.GetComponent<Grid>();
+
+        }
+        if(this.GetComponent<AgentNPC>()){
+            this.GetComponent<AgentNPC>().setGrid(gird);
+        }
     }
 
     void Update()

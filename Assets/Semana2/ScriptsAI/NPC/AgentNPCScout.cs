@@ -5,13 +5,14 @@ using System;
 
 public class AgentNPCScout : AgentNPC
 {
-    [SerializeField] Grid grid;
+    
     
     // Start is called before the first frame update
     protected override void Start()
     {
         base.Start();
         this.vida = 6;
+        this.maxVida = 6;
         this.atq = 1;
         this.range = 5f;
         
@@ -22,23 +23,25 @@ public class AgentNPCScout : AgentNPC
     public override void Update()
     {
         base.Update();
-        
-        Tile tile = grid.getTileByVector(this.transform.position);
-        String tipo = tile.getTipo();
-        switch (tipo)
-        {
-        case "Hierba":
-            this.MaxSpeed = 6f;
-            break;
-        case "Desierto":
-            this.MaxSpeed = 4f;
-            break;
-        case "Camino":
-            this.MaxSpeed = 12f;
-            break;
-        case "Agua":
-            this.MaxSpeed = 1f;
-            break;
+        if(grid != null){
+            Tile tile = grid.getTileByVector(this.transform.position);
+            String tipo = tile.getTipo();
+            switch (tipo)
+            {
+            case "Hierba":
+                this.MaxSpeed = 6f;
+                break;
+            case "Desierto":
+                this.MaxSpeed = 4f;
+                break;
+            case "Camino":
+                this.MaxSpeed = 12f;
+                break;
+            case "Agua":
+                this.MaxSpeed = 1f;
+                break;
+            }
         }
+        
     }
 }

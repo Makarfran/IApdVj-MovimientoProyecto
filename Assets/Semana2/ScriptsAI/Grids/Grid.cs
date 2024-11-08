@@ -20,19 +20,22 @@ public class Grid : MonoBehaviour
             for(int j = 0; j < b; j++){
                 GameObject a = GameObject.Find("Tile " + i + " " + j);
                 posiciones[i,j] = a.GetComponent<Tile>();
-                
+                Debug.Log(posiciones[i,j]);
                 posiciones[i,j].fila = i;
                 posiciones[i,j].columna = j;
                 //esto se asegura que las posiciones de las casillas esten bien
                 posiciones[i,j].setPos(a.transform.position);
+                Debug.Log(posiciones[i,j]);
+                
             }
         }
+        
     }
 
     // Update is called once per frame
     void Update()
     {   
-
+        
     }
 
     public Vector3 getTilePosition(int x, int y){
@@ -46,6 +49,7 @@ public class Grid : MonoBehaviour
     public Tile getTileByVector(Vector3 position){
 
         List<Tile> lista = posiciones.Cast<Tile>().ToList();
+        
 
         Tile tile = lista
             .Where(o => o.pasable)
@@ -60,6 +64,16 @@ public class Grid : MonoBehaviour
 
     public int getAncho(){
         return a;
+    }
+
+    public void setA(int a){
+        this.a = a;
+    }
+    public void setB(int b){
+        this.b = b;
+    }
+    public void setLado(float b){
+        this.lado = b;
     }
 
     public Tile[,] getTiles(){
