@@ -1,11 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
 
 public class AStart
 {
-    [SerializeField] int costeMovimientoLineal;
-    [SerializeField] Grid gird;
+    [SerializeField] public int costeMovimientoLineal;
+    [SerializeField] public Grid gird;
     private List<Tile> abiertos;
     private List<Tile> cerrados;
     public AStart(){
@@ -13,7 +14,7 @@ public class AStart
     }
 
 
-    public List<Tile> buscarCamino(int startFila, int startColumna, int endFila, int endColumna){
+    public List<Tile> buscarCamino(Tile startTile, Tile endTile){
 
         // inicialización de valores g y h de Tiles
         for(int i = 0; i < gird.getAlto(); i++){
@@ -32,8 +33,6 @@ public class AStart
         abiertos = new List<Tile>();
         cerrados= new List<Tile>();
 
-        Tile startTile = gird.getTile(startFila,startColumna);
-        Tile endTile = gird.getTile(endFila, endColumna);
         startTile.gCoste = 0;
         startTile.hCoste = calcularHCoste(startTile, endTile);
         startTile.calcularFCoste();
@@ -105,7 +104,7 @@ public class AStart
             vecinos.Add(gird.getTile(tile.fila + 1,tile.columna));
         }
 
-        return vecinos;
+        return vecinos.Where(tile => tile.pasable).ToList();
     }
 
     private List<Tile> getSolucion(Tile tile){
@@ -113,10 +112,12 @@ public class AStart
         Tile currentTile = tile;
         
         while(currentTile.tilePadre != null){
+            currentTile.CambiarColorVerde();
             solucion.Add(currentTile);
             currentTile = currentTile.tilePadre;
         }
         // debería ser startTile
+        currentTile.CambiarColorVerde();
         solucion.Add(currentTile);
         solucion.Reverse();
         return solucion;
@@ -141,4 +142,7 @@ public class AStart
         return (costeMovimientoLineal * (distanciaX + distanciaY));
     }
 
+    public void setGrid (Grid gird) {
+        this.gird = gird;
+    }
 }

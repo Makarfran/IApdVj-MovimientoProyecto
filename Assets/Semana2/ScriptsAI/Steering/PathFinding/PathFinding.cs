@@ -9,8 +9,9 @@ public class PathFinding : MonoBehaviour
 
     [SerializeField] Grid gird;
     [SerializeField] private int maxDepth;
-
+    [SerializeField] private bool pathFindingTactico = true;
     private LRTAStart lrta;
+    private AStart astart;
     private List<Tile> camino;
     private int posCamino;
 
@@ -21,9 +22,12 @@ public class PathFinding : MonoBehaviour
     void Start(){
         camino = new List<Tile>();
         lrta = new LRTAStart();
+        astart = new AStart();
         this.generateGrid();
         lrta.setGrid(gird);
+        astart.setGrid(gird);
         lrta.costeMovimientoLineal = costeMovimientoLineal;
+        astart.costeMovimientoLineal = costeMovimientoLineal;
         lrta.maxDepth = maxDepth;
     }
 
@@ -74,8 +78,12 @@ public class PathFinding : MonoBehaviour
     {   
         Tile goal = gird.getTileByVector(newTarget);
         Tile start = gird.getTileByVector(transform.position);
-
-        camino = new List<Tile>(lrta.run(start, goal));
+        if (pathFindingTactico){
+            camino =  new List<Tile>(astart.buscarCamino(start, goal));
+        } else{
+            camino = new List<Tile>(lrta.run(start, goal));
+        }
+        
         posCamino = 0;
     }
 
