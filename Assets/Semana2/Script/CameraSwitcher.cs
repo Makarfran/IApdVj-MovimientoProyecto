@@ -21,5 +21,29 @@ public class CameraSwitcher : MonoBehaviour
             mainCamera.enabled = !mainCamera.enabled;
             layerCamera.enabled = !layerCamera.enabled;
         }
+
+        if (Input.GetKeyDown(KeyCode.T))
+        {
+            // Busca todos los objetos que tengan el script PathFinding
+            PathFinding[] pathFinders = FindObjectsOfType<PathFinding>();
+
+            // Aplica la función changeToTatico() en cada uno
+            foreach (PathFinding pathFinder in pathFinders)
+            {
+                pathFinder.changeToTatico();
+            }
+        }
+
+        if (Input.GetKeyDown(KeyCode.L))
+        {
+            // Busca todos los objetos que tengan el script PathFinding
+            PathFinding[] pathFinders = FindObjectsOfType<PathFinding>();
+
+            // Aplica la función changeToTatico() en cada uno
+            foreach (PathFinding pathFinder in pathFinders)
+            {
+                pathFinder.changeToLRTA();
+            }
+        }        
     }
 }

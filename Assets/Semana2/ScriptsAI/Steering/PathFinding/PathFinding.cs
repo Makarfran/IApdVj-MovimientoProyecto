@@ -15,11 +15,13 @@ public class PathFinding : MonoBehaviour
     private List<Tile> camino;
     private int posCamino;
 
-    public void setGrid(Grid g){
+    public void setGrid(Grid g)
+    {
         gird = g;
     }
 
-    void Start(){
+    void Start()
+    {
         camino = new List<Tile>();
         lrta = new LRTAStart();
         astart = new AStart();
@@ -31,26 +33,31 @@ public class PathFinding : MonoBehaviour
         lrta.maxDepth = maxDepth;
     }
 
-    public void generateGrid(){
+    public void generateGrid()
+    {
         float tam = this.GetComponent<AgentNPC>().getTam();
         string name = $"Grid {tam}";
         GameObject obj = GameObject.Find(name);
-        if(obj ){
+        if (obj)
+        {
             gird = obj.GetComponent<Grid>();
-        } else{
+        }
+        else
+        {
             GameObject gridgen = GameObject.Find("GridGenerator");
             GameObject gridA = gridgen.GetComponent<GeneraGrid>().generameGrid(this.GetComponent<AgentNPC>());
             gird = gridA.GetComponent<Grid>();
 
         }
-        if(this.GetComponent<AgentNPC>()){
+        if (this.GetComponent<AgentNPC>())
+        {
             this.GetComponent<AgentNPC>().setGrid(gird);
         }
     }
 
     void Update()
     {
-        
+
         if (camino.Count > 0)
         {
             /*
@@ -75,15 +82,18 @@ public class PathFinding : MonoBehaviour
     }
 
     public void CalcularCamino(Vector3 newTarget)
-    {   
+    {
         Tile goal = gird.getTileByVector(newTarget);
         Tile start = gird.getTileByVector(transform.position);
-        if (pathFindingTactico){
-            camino =  new List<Tile>(astart.buscarCamino(start, goal));
-        } else{
+        if (pathFindingTactico)
+        {
+            camino = new List<Tile>(astart.buscarCamino(start, goal));
+        }
+        else
+        {
             camino = new List<Tile>(lrta.run(start, goal));
         }
-        
+
         posCamino = 0;
     }
 
@@ -102,5 +112,13 @@ public class PathFinding : MonoBehaviour
     }
     */
 
+    public void changeToTatico(){
+        pathFindingTactico = true;
     }
+
+    public void changeToLRTA(){
+        pathFindingTactico = false;
+    }
+
+}
 
