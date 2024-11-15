@@ -43,6 +43,9 @@ public class InfluenceGrid : MonoBehaviour
     }
 
     public Tile getTile(int x, int y){
+        if (x > a || x < 0 || y > b || y <0){
+            return null;
+        }        
         return posiciones[x,y];
     }
 

@@ -31,17 +31,17 @@ public class InfluenceMap : MonoBehaviour
         }
 
         // Verificar si el personaje ha cambiado de posición y recalcular influencias
-        if (posicionAnterior != transform.position)
-        {
+       // if (posicionAnterior != transform.position)
+        //{
             // Primero eliminar las influencias anteriores
-            EliminarInfluencias();
+            //EliminarInfluencias();
 
             // Luego aplicar las nuevas influencias en el área alrededor de la nueva posición
             ActualizarInfluencias();
 
             // Actualizar la posición anterior
-            posicionAnterior = transform.position;
-        }
+           // posicionAnterior = transform.position;
+        //}
     }
 
     // Método para verificar si el Grid ya está inicializado
@@ -77,36 +77,45 @@ public class InfluenceMap : MonoBehaviour
     private void ActualizarInfluenciasAux(Tile tile, float influence)
     {
         // Actualizar el diccionario y añadir la influencia en el InfluenceManager
-        if (tilesInfluenciados.ContainsKey(tile)){
-            InfluenceManager.Instance.EliminarInfluencia(tile,influence,faccion);
+        if (tilesInfluenciados.ContainsKey(tile))
+        {
+            //InfluenceManager.Instance.EliminarInfluencia(tile, influence, faccion);
         }
         tilesInfluenciados[tile] = influence;
         InfluenceManager.Instance.AgregarInfluencia(tile, influence, faccion);
     }
 
     // Método para actualizar y aplicar la influencia en el área dentro del radio alrededor de la posición actual
+    // Método para actualizar y aplicar la influencia en el área dentro del radio alrededor de la posición actual
     private void ActualizarInfluencias()
     {
-        if (!gridInicializado) return;
+        // Obtenemos la posición actual del personaje
+        Vector3 posicionPersonaje = transform.position;
 
-        Vector3 agentPosition = transform.position;
+        // Calculamos las coordenadas del tile central en base a la posición actual del personaje en el grid
+        Tile tileCentral = grid.getTileByVector(posicionPersonaje);
 
-        for (int x = -radio; x <= radio; x++)
+        // Iteramos sobre los tiles en el área dentro del radio en una cuadrícula
+        int radioTiles = Mathf.CeilToInt(radio); // Convertimos el radio a entero para usar en coordenadas de grid
+        for (int x = -radioTiles; x <= radioTiles; x++)
         {
-            for (int z = -radio; z <= radio; z++)
+            for (int z = -radioTiles; z <= radioTiles; z++)
             {
-                Vector3 tilePosition = new Vector3(agentPosition.x + x, agentPosition.y, agentPosition.z + z);
-                Tile tile = grid.getTileByVector(tilePosition);
+                // Calculamos la posición del tile actual en relación al tile central
+                Tile tileActual = grid.getTile(tileCentral.fila + x, tileCentral.columna + z);
 
-                if (tile != null)
-                {   
-                    
-                    float influence = CalcularInfluencia(agentPosition, tile);
-                    if (influence > 0)
-                    {
-                        // Utilizar el método auxiliar para actualizar la influencia en el tile
-                        ActualizarInfluenciasAux(tile, influence);
-                    }
+                // Si el tile es nulo o no está dentro del radio, lo saltamos
+                if (tileActual == null) continue;
+
+                // Calculamos la distancia del tile actual al personaje
+                float distancia = Vector3.Distance(new Vector3(tileActual.getPosition().x, 0, tileActual.getPosition().z),
+                                                   new Vector3(posicionPersonaje.x, 0, posicionPersonaje.z));
+
+                // Si la distancia está dentro del radio, calculamos la influencia y la aplicamos
+                if (distancia <= radio)
+                {
+                    float influencia = CalcularInfluencia(posicionPersonaje, tileActual);
+                    ActualizarInfluenciasAux(tileActual, influencia);
                 }
             }
         }
