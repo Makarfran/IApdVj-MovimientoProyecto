@@ -16,7 +16,7 @@ public class InfluenceManager : MonoBehaviour
     // Tiempo total en segundos para que la influencia se reduzca a cero
     [SerializeField]
     public float seconds = 10.0f;
-    private bool gridInicializado = false;  // Variable para controlar si el grid está listo
+    public bool gridInicializado = false;  // Variable para controlar si el grid está listo
 
     // Tiempo total en segundos para que la influencia se reduzca a cero
     [SerializeField]
@@ -76,18 +76,12 @@ public class InfluenceManager : MonoBehaviour
     {
         influence = Mathf.Min(maxInfluence, influence);
         if (faccion == InfluenceMap.Faccion.Rojo)
-        {
-            if (influenciaRojo.ContainsKey(position))
-                influenciaRojo[position] = Mathf.Min(maxInfluence, influenciaRojo[position] + influence);
-            else
-                influenciaRojo[position] = influence;
+        {   
+            influenciaRojo[position] = Mathf.Min(maxInfluence, influenciaRojo[position] + influence);
         }
         else if (faccion == InfluenceMap.Faccion.Azul)
         {
-            if (influenciaAzul.ContainsKey(position))
-                influenciaAzul[position] = Mathf.Min(maxInfluence, influenciaAzul[position] + influence);
-            else
-                influenciaAzul[position] = influence;
+            influenciaAzul[position] = Mathf.Min(maxInfluence, influenciaAzul[position] + influence);
         }
 
         // Actualizar visualización
@@ -101,14 +95,14 @@ public class InfluenceManager : MonoBehaviour
         if (faccion == InfluenceMap.Faccion.Rojo && influenciaRojo.ContainsKey(position))
         {
             influenciaRojo[position] -= influence;
-            if (influenciaRojo[position] <= 0)
-                influenciaRojo.Remove(position);
+            if (influenciaRojo[position] < 0)
+                influenciaRojo[position] = 0;
         }
         else if (faccion == InfluenceMap.Faccion.Azul && influenciaAzul.ContainsKey(position))
         {
             influenciaAzul[position] -= influence;
-            if (influenciaAzul[position] <= 0)
-                influenciaAzul.Remove(position);
+            if (influenciaAzul[position] < 0)
+                influenciaAzul[position] = 0 ;
         }
 
         // Actualizar visualización

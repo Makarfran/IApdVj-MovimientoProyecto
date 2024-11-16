@@ -52,7 +52,7 @@ public class AgentNPCElite : AgentNPC
     }
 
 
-    public override float getGCosteWeight(Tile tile)
+    public override float getGCosteWeightCamino(Tile tile)
     {
         switch (tile.getTipo())
         {

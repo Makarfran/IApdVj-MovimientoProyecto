@@ -47,7 +47,7 @@ public class InfluenceMap : MonoBehaviour
     // Método para verificar si el Grid ya está inicializado
     private void VerificarGridInicializado()
     {
-        if (grid != null && grid.estaInicializado)
+        if (grid != null && grid.estaInicializado && InfluenceManager.Instance.gridInicializado)
         {
             gridInicializado = true;  // El grid ya está listo
             ActualizarInfluencias();  // Podemos aplicar las influencias iniciales

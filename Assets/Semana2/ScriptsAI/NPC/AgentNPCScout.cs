@@ -45,8 +45,8 @@ public class AgentNPCScout : AgentNPC
         
     }
 
-    public override float getGCosteWeight(Tile tile)
-    {
+
+    public override float getGCosteWeightCamino(Tile tile){
         switch (tile.getTipo())
         {
             case "Hierba":

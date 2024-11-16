@@ -66,7 +66,7 @@ public class AStart
                 }                
 
 
-                int gcoste = currentTile.gCoste + getGCoste(vecino);
+                float gcoste = currentTile.gCoste + getGCoste(vecino);
 
                 if (cerrados.Contains(vecino))
                 {
@@ -183,7 +183,7 @@ public class AStart
         this.agent = agent;
     }
 
-    private int getGCoste(Tile tile){
-        return (int) (agent.getGCosteWeight(tile) * costConnection);
+    private float getGCoste(Tile tile){
+        return (agent.getGCosteWeight(tile) * costConnection);
     }
 }

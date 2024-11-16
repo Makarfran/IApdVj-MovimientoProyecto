@@ -173,10 +173,50 @@ public class AgentNPC : Agent
     /*
     * porcentaje de mejora o empeoramiento de la heuristica segun el tipo de NPC
     */    
-    public virtual float getGCosteWeight(Tile tile){
-        switch(tile.getTipo()){
+
+    public virtual float getGCosteWeightCamino(Tile tile){
+        switch (tile.getTipo())
+        {     
             default:
-                return 1;
+                return 1f;
         }
     }
+
+    public  float getGCosteWeight(Tile tile)
+    {   
+        Tile inlfuenceTile = this.GetComponent<InfluenceMap>().grid.getTile(tile.fila,tile.columna);
+
+        Dictionary<Tile, float> tilesInfluenciados = InfluenceManager.Instance.getInfluenceMap(this.GetComponent<InfluenceMap>().faccion);
+
+        float coste = CalcularFactorModificado(getGCosteWeightCamino(tile), tilesInfluenciados[inlfuenceTile]);
+        //float coste = getGCosteWeightCamino(tile);
+        Debug.Log("Current wig: " + getGCosteWeightCamino(tile) + " current influence: "+ tilesInfluenciados[inlfuenceTile] + "coste: "+coste);
+        return  coste;
+         
+
+    }
+
+
+// Método para calcular el nuevo factor modificado por la influencia
+    public float CalcularFactorModificado(float factorActual, float influenciaNeta)
+    {   
+        float maxInfluencia = InfluenceManager.Instance.maxInfluence;
+        if (influenciaNeta < 0)
+        {
+            // Incrementa factorActual hacia 5 cuando la influenciaNeta es negativa
+            return factorActual + ((-influenciaNeta / maxInfluencia) * (5 - factorActual));
+        }
+        else if (influenciaNeta > 0)
+        {
+            // Disminuye factorActual hacia 0.01 cuando la influenciaNeta es positiva
+            return factorActual - ((influenciaNeta / maxInfluencia) * (factorActual - 0.01f));
+        }
+        else
+        {
+            // No hay modificación si influenciaNeta es 0
+            return factorActual;
+        }
+    }
+
+
 }

@@ -8,10 +8,10 @@ public class Tile : MonoBehaviour
     public int fila, columna;
     public bool pasable = true;
     public Vector3 pos;
-    public int gCoste;
+    public float gCoste;
     public int hCoste;
     public int tempHCoste;
-    public int fCoste;
+    public float fCoste;
     public Tile tilePadre;
     public String tipo;
 
