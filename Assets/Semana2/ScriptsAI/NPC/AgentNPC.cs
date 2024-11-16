@@ -173,7 +173,7 @@ public class AgentNPC : Agent
     /*
     * porcentaje de mejora o empeoramiento de la heuristica segun el tipo de NPC
     */    
-    public virtual float getHeuristica(Tile tile){
+    public virtual float getGCosteWeight(Tile tile){
         switch(tile.getTipo()){
             default:
                 return 1;

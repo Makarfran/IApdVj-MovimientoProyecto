@@ -21,9 +21,9 @@ public class AStart
     {
 
         // inicialización de valores g y h de Tiles
-        for (int i = 0; i < gird.getAlto(); i++)
+        for (int i = 0; i < gird.a; i++)
         {
-            for (int j = 0; j < gird.getAncho(); j++)
+            for (int j = 0; j < gird.b; j++)
             {
                 Tile tile = gird.getTile(i, j);
                 tile.tilePadre = null;
@@ -66,7 +66,7 @@ public class AStart
                 }                
 
 
-                int gcoste = currentTile.gCoste + costConnection;
+                int gcoste = currentTile.gCoste + getGCoste(vecino);
 
                 if (cerrados.Contains(vecino))
                 {
@@ -111,7 +111,7 @@ public class AStart
         }
 
         // derecha
-        if (tile.columna + 1 < gird.getAncho())
+        if (tile.columna + 1 < gird.b)
         {
             vecinos.Add(gird.getTile(tile.fila, tile.columna + 1));
         }
@@ -124,7 +124,7 @@ public class AStart
         }
 
         //abajo
-        if (tile.fila + 1 < gird.getAlto())
+        if (tile.fila + 1 < gird.a)
         {
             vecinos.Add(gird.getTile(tile.fila + 1, tile.columna));
         }
@@ -181,5 +181,9 @@ public class AStart
     public void setAgent(AgentNPC agent)
     {
         this.agent = agent;
+    }
+
+    private int getGCoste(Tile tile){
+        return (int) (agent.getGCosteWeight(tile) * costConnection);
     }
 }

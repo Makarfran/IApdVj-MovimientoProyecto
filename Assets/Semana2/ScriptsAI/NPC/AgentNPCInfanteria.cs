@@ -44,7 +44,7 @@ public class AgentNPCInfanteria : AgentNPC
         
     }
 
-    public override float getHeuristica(Tile tile)
+    public override float getGCosteWeight(Tile tile)
     {
         switch (tile.getTipo())
         {
