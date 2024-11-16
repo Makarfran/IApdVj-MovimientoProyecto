@@ -7,6 +7,7 @@ public class InfluenceManager : MonoBehaviour
 
     // Prefab para representar la influencia en cada tile
     public GameObject tileVisualPrefab;
+    [SerializeField] public InfluenceGrid gird;
 
     // Diccionarios para almacenar la influencia en cada tile
     private Dictionary<Tile, float> influenciaRojo = new Dictionary<Tile, float>();
@@ -15,10 +16,11 @@ public class InfluenceManager : MonoBehaviour
     // Tiempo total en segundos para que la influencia se reduzca a cero
     [SerializeField]
     public float seconds = 10.0f;
+    private bool gridInicializado = false;  // Variable para controlar si el grid está listo
 
     // Tiempo total en segundos para que la influencia se reduzca a cero
     [SerializeField]
-    public int maxInfluence = 1000;    
+    public int maxInfluence = 10;
     private void Awake()
     {
         if (Instance == null)
@@ -32,27 +34,41 @@ public class InfluenceManager : MonoBehaviour
     }
 
 
+    void Start()
+    {
+
+
+    }
     void Update()
     {
+
+
+        // Verificamos si el Grid está inicializado antes de calcular influencias
+        if (!gridInicializado)
+        {
+            VerificarGridInicializado();
+            return;  // Si no está inicializado, no calculamos nada
+        }
+
         // Calculamos el decremento de influencia en cada frame
         float decrementoPorFrame = (maxInfluence / seconds) * Time.deltaTime;
 
         // Actualizar la influencia para cada tile en el equipo rojo
-        ActualizarInfluenciaDiccionario(influenciaRojo, decrementoPorFrame,InfluenceMap.Faccion.Rojo);
+        ActualizarInfluenciaDiccionario(influenciaRojo, decrementoPorFrame, InfluenceMap.Faccion.Rojo);
 
         // Actualizar la influencia para cada tile en el equipo azul
-        ActualizarInfluenciaDiccionario(influenciaAzul, decrementoPorFrame,InfluenceMap.Faccion.Azul);
+        ActualizarInfluenciaDiccionario(influenciaAzul, decrementoPorFrame, InfluenceMap.Faccion.Azul);
     }
 
-  private void ActualizarInfluenciaDiccionario(Dictionary<Tile, float> influenciaDiccionario, float decrementoPorSegundo, InfluenceMap.Faccion faccion)
+    private void ActualizarInfluenciaDiccionario(Dictionary<Tile, float> influenciaDiccionario, float decrementoPorSegundo, InfluenceMap.Faccion faccion)
     {
-            // Creamos una lista de claves para iterar sin modificar el diccionario directamente
+        // Creamos una lista de claves para iterar sin modificar el diccionario directamente
         List<Tile> tiles = new List<Tile>(influenciaDiccionario.Keys);
         foreach (var tileInfluence in tiles)
-        {   
-            EliminarInfluencia(tileInfluence,decrementoPorSegundo,faccion);
+        {
+            EliminarInfluencia(tileInfluence, decrementoPorSegundo, faccion);
         }
-    }    
+    }
 
 
     // Método para agregar influencia a un tile
@@ -62,7 +78,7 @@ public class InfluenceManager : MonoBehaviour
         if (faccion == InfluenceMap.Faccion.Rojo)
         {
             if (influenciaRojo.ContainsKey(position))
-                influenciaRojo[position]  = Mathf.Min(maxInfluence, influenciaRojo[position] + influence);
+                influenciaRojo[position] = Mathf.Min(maxInfluence, influenciaRojo[position] + influence);
             else
                 influenciaRojo[position] = influence;
         }
@@ -104,8 +120,8 @@ public class InfluenceManager : MonoBehaviour
     {
 
         // Obtener las influencias de las dos facciones
-        float rojo = influenciaRojo.ContainsKey(position) ? influenciaRojo[position]/maxInfluence : 0f;
-        float azul = influenciaAzul.ContainsKey(position) ? influenciaAzul[position]/maxInfluence : 0f;
+        float rojo = influenciaRojo.ContainsKey(position) ? influenciaRojo[position] / maxInfluence : 0f;
+        float azul = influenciaAzul.ContainsKey(position) ? influenciaAzul[position] / maxInfluence : 0f;
 
         // Normalizar las influencias para que sumen 1
         //float totalInfluencia = influenciaRojoVal + influenciaAzulVal;
@@ -119,4 +135,40 @@ public class InfluenceManager : MonoBehaviour
         // Añadimos un Debug para asegurarnos de que el color se está asignando correctamente
         //Debug.Log($"Tile en {position} con influencia roja: {rojo}, azul: {azul}, color asignado: {color}");
     }
+
+    public Dictionary<Tile, float> getInfluenceMap(InfluenceMap.Faccion faccion)
+    {
+        Dictionary<Tile, float> influencia = new Dictionary<Tile, float>();
+
+        foreach (var tile in influenciaRojo)
+        {
+            if (faccion == InfluenceMap.Faccion.Rojo)
+            {
+                influencia[tile.Key] = tile.Value - influenciaAzul[tile.Key];
+            }
+            else
+            {
+                influencia[tile.Key] = influenciaAzul[tile.Key] - tile.Value;
+            }
+
+        }
+        return influencia;
+    }
+
+
+    private void VerificarGridInicializado()
+    {
+        if (gird != null && gird.estaInicializado)
+        {
+            gridInicializado = true;  // El grid ya está listo
+            foreach (Tile tile in gird.posiciones)
+            {
+                influenciaAzul[tile] = 0;
+                influenciaRojo[tile] = 0;
+            }
+
+        }
+    }
+
+
 }

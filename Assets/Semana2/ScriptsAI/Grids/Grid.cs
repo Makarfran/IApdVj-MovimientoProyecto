@@ -5,8 +5,8 @@ using System.Linq;
 
 public class Grid : MonoBehaviour
 {
-    [SerializeField] protected int a;
-    [SerializeField] protected int b;
+    [SerializeField] public int a;
+    [SerializeField] public int b;
     [SerializeField] protected float lado;
     [SerializeField] public Tile[,] posiciones;
     public bool estaInicializado = false;

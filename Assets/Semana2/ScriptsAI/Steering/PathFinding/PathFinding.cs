@@ -86,7 +86,8 @@ public class PathFinding : MonoBehaviour
         Tile goal = gird.getTileByVector(newTarget);
         Tile start = gird.getTileByVector(transform.position);
         if (pathFindingTactico)
-        {
+        {   
+            astart.setAgent(this.GetComponent<AgentNPC>());
             camino = new List<Tile>(astart.buscarCamino(start, goal));
         }
         else
