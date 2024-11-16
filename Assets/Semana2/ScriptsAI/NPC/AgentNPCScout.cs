@@ -53,7 +53,7 @@ public class AgentNPCScout : AgentNPC
                 return 0.8f;
 
             case "Desierto":
-                return 100f;
+                return 1f;
 
             case "Camino":
                 return 0.5f;
