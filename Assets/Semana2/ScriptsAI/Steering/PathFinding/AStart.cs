@@ -9,70 +9,90 @@ public class AStart
     [SerializeField] public Grid gird;
     private List<Tile> abiertos;
     private List<Tile> cerrados;
-    public AStart(){
+    private AgentNPC agent;
+    public int costConnection = 100;
+    public AStart()
+    {
 
     }
 
 
-    public List<Tile> buscarCamino(Tile startTile, Tile endTile){
+    public List<Tile> buscarCamino(Tile startTile, Tile endTile)
+    {
 
         // inicialización de valores g y h de Tiles
-        for(int i = 0; i < gird.getAlto(); i++){
-            for (int j = 0; j < gird.getAncho(); j++){
-                Tile tile = gird.getTile(i,j);
-
+        for (int i = 0; i < gird.getAlto(); i++)
+        {
+            for (int j = 0; j < gird.getAncho(); j++)
+            {
+                Tile tile = gird.getTile(i, j);
                 tile.tilePadre = null;
-                tile.gCoste = int.MaxValue;
-                tile.calcularFCoste();
-                
             }
         }
 
 
         // inicialización de conjuntos abiertos y cerrados
         abiertos = new List<Tile>();
-        cerrados= new List<Tile>();
+        cerrados = new List<Tile>();
 
         startTile.gCoste = 0;
         startTile.hCoste = calcularHCoste(startTile, endTile);
         startTile.calcularFCoste();
+
         abiertos.Add(startTile);
 
 
         //bucle A*
-        while(abiertos.Count > 0){
+        while (abiertos.Count > 0)
+        {
             Tile currentTile = getTileMenorF(abiertos);
             // si hemos alcanzado al objetivo
-            if(currentTile == endTile){
+            if (currentTile == endTile)
+            {
                 return getSolucion(currentTile);
             }
 
             // si no, Expandir nodo 
             abiertos.Remove(currentTile);
             cerrados.Add(currentTile);
-            
+
             foreach (Tile vecino in getVecinos(currentTile))
             {
-                if(cerrados.Contains(vecino)){
-                    continue;
-                }
 
-                if(!vecino.pasable){
+                if (!vecino.pasable)
+                {   
                     cerrados.Add(vecino);
-                }
+                    continue;
+                }                
 
-                //poda
-                int gCoste = currentTile.gCoste + calcularHCoste(currentTile,vecino);
-                if( gCoste < vecino.gCoste){
-                    vecino.tilePadre = currentTile;
-                    vecino.gCoste = gCoste;
-                    vecino.hCoste = calcularHCoste(currentTile,vecino);
-                    vecino.calcularFCoste();
 
-                    if(!abiertos.Contains(vecino)){
-                        abiertos.Add(vecino);
+                int gcoste = currentTile.gCoste + costConnection;
+
+                if (cerrados.Contains(vecino))
+                {
+                    if (vecino.gCoste <= gcoste)
+                    {
+                        continue;
                     }
+                    cerrados.Remove(vecino);
                 }
+                else if (abiertos.Contains(vecino))
+                {
+                    if (vecino.gCoste <= gcoste)
+                    {
+                        continue;
+                    }
+
+                }
+
+                vecino.gCoste = gcoste;
+                vecino.hCoste = calcularHCoste(vecino, endTile);
+                vecino.calcularFCoste();
+                vecino.tilePadre = currentTile;
+
+                if (!abiertos.Contains(vecino)){
+                    abiertos.Add(vecino);
+                }                
             }
         }
 
@@ -80,38 +100,45 @@ public class AStart
         return null;
     }
 
-    private List<Tile> getVecinos(Tile tile){
+    private List<Tile> getVecinos(Tile tile)
+    {
         List<Tile> vecinos = new List<Tile>();
 
         // izquierda
-        if(tile.columna -1 >= 0){
-            vecinos.Add(gird.getTile(tile.fila, tile.columna -1));
+        if (tile.columna - 1 >= 0)
+        {
+            vecinos.Add(gird.getTile(tile.fila, tile.columna - 1));
         }
 
         // derecha
-        if(tile.columna + 1 < gird.getAncho()){
+        if (tile.columna + 1 < gird.getAncho())
+        {
             vecinos.Add(gird.getTile(tile.fila, tile.columna + 1));
         }
 
         // arriba
 
-        if(tile.fila - 1 >= 0){
-            vecinos.Add(gird.getTile(tile.fila -1, tile.columna));
+        if (tile.fila - 1 >= 0)
+        {
+            vecinos.Add(gird.getTile(tile.fila - 1, tile.columna));
         }
 
         //abajo
-        if(tile.fila +  1 < gird.getAlto()){
-            vecinos.Add(gird.getTile(tile.fila + 1,tile.columna));
+        if (tile.fila + 1 < gird.getAlto())
+        {
+            vecinos.Add(gird.getTile(tile.fila + 1, tile.columna));
         }
 
         return vecinos.Where(tile => tile.pasable).ToList();
     }
 
-    private List<Tile> getSolucion(Tile tile){
+    private List<Tile> getSolucion(Tile tile)
+    {
         List<Tile> solucion = new List<Tile>();
         Tile currentTile = tile;
-        
-        while(currentTile.tilePadre != null){
+
+        while (currentTile.tilePadre != null)
+        {
             currentTile.CambiarColorVerde();
             solucion.Add(currentTile);
             currentTile = currentTile.tilePadre;
@@ -124,10 +151,13 @@ public class AStart
     }
 
     // Busca el estado de menor costo entre lista de abiertos.
-    private Tile getTileMenorF(List<Tile> tileList){
+    private Tile getTileMenorF(List<Tile> tileList)
+    {
         Tile tileMenorCosto = tileList[0];
-        for(int i = 1; i < tileList.Count;i++){
-            if(tileList[i].fCoste < tileMenorCosto.fCoste){
+        for (int i = 1; i < tileList.Count; i++)
+        {
+            if (tileList[i].fCoste < tileMenorCosto.fCoste)
+            {
                 tileMenorCosto = tileList[i];
             }
         }
@@ -135,14 +165,21 @@ public class AStart
     }
 
     // distancia Manhattan 
-    private int calcularHCoste(Tile current, Tile goal){
-        int distanciaX = Mathf.Abs(current.columna -  goal.columna);
+    private int calcularHCoste(Tile current, Tile goal)
+    {
+        int distanciaX = Mathf.Abs(current.columna - goal.columna);
         int distanciaY = Mathf.Abs(current.fila - goal.fila);
 
         return (costeMovimientoLineal * (distanciaX + distanciaY));
     }
 
-    public void setGrid (Grid gird) {
+    public void setGrid(Grid gird)
+    {
         this.gird = gird;
+    }
+
+    public void setAgent(AgentNPC agent)
+    {
+        this.agent = agent;
     }
 }
