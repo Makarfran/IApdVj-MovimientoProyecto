@@ -197,19 +197,27 @@ public class AgentNPC : Agent
     }
 
 
+    public virtual (float,float ) getFactorInfluencia(){
+        return (0.01f, 5f);
+    }
+
 // Método para calcular el nuevo factor modificado por la influencia
     public float CalcularFactorModificado(float factorActual, float influenciaNeta)
     {   
+        var factoresInfluencia = getFactorInfluencia();
+        float facorMejora = factoresInfluencia.Item1;
+        float factorEmpeoramiento = factoresInfluencia.Item2;
+
         float maxInfluencia = InfluenceManager.Instance.maxInfluence;
         if (influenciaNeta < 0)
         {
             // Incrementa factorActual hacia 5 cuando la influenciaNeta es negativa
-            return factorActual + ((-influenciaNeta / maxInfluencia) * (5 - factorActual));
+            return factorActual + ((-influenciaNeta / maxInfluencia) * (factorEmpeoramiento - factorActual));
         }
         else if (influenciaNeta > 0)
         {
             // Disminuye factorActual hacia 0.01 cuando la influenciaNeta es positiva
-            return factorActual - ((influenciaNeta / maxInfluencia) * (factorActual - 0.01f));
+            return factorActual - ((influenciaNeta / maxInfluencia) * (factorActual - facorMejora));
         }
         else
         {

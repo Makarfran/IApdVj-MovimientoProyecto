@@ -65,5 +65,10 @@ public class AgentNPCScout : AgentNPC
                 return 1f;
         }
     }
+
+    public virtual (float,float ) getFactorInfluencia(){
+        
+        return (0.01f, 5f);
+    }    
     
 }
