@@ -43,4 +43,27 @@ public class AgentNPCInfanteria : AgentNPC
         }
         
     }
+
+    public override float getGCosteWeightCamino(Tile tile)
+    {
+        switch (tile.getTipo())
+        {
+            case "Hierba":
+            return 1f;
+
+            case "Camino":
+                return 0.5f;
+
+            case "Desierto":                
+            case "Agua":
+                return 1.5f;
+            default:
+                return 1f;
+        }
+    }    
+
+    public virtual (float,float ) getFactorInfluencia(){
+        
+        return (0.01f, 5f);
+    }       
 }

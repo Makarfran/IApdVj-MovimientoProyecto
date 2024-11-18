@@ -6,45 +6,58 @@ using System.Linq;
 public class PathFinding : MonoBehaviour
 {
     [SerializeField] public int costeMovimientoLineal;
-    [SerializeField] public Grid gird;
-    private int maxDepth;
+
+    [SerializeField] Grid gird;
+    [SerializeField] private int maxDepth;
+    [SerializeField] private bool pathFindingTactico = true;
     private LRTAStart lrta;
+    private AStart astart;
     private List<Tile> camino;
     private int posCamino;
 
-    public void setGrid(Grid g){
+    public void setGrid(Grid g)
+    {
         gird = g;
     }
 
-    void Start(){
+    void Start()
+    {
         camino = new List<Tile>();
         lrta = new LRTAStart();
+        astart = new AStart();
         this.generateGrid();
         lrta.setGrid(gird);
+        astart.setGrid(gird);
         lrta.costeMovimientoLineal = costeMovimientoLineal;
-        lrta.maxDepth = 1;
+        astart.costeMovimientoLineal = costeMovimientoLineal;
+        lrta.maxDepth = maxDepth;
     }
 
-    public void generateGrid(){
+    public void generateGrid()
+    {
         float tam = this.GetComponent<AgentNPC>().getTam();
         string name = $"Grid {tam}";
         GameObject obj = GameObject.Find(name);
-        if(obj ){
+        if (obj)
+        {
             gird = obj.GetComponent<Grid>();
-        } else{
+        }
+        else
+        {
             GameObject gridgen = GameObject.Find("GridGenerator");
             GameObject gridA = gridgen.GetComponent<GeneraGrid>().generameGrid(this.GetComponent<AgentNPC>());
             gird = gridA.GetComponent<Grid>();
 
         }
-        if(this.GetComponent<AgentNPC>()){
+        if (this.GetComponent<AgentNPC>())
+        {
             this.GetComponent<AgentNPC>().setGrid(gird);
         }
     }
 
     void Update()
     {
-        
+
         if (camino.Count > 0)
         {
             /*
@@ -72,8 +85,16 @@ public class PathFinding : MonoBehaviour
     {
         Tile goal = gird.getTileByVector(newTarget);
         Tile start = gird.getTileByVector(transform.position);
+        if (pathFindingTactico)
+        {   
+            astart.setAgent(this.GetComponent<AgentNPC>());
+            camino = new List<Tile>(astart.buscarCamino(start, goal));
+        }
+        else
+        {
+            camino = new List<Tile>(lrta.run(start, goal));
+        }
 
-        camino = new List<Tile>(lrta.run(start, goal));
         posCamino = 0;
     }
 
@@ -91,5 +112,14 @@ public class PathFinding : MonoBehaviour
 
     }
     */
-    
+
+    public void changeToTatico(){
+        pathFindingTactico = true;
     }
+
+    public void changeToLRTA(){
+        pathFindingTactico = false;
+    }
+
+}
+

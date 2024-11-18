@@ -23,7 +23,7 @@ public class OrderMove : MonoBehaviour
 
             if (Physics.Raycast(ray, out hitInfo))
             {
-                if (UnitsSelection.npcsSelected.Count > 0 && hitInfo.collider != null && hitInfo.collider.CompareTag("Terrain"))
+                if (UnitsSelection.npcsSelected.Count > 0 && hitInfo.collider != null && !hitInfo.collider.CompareTag("Obstaculos"))
                 {
                     Vector3 newTarget = new Vector3(hitInfo.point.x, 0, hitInfo.point.z);
 

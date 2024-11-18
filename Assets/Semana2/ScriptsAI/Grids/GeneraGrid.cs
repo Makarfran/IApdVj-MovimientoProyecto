@@ -34,7 +34,7 @@ public class GeneraGrid : MonoBehaviour {
                 plane.transform.parent = npc.transform;
                 
                 plane.GetComponent<MeshRenderer>().material = matTrans;
-                plane.GetComponent<MeshRenderer>().enabled = false;
+                plane.GetComponent<MeshRenderer>().enabled = true;
                 
                 plane.transform.localScale = new Vector3(plane.transform.localScale.x*lado, 0.1f ,plane.transform.localScale.x*lado);
                 plane.name = $"Tile {i} {j}";
@@ -42,7 +42,7 @@ public class GeneraGrid : MonoBehaviour {
                 plane.transform.parent = gridT.transform;
                 BoxCollider boxer = plane.GetComponent<BoxCollider>();
                 boxer.center = new Vector3(0f,-1f, 0f);
-                Vector3 pos = new Vector3(posIni.x + i*lado + lado/2, -0.5f , posIni.z + j*lado + lado/2  );
+                Vector3 pos = new Vector3(posIni.x + i*lado + lado/2, 0 , posIni.z + j*lado + lado/2  );
                 //plane.tag = "Terrain";
                 
                 

@@ -14,7 +14,7 @@ public class AgentNPC : Agent
     [SerializeField] protected float vida;
     protected int atq;
     protected float range;
-    public float tam;
+    public float tam = 1;
     [SerializeField] protected Grid grid;
 
     public string getBando(){
@@ -174,4 +174,62 @@ public class AgentNPC : Agent
             }
         }
     }
+
+    /*
+    * porcentaje de mejora o empeoramiento de la heuristica segun el tipo de NPC
+    */    
+
+    public virtual float getGCosteWeightCamino(Tile tile){
+        switch (tile.getTipo())
+        {     
+            default:
+                return 1f;
+        }
+    }
+
+    public  float getGCosteWeight(Tile tile)
+    {   
+        Tile inlfuenceTile = this.GetComponent<InfluenceMap>().grid.getTile(tile.fila,tile.columna);
+
+        Dictionary<Tile, float> tilesInfluenciados = InfluenceManager.Instance.getInfluenceMap(this.GetComponent<InfluenceMap>().faccion);
+
+        float coste = CalcularFactorModificado(getGCosteWeightCamino(tile), tilesInfluenciados[inlfuenceTile]);
+        //float coste = getGCosteWeightCamino(tile);
+        Debug.Log("Current wig: " + getGCosteWeightCamino(tile) + " current influence: "+ tilesInfluenciados[inlfuenceTile] + "coste: "+coste);
+        return  coste;
+         
+
+    }
+
+
+    public virtual (float,float ) getFactorInfluencia(){
+        return (0.01f, 5f);
+    }
+
+// Método para calcular el nuevo factor modificado por la influencia
+    public float CalcularFactorModificado(float factorActual, float influenciaNeta)
+    {   
+        var factoresInfluencia = getFactorInfluencia();
+        float facorMejora = factoresInfluencia.Item1;
+        float factorEmpeoramiento = factoresInfluencia.Item2;
+
+        float maxInfluencia = InfluenceManager.Instance.maxInfluence;
+        if (influenciaNeta < 0)
+        {
+            // Incrementa factorActual hacia 5 cuando la influenciaNeta es negativa
+            return factorActual + ((-influenciaNeta / maxInfluencia) * (factorEmpeoramiento - factorActual));
+        }
+        else if (influenciaNeta > 0)
+        {
+            // Disminuye factorActual hacia 0.01 cuando la influenciaNeta es positiva
+            return factorActual - ((influenciaNeta / maxInfluencia) * (factorActual - facorMejora));
+        }
+        else
+        {
+            // No hay modificación si influenciaNeta es 0
+            return factorActual;
+        }
+    }
+
+
 }

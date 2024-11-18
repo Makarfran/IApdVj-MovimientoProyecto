@@ -5,11 +5,11 @@ using System.Linq;
 
 public class Grid : MonoBehaviour
 {
-    [SerializeField] protected int a;
-    [SerializeField] protected int b;
+    [SerializeField] public int a;
+    [SerializeField] public int b;
     [SerializeField] protected float lado;
     [SerializeField] public Tile[,] posiciones;
-
+    public bool estaInicializado = false;
     // Start is called before the first frame update
     void Start()
     {  
@@ -25,11 +25,11 @@ public class Grid : MonoBehaviour
                 posiciones[i,j].columna = j;
                 //esto se asegura que las posiciones de las casillas esten bien
                 posiciones[i,j].setPos(a.transform.position);
-                
+                //Debug.Log(posiciones[i,j]);
                 
             }
         }
-        
+        estaInicializado = true;
     }
 
     // Update is called once per frame
@@ -99,6 +99,29 @@ public class Grid : MonoBehaviour
             }
         }
     }
+
+    public bool IsPositionInsideRectangle(Vector3 position)
+    {   
+        Vector3 a = getTilePosition(0,0);
+        Vector3 b = getTilePosition(0,getAlto()-1);
+        Vector3 c = getTilePosition(getAncho()-1,getAlto()-1);
+        Vector3 d = getTilePosition(getAncho()-1,0);
+        // Calculate vectors
+        Vector3 BC = c - b;
+        Vector3 BM = position - b;
+        Vector3 DA = a - d;
+        Vector3 DM = position - d;
+
+        // Calculate dot products
+        float BCBC = Vector3.Dot(BC, BC);
+        float BCBM = Vector3.Dot(BC, BM);
+        float DADA = Vector3.Dot(DA, DA);
+        float DADM = Vector3.Dot(DA, DM);
+
+        // Check if position is inside rectangle
+        return 0 <= BCBM && BCBM <= BCBC && 0 <= DADM && DADM <= DADA;
+    }
+
 
     
 
