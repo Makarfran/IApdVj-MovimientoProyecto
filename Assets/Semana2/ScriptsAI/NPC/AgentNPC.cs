@@ -5,16 +5,21 @@ using UnityEngine;
 public class AgentNPC : Agent
 { 
     // Este será el steering final que se aplique al personaje.
+    public string bando;
     [SerializeField] protected Steering steer;
     // Todos los steering que tiene que calcular el agente.
     private List<SteeringBehaviour> listSteerings;
     private bool ModoDep;
     protected int maxVida;
-    protected int vida;
+    [SerializeField] protected float vida;
     protected int atq;
     protected float range;
     public float tam;
     [SerializeField] protected Grid grid;
+
+    public string getBando(){
+        return bando;
+    }
 
     public float getTam(){
         return tam;
@@ -148,8 +153,8 @@ public class AgentNPC : Agent
         return atq;
     }
 
-    public void pierdeVida(int a){
-        int perdida = vida - a;
+    public void pierdeVida(float a){
+        float perdida = vida - a;
         vida = Mathf.Max(perdida,0);
     }
 
@@ -164,8 +169,8 @@ public class AgentNPC : Agent
                 {
                  // Si este objeto está en contacto con un obstáculo, invoca setImpasable()
                 // Debug.Log("Tile: "+fila +" "+columna+" choca");
-                    int gana = vida + 1;
-                    vida = Mathf.Max(gana, maxVida);
+                    float gana = vida + 0.2f;
+                    vida = Mathf.Min(gana, maxVida);
             }
         }
     }
