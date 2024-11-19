@@ -7,7 +7,7 @@ public class InfluenceManager : MonoBehaviour
     public static InfluenceManager Instance { get; private set; }
 
     // Prefab para representar la influencia en cada tile
-    public GameObject tileVisualPrefab;
+    [SerializeField] public GameObject tileVisualPrefab;
     [SerializeField] public InfluenceGrid gird;
 
     // Diccionarios para almacenar la influencia en cada tile

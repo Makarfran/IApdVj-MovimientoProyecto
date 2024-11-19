@@ -10,7 +10,7 @@ public class AStart
     private List<Tile> abiertos;
     private List<Tile> cerrados;
     private AgentNPC agent;
-    public int costConnection = 100;
+    [SerializeField] public int costConnection = 100;
     public AStart()
     {
 
