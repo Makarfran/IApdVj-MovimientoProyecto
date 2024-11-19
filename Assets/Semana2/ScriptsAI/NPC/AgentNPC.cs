@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class AgentNPC : Agent
-{ 
+{
     // Este será el steering final que se aplique al personaje.
     public string bando;
     [SerializeField] protected Steering steer;
@@ -17,19 +17,22 @@ public class AgentNPC : Agent
     public float tam = 1;
     [SerializeField] protected Grid grid;
 
-    public string getBando(){
+    public string getBando()
+    {
         return bando;
     }
 
-    public float getTam(){
+    public float getTam()
+    {
         return tam;
     }
-    
-    public void setGrid(Grid g){
+
+    public void setGrid(Grid g)
+    {
         grid = g;
     }
 
-    protected  void Awake()
+    protected void Awake()
     {
         this.steer = new Steering();
 
@@ -37,7 +40,7 @@ public class AgentNPC : Agent
         // Construye una lista con todos las componenen del tipo SteeringBehaviour.
         // La llamaremos listSteerings
         // Puedes usar GetComponents<>()
-        SteeringBehaviour [] steers = GetComponents<SteeringBehaviour>();
+        SteeringBehaviour[] steers = GetComponents<SteeringBehaviour>();
         listSteerings = new List<SteeringBehaviour>(steers);
     }
 
@@ -54,31 +57,32 @@ public class AgentNPC : Agent
     {
         // En cada frame se actualiza el movimiento
         ApplySteering(Time.deltaTime);
-        if(ModoDep){
-            Debug.DrawLine(new Vector3(transform.position.x, transform.position.y + 3f, transform.position.z), new Vector3(this.transform.position.x + Acceleration.x, this.transform.position.y + Acceleration.y + 3f , this.transform.position.z + Acceleration.z), Color.blue);
+        if (ModoDep)
+        {
+            Debug.DrawLine(new Vector3(transform.position.x, transform.position.y + 3f, transform.position.z), new Vector3(this.transform.position.x + Acceleration.x, this.transform.position.y + Acceleration.y + 3f, this.transform.position.z + Acceleration.z), Color.blue);
         }
         recuperarVida();
         // En cada frame podría ejecutar otras componentes IA
     }
 
     private void ApplySteering(float deltaTime)
-    {   
+    {
 
         Acceleration = this.steer.linear;
         // Actualizar las propiedades para Time.deltaTime según NewtonEuler
         // La actualización de las propiedades se puede hacer en LateUpdate()
         Velocity += Acceleration * deltaTime;
         Rotation = this.steer.angular;
-        
+
         Orientation += Rotation * deltaTime;
         //transform.rotation = Quaternion.Euler(0,Orientation, 0);
         transform.rotation = new Quaternion();
         transform.Rotate(Vector3.up, Orientation);
-        
-        
-        Position += (new Vector3(Mathf.Min(Velocity.x, MaxSpeed),0 ,Mathf.Min(Velocity.z, MaxSpeed))) * deltaTime;
 
-        
+
+        Position += (new Vector3(Mathf.Min(Velocity.x, MaxSpeed), 0, Mathf.Min(Velocity.z, MaxSpeed))) * deltaTime;
+
+
         // Rotation
         // Position
         // Orientation
@@ -87,7 +91,7 @@ public class AgentNPC : Agent
     public virtual void LateUpdate()
     {
         Steering kinematicFinal = new Steering();
-        
+
         // Reseteamos el steering final.
         this.steer = new Steering();
 
@@ -100,25 +104,28 @@ public class AgentNPC : Agent
             
         }
         */
-    
+
         List<SteeringBehaviour> auxList = new List<SteeringBehaviour>();
         foreach (SteeringBehaviour b in listSteerings)
         {
-            if (GetComponent<StateMachineManager>() != null){
+            if (GetComponent<StateMachineManager>() != null)
+            {
                 if (GetComponent<StateMachineManager>().CurrentState == StateMachineManager.wanderState)
                 {
                     if (b.NameSteering == "Wander" || b.NameSteering == "WallAvoidance") { auxList.Add(b); }
                 }
-                else 
+                else
                 {
                     if (b.NameSteering != "Wander") { auxList.Add(b); }
-                } 
-            } else {
+                }
+            }
+            else
+            {
                 auxList.Add(b);
             }
         }
         kinematicFinal = Arbitro.getKinematicFinal(auxList, this);
-        
+
         //foreach (SteeringBehaviour behavior in listSteerings)
         //    Steering kinematic = behavior.GetSteering(this);
         //// La cinemática de este SteeringBehaviour se tiene que combinar
@@ -136,99 +143,120 @@ public class AgentNPC : Agent
         this.steer = kinematicFinal;
     }
 
-    public void ActivarDep(){
+    public void ActivarDep()
+    {
         this.ModoDep = true;
     }
 
-    public void DeactivarDep(){
+    public void DeactivarDep()
+    {
         this.ModoDep = false;
     }
 
-    public void attackEnemy(AgentNPC target){
+    public void attackEnemy(AgentNPC target)
+    {
         target.vida -= this.atq;
 
     }
 
-    public int getAtaque(){
+    public int getAtaque()
+    {
         return atq;
     }
 
-    public void pierdeVida(float a){
+    public void pierdeVida(float a)
+    {
         float perdida = vida - a;
-        vida = Mathf.Max(perdida,0);
+        vida = Mathf.Max(perdida, 0);
     }
 
-    public void recuperarVida(){
+    public void recuperarVida()
+    {
         Vector3 boxSize = GetComponent<Collider>().bounds.size;
-        
+
         // Verifica si este objeto está en contacto con un obstáculo
         Collider[] colliders = Physics.OverlapBox(transform.position, boxSize / 2, Quaternion.identity);
         foreach (Collider collider in colliders)
         {
             if (collider.gameObject.CompareTag("Cura"))
-                {
-                 // Si este objeto está en contacto con un obstáculo, invoca setImpasable()
+            {
+                // Si este objeto está en contacto con un obstáculo, invoca setImpasable()
                 // Debug.Log("Tile: "+fila +" "+columna+" choca");
-                    float gana = vida + 0.2f;
-                    vida = Mathf.Min(gana, maxVida);
+                float gana = vida + 0.2f;
+                vida = Mathf.Min(gana, maxVida);
             }
         }
     }
 
     /*
     * porcentaje de mejora o empeoramiento de la heuristica segun el tipo de NPC
-    */    
+    */
 
-    public virtual float getGCosteWeightCamino(Tile tile){
+    public virtual float getGCosteWeightCamino(Tile tile)
+    {
         switch (tile.getTipo())
-        {     
+        {
             default:
                 return 1f;
         }
     }
 
-    public  float getGCosteWeight(Tile tile)
-    {   
-        Tile inlfuenceTile = this.GetComponent<InfluenceMap>().grid.getTile(tile.fila,tile.columna);
+    public float getGCosteWeight(Tile tile)
+    {
+        Tile inlfuenceTile = this.GetComponent<InfluenceMap>().grid.getTile(tile.fila, tile.columna);
 
         Dictionary<Tile, float> tilesInfluenciados = InfluenceManager.Instance.getInfluenceMap(this.GetComponent<InfluenceMap>().faccion);
 
         float coste = CalcularFactorModificado(getGCosteWeightCamino(tile), tilesInfluenciados[inlfuenceTile]);
         //float coste = getGCosteWeightCamino(tile);
-        Debug.Log("Current wig: " + getGCosteWeightCamino(tile) + " current influence: "+ tilesInfluenciados[inlfuenceTile] + "coste: "+coste);
-        return  coste;
-         
+        Debug.Log("camino peso: " + getGCosteWeightCamino(tile) + " current influence: " + tilesInfluenciados[inlfuenceTile] + "coste: " + coste);
+        return coste;
+
 
     }
 
 
-    public virtual (float,float ) getFactorInfluencia(){
-        return (0.01f, 5f);
+    public virtual (float,float,float,float ) getFactorInfluencia()
+    {
+        return (0.1f, 0.3f, 1.20f, 3f);
     }
 
-// Método para calcular el nuevo factor modificado por la influencia
-    public float CalcularFactorModificado(float factorActual, float influenciaNeta)
-    {   
+
+    public float Map(float value, float inMin, float inMax, float outMin, float outMax)
+    {
+        return outMin + (outMax - outMin) * ((value - inMin) / (inMax - inMin));
+    }
+
+    // Método para calcular el nuevo factor modificado por la influencia
+    public virtual float CalcularFactorModificado(float factorActual, float influenciaNeta)
+    {
         var factoresInfluencia = getFactorInfluencia();
-        float facorMejora = factoresInfluencia.Item1;
-        float factorEmpeoramiento = factoresInfluencia.Item2;
+        float minMejora = factoresInfluencia.Item1;
+        float maxMejora = factoresInfluencia.Item2;
+
+        float minEmpeoramiento = factoresInfluencia.Item3;
+        float maxEmpeoramiento = factoresInfluencia.Item4;        
 
         float maxInfluencia = InfluenceManager.Instance.maxInfluence;
-        if (influenciaNeta < 0)
+        float minInfluencia = 0f;
+        float newFactor = factorActual;
+
+        if (minMejora == 0 && maxMejora == 0 && minEmpeoramiento == 0 && maxEmpeoramiento == 0  ){
+            return factorActual;
+        } 
+
+        if (influenciaNeta < 0 )
         {
-            // Incrementa factorActual hacia 5 cuando la influenciaNeta es negativa
-            return factorActual + ((-influenciaNeta / maxInfluencia) * (factorEmpeoramiento - factorActual));
+            
+            newFactor = factorActual *  Map( -influenciaNeta, minInfluencia,maxInfluencia, minEmpeoramiento, maxEmpeoramiento);
         }
         else if (influenciaNeta > 0)
         {
-            // Disminuye factorActual hacia 0.01 cuando la influenciaNeta es positiva
-            return factorActual - ((influenciaNeta / maxInfluencia) * (factorActual - facorMejora));
+            
+            newFactor = factorActual * (1 -  Map(influenciaNeta, minInfluencia,maxInfluencia, minMejora, maxMejora));
         }
-        else
-        {
-            // No hay modificación si influenciaNeta es 0
-            return factorActual;
-        }
+
+        return newFactor;
     }
 
 

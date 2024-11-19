@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections.Generic;
+using System.Collections;
 
 public class InfluenceManager : MonoBehaviour
 {
@@ -12,7 +13,8 @@ public class InfluenceManager : MonoBehaviour
     // Diccionarios para almacenar la influencia en cada tile
     private Dictionary<Tile, float> influenciaRojo = new Dictionary<Tile, float>();
     private Dictionary<Tile, float> influenciaAzul = new Dictionary<Tile, float>();
-
+    private Dictionary<Tile, float> mapaRojo;
+    private Dictionary<Tile, float> mapaAzul;
     // Tiempo total en segundos para que la influencia se reduzca a cero
     [SerializeField]
     public float seconds = 10.0f;
@@ -21,6 +23,8 @@ public class InfluenceManager : MonoBehaviour
     // Tiempo total en segundos para que la influencia se reduzca a cero
     [SerializeField]
     public int maxInfluence = 10;
+
+    [SerializeField] public int updateEach = 10; // Tiempo en segundos para actualizar la influencia    
     private void Awake()
     {
         if (Instance == null)
@@ -36,9 +40,26 @@ public class InfluenceManager : MonoBehaviour
 
     void Start()
     {
-
-
+        // Iniciamos la corrutina
+        StartCoroutine(UpdateInfluenceMapRoutine());
     }
+
+    // Corrutina que llama a updateInfluenceMap cada cierto tiempo
+    IEnumerator UpdateInfluenceMapRoutine()
+    {
+        while (true)
+        {
+            if (!gridInicializado)
+            {
+                yield return new WaitForSeconds(1); // Espera el tiempo especificado    
+            }
+
+            updateInfluenceMap(); // Llamada a la función principal
+            yield return new WaitForSeconds(updateEach); // Espera el tiempo especificado
+        }
+    }
+
+
     void Update()
     {
 
@@ -76,7 +97,7 @@ public class InfluenceManager : MonoBehaviour
     {
         influence = Mathf.Min(maxInfluence, influence);
         if (faccion == InfluenceMap.Faccion.Rojo)
-        {   
+        {
             influenciaRojo[position] = Mathf.Min(maxInfluence, influenciaRojo[position] + influence);
         }
         else if (faccion == InfluenceMap.Faccion.Azul)
@@ -102,7 +123,7 @@ public class InfluenceManager : MonoBehaviour
         {
             influenciaAzul[position] -= influence;
             if (influenciaAzul[position] < 0)
-                influenciaAzul[position] = 0 ;
+                influenciaAzul[position] = 0;
         }
 
         // Actualizar visualización
@@ -130,23 +151,31 @@ public class InfluenceManager : MonoBehaviour
         //Debug.Log($"Tile en {position} con influencia roja: {rojo}, azul: {azul}, color asignado: {color}");
     }
 
-    public Dictionary<Tile, float> getInfluenceMap(InfluenceMap.Faccion faccion)
+    private void updateInfluenceMap()
     {
-        Dictionary<Tile, float> influencia = new Dictionary<Tile, float>();
+        mapaRojo = new Dictionary<Tile, float>();
+        mapaAzul = new Dictionary<Tile, float>();
 
         foreach (var tile in influenciaRojo)
         {
-            if (faccion == InfluenceMap.Faccion.Rojo)
-            {
-                influencia[tile.Key] = tile.Value - influenciaAzul[tile.Key];
-            }
-            else
-            {
-                influencia[tile.Key] = influenciaAzul[tile.Key] - tile.Value;
-            }
+            mapaRojo[tile.Key] = tile.Value - influenciaAzul[tile.Key];
+            mapaAzul[tile.Key] = influenciaAzul[tile.Key] - tile.Value;
 
         }
-        return influencia;
+
+    }
+    public Dictionary<Tile, float> getInfluenceMap(InfluenceMap.Faccion faccion)
+    {
+
+        if (faccion == InfluenceMap.Faccion.Rojo)
+        {
+            return mapaRojo;
+        }
+        else
+        {
+            return mapaAzul;
+        }
+
     }
 
 

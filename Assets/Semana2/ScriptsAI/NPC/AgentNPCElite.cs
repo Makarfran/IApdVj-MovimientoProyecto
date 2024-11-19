@@ -71,8 +71,43 @@ public class AgentNPCElite : AgentNPC
         }
     }
 
-    public virtual (float,float ) getFactorInfluencia(){
-        
-        return (0.01f, 5f);
-    }       
+    public override (float,float,float,float ) getFactorInfluencia(){
+        // actitud camorrista, más peso a ir por el camino de inlfuencia enemiga
+
+       return ( 1.10f, 2f, 0.2f, 0.6f);
+    } 
+    
+    public override float CalcularFactorModificado(float factorActual, float influenciaNeta)
+    {
+        var factoresInfluencia = getFactorInfluencia();
+        float minMejora = factoresInfluencia.Item1;
+        float maxMejora = factoresInfluencia.Item2;
+
+        float minEmpeoramiento = factoresInfluencia.Item3;
+        float maxEmpeoramiento = factoresInfluencia.Item4;        
+
+        float maxInfluencia = InfluenceManager.Instance.maxInfluence;
+        float minInfluencia = 0f;
+        float newFactor = factorActual;
+
+        if (minMejora == 0 && maxMejora == 0 && minEmpeoramiento == 0 && maxEmpeoramiento == 0  ){
+            return factorActual;
+        } 
+
+        // mejoro el porcentaje de coste
+        if (influenciaNeta < 0 )
+        {
+            
+            newFactor = factorActual *  ( 1 - Map( -influenciaNeta, minInfluencia,maxInfluencia, minEmpeoramiento, maxEmpeoramiento));
+        }
+        // empeoro el porcenaje de coste
+        else if (influenciaNeta > 0)
+        {
+            
+            newFactor = (factorActual * Map(influenciaNeta, minInfluencia,maxInfluencia, minMejora, maxMejora));
+        }
+
+        return newFactor;
+    }  
+          
 }

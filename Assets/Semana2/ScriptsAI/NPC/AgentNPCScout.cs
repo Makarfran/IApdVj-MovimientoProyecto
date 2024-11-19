@@ -66,9 +66,10 @@ public class AgentNPCScout : AgentNPC
         }
     }
 
-    public virtual (float,float ) getFactorInfluencia(){
-        
-        return (0.01f, 5f);
+    public override (float,float,float,float ) getFactorInfluencia(){
+        // comportamiento evidentemente evasivo, siempre elige el camino
+        // gobernado por su equipo!
+        return (0.1f, 0.3f, 1.20f, 3f);
     }    
     
 }

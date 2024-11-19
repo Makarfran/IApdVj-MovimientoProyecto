@@ -62,8 +62,9 @@ public class AgentNPCInfanteria : AgentNPC
         }
     }    
 
-    public virtual (float,float ) getFactorInfluencia(){
-        
-        return (0.01f, 5f);
+    public override (float,float,float,float ) getFactorInfluencia(){
+        // prefiere el camino más corto a la base, la influencia no se usa.
+
+        return (0f, 0f,0f,0f);
     }       
 }

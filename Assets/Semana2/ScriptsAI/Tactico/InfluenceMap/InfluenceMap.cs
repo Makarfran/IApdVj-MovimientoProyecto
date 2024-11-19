@@ -4,10 +4,10 @@ using System.Collections.Generic;
 public class InfluenceMap : MonoBehaviour
 {
     public InfluenceGrid grid;  // El Grid predefinido que se asignará desde la UI de Unity
-    public int radio = 5;  // El radio de influencia del personaje
-    public float influenciaBase = 10.0f;  // La influencia base I0
+    [SerializeField] public int radio = 5;  // El radio de influencia del personaje
+    [SerializeField] public float influenciaBase = 10.0f;  // La influencia base I0
     public enum Faccion { Rojo, Azul };  // Facción del personaje
-    public Faccion faccion;
+    [SerializeField] public Faccion faccion;
 
     private Vector3 posicionAnterior;  // Posición anterior del personaje
     private bool gridInicializado = false;  // Variable para controlar si el grid está listo
