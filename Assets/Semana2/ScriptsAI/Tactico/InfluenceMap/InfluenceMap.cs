@@ -120,4 +120,8 @@ public class InfluenceMap : MonoBehaviour
             }
         }
     }
+
+    public void setFaccion(Faccion faccion){
+        this.faccion = faccion;
+    }
 }

@@ -43,6 +43,7 @@ public class KeypointBase : Keypoint
             Material[] mats = plane.GetComponent<Renderer>().materials;
             mats[0] = Rmat;
             plane.GetComponent<Renderer>().materials = mats;
+            this.GetComponent<InfluenceMap>().setFaccion(InfluenceMap.Faccion.Rojo);
             
         } else{
             Bando = "A";
@@ -51,6 +52,7 @@ public class KeypointBase : Keypoint
             Material[] mats = plane.GetComponent<Renderer>().materials;
             mats[0] = Amat;
             plane.GetComponent<Renderer>().materials = mats;
+            this.GetComponent<InfluenceMap>().setFaccion(InfluenceMap.Faccion.Azul);
             
         }
     }
