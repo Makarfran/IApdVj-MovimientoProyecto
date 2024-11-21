@@ -12,10 +12,48 @@ public class AgentNPC : Agent
     private bool ModoDep;
     protected int maxVida;
     [SerializeField] protected float vida;
-    protected int atq;
+    [SerializeField] protected int atq;
+    [SerializeField] public float costeAtaque = 200f;
     protected float range;
     public float tam = 1;
     [SerializeField] protected Grid grid;
+
+    protected string tipoUnidad = "";
+
+
+
+
+
+
+
+    // Factores entre tipos de unidades
+    public Dictionary<string, Dictionary<string, float>> UnitAttackFactor = new Dictionary<string, Dictionary<string, float>>()
+    {
+        { "Scout", new Dictionary<string, float> { { "Scout", 1f }, { "Infantería", 1.5f }, { "Élite", 1f } } },
+        { "Infantería", new Dictionary<string, float> { { "Scout", 1.75f }, { "Infantería", 1f }, { "Élite", 0.25f } } },
+        { "Élite", new Dictionary<string, float> { { "Scout", 1.75f }, { "Infantería", 1.5f }, { "Élite", 1f } } }
+    };
+
+    // Factores de ataque por terreno
+    public Dictionary<string, Dictionary<string, float>> TerrainAttackFactor = new Dictionary<string, Dictionary<string, float>>()
+    {
+        { "Hierba", new Dictionary<string, float> { { "Scout", 1.25f }, { "Infantería", 0.75f }, { "Élite", 1f } } },
+        { "Desierto", new Dictionary<string, float> { { "Scout", 2f }, { "Infantería", 1f }, { "Élite", 1f } } },
+        { "Camino", new Dictionary<string, float> { { "Scout", 2f }, { "Infantería", 1f }, { "Élite", 0.25f } } }
+    };
+
+    // Factores de defensa por terreno
+    public Dictionary<string, Dictionary<string, float>> TerrainDefenseFactor = new Dictionary<string, Dictionary<string, float>>()
+    {
+        { "Hierba", new Dictionary<string, float> { { "Scout", 1.75f }, { "Infantería", 1f }, { "Élite", 0.5f } } },
+        { "Desierto", new Dictionary<string, float> { { "Scout", 0.75f }, { "Infantería", 1.25f }, { "Élite", 1f } } },
+        { "Camino", new Dictionary<string, float> { { "Scout", 0.75f }, { "Infantería", 0.75f }, { "Élite", 1f } } }
+    };
+
+
+
+
+
 
     public string getBando()
     {
@@ -153,9 +191,43 @@ public class AgentNPC : Agent
         this.ModoDep = false;
     }
 
+
+    public float getDamage(float FA, float FD)
+    {
+        float damage = 0;
+
+
+        if (Random.Range(0f, 101f) == 100)
+        {
+            damage = costeAtaque * 50; // Ataque suertudo
+        }
+        else
+        {
+            damage = FA / FD * costeAtaque * (Random.Range(0f, 51f) / 100f + 0.5f);
+            if (damage <= (costeAtaque / 10))
+            {
+                damage = Random.Range(0f, (costeAtaque / 10f)) + (costeAtaque / 10f);
+            }
+        }
+
+        return damage;
+
+    }
     public void attackEnemy(AgentNPC target)
     {
-        target.vida -= this.atq;
+        string atackTerreno = grid.getTileByVector(this.transform.position).getTipo();
+        string defenseTerreno = grid.getTileByVector(target.transform.position).getTipo();
+
+        float FAD = UnitAttackFactor[tipoUnidad][target.tipoUnidad];
+        float FTA = TerrainAttackFactor[atackTerreno][tipoUnidad];
+        float FTD = TerrainDefenseFactor[defenseTerreno][target.tipoUnidad];
+
+
+        float FA = atq * FAD * FTA;
+        float FD = target.atq * FTD;
+        float damage = getDamage(FA, FD);
+
+        target.pierdeVida(damage);
 
     }
 
@@ -216,7 +288,7 @@ public class AgentNPC : Agent
     }
 
 
-    public virtual (float,float,float,float ) getFactorInfluencia()
+    public virtual (float, float, float, float) getFactorInfluencia()
     {
         return (0.1f, 0.3f, 1.20f, 3f);
     }
@@ -235,25 +307,26 @@ public class AgentNPC : Agent
         float maxMejora = factoresInfluencia.Item2;
 
         float minEmpeoramiento = factoresInfluencia.Item3;
-        float maxEmpeoramiento = factoresInfluencia.Item4;        
+        float maxEmpeoramiento = factoresInfluencia.Item4;
 
         float maxInfluencia = InfluenceManager.Instance.maxInfluence;
         float minInfluencia = 0f;
         float newFactor = factorActual;
 
-        if (minMejora == 0 && maxMejora == 0 && minEmpeoramiento == 0 && maxEmpeoramiento == 0  ){
-            return factorActual;
-        } 
-
-        if (influenciaNeta < 0 )
+        if (minMejora == 0 && maxMejora == 0 && minEmpeoramiento == 0 && maxEmpeoramiento == 0)
         {
-            
-            newFactor = factorActual *  Map( -influenciaNeta, minInfluencia,maxInfluencia, minEmpeoramiento, maxEmpeoramiento);
+            return factorActual;
+        }
+
+        if (influenciaNeta < 0)
+        {
+
+            newFactor = factorActual * Map(-influenciaNeta, minInfluencia, maxInfluencia, minEmpeoramiento, maxEmpeoramiento);
         }
         else if (influenciaNeta > 0)
         {
-            
-            newFactor = factorActual * (1 -  Map(influenciaNeta, minInfluencia,maxInfluencia, minMejora, maxMejora));
+
+            newFactor = factorActual * (1 - Map(influenciaNeta, minInfluencia, maxInfluencia, minMejora, maxMejora));
         }
 
         return newFactor;

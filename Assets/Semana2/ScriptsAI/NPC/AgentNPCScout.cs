@@ -11,10 +11,11 @@ public class AgentNPCScout : AgentNPC
     protected override void Start()
     {
         base.Start();
-        this.vida = 6;
-        this.maxVida = 6;
-        this.atq = 1;
+        this.vida = 8000;
+        this.maxVida = 8000;
+        this.atq = 75;
         this.range = 5f;
+        this.tipoUnidad = "Scout";
         
     }
     

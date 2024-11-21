@@ -11,10 +11,11 @@ public class AgentNPCElite : AgentNPC
     protected override void Start()
     {
         base.Start();
-        this.vida = 12;
-        this.maxVida = 12;
-        this.atq = 3;
+        this.vida = 6000;
+        this.maxVida = 6000;
+        this.atq = 120;
         this.range = 2f;
+        this.tipoUnidad = "Elite";
 
     }
     // Start is called before the first frame update
