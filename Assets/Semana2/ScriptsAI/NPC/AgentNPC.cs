@@ -254,7 +254,7 @@ public class AgentNPC : Agent
             {
                 // Si este objeto está en contacto con un obstáculo, invoca setImpasable()
                 // Debug.Log("Tile: "+fila +" "+columna+" choca");
-                float gana = vida + 0.2f;
+                float gana = vida + 5f;
                 vida = Mathf.Min(gana, maxVida);
             }
         }
