@@ -368,8 +368,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1528838799}
-  m_RootOrder: 3
+  m_Father: {fileID: 1546207957}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &12693354
 GameObject:
@@ -2583,7 +2583,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1528838799}
+  m_Father: {fileID: 1760510317}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &138324567
@@ -2791,7 +2791,7 @@ MonoBehaviour:
   vida: 0
   atq: 0
   costeAtaque: 200
-  tam: 1.5
+  tam: 3
   grid: {fileID: 0}
 --- !u!114 &143926578
 MonoBehaviour:
@@ -3978,7 +3978,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400070, guid: 3353e4f866c39d043a315b41717c9bb7, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -18.33
+      value: 1.2
       objectReference: {fileID: 0}
     - target: {fileID: 400070, guid: 3353e4f866c39d043a315b41717c9bb7, type: 3}
       propertyPath: m_LocalPosition.y
@@ -3986,7 +3986,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400070, guid: 3353e4f866c39d043a315b41717c9bb7, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 5.5
+      value: -19
       objectReference: {fileID: 0}
     - target: {fileID: 400070, guid: 3353e4f866c39d043a315b41717c9bb7, type: 3}
       propertyPath: m_LocalRotation.w
@@ -5177,7 +5177,7 @@ MonoBehaviour:
   vida: 0
   atq: 0
   costeAtaque: 200
-  tam: 1.5
+  tam: 3
   grid: {fileID: 0}
 --- !u!114 &280528289
 MonoBehaviour:
@@ -5897,7 +5897,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 41f081d5c6d286c47a33bed3f84de79a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 20.01
+      value: 1.6
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 41f081d5c6d286c47a33bed3f84de79a, type: 3}
       propertyPath: m_LocalPosition.y
@@ -5905,7 +5905,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 41f081d5c6d286c47a33bed3f84de79a, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -7.53
+      value: -16.8
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 41f081d5c6d286c47a33bed3f84de79a, type: 3}
       propertyPath: m_LocalRotation.w
@@ -6008,7 +6008,7 @@ MonoBehaviour:
   vida: 0
   atq: 0
   costeAtaque: 200
-  tam: 1.5
+  tam: 3
   grid: {fileID: 0}
 --- !u!114 &344655514
 MonoBehaviour:
@@ -6022,8 +6022,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5afadb25a4e8d2141b4adacaf9e27726, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 106873492}
-  camino: {fileID: 1528838798}
+  target: {fileID: 2001415970}
+  camino: {fileID: 1718149464}
 --- !u!4 &344655516 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 41f081d5c6d286c47a33bed3f84de79a, type: 3}
@@ -6657,7 +6657,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 41f081d5c6d286c47a33bed3f84de79a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 14.64
+      value: 15.53
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 41f081d5c6d286c47a33bed3f84de79a, type: 3}
       propertyPath: m_LocalPosition.y
@@ -6665,7 +6665,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 41f081d5c6d286c47a33bed3f84de79a, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.21
+      value: -1.98
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 41f081d5c6d286c47a33bed3f84de79a, type: 3}
       propertyPath: m_LocalRotation.w
@@ -6778,7 +6778,7 @@ MonoBehaviour:
   vida: 0
   atq: 0
   costeAtaque: 200
-  tam: 2
+  tam: 4
   grid: {fileID: 0}
 --- !u!114 &368208434
 MonoBehaviour:
@@ -7354,7 +7354,7 @@ MonoBehaviour:
   vida: 0
   atq: 0
   costeAtaque: 200
-  tam: 1.5
+  tam: 3
   grid: {fileID: 0}
 --- !u!114 &379401897
 MonoBehaviour:
@@ -7982,11 +7982,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 412008870}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -19.1, y: 0, z: -14.2}
+  m_LocalPosition: {x: -19.1, y: 0, z: -14.200001}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1109423210}
+  m_Father: {fileID: 1167824444}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &412147220
@@ -8808,7 +8808,7 @@ MonoBehaviour:
   vida: 0
   atq: 0
   costeAtaque: 200
-  tam: 1.5
+  tam: 3
   grid: {fileID: 0}
 --- !u!114 &446215333
 MonoBehaviour:
@@ -12242,7 +12242,7 @@ MonoBehaviour:
   vida: 0
   atq: 0
   costeAtaque: 200
-  tam: 1.5
+  tam: 3
   grid: {fileID: 0}
 --- !u!114 &652509382
 MonoBehaviour:
@@ -12270,8 +12270,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5afadb25a4e8d2141b4adacaf9e27726, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 0}
-  camino: {fileID: 652509384}
+  target: {fileID: 412008871}
+  camino: {fileID: 1167824443}
 --- !u!114 &652509384
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13237,8 +13237,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1528838799}
-  m_RootOrder: 2
+  m_Father: {fileID: 1546207957}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &684618815
 GameObject:
@@ -13739,12 +13739,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 712077154}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -23.1, y: 0, z: -7.6}
+  m_LocalPosition: {x: -23.100002, y: 0, z: -7.6000004}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1109423210}
-  m_RootOrder: 4
+  m_Father: {fileID: 1920035551}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &712077156
 MonoBehaviour:
@@ -16361,7 +16361,7 @@ MonoBehaviour:
   vida: 0
   atq: 0
   costeAtaque: 200
-  tam: 1.5
+  tam: 3
   grid: {fileID: 0}
 --- !u!114 &856753710
 MonoBehaviour:
@@ -16760,7 +16760,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1528838799}
+  m_Father: {fileID: 1718149463}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &871910568
@@ -17304,7 +17304,7 @@ MonoBehaviour:
   vida: 0
   atq: 0
   costeAtaque: 200
-  tam: 1.5
+  tam: 3
   grid: {fileID: 0}
 --- !u!114 &913492956
 MonoBehaviour:
@@ -19526,7 +19526,7 @@ MonoBehaviour:
   vida: 0
   atq: 0
   costeAtaque: 200
-  tam: 1.5
+  tam: 3
   grid: {fileID: 0}
 --- !u!114 &1032717905
 MonoBehaviour:
@@ -19721,7 +19721,7 @@ MonoBehaviour:
   vida: 0
   atq: 0
   costeAtaque: 200
-  tam: 2
+  tam: 4
   grid: {fileID: 0}
 --- !u!4 &1036781326 stripped
 Transform:
@@ -19754,8 +19754,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5afadb25a4e8d2141b4adacaf9e27726, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 0}
-  camino: {fileID: 1036781330}
+  target: {fileID: 712077156}
+  camino: {fileID: 1920035552}
 --- !u!114 &1036781330
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20004,8 +20004,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1109423210}
-  m_RootOrder: 3
+  m_Father: {fileID: 1691924903}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1047544123
 GameObject:
@@ -20699,8 +20699,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1109423210}
-  m_RootOrder: 2
+  m_Father: {fileID: 1167824444}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1086522652
 PrefabInstance:
@@ -20727,7 +20727,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 41f081d5c6d286c47a33bed3f84de79a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -12.97
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 41f081d5c6d286c47a33bed3f84de79a, type: 3}
       propertyPath: m_LocalPosition.y
@@ -20735,7 +20735,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 41f081d5c6d286c47a33bed3f84de79a, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -3.13
+      value: 5.4
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 41f081d5c6d286c47a33bed3f84de79a, type: 3}
       propertyPath: m_LocalRotation.w
@@ -21105,7 +21105,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1109423210}
-  - component: {fileID: 1109423209}
   m_Layer: 0
   m_Name: Patrulla A
   m_TagString: Untagged
@@ -21113,25 +21112,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1109423209
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1109423208}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 64c1ef18abdb1e04098608d2da1e16b1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  objetivos:
-  - {fileID: 412008871}
-  - {fileID: 1748294762}
-  - {fileID: 1037386134}
-  - {fileID: 1078030537}
-  resetable: 1
-  ModoDep: 0
 --- !u!4 &1109423210
 Transform:
   m_ObjectHideFlags: 0
@@ -21144,12 +21124,9 @@ Transform:
   m_LocalScale: {x: 0.99999994, y: 1, z: 0.99999994}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 412008875}
-  - {fileID: 1748294766}
-  - {fileID: 1078030541}
-  - {fileID: 1037386138}
-  - {fileID: 712077155}
-  - {fileID: 1790103595}
+  - {fileID: 1167824444}
+  - {fileID: 1691924903}
+  - {fileID: 1920035551}
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -21803,6 +21780,57 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1163940283}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1167824442
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1167824444}
+  - component: {fileID: 1167824443}
+  m_Layer: 0
+  m_Name: PatrullaA1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1167824443
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1167824442}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64c1ef18abdb1e04098608d2da1e16b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objetivos:
+  - {fileID: 412008871}
+  - {fileID: 1078030537}
+  resetable: 1
+  ModoDep: 0
+--- !u!4 &1167824444
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1167824442}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 412008875}
+  - {fileID: 1078030541}
+  m_Father: {fileID: 1109423210}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1177374431
 GameObject:
   m_ObjectHideFlags: 0
@@ -22057,7 +22085,7 @@ MonoBehaviour:
   vida: 0
   atq: 0
   costeAtaque: 200
-  tam: 2
+  tam: 4
   grid: {fileID: 0}
 --- !u!4 &1203993012 stripped
 Transform:
@@ -22105,8 +22133,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5afadb25a4e8d2141b4adacaf9e27726, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 0}
-  camino: {fileID: 1203993015}
+  target: {fileID: 106873492}
+  camino: {fileID: 1760510316}
 --- !u!114 &1203993017
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22637,7 +22665,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400070, guid: 3353e4f866c39d043a315b41717c9bb7, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 25.12
+      value: 3.8
       objectReference: {fileID: 0}
     - target: {fileID: 400070, guid: 3353e4f866c39d043a315b41717c9bb7, type: 3}
       propertyPath: m_LocalPosition.y
@@ -22645,7 +22673,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400070, guid: 3353e4f866c39d043a315b41717c9bb7, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -5.5
+      value: 2.5
       objectReference: {fileID: 0}
     - target: {fileID: 400070, guid: 3353e4f866c39d043a315b41717c9bb7, type: 3}
       propertyPath: m_LocalRotation.w
@@ -22725,7 +22753,7 @@ MonoBehaviour:
   vida: 0
   atq: 0
   costeAtaque: 200
-  tam: 1.5
+  tam: 3
   grid: {fileID: 0}
 --- !u!114 &1233011879
 MonoBehaviour:
@@ -22768,8 +22796,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5afadb25a4e8d2141b4adacaf9e27726, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 0}
-  camino: {fileID: 1233011880}
+  target: {fileID: 681995163}
+  camino: {fileID: 1546207958}
 --- !u!114 &1233011882
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -24208,7 +24236,7 @@ MonoBehaviour:
   vida: 0
   atq: 0
   costeAtaque: 200
-  tam: 1.5
+  tam: 3
   grid: {fileID: 0}
 --- !u!114 &1274613301
 MonoBehaviour:
@@ -26304,8 +26332,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1528838799}
-  m_RootOrder: 5
+  m_Father: {fileID: 1760510317}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1407962024
 MonoBehaviour:
@@ -27565,7 +27593,7 @@ MonoBehaviour:
   vida: 0
   atq: 0
   costeAtaque: 200
-  tam: 1.5
+  tam: 3
   grid: {fileID: 0}
 --- !u!114 &1467225584
 MonoBehaviour:
@@ -28948,7 +28976,7 @@ MonoBehaviour:
   vida: 0
   atq: 0
   costeAtaque: 200
-  tam: 1.5
+  tam: 3
   grid: {fileID: 0}
 --- !u!114 &1510112729
 MonoBehaviour:
@@ -29587,7 +29615,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1528838799}
-  - component: {fileID: 1528838798}
   m_Layer: 0
   m_Name: Patrulla B
   m_TagString: Untagged
@@ -29595,25 +29622,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1528838798
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1528838797}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 64c1ef18abdb1e04098608d2da1e16b1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  objetivos:
-  - {fileID: 106873492}
-  - {fileID: 865298881}
-  - {fileID: 681995163}
-  - {fileID: 8104719}
-  resetable: 1
-  ModoDep: 0
 --- !u!4 &1528838799
 Transform:
   m_ObjectHideFlags: 0
@@ -29626,12 +29634,9 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 106873496}
-  - {fileID: 865298885}
-  - {fileID: 681995167}
-  - {fileID: 8104723}
-  - {fileID: 2001415969}
-  - {fileID: 1407962023}
+  - {fileID: 1760510317}
+  - {fileID: 1718149463}
+  - {fileID: 1546207957}
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -29761,6 +29766,57 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1535024244}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1546207956
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1546207957}
+  - component: {fileID: 1546207958}
+  m_Layer: 0
+  m_Name: PatrullaB3
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1546207957
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1546207956}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 681995167}
+  - {fileID: 8104723}
+  m_Father: {fileID: 1528838799}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1546207958
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1546207956}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64c1ef18abdb1e04098608d2da1e16b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objetivos:
+  - {fileID: 681995163}
+  - {fileID: 8104719}
+  resetable: 1
+  ModoDep: 0
 --- !u!1 &1557063884 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 41f081d5c6d286c47a33bed3f84de79a, type: 3}
@@ -29797,7 +29853,7 @@ MonoBehaviour:
   vida: 0
   atq: 0
   costeAtaque: 200
-  tam: 1.5
+  tam: 3
   grid: {fileID: 0}
 --- !u!114 &1557063887
 MonoBehaviour:
@@ -29811,8 +29867,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5afadb25a4e8d2141b4adacaf9e27726, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 412008871}
-  camino: {fileID: 1109423209}
+  target: {fileID: 1037386134}
+  camino: {fileID: 1691924904}
 --- !u!4 &1557063889 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 41f081d5c6d286c47a33bed3f84de79a, type: 3}
@@ -30786,7 +30842,7 @@ MonoBehaviour:
   vida: 0
   atq: 0
   costeAtaque: 200
-  tam: 1.5
+  tam: 3
   grid: {fileID: 0}
 --- !u!114 &1633838602
 MonoBehaviour:
@@ -31070,7 +31126,7 @@ MonoBehaviour:
   vida: 0
   atq: 0
   costeAtaque: 200
-  tam: 1.5
+  tam: 3
   grid: {fileID: 0}
 --- !u!114 &1638429243
 MonoBehaviour:
@@ -31906,7 +31962,7 @@ MonoBehaviour:
   vida: 0
   atq: 0
   costeAtaque: 200
-  tam: 1.5
+  tam: 3
   grid: {fileID: 0}
 --- !u!114 &1683300420
 MonoBehaviour:
@@ -32418,6 +32474,57 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1686532106}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1691924902
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1691924903}
+  - component: {fileID: 1691924904}
+  m_Layer: 0
+  m_Name: PatrullaA2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1691924903
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1691924902}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1037386138}
+  - {fileID: 1748294766}
+  m_Father: {fileID: 1109423210}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1691924904
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1691924902}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64c1ef18abdb1e04098608d2da1e16b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objetivos:
+  - {fileID: 1037386134}
+  - {fileID: 1748294762}
+  resetable: 1
+  ModoDep: 0
 --- !u!1001 &1695337633
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -32770,6 +32877,57 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 12bd93f03376fc64f859657a80a0919f, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 977c66ca50d912d48a8e258960cae97f, type: 3}
+--- !u!1 &1718149462
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1718149463}
+  - component: {fileID: 1718149464}
+  m_Layer: 0
+  m_Name: PatrullaB2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1718149463
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1718149462}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 2001415969}
+  - {fileID: 865298885}
+  m_Father: {fileID: 1528838799}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1718149464
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1718149462}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64c1ef18abdb1e04098608d2da1e16b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objetivos:
+  - {fileID: 2001415970}
+  - {fileID: 865298881}
+  resetable: 1
+  ModoDep: 0
 --- !u!1 &1723370205
 GameObject:
   m_ObjectHideFlags: 0
@@ -33416,7 +33574,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1109423210}
+  m_Father: {fileID: 1691924903}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1755614438
@@ -33540,6 +33698,57 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1755614438}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1760510315
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1760510317}
+  - component: {fileID: 1760510316}
+  m_Layer: 0
+  m_Name: PatrullaB1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1760510316
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1760510315}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64c1ef18abdb1e04098608d2da1e16b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objetivos:
+  - {fileID: 106873492}
+  - {fileID: 1407962024}
+  resetable: 1
+  ModoDep: 0
+--- !u!4 &1760510317
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1760510315}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 106873496}
+  - {fileID: 1407962023}
+  m_Father: {fileID: 1528838799}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1765992123
 GameObject:
   m_ObjectHideFlags: 0
@@ -33810,12 +34019,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1790103594}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -23.1, y: 0, z: 3.9}
+  m_LocalPosition: {x: -23.100002, y: 0, z: 3.9000003}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1109423210}
-  m_RootOrder: 5
+  m_Father: {fileID: 1920035551}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1790103596
 MonoBehaviour:
@@ -34214,7 +34423,7 @@ Canvas:
   m_GameObject: {fileID: 1805474885}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 1
+  m_RenderMode: 0
   m_Camera: {fileID: 1844119923}
   m_PlaneDistance: 70
   m_PixelPerfect: 0
@@ -35104,7 +35313,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1844119921}
   m_LocalRotation: {x: 0.6951948, y: -0, z: -0, w: 0.7188215}
-  m_LocalPosition: {x: -0.3, y: 77.7, z: -5.5}
+  m_LocalPosition: {x: -0.3, y: 52.2, z: -4.7}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -36396,6 +36605,57 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1919186574}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1920035550
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1920035551}
+  - component: {fileID: 1920035552}
+  m_Layer: 0
+  m_Name: PatrullaA3
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1920035551
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1920035550}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 712077155}
+  - {fileID: 1790103595}
+  m_Father: {fileID: 1109423210}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1920035552
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1920035550}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64c1ef18abdb1e04098608d2da1e16b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objetivos:
+  - {fileID: 712077156}
+  - {fileID: 1790103596}
+  resetable: 1
+  ModoDep: 0
 --- !u!1 &1925413736
 GameObject:
   m_ObjectHideFlags: 0
@@ -37356,7 +37616,7 @@ MonoBehaviour:
   vida: 0
   atq: 0
   costeAtaque: 200
-  tam: 1.5
+  tam: 3
   grid: {fileID: 0}
 --- !u!114 &1975255649
 MonoBehaviour:
@@ -37834,8 +38094,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1528838799}
-  m_RootOrder: 4
+  m_Father: {fileID: 1718149463}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2001415970
 MonoBehaviour:
@@ -38889,7 +39149,7 @@ MonoBehaviour:
   vida: 0
   atq: 0
   costeAtaque: 200
-  tam: 1.5
+  tam: 3
   grid: {fileID: 0}
 --- !u!65 &2043641406
 BoxCollider:
@@ -39259,7 +39519,7 @@ MonoBehaviour:
   vida: 0
   atq: 0
   costeAtaque: 200
-  tam: 2
+  tam: 4
   grid: {fileID: 0}
 --- !u!114 &2050240627
 MonoBehaviour:
@@ -39454,7 +39714,7 @@ MonoBehaviour:
   vida: 0
   atq: 0
   costeAtaque: 200
-  tam: 1.5
+  tam: 3
   grid: {fileID: 0}
 --- !u!114 &2051067679
 MonoBehaviour:
@@ -41165,7 +41425,7 @@ MonoBehaviour:
   vida: 0
   atq: 0
   costeAtaque: 200
-  tam: 1.5
+  tam: 3
   grid: {fileID: 0}
 --- !u!114 &2128671333
 MonoBehaviour:
@@ -41525,7 +41785,7 @@ MonoBehaviour:
   vida: 0
   atq: 0
   costeAtaque: 200
-  tam: 1.5
+  tam: 3
   grid: {fileID: 0}
 --- !u!114 &2133570266
 MonoBehaviour:

@@ -42,6 +42,7 @@ public class InfluenceManager : MonoBehaviour
     {
         // Iniciamos la corrutina
         StartCoroutine(UpdateInfluenceMapRoutine());
+        StartCoroutine(UpdateInfluenceColorRoutine());
     }
 
     // Corrutina que llama a updateInfluenceMap cada cierto tiempo
@@ -59,27 +60,37 @@ public class InfluenceManager : MonoBehaviour
         }
     }
 
+    IEnumerator UpdateInfluenceColorRoutine()
+    {
+        while (true)
+        {
+            Debug.Log("corrutina1");
+            // Verificamos si el Grid está inicializado antes de calcular influencias
+            if (!gridInicializado)
+            {
+                VerificarGridInicializado();
+                yield return new WaitForSeconds(1);
+            }
+
+            // Calculamos el decremento de influencia en cada frame
+            float decrementoPorFrame = (maxInfluence / seconds) * updateEach;
+
+            // Actualizar la influencia para cada tile en el equipo rojo
+            ActualizarInfluenciaDiccionario(influenciaRojo, decrementoPorFrame, InfluenceMap.Faccion.Rojo);
+
+            // Actualizar la influencia para cada tile en el equipo azul
+            ActualizarInfluenciaDiccionario(influenciaAzul, decrementoPorFrame, InfluenceMap.Faccion.Azul);
+  
+            yield return new WaitForSeconds(3); // Espera el tiempo especificado
+        }
+    }
+
 
     void Update()
     {
 
 
-        // Verificamos si el Grid está inicializado antes de calcular influencias
-        if (!gridInicializado)
-        {
-            VerificarGridInicializado();
-            return;  // Si no está inicializado, no calculamos nada
-        }
-
-        // Calculamos el decremento de influencia en cada frame
-        float decrementoPorFrame = (maxInfluence / seconds) * Time.deltaTime;
-
-        // Actualizar la influencia para cada tile en el equipo rojo
-        ActualizarInfluenciaDiccionario(influenciaRojo, decrementoPorFrame, InfluenceMap.Faccion.Rojo);
-
-        // Actualizar la influencia para cada tile en el equipo azul
-        ActualizarInfluenciaDiccionario(influenciaAzul, decrementoPorFrame, InfluenceMap.Faccion.Azul);
-    }
+          }
 
     private void ActualizarInfluenciaDiccionario(Dictionary<Tile, float> influenciaDiccionario, float decrementoPorSegundo, InfluenceMap.Faccion faccion)
     {
@@ -111,7 +122,8 @@ public class InfluenceManager : MonoBehaviour
 
     // Método para eliminar influencia de un tile
     public void EliminarInfluencia(Tile position, float influence, InfluenceMap.Faccion faccion)
-    {
+    {   
+        
         //Debug.Log("eliminando tile " + position);
         if (faccion == InfluenceMap.Faccion.Rojo && influenciaRojo.ContainsKey(position))
         {

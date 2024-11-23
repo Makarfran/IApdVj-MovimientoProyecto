@@ -21,9 +21,10 @@ public class Tile : MonoBehaviour
 
     void Start()
     {
+        
         // Obtener la capa del objeto actual
         int layerIndex = gameObject.layer;
-        if (layerIndex == 0)
+        if (layerIndex != 5)
         {
             // Define el tamaño de la caja de colisión
             Vector3 boxSize = GetComponent<Collider>().bounds.size;
@@ -50,7 +51,7 @@ public class Tile : MonoBehaviour
                 {
                     tipo = "Desierto";
                 }
-                else if (collider.gameObject.CompareTag("Terrain") && (tipo != "Camino" && tipo != "Desierto") && pasable)
+                else 
                 {
                     tipo = "Hierba";
                 }
