@@ -4,15 +4,15 @@ using UnityEngine;
 
 public class ActionManager : MonoBehaviour
 {
-    private List<Action> queue;
-    private List<Action> active;
+    private List<Action> queue = new List<Action>();
+    private List<Action> active = new List<Action>();
     public int currTime;
 
-    void scheduleAction( Action action){
-        queue.Add(action);
+    public void scheduleAction( List<Action> action){
+        queue.AddRange(action);
     }
 
-    void execute(){
+    void Update(){
         
         currTime += 1;
         foreach(Action a in queue){

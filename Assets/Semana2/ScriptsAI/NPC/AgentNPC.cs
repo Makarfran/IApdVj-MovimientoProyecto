@@ -65,6 +65,16 @@ public class AgentNPC : Agent
         return tam;
     }
 
+    public float getVida()
+    {
+        return vida;
+    }
+
+    public float getRange()
+    {
+        return range;
+    }
+
     public void setGrid(Grid g)
     {
         grid = g;

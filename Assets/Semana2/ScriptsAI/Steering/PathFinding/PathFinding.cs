@@ -121,5 +121,11 @@ public class PathFinding : MonoBehaviour
         pathFindingTactico = false;
     }
 
+    public void cortarCamino() 
+    {
+        posCamino = 0;
+        camino.Clear();
+    }
+
 }
 
