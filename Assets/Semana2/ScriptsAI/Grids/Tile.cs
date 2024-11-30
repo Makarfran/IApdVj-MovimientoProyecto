@@ -17,7 +17,7 @@ public class Tile : MonoBehaviour
 
     public Text textComponent;
 
-
+    private Color defaultColor;
 
     void Start()
     {
@@ -34,7 +34,7 @@ public class Tile : MonoBehaviour
 
             foreach (Collider collider in colliders)
             {
-                if (collider.gameObject.CompareTag("Obstaculos"))
+if (collider.gameObject.CompareTag("Obstaculos"))
                 {
                     // Si este objeto está en contacto con un obstáculo, invoca setImpasable()
                     // Debug.Log("Tile: "+fila +" "+columna+" choca");
@@ -51,7 +51,7 @@ public class Tile : MonoBehaviour
                 {
                     tipo = "Desierto";
                 }
-                else 
+                else if (collider.gameObject.CompareTag("Terrain") && (tipo != "Camino" && tipo != "Desierto") && pasable)
                 {
                     tipo = "Hierba";
                 }
@@ -65,7 +65,7 @@ public class Tile : MonoBehaviour
             renderer.material.color = color;
         }
 
-
+        defaultColor = GetComponent<Renderer>().material.color;
     }
 
     public void setPasable(bool pasable)
@@ -121,5 +121,10 @@ public class Tile : MonoBehaviour
         Renderer renderer = GetComponent<Renderer>();
         // Asignar un color basado en la influencia
         renderer.material.color = color;
+    }
+
+    public void cambiarDefaultColor(){
+        Renderer renderer = GetComponent<Renderer>();
+        renderer.material.color = defaultColor;
     }
 }

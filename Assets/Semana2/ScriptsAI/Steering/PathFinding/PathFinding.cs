@@ -76,11 +76,18 @@ public class PathFinding : MonoBehaviour
             if (posCamino >= camino.Count - 1)
             {
                 posCamino = 0;
-                camino.Clear();
+                clearCamino();
             }
         }
     }
 
+
+    private void clearCamino(){
+        foreach(Tile tile in camino){
+            tile.cambiarDefaultColor();
+        }
+        camino.Clear();
+    }
     public void CalcularCamino(Vector3 newTarget)
     {
         Tile goal = gird.getTileByVector(newTarget);
