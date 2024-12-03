@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Keypoint : MonoBehaviour
 {
+    [SerializeField]protected string Bando;
     // Start is called before the first frame update
     void Start()
     {
