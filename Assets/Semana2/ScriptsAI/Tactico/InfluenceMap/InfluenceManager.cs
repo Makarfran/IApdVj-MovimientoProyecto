@@ -15,16 +15,21 @@ public class InfluenceManager : MonoBehaviour
     private Dictionary<Tile, float> influenciaAzul = new Dictionary<Tile, float>();
     private Dictionary<Tile, float> mapaRojo;
     private Dictionary<Tile, float> mapaAzul;
+    
     // Tiempo total en segundos para que la influencia se reduzca a cero
     [SerializeField]
-    public float seconds = 10.0f;
-    public bool gridInicializado = false;  // Variable para controlar si el grid está listo
+    public float maxInfluenceTime = 10.0f;
 
+    [SerializeField] public float visualUpdate = 5f;
+
+    public bool gridInicializado = false;  // Variable para controlar si el grid está listo
+    private bool mapsInicializados = false;
     // Tiempo total en segundos para que la influencia se reduzca a cero
     [SerializeField]
     public int maxInfluence = 10;
 
     [SerializeField] public int updateEach = 10; // Tiempo en segundos para actualizar la influencia    
+
     private void Awake()
     {
         if (Instance == null)
@@ -63,6 +68,7 @@ public class InfluenceManager : MonoBehaviour
             }
 
             updateInfluenceMap(); // Llamada a la función principal
+            mapsInicializados = true;
             yield return new WaitForSeconds(updateEach); // Espera el tiempo especificado
         }
     }
@@ -79,8 +85,8 @@ public class InfluenceManager : MonoBehaviour
                 yield return new WaitForSeconds(1);
             }
 
-            // Calculamos el decremento de influencia en cada frame
-            float decrementoPorFrame = (maxInfluence / seconds) * updateEach;
+            // Calculamos el decremento de influencia en cada segundo
+            float decrementoPorFrame = (maxInfluence / maxInfluenceTime) * visualUpdate;
 
             // Actualizar la influencia para cada tile en el equipo rojo
             ActualizarInfluenciaDiccionario(influenciaRojo, decrementoPorFrame, InfluenceMap.Faccion.Rojo);
@@ -88,7 +94,7 @@ public class InfluenceManager : MonoBehaviour
             // Actualizar la influencia para cada tile en el equipo azul
             ActualizarInfluenciaDiccionario(influenciaAzul, decrementoPorFrame, InfluenceMap.Faccion.Azul);
   
-            yield return new WaitForSeconds(3); // Espera el tiempo especificado
+            yield return new WaitForSeconds(visualUpdate); // Espera el tiempo especificado
         }
     }
 
@@ -198,6 +204,10 @@ public class InfluenceManager : MonoBehaviour
     }
 
     public float getInfluenceTile(Vector3 tilePosition, InfluenceMap.Faccion faccion ){
+        if (!mapsInicializados){
+            return 0f;
+        }
+        
         Tile tile = gird.getTileByVector(tilePosition);
         if (tile == null){
             return 0;
@@ -206,10 +216,19 @@ public class InfluenceManager : MonoBehaviour
         switch (faccion)
         {   
             case InfluenceMap.Faccion.Rojo:
-                return mapaRojo[tile];
+                if (mapaRojo.ContainsKey(tile)){
+                    return mapaRojo[tile];
+                } else{
+                    return 0f;
+                }
+                
 
             default:
-                return mapaAzul[tile];
+                if (mapaAzul.ContainsKey(tile)){
+                    return mapaAzul[tile];
+                } else{
+                    return 0f;
+                }
         }
     }
 
