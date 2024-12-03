@@ -18,7 +18,7 @@ public class InfluenceManager : MonoBehaviour
     
     // Tiempo total en segundos para que la influencia se reduzca a cero
     [SerializeField]
-    public float seconds = 10.0f;
+    public float maxInfluenceTime = 10.0f;
 
     [SerializeField] public float visualUpdate = 5f;
 
@@ -85,7 +85,7 @@ public class InfluenceManager : MonoBehaviour
             }
 
             // Calculamos el decremento de influencia en cada segundo
-            float decrementoPorFrame = (maxInfluence / seconds) * visualUpdate;
+            float decrementoPorFrame = (maxInfluence / maxInfluenceTime) * visualUpdate;
 
             // Actualizar la influencia para cada tile en el equipo rojo
             ActualizarInfluenciaDiccionario(influenciaRojo, decrementoPorFrame, InfluenceMap.Faccion.Rojo);
