@@ -16,13 +16,7 @@ public interface IState
     //Devuelve las transiciones que se comprobarán
     List<ITransition> getTransitions();
 
-    //Fija el objetivo de la acción correspondiente al estado
-    //p.e: en el estado de ataque establece como objetivo al enemigo correspondiente
-    //p.e : en el estado de captura establece como objetivo la base a capturar
-    void fijarObjetivo();
-
-    void soltarObjetivo();
-
+    //Comprueba si se debe salir del estado actual para tomar una nueva decisión
     bool condicionIdle();
 
-}
+}   

@@ -29,9 +29,10 @@ public class Movimiento : Action
     public override bool isComplete()
     {
         AgentNPC npcActual = GetComponent<AgentNPC>();
-        if ((target == null) || 
-           ((npcActual.Position - target.transform.position).magnitude < npcActual.getRange())) 
+        if (target == null || comprobarDistancia() || 
+           (target.GetComponent<AgentNPC>() && (target.GetComponent<AgentNPC>().Position - GetComponent<Agent>().Position).magnitude >= 12)) 
         {
+            //Debug.Log("cortar camino");
             GetComponent<PathFinding>().cortarCamino();
             return true;
         }
@@ -50,5 +51,19 @@ public class Movimiento : Action
     public GameObject getTarget()
     {
         return target;
+    }
+
+    private bool comprobarDistancia() 
+    {
+        AgentNPC npcActual = GetComponent<AgentNPC>();
+        if (target.GetComponent<AgentNPC>())
+        {
+            return (npcActual.Position - target.transform.position).magnitude < npcActual.getRange();
+
+        }
+        else 
+        {
+            return target.GetComponent<KeypointBase>().GetNPCS().Contains(npcActual);
+        }
     }
 }

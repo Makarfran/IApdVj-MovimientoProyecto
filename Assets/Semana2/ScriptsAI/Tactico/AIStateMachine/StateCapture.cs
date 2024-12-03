@@ -14,16 +14,17 @@ public class StateCapture : MonoBehaviour, IState
     {
         //Metemos todas las transiciones asociadas al gameObject
         transitions.Add(GetComponent<TAttack>());
-        //transitions.Add(GetComponent<THuir>());
+        transitions.Add(GetComponent<Tidle>());
+        
 
         //Metemos Acciones
         //ACCIÓN ENTRADA fijar objetivo
-        entryAction.Add(GetComponent<FijarObjetivo>());
+        entryAction.Add(GetComponent<FijarObjetivoBase>());
         //ACCIÓN movimiento, capturar
         action.Add(GetComponent<Movimiento>());
-        //action.Add(GetComponent<AtacarBase>());
+        //action.Add(GetComponent<Capture>());
         //ACCIÓN SALIDA soltar objetivo
-        exitAction.Add(GetComponent<SoltarObjetivo>());
+        exitAction.Add(GetComponent<SoltarObjetivoBase>());
     }
 
     // Update is called once per frame
@@ -46,9 +47,17 @@ public class StateCapture : MonoBehaviour, IState
     //Devuelve las transiciones que se comprobarán
     public List<ITransition> getTransitions() { return transitions; }
 
-    public void fijarObjetivo() { }
-
-    public void soltarObjetivo() { }
-
-    public bool condicionIdle() { return false; }
+    public bool condicionIdle() 
+    {
+        if (GetComponent<Movimiento>().getTarget() != null) 
+        {
+            KeypointBase objetivo = GetComponent<Movimiento>().getTarget().GetComponent<KeypointBase>();
+            if (objetivo != null && objetivo.getBando() == GetComponent<AgentNPC>().getBando())
+            {
+                Debug.Log("de captura a idle");
+                return true;
+            }
+        }
+        return false;
+    }
 }

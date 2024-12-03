@@ -7,7 +7,7 @@ public class SoltarObjetivo : Action
     // Start is called before the first frame update
     void Start()
     {
-
+        priority = 1;
     }
 
     // Update is called once per frame
@@ -19,7 +19,7 @@ public class SoltarObjetivo : Action
 
     public override bool canInterrupt()
     {
-        return false;
+        return true;
     }
     public override bool canDoBoth(Action other)
     {
@@ -28,9 +28,9 @@ public class SoltarObjetivo : Action
 
     public override bool isComplete()
     {
-        if (GetComponent<Atacar>().getTarget() && GetComponent<Movimiento>().getTarget() )
-            return false;
-        else return true;
+        if (GetComponent<Atacar>().getTarget() == null && GetComponent<Movimiento>().getTarget() == null )
+            return true;
+        else return false;
     }
     public override void execute()
     {

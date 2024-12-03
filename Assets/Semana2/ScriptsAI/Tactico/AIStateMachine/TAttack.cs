@@ -7,18 +7,21 @@ public class TAttack: MonoBehaviour, ITransition
     //Comprueba si se debe lanzar la transición
     public bool isTriggered() 
     {
+        /*
         //Condicion de Ataque -- enemigo cerca y enemigo visible
         Controlador controlador = GameObject.Find("ControladorJuego").GetComponent<Controlador>();
-        if (transform.parent.name == "A")
-        {
-            return AttackCondition(controlador.teamB);
-        }
-        if (transform.parent.name == "B")
+        if (GetComponent<AgentNPC>().getBando() == "R")
         {
             return AttackCondition(controlador.teamA);
         }
+        if (GetComponent<AgentNPC>().getBando() == "A")
+        {
+            return AttackCondition(controlador.teamR);
+        }
 
         return false;
+        */
+        return GetComponent<ComponenteIA>().conditionAttack();
     }
 
     //Devuelve el estado objetivo de la transición
@@ -36,6 +39,7 @@ public class TAttack: MonoBehaviour, ITransition
         return actions;
     }
 
+    /*
     private bool AttackCondition(List<GameObject> enemigos)  
     {
         foreach (GameObject enemigo in enemigos)
@@ -49,4 +53,5 @@ public class TAttack: MonoBehaviour, ITransition
         }
         return false;
     }
+    */
 }

@@ -43,6 +43,7 @@ public class StateAttack : MonoBehaviour, IState
     //Devuelve las transiciones que se comprobarán
     public List<ITransition> getTransitions() { return transitions; }
 
+    /* metodo cambiado a componenteIA
     public void fijarObjetivo() 
     {
      
@@ -60,26 +61,28 @@ public class StateAttack : MonoBehaviour, IState
         GetComponent<Atacar>().setTarget(objetivo.GetComponent<AgentNPC>());
         GetComponent<Movimiento>().setTarget(objetivo);
     }
-
+    
     public void soltarObjetivo() 
     { 
         GetComponent<Atacar>().setTarget(null);
         GetComponent<Movimiento>().setTarget(null);
     }
-
+    */
     public bool condicionIdle() 
     {
+        if (GetComponent<Atacar>().getTarget() == null) return false;
         AgentNPC enemigo = GetComponent<Atacar>().getTarget();
         //Condicion de pérdida de objetivo
-        if (((enemigo.Position - GetComponent<Agent>().Position).magnitude >= 21) ||
-             (enemigo.getVida() == 0))
-        { 
+        if (GetComponent<ComponenteIA>().enemigoMuerto(enemigo) || (enemigo.Position - GetComponent<Agent>().Position).magnitude >= 12)
+        {
+            Debug.Log("de atack a idle");
             return true; 
         }
         else return false;
         //El objetivo ha sido eliminado o ha huido
     }
 
+    /* metodo cambiado a componenteIA
     GameObject getObjetivo(List<GameObject> enemigos) 
     {
         float distancia = float.MaxValue;
@@ -94,4 +97,5 @@ public class StateAttack : MonoBehaviour, IState
         }
         return objetivoActual;
     }
+    */
 }

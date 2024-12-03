@@ -33,7 +33,8 @@ public class Atacar : Action
 
     public override bool isComplete()
     {
-        if (Time.time > timeInicio + 2)
+      
+        if (target == null || (target.Position - GetComponent<Agent>().Position).magnitude >= 12 || Time.time > timeInicio + 2)
         {
             didyoudoit = false;
             timeInicio = float.MaxValue;
@@ -41,6 +42,7 @@ public class Atacar : Action
         }
         return false;
     }
+
     public override void execute()
     {
         if (!didyoudoit)

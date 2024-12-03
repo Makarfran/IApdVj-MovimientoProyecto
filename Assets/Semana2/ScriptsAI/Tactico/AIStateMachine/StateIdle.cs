@@ -14,6 +14,9 @@ public class StateIdle : MonoBehaviour, IState
     {
         //Metemos todas las transiciones asociadas al gameObject
         transitions.Add(GetComponent<TAttack>());
+        transitions.Add(GetComponent<TDefend>());
+        transitions.Add(GetComponent<TCapture>());
+        
     }
 
     //Devuelve la acción o lista de acciones a realizar mientras se esta en el estado
@@ -30,10 +33,6 @@ public class StateIdle : MonoBehaviour, IState
 
     //Devuelve las transiciones que se comprobarán
     public List<ITransition> getTransitions() { return transitions; }
-
-    public void fijarObjetivo() { }
-
-    public void soltarObjetivo() { }
 
     public bool condicionIdle() { return false; }
 }

@@ -14,7 +14,7 @@ public class AgentNPCScout : AgentNPC
         this.vida = 8000;
         this.maxVida = 8000;
         this.atq = 75;
-        this.range = 5f;
+        this.range = 8f;
         this.tipoUnidad = "Scout";
         
     }

@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class FijarObjetivo : Action
 {
+    
     // Start is called before the first frame update
     void Start()
     {
-
+ 
     }
 
     // Update is called once per frame
@@ -27,13 +28,14 @@ public class FijarObjetivo : Action
 
     public override bool isComplete()
     {
-        if (GetComponent<Atacar>().getTarget() && GetComponent<Movimiento>().getTarget() )
+        if (GetComponent<Atacar>().getTarget() != null && GetComponent<Movimiento>().getTarget() != null )
             return true;
         else return false;
     }
     public override void execute()
     {
-        GetComponent<StateAttack>().fijarObjetivo();
+        GetComponent<ComponenteIA>().fijarObjetivo();
+        Debug.Log("fijar objetivo");
     }
 
 }

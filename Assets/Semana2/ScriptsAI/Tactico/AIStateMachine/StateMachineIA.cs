@@ -22,6 +22,9 @@ public class StateMachineIA : MonoBehaviour
         //Metemos todos los estados asociados al gameObject
         states.Add(GetComponent<StateIdle>());
         states.Add(GetComponent<StateAttack>());
+        states.Add(GetComponent<StateDefend>());
+        states.Add(GetComponent<StateCapture>());
+        
     }
 
     // Update is called once per frame
@@ -56,7 +59,7 @@ public class StateMachineIA : MonoBehaviour
 
             //Completamos la transición y devolvemos la lista de acciones
             CurrentState = targetState;
-
+            Debug.Log(CurrentState);
             //TO-DO hay que cambiar los return probablemente por scheduleAction() del action manager
             GetComponent<ActionManager>().scheduleAction(actions);
             //return actions;
