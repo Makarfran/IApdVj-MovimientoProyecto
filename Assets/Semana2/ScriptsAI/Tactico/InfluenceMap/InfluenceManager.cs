@@ -45,6 +45,13 @@ public class InfluenceManager : MonoBehaviour
         StartCoroutine(UpdateInfluenceColorRoutine());
     }
 
+    public Grid getGrid(){
+        return gird;
+    }
+
+    public float getMaxInf(){
+        return maxInfluence;
+    }
     // Corrutina que llama a updateInfluenceMap cada cierto tiempo
     IEnumerator UpdateInfluenceMapRoutine()
     {
