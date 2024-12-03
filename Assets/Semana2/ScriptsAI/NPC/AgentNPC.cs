@@ -29,32 +29,26 @@ public class AgentNPC : Agent
     // Factores entre tipos de unidades
     public Dictionary<string, Dictionary<string, float>> UnitAttackFactor = new Dictionary<string, Dictionary<string, float>>()
     {
-        { "Scout", new Dictionary<string, float> { { "Scout", 1f }, { "Infantería", 1.5f }, { "Élite", 1f } } },
-        { "Infantería", new Dictionary<string, float> { { "Scout", 1.75f }, { "Infantería", 1f }, { "Élite", 0.25f } } },
-        { "Élite", new Dictionary<string, float> { { "Scout", 1.75f }, { "Infantería", 1.5f }, { "Élite", 1f } } }
+        { "Scout", new Dictionary<string, float> { { "Scout", 1f }, { "Infanteria", 1.5f }, { "Elite", 1f } } },
+        { "Infanteria", new Dictionary<string, float> { { "Scout", 1.75f }, { "Infanteria", 1f }, { "Elite", 0.25f } } },
+        { "Elite", new Dictionary<string, float> { { "Scout", 1.75f }, { "Infanteria", 1.5f }, { "Elite", 1f } } }
     };
 
     // Factores de ataque por terreno
     public Dictionary<string, Dictionary<string, float>> TerrainAttackFactor = new Dictionary<string, Dictionary<string, float>>()
     {
-        { "Hierba", new Dictionary<string, float> { { "Scout", 1.25f }, { "Infantería", 0.75f }, { "Élite", 1f } } },
-        { "Desierto", new Dictionary<string, float> { { "Scout", 2f }, { "Infantería", 1f }, { "Élite", 1f } } },
-        { "Camino", new Dictionary<string, float> { { "Scout", 2f }, { "Infantería", 1f }, { "Élite", 0.25f } } }
+        { "Hierba", new Dictionary<string, float> { { "Scout", 1.25f }, { "Infanteria", 0.75f }, { "Elite", 1f } } },
+        { "Desierto", new Dictionary<string, float> { { "Scout", 2f }, { "Infanteria", 1f }, { "Elite", 1f } } },
+        { "Camino", new Dictionary<string, float> { { "Scout", 2f }, { "Infanteria", 1f }, { "Elite", 0.25f } } }
     };
 
     // Factores de defensa por terreno
     public Dictionary<string, Dictionary<string, float>> TerrainDefenseFactor = new Dictionary<string, Dictionary<string, float>>()
     {
-        { "Hierba", new Dictionary<string, float> { { "Scout", 1.75f }, { "Infantería", 1f }, { "Élite", 0.5f } } },
-        { "Desierto", new Dictionary<string, float> { { "Scout", 0.75f }, { "Infantería", 1.25f }, { "Élite", 1f } } },
-        { "Camino", new Dictionary<string, float> { { "Scout", 0.75f }, { "Infantería", 0.75f }, { "Élite", 1f } } }
+        { "Hierba", new Dictionary<string, float> { { "Scout", 1.75f }, { "Infanteria", 1f }, { "Elite", 0.5f } } },
+        { "Desierto", new Dictionary<string, float> { { "Scout", 0.75f }, { "Infanteria", 1.25f }, { "Elite", 1f } } },
+        { "Camino", new Dictionary<string, float> { { "Scout", 0.75f }, { "Infanteria", 0.75f }, { "Elite", 1f } } }
     };
-
-
-
-
-
-
     public string getBando()
     {
         return bando;
@@ -291,7 +285,7 @@ public class AgentNPC : Agent
 
         float coste = CalcularFactorModificado(getGCosteWeightCamino(tile), tilesInfluenciados[inlfuenceTile]);
         //float coste = getGCosteWeightCamino(tile);
-        Debug.Log("camino peso: " + getGCosteWeightCamino(tile) + " current influence: " + tilesInfluenciados[inlfuenceTile] + "coste: " + coste);
+        //Debug.Log("camino peso: " + getGCosteWeightCamino(tile) + " current influence: " + tilesInfluenciados[inlfuenceTile] + "coste: " + coste);
         return coste;
 
 
