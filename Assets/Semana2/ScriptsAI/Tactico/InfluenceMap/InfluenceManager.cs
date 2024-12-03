@@ -45,6 +45,13 @@ public class InfluenceManager : MonoBehaviour
         StartCoroutine(UpdateInfluenceColorRoutine());
     }
 
+    public InfluenceGrid getGrid(){
+        return gird;
+    }
+
+    public float getMaxInf(){
+        return maxInfluence;
+    }
     // Corrutina que llama a updateInfluenceMap cada cierto tiempo
     IEnumerator UpdateInfluenceMapRoutine()
     {
@@ -190,6 +197,21 @@ public class InfluenceManager : MonoBehaviour
 
     }
 
+    public float getInfluenceTile(Vector3 tilePosition, InfluenceMap.Faccion faccion ){
+        Tile tile = gird.getTileByVector(tilePosition);
+        if (tile == null){
+            return 0;
+        }
+
+        switch (faccion)
+        {   
+            case InfluenceMap.Faccion.Rojo:
+                return mapaRojo[tile];
+
+            default:
+                return mapaAzul[tile];
+        }
+    }
 
     private void VerificarGridInicializado()
     {

@@ -49,6 +49,7 @@ public class GeneraGrid : MonoBehaviour {
                 plane.transform.position = pos;
                 
                 plane.GetComponent<Tile>().setPos(pos);
+                plane.GetComponent<MeshRenderer>().enabled = false;
                 
             }
         }

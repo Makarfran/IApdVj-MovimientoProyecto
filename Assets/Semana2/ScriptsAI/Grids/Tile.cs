@@ -17,11 +17,11 @@ public class Tile : MonoBehaviour
 
     public Text textComponent;
 
-
+    private Color defaultColor;
 
     void Start()
     {
-        
+
         // Obtener la capa del objeto actual
         int layerIndex = gameObject.layer;
         if (layerIndex != 5)
@@ -51,21 +51,16 @@ public class Tile : MonoBehaviour
                 {
                     tipo = "Desierto";
                 }
-                else 
+                else if (collider.gameObject.CompareTag("Terrain") && (tipo != "Camino" && tipo != "Desierto") && pasable)
                 {
                     tipo = "Hierba";
                 }
             }
         }
-        else
-        {
-            Renderer renderer = GetComponent<Renderer>();
-            // Asignar un color basado en la influencia
-            Color color = new Color(0f, 0f, 0f, 0.5f);  // El verde es 0 porque no se usa
-            renderer.material.color = color;
-        }
 
+        //GetComponent<MeshRenderer>().enabled = false;
 
+        defaultColor = GetComponent<Renderer>().material.color;
     }
 
     public void setPasable(bool pasable)
@@ -121,5 +116,11 @@ public class Tile : MonoBehaviour
         Renderer renderer = GetComponent<Renderer>();
         // Asignar un color basado en la influencia
         renderer.material.color = color;
+    }
+
+    public void cambiarDefaultColor()
+    {
+        Renderer renderer = GetComponent<Renderer>();
+        renderer.material.color = defaultColor;
     }
 }

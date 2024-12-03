@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class KeypointBase : Keypoint
 {
-    [SerializeField]private string Bando;
+    
     [SerializeField]private bool winCondition;
     Controlador controladorJuego;
     
