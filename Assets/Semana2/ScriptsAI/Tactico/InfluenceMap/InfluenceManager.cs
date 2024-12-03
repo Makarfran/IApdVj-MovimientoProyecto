@@ -197,6 +197,21 @@ public class InfluenceManager : MonoBehaviour
 
     }
 
+    public float getInfluenceTile(Vector3 tilePosition, InfluenceMap.Faccion faccion ){
+        Tile tile = gird.getTile(tilePosition);
+        if (tile == null){
+            return 0;
+        }
+
+        switch (faccion)
+        {   
+            case InfluenceMap.Faccion.Rojo:
+                return mapaRojo[tile];
+
+            default:
+                return mapaAzul[tile];
+        }
+    }
 
     private void VerificarGridInicializado()
     {
