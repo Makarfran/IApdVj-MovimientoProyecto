@@ -6,6 +6,7 @@ public class KeypointBase : Keypoint
 {
     [SerializeField]private string Bando;
     [SerializeField]private bool winCondition;
+    Controlador controladorJuego;
     
     public Material Amat;
     public Material Rmat;
@@ -16,7 +17,8 @@ public class KeypointBase : Keypoint
     void Start()
     {
         lifeP = lifePMax;
-        
+        controladorJuego = GameObject.Find("ControladorJuego").GetComponent<Controlador>();
+
     }
 
     // Update is called once per frame
@@ -34,9 +36,21 @@ public class KeypointBase : Keypoint
         return Bando;
     }
 
+    public float getLifeP() 
+    {
+        return lifeP;
+    }
+
+    public float getLifePMax() 
+    {
+        return lifePMax;
+    }
+
     public void switchBando(){
         if(Bando == "A"){
             Bando = "R";
+            controladorJuego.basesTeamA.Remove(gameObject);
+            controladorJuego.basesTeamR.Add(gameObject);
             GameObject mychild = this.transform.GetChild(0).gameObject;
             GameObject plane = mychild.transform.GetChild(1).gameObject;
             
@@ -47,6 +61,8 @@ public class KeypointBase : Keypoint
             
         } else{
             Bando = "A";
+            controladorJuego.basesTeamR.Remove(gameObject);
+            controladorJuego.basesTeamA.Add(gameObject);
             GameObject mychild = this.transform.GetChild(0).gameObject;
             GameObject plane = mychild.transform.GetChild(1).gameObject;
             Material[] mats = plane.GetComponent<Renderer>().materials;
