@@ -10,7 +10,7 @@ public class AgentNPC : Agent
     // Todos los steering que tiene que calcular el agente.
     private List<SteeringBehaviour> listSteerings;
     private bool ModoDep;
-    protected int maxVida;
+    [SerializeField] protected int maxVida;
     [SerializeField] protected float vida;
     [SerializeField] protected int atq;
     [SerializeField] public float costeAtaque = 200f;
@@ -19,7 +19,7 @@ public class AgentNPC : Agent
     [SerializeField] protected Grid grid;
 
     protected string tipoUnidad = "";
-
+    [SerializeField] Vector3 respawnPosition;
 
 
 
@@ -98,6 +98,11 @@ public class AgentNPC : Agent
         this.Velocity = Vector3.zero;
 
         //this.generateGrid();
+        if (bando == "R"){
+            respawnPosition = new Vector3(-42.9f,0f,0.6f);
+        } else {
+            respawnPosition = new Vector3(52.8f,0f,-9.8f);
+        }
     }
 
     // Update is called once per frame
@@ -246,10 +251,15 @@ public class AgentNPC : Agent
         return atq;
     }
 
-    public void pierdeVida(float a)
+    public float pierdeVida(float a)
     {
         float perdida = vida - a;
         vida = Mathf.Max(perdida, 0);
+
+        if (vida == 0){
+            respawn();
+        }
+        return vida;
     }
 
     public void recuperarVida()
@@ -342,5 +352,9 @@ public class AgentNPC : Agent
         return newFactor;
     }
 
+
+    public void respawn(){
+        this.transform.position = respawnPosition;
+    }
 
 }

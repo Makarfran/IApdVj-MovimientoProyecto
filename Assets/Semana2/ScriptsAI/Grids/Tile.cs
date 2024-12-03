@@ -21,7 +21,7 @@ public class Tile : MonoBehaviour
 
     void Start()
     {
-        
+
         // Obtener la capa del objeto actual
         int layerIndex = gameObject.layer;
         if (layerIndex != 5)
@@ -34,7 +34,7 @@ public class Tile : MonoBehaviour
 
             foreach (Collider collider in colliders)
             {
-if (collider.gameObject.CompareTag("Obstaculos"))
+                if (collider.gameObject.CompareTag("Obstaculos"))
                 {
                     // Si este objeto está en contacto con un obstáculo, invoca setImpasable()
                     // Debug.Log("Tile: "+fila +" "+columna+" choca");
@@ -57,13 +57,8 @@ if (collider.gameObject.CompareTag("Obstaculos"))
                 }
             }
         }
-        else
-        {
-            Renderer renderer = GetComponent<Renderer>();
-            // Asignar un color basado en la influencia
-            Color color = new Color(0f, 0f, 0f, 0.5f);  // El verde es 0 porque no se usa
-            renderer.material.color = color;
-        }
+
+        //GetComponent<MeshRenderer>().enabled = false;
 
         defaultColor = GetComponent<Renderer>().material.color;
     }
@@ -123,7 +118,8 @@ if (collider.gameObject.CompareTag("Obstaculos"))
         renderer.material.color = color;
     }
 
-    public void cambiarDefaultColor(){
+    public void cambiarDefaultColor()
+    {
         Renderer renderer = GetComponent<Renderer>();
         renderer.material.color = defaultColor;
     }
