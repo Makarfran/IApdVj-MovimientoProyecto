@@ -51,7 +51,7 @@ public class Tile : MonoBehaviour
                 {
                     tipo = "Desierto";
                 }
-                else if (collider.gameObject.CompareTag("Terrain") && (tipo != "Camino" && tipo != "Desierto") && pasable)
+                else if (tipo != "Camino" && tipo != "Desierto" && pasable)
                 {
                     tipo = "Hierba";
                 }

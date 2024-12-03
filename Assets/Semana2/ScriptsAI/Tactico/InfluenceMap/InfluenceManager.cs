@@ -23,7 +23,7 @@ public class InfluenceManager : MonoBehaviour
     [SerializeField] public float visualUpdate = 5f;
 
     public bool gridInicializado = false;  // Variable para controlar si el grid está listo
-
+    private bool mapsInicializados = false;
     // Tiempo total en segundos para que la influencia se reduzca a cero
     [SerializeField]
     public int maxInfluence = 10;
@@ -68,6 +68,7 @@ public class InfluenceManager : MonoBehaviour
             }
 
             updateInfluenceMap(); // Llamada a la función principal
+            mapsInicializados = true;
             yield return new WaitForSeconds(updateEach); // Espera el tiempo especificado
         }
     }
@@ -203,6 +204,10 @@ public class InfluenceManager : MonoBehaviour
     }
 
     public float getInfluenceTile(Vector3 tilePosition, InfluenceMap.Faccion faccion ){
+        if (!mapsInicializados){
+            return 0f;
+        }
+        
         Tile tile = gird.getTileByVector(tilePosition);
         if (tile == null){
             return 0;
@@ -211,10 +216,19 @@ public class InfluenceManager : MonoBehaviour
         switch (faccion)
         {   
             case InfluenceMap.Faccion.Rojo:
-                return mapaRojo[tile];
+                if (mapaRojo.ContainsKey(tile)){
+                    return mapaRojo[tile];
+                } else{
+                    return 0f;
+                }
+                
 
             default:
-                return mapaAzul[tile];
+                if (mapaAzul.ContainsKey(tile)){
+                    return mapaAzul[tile];
+                } else{
+                    return 0f;
+                }
         }
     }
 
