@@ -18,7 +18,7 @@ public class KeypointCura : Keypoint
             int inf = getInfluenceValue(this.transform.position);
             if(inf == 1){
                 Bando = "A";
-            } else if (inf = -1){
+            } else if (inf == -1){
                 Bando = "R";
             } else {
                 Bando = "None";
@@ -30,12 +30,9 @@ public class KeypointCura : Keypoint
     public int getInfluenceValue(Vector3 vec){
         InfluenceManager influenceManager = FindObjectOfType<InfluenceManager>();
         InfluenceMap influenceMap = FindObjectOfType<InfluenceMap>();
-        Grid infGrid = influenceManager.getGrid();
-
-        Tile tile = infGrid.getTileByVector(vec);
         float maxinf = influenceManager.getMaxInf();
         
-        float inf = influenceManager.getInfluenceTile(tilePosition, InfluenceMap.Azul);
+        float inf = influenceManager.getInfluenceTile(vec, InfluenceMap.Faccion.Azul);
         if(inf < 0){
             if(inf < (3/4)*maxinf){
                 return 0;

@@ -45,7 +45,7 @@ public class InfluenceManager : MonoBehaviour
         StartCoroutine(UpdateInfluenceColorRoutine());
     }
 
-    public Grid getGrid(){
+    public InfluenceGrid getGrid(){
         return gird;
     }
 
@@ -198,7 +198,7 @@ public class InfluenceManager : MonoBehaviour
     }
 
     public float getInfluenceTile(Vector3 tilePosition, InfluenceMap.Faccion faccion ){
-        Tile tile = gird.getTile(tilePosition);
+        Tile tile = gird.getTileByVector(tilePosition);
         if (tile == null){
             return 0;
         }
