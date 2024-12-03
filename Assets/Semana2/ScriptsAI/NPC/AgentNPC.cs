@@ -374,7 +374,7 @@ public class AgentNPC : Agent
         changeColor(new Color(1,0,0,1));
     }
 
-    public void changeColorDefensa(){
+    public void changeColorFijarObjetivo(){
         changeColor(new Color(0,0,1,1));
     }
 
@@ -383,17 +383,19 @@ public class AgentNPC : Agent
     }
 
     // morado
-    public void changeColorCuracion(){
+    public void changeColorSoltarObjetivo(){
         changeColor(new Color(1,0,1,1));
     }
 
     // amarillo
-    public void changeColorPatrullar(){
+    public void changeColorMovimiento(){
         changeColor(new Color(1,1,0,1));
     }
 
     //naranja
-    public void changeColorConquista(){
+    public void changeColorSinConcretar(){
         changeColor(new Color(1,0.5f,0,1));
     }
+
+
 }
