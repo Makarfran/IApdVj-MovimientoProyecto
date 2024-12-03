@@ -22,7 +22,7 @@ public class AgentNPC : Agent
     [SerializeField] Vector3 respawnPosition;
 
 
-
+    [SerializeField] public GameObject bocadilloCube;
 
 
 
@@ -97,6 +97,19 @@ public class AgentNPC : Agent
         } else {
             respawnPosition = new Vector3(52.8f,0f,-9.8f);
         }
+        bocadilloCube = GameObject.CreatePrimitive(PrimitiveType.Cube);
+        bocadilloCube.transform.localScale = new Vector3(0.8f, 0.8f, 0.8f); // Reducir el tamaño del cubo
+                // Hacer que el cubo sea hijo del NPC
+        bocadilloCube.transform.SetParent(transform);
+
+        // Ajustar la posición local del cubo (respecto al NPC)
+        bocadilloCube.transform.localPosition = new Vector3(-0.8f, 1.5f, 0f);
+        //bocadilloCube.GetComponent<Renderer>().material.color = Color.green;
+        bocadilloCube.GetComponent<Renderer>().enabled = false;
+        bocadilloCube.GetComponent<Collider>().enabled = false;
+        //changeColorCuracion();
+        //changeColorPatrullar();
+        //changeColorConquista();
     }
 
     // Update is called once per frame
@@ -193,11 +206,13 @@ public class AgentNPC : Agent
     public void ActivarDep()
     {
         this.ModoDep = true;
+        bocadilloCube.GetComponent<Renderer>().enabled = true;
     }
 
     public void DeactivarDep()
     {
         this.ModoDep = false;
+        bocadilloCube.GetComponent<Renderer>().enabled = false;
     }
 
 
@@ -351,4 +366,34 @@ public class AgentNPC : Agent
         this.transform.position = respawnPosition;
     }
 
+
+    public void changeColor (Color color){
+        bocadilloCube.GetComponent<Renderer>().material.color= color;
+    }
+    public void changeColorAtaque(){
+        changeColor(new Color(1,0,0,1));
+    }
+
+    public void changeColorDefensa(){
+        changeColor(new Color(0,0,1,1));
+    }
+
+    public void changeColorHuir(){
+        changeColor(new Color(0,1,0,1));
+    }
+
+    // morado
+    public void changeColorCuracion(){
+        changeColor(new Color(1,0,1,1));
+    }
+
+    // amarillo
+    public void changeColorPatrullar(){
+        changeColor(new Color(1,1,0,1));
+    }
+
+    //naranja
+    public void changeColorConquista(){
+        changeColor(new Color(1,0.5f,0,1));
+    }
 }
