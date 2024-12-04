@@ -304,11 +304,11 @@ public class AgentNPC : Agent
 
     public float getGCosteWeight(Tile tile)
     {
-        Tile inlfuenceTile = this.GetComponent<InfluenceMap>().grid.getTile(tile.fila, tile.columna);
+        //Tile inlfuenceTile = this.GetComponent<InfluenceMap>().grid.getTile(tile.fila, tile.columna);
 
-        Dictionary<Tile, float> tilesInfluenciados = InfluenceManager.Instance.getInfluenceMap(this.GetComponent<InfluenceMap>().faccion);
-
-        float coste = CalcularFactorModificado(getGCosteWeightCamino(tile), tilesInfluenciados[inlfuenceTile]);
+        //Dictionary<Tile, float> tilesInfluenciados = InfluenceManager.Instance.getInfluenceMap(this.GetComponent<InfluenceMap>().faccion);
+        float influence = InfluenceManager.Instance.getInfluenceTile(tile.pos, this.GetComponent<InfluenceMap>().faccion);
+        float coste = CalcularFactorModificado(getGCosteWeightCamino(tile), influence);
         //float coste = getGCosteWeightCamino(tile);
         //Debug.Log("camino peso: " + getGCosteWeightCamino(tile) + " current influence: " + tilesInfluenciados[inlfuenceTile] + "coste: " + coste);
         return coste;
