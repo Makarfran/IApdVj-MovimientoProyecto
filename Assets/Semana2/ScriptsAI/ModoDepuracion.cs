@@ -21,6 +21,12 @@ public class ModoDepuracion : MonoBehaviour
             if(!OnSwitch){
                 OnSwitch = true;
                 Grid[] grids = GameObject.FindObjectsOfType<Grid>();
+                patrulladepurator[] patrulla = GameObject.FindObjectsOfType<patrulladepurator>();
+                if(patrulla.Length != 0){
+                    foreach(patrulladepurator p in patrulla){
+                        p.activateDepuration();
+                    }
+                }
                 if(grids.Length != 0){
                     foreach(Grid g in grids){
                         g.ActivateGrid();
@@ -112,6 +118,12 @@ public class ModoDepuracion : MonoBehaviour
                     foreach(Grid g in grids){
                         g.DeactivateGrid();
                     } 
+                }
+                patrulladepurator[] patrulla = GameObject.FindObjectsOfType<patrulladepurator>();
+                if(patrulla.Length != 0){
+                    foreach(patrulladepurator p in patrulla){
+                        p.deactivateDepuration();
+                    }
                 }
                 GameObject[] npcs = GameObject.FindGameObjectsWithTag("Npc");
                 if(npcs.Length != 0){
