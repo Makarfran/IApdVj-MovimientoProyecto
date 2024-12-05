@@ -64,6 +64,11 @@ public class AgentNPC : Agent
         return vida;
     }
 
+    public float getMaxVida()
+    {
+        return maxVida;
+    }
+
     public float getRange()
     {
         return range;
@@ -258,6 +263,7 @@ public class AgentNPC : Agent
 
     public void recuperarVida()
     {
+
         Vector3 boxSize = GetComponent<Collider>().bounds.size;
 
         // Verifica si este objeto está en contacto con un obstáculo

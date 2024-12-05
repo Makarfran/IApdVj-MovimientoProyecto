@@ -1,11 +1,12 @@
 using UnityEngine;
 using System.Collections.Generic;
+using System.Collections;
 
 public class InfluenceMap : MonoBehaviour
 {
     public InfluenceGrid grid;  // El Grid predefinido que se asignará desde la UI de Unity
-    [SerializeField] public int radio = 5;  // El radio de influencia del personaje
-    [SerializeField] public float influenciaBase = 10.0f;  // La influencia base I0
+    [SerializeField] public int radio ;  // El radio de influencia del personaje
+    [SerializeField] public float influenciaBase ;  // La influencia base I0
     public enum Faccion { Rojo, Azul };  // Facción del personaje
     [SerializeField] public Faccion faccion;
 
@@ -19,10 +20,44 @@ public class InfluenceMap : MonoBehaviour
     {
         // Inicializar la posición anterior al inicio del personaje
         posicionAnterior = transform.position;
+        StartCoroutine(ActualizarInfluenciasRoutine());
+    }
+    
+    IEnumerator ActualizarInfluenciasRoutine()
+    {
+        while (true) 
+        {
+            actinflu();
+            yield return new WaitForSeconds(2);
+        }
     }
 
+    void actinflu() 
+    
+    {
+        // Verificamos si el Grid está inicializado antes de calcular influencias
+        if (!gridInicializado)
+        {
+            VerificarGridInicializado();
+            return;  // Si no está inicializado, no calculamos nada
+        }
+
+        // Verificar si el personaje ha cambiado de posición y recalcular influencias
+        // if (posicionAnterior != transform.position)
+        //{
+        // Primero eliminar las influencias anteriores
+        //EliminarInfluencias();
+
+        // Luego aplicar las nuevas influencias en el área alrededor de la nueva posición
+        ActualizarInfluencias();
+        // Actualizar la posición anterior
+        // posicionAnterior = transform.position;
+        //}
+    }
+    
     void Update()
     {
+        /*
         // Verificamos si el Grid está inicializado antes de calcular influencias
         if (!gridInicializado)
         {
@@ -37,15 +72,16 @@ public class InfluenceMap : MonoBehaviour
             //EliminarInfluencias();
 
             // Luego aplicar las nuevas influencias en el área alrededor de la nueva posición
-            ActualizarInfluencias();
+        ActualizarInfluencias();
 
             // Actualizar la posición anterior
            // posicionAnterior = transform.position;
         //}
-    }
+       */
+}
 
-    // Método para verificar si el Grid ya está inicializado
-    private void VerificarGridInicializado()
+// Método para verificar si el Grid ya está inicializado
+private void VerificarGridInicializado()
     {
         if (grid != null && grid.estaInicializado && InfluenceManager.Instance.gridInicializado)
         {
