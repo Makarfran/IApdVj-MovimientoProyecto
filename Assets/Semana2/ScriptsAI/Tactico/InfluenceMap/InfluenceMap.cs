@@ -14,7 +14,8 @@ public class InfluenceMap : MonoBehaviour
 
     // Diccionario para guardar tiles afectados y su influencia
     private Dictionary<Tile, float> tilesInfluenciados = new Dictionary<Tile, float>();
-
+    [SerializeField] public float updateEach = 3f;
+    private float tiempoTranscurrido = 0f;
     void Start()
     {
         // Inicializar la posición anterior al inicio del personaje
@@ -31,16 +32,23 @@ public class InfluenceMap : MonoBehaviour
         }
 
         // Verificar si el personaje ha cambiado de posición y recalcular influencias
-       // if (posicionAnterior != transform.position)
+        // if (posicionAnterior != transform.position)
         //{
-            // Primero eliminar las influencias anteriores
-            //EliminarInfluencias();
+        // Primero eliminar las influencias anteriores
+        // Incrementa el tiempo transcurrido por frame
+        tiempoTranscurrido += Time.deltaTime;
 
-            // Luego aplicar las nuevas influencias en el área alrededor de la nueva posición
+        // Verifica si el tiempo transcurrido excede el intervalo
+        if (tiempoTranscurrido >= updateEach)
+        {
             ActualizarInfluencias();
-
-            // Actualizar la posición anterior
-           // posicionAnterior = transform.position;
+            tiempoTranscurrido = 0f;
+        }
+        // Luego aplicar las nuevas influencias en el área alrededor de la nueva posición
+        //ActualizarInfluencias();
+        //updateEach ++;
+        // Actualizar la posición anterior
+        // posicionAnterior = transform.position;
         //}
     }
 
@@ -88,9 +96,10 @@ public class InfluenceMap : MonoBehaviour
     // Método para actualizar y aplicar la influencia en el área dentro del radio alrededor de la posición actual
     // Método para actualizar y aplicar la influencia en el área dentro del radio alrededor de la posición actual
     private void ActualizarInfluencias()
-    {   
+    {
 
-        if (!InfluenceManager.Instance.gridInicializado){
+        if (!InfluenceManager.Instance.gridInicializado)
+        {
             return;
         }
         // Obtenemos la posición actual del personaje
@@ -125,7 +134,8 @@ public class InfluenceMap : MonoBehaviour
         }
     }
 
-    public void setFaccion(Faccion faccion){
+    public void setFaccion(Faccion faccion)
+    {
         this.faccion = faccion;
     }
 }
