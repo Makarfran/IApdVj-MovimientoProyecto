@@ -46,7 +46,7 @@ public class InfluenceManager : MonoBehaviour
     void Start()
     {
         // Iniciamos la corrutina
-        StartCoroutine(UpdateInfluenceMapRoutine());
+        //StartCoroutine(UpdateInfluenceMapRoutine());
         StartCoroutine(UpdateInfluenceColorRoutine());
     }
 
@@ -191,7 +191,7 @@ public class InfluenceManager : MonoBehaviour
     }
     public Dictionary<Tile, float> getInfluenceMap(InfluenceMap.Faccion faccion)
     {
-
+        updateInfluenceMap();
         if (faccion == InfluenceMap.Faccion.Rojo)
         {
             return mapaRojo;
@@ -216,18 +216,29 @@ public class InfluenceManager : MonoBehaviour
         switch (faccion)
         {   
             case InfluenceMap.Faccion.Rojo:
-                if (mapaRojo.ContainsKey(tile)){
-                    return mapaRojo[tile];
-                } else{
-                    return 0f;
+
+                if (influenciaRojo.ContainsKey(tile) && influenciaAzul.ContainsKey(tile)){
+                    
+                    return influenciaRojo[tile] - influenciaAzul[tile];
+                } else if (influenciaRojo.ContainsKey(tile))
+                
+                {
+                    return influenciaRojo[tile];
+                } else {
+                    return 0;
                 }
                 
 
             default:
-                if (mapaAzul.ContainsKey(tile)){
-                    return mapaAzul[tile];
-                } else{
-                    return 0f;
+                if (influenciaRojo.ContainsKey(tile) && influenciaAzul.ContainsKey(tile)){
+                    
+                    return influenciaAzul[tile] - influenciaRojo[tile];
+                } else if (influenciaAzul.ContainsKey(tile))
+                
+                {
+                    return influenciaAzul[tile];
+                } else {
+                    return 0;
                 }
         }
     }
