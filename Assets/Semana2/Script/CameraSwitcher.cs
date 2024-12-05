@@ -44,6 +44,18 @@ public class CameraSwitcher : MonoBehaviour
             {
                 pathFinder.changeToLRTA();
             }
-        }        
+        }  
+
+        if (Input.GetKeyDown(KeyCode.P)){
+            
+             foreach(GameObject npc in UnitsSelection.npcsSelected){
+                if (npc.GetComponent<PathFinding>().pathFindingTactico){
+                    npc.GetComponent<PathFinding>().changeToLRTA();
+                } else {
+                    npc.GetComponent<PathFinding>().changeToTatico();
+                }
+                
+             }
+        }      
     }
 }
