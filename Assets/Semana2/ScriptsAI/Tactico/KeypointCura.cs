@@ -4,17 +4,19 @@ using UnityEngine;
 
 public class KeypointCura : Keypoint
 {
-    
+    public InfluenceManager infman;
+    public InfluenceMap infmap;
     // Start is called before the first frame update
     void Start()
     {
-        
+        infman = FindObjectOfType<InfluenceManager>();
+        infmap = FindObjectOfType<InfluenceMap>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(FindObjectOfType<InfluenceManager>()){
+        if(infman != null){
             int inf = getInfluenceValue(this.transform.position);
             if(inf == 1){
                 Bando = "A";
@@ -28,11 +30,10 @@ public class KeypointCura : Keypoint
     }
 
     public int getInfluenceValue(Vector3 vec){
-        InfluenceManager influenceManager = FindObjectOfType<InfluenceManager>();
-        InfluenceMap influenceMap = FindObjectOfType<InfluenceMap>();
-        float maxinf = influenceManager.getMaxInf();
         
-        float inf = influenceManager.getInfluenceTile(vec, InfluenceMap.Faccion.Azul);
+        float maxinf = infman.getMaxInf();
+        
+        float inf = infman.getInfluenceTile(vec, InfluenceMap.Faccion.Azul);
         if(inf < 0){
             if(inf < (3/4)*maxinf){
                 return 0;
