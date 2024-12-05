@@ -9,7 +9,7 @@ public class PathFinding : MonoBehaviour
 
     [SerializeField] Grid gird;
     [SerializeField] private int maxDepth;
-    [SerializeField] private bool pathFindingTactico = true;
+    [SerializeField] public bool pathFindingTactico = true;
     private LRTAStart lrta;
     private AStart astart;
     private List<Tile> camino;
