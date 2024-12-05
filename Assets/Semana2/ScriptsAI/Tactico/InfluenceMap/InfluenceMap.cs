@@ -88,7 +88,11 @@ public class InfluenceMap : MonoBehaviour
     // Método para actualizar y aplicar la influencia en el área dentro del radio alrededor de la posición actual
     // Método para actualizar y aplicar la influencia en el área dentro del radio alrededor de la posición actual
     private void ActualizarInfluencias()
-    {
+    {   
+
+        if (!InfluenceManager.Instance.gridInicializado){
+            return;
+        }
         // Obtenemos la posición actual del personaje
         Vector3 posicionPersonaje = transform.position;
 
