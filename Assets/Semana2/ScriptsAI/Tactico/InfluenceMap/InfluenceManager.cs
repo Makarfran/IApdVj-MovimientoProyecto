@@ -15,7 +15,7 @@ public class InfluenceManager : MonoBehaviour
     private Dictionary<Tile, float> influenciaAzul = new Dictionary<Tile, float>();
     private Dictionary<Tile, float> mapaRojo;
     private Dictionary<Tile, float> mapaAzul;
-    
+
     // Tiempo total en segundos para que la influencia se reduzca a cero
     [SerializeField]
     public float maxInfluenceTime = 10.0f;
@@ -50,11 +50,13 @@ public class InfluenceManager : MonoBehaviour
         StartCoroutine(UpdateInfluenceColorRoutine());
     }
 
-    public InfluenceGrid getGrid(){
+    public InfluenceGrid getGrid()
+    {
         return gird;
     }
 
-    public float getMaxInf(){
+    public float getMaxInf()
+    {
         return maxInfluence;
     }
     // Corrutina que llama a updateInfluenceMap cada cierto tiempo
@@ -93,7 +95,7 @@ public class InfluenceManager : MonoBehaviour
 
             // Actualizar la influencia para cada tile en el equipo azul
             ActualizarInfluenciaDiccionario(influenciaAzul, decrementoPorFrame, InfluenceMap.Faccion.Azul);
-  
+
             yield return new WaitForSeconds(visualUpdate); // Espera el tiempo especificado
         }
     }
@@ -103,7 +105,7 @@ public class InfluenceManager : MonoBehaviour
     {
 
 
-          }
+    }
 
     private void ActualizarInfluenciaDiccionario(Dictionary<Tile, float> influenciaDiccionario, float decrementoPorSegundo, InfluenceMap.Faccion faccion)
     {
@@ -135,8 +137,8 @@ public class InfluenceManager : MonoBehaviour
 
     // Método para eliminar influencia de un tile
     public void EliminarInfluencia(Tile position, float influence, InfluenceMap.Faccion faccion)
-    {   
-        
+    {
+
         //Debug.Log("eliminando tile " + position);
         if (faccion == InfluenceMap.Faccion.Rojo && influenciaRojo.ContainsKey(position))
         {
@@ -203,32 +205,29 @@ public class InfluenceManager : MonoBehaviour
 
     }
 
-    public float getInfluenceTile(Vector3 tilePosition, InfluenceMap.Faccion faccion ){
-        if (!mapsInicializados){
+    public float getInfluenceTile(Vector3 tilePosition, InfluenceMap.Faccion faccion)
+    {
+        if (!mapsInicializados)
+        {
             return 0f;
         }
-        
+
         Tile tile = gird.getTileByVector(tilePosition);
-        if (tile == null){
+        if (tile == null)
+        {
             return 0;
         }
 
         switch (faccion)
-        {   
+        {
             case InfluenceMap.Faccion.Rojo:
-                if (mapaRojo.ContainsKey(tile)){
-                    return mapaRojo[tile];
-                } else{
-                    return 0f;
-                }
-                
+                return mapaRojo[tile];
+
 
             default:
-                if (mapaAzul.ContainsKey(tile)){
-                    return mapaAzul[tile];
-                } else{
-                    return 0f;
-                }
+
+                return mapaAzul[tile];
+
         }
     }
 
