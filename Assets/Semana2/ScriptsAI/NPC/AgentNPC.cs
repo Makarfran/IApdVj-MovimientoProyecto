@@ -121,7 +121,7 @@ public class AgentNPC : Agent
         {
             Debug.DrawLine(new Vector3(transform.position.x, transform.position.y + 3f, transform.position.z), new Vector3(this.transform.position.x + Acceleration.x, this.transform.position.y + Acceleration.y + 3f, this.transform.position.z + Acceleration.z), Color.blue);
         }
-        recuperarVida();
+        //recuperarVida();
         // En cada frame podría ejecutar otras componentes IA
     }
 
@@ -273,20 +273,13 @@ public class AgentNPC : Agent
 
     public void recuperarVida()
     {
-        Vector3 boxSize = GetComponent<Collider>().bounds.size;
 
-        // Verifica si este objeto está en contacto con un obstáculo
-        Collider[] colliders = Physics.OverlapBox(transform.position, boxSize / 2, Quaternion.identity);
-        foreach (Collider collider in colliders)
-        {
-            if (collider.gameObject.CompareTag("Cura"))
-            {
                 // Si este objeto está en contacto con un obstáculo, invoca setImpasable()
                 // Debug.Log("Tile: "+fila +" "+columna+" choca");
-                float gana = vida + 5f;
-                vida = Mathf.Min(gana, maxVida);
-            }
-        }
+        float gana = vida + 5f;
+        vida = Mathf.Min(gana, maxVida);
+        
+    
     }
 
     /*
