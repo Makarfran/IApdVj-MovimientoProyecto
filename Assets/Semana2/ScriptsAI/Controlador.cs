@@ -14,6 +14,9 @@ public class Controlador : MonoBehaviour
     public List<GameObject> basesInicioTeamA = new List<GameObject>();
     public List<GameObject> basesTeamR = new List<GameObject>();
     public List<GameObject> basesTeamA = new List<GameObject>();
+    public GameObject HRoja;
+    public GameObject HAzul;
+    public List<GameObject> zonasH = new List<GameObject>();
 
     // Start is called before the first frame update
     void Start()
