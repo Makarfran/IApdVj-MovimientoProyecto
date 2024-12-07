@@ -7,7 +7,7 @@ public class KeypointCura : Keypoint
     public InfluenceManager infman;
     public InfluenceMap infmap;
     private List<AgentNPC> agentes = new List<AgentNPC>();
-    public List<AgentNPC> GetAgentes() { return agentes; }
+    public List<AgentNPC> GetAgentes () { return agentes; }
     // Start is called before the first frame update
     void Start()
     {
@@ -34,6 +34,10 @@ public class KeypointCura : Keypoint
                 Bando = "None";
             }
         }
+        foreach(AgentNPC a in agentes){
+            a.recuperarVida();
+        }
+        
     }
 
     public int getInfluenceValue(Vector3 vec)
@@ -73,21 +77,19 @@ public class KeypointCura : Keypoint
 
     void OnTriggerEnter(Collider collision)
     {
-        if (collision.gameObject.tag == "Npc")
-        {
+        if(collision.gameObject.tag == "Npc" ){
             AgentNPC npc = collision.gameObject.GetComponent<AgentNPC>();
             agentes.Add(npc);
-
+            
 
         }
     }
     void OnTriggerExit(Collider collision)
     {
-        if (collision.gameObject.tag == "Npc")
-        {
+        if(collision.gameObject.tag == "Npc" ){
             AgentNPC npc = collision.gameObject.GetComponent<AgentNPC>();
             agentes.Remove(npc);
-
+            
 
         }
     }

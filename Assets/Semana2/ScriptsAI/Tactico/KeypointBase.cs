@@ -74,8 +74,6 @@ public class KeypointBase : Keypoint
     }
 
     public void captureCheck(){
-        nepeces.Clear();
-        colliderCheck();
         int countA = 0;
         int countR = 0;
         foreach(AgentNPC npc in nepeces){
@@ -109,19 +107,23 @@ public class KeypointBase : Keypoint
     private List<AgentNPC> nepeces = new List<AgentNPC>();
     public List<AgentNPC> GetNPCS () { return nepeces; }
 
-    private void colliderCheck () {
-        Vector3 boxSize = GetComponent<Collider>().bounds.size;
-        
-        // Verifica si este objeto está en contacto con un obstáculo
-        Collider[] colliders = Physics.OverlapBox(transform.position, boxSize / 2, Quaternion.identity);
-        foreach (Collider collider in colliders)
-        {
-            if (collider.gameObject.GetComponent<AgentNPC>())
-                {
-                AgentNPC npc = collider.gameObject.GetComponent<AgentNPC>();
-                 nepeces.Add(npc);
-                 
-            }
+
+    void OnTriggerEnter(Collider collision)
+    {
+        if(collision.gameObject.tag == "Npc" ){
+            AgentNPC npc = collision.gameObject.GetComponent<AgentNPC>();
+            nepeces.Add(npc);
+            
+
+        }
+    }
+    void OnTriggerExit(Collider collision)
+    {
+        if(collision.gameObject.tag == "Npc" ){
+            AgentNPC npc = collision.gameObject.GetComponent<AgentNPC>();
+            nepeces.Remove(npc);
+            
+
         }
     }
         
