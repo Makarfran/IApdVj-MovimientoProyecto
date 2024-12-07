@@ -5,24 +5,22 @@ using UnityEngine;
 public class KeypointCura : Keypoint
 {
     public InfluenceManager infman;
-    //public InfluenceMap infmap;
+    public InfluenceMap infmap;
+    private List<AgentNPC> agentes = new List<AgentNPC>();
+    public List<AgentNPC> GetAgentes() { return agentes; }
     // Start is called before the first frame update
     void Start()
     {
         infman = FindObjectOfType<InfluenceManager>();
-        //infmap = FindObjectOfType<InfluenceMap>();
-        //Bando = "None";
+        infmap = FindObjectOfType<InfluenceMap>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        
         if (infman != null)
         {
-
             int inf = getInfluenceValue(this.transform.position);
-            
             if (inf == 1)
             {
                 Bando = "A";
@@ -44,7 +42,6 @@ public class KeypointCura : Keypoint
         float maxinf = infman.getMaxInf();
 
         float inf = infman.getInfluenceTile(vec, InfluenceMap.Faccion.Azul);
-        
         if (inf < 0)
         {
             if (inf < (3 / 4) * maxinf)
@@ -70,6 +67,28 @@ public class KeypointCura : Keypoint
             {
                 return -1;
             }
+        }
+    }
+
+
+    void OnTriggerEnter(Collider collision)
+    {
+        if (collision.gameObject.tag == "Npc")
+        {
+            AgentNPC npc = collision.gameObject.GetComponent<AgentNPC>();
+            agentes.Add(npc);
+
+
+        }
+    }
+    void OnTriggerExit(Collider collision)
+    {
+        if (collision.gameObject.tag == "Npc")
+        {
+            AgentNPC npc = collision.gameObject.GetComponent<AgentNPC>();
+            agentes.Remove(npc);
+
+
         }
     }
 }
