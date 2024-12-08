@@ -56,7 +56,7 @@ public class GeneraGrid : MonoBehaviour {
         gridT.AddComponent<Grid>();
         gridT.GetComponent<Grid>().setA(a);
         gridT.GetComponent<Grid>().setB(b);
-        gridT.GetComponent<Grid>().setLado(0.5f);
+        gridT.GetComponent<Grid>().setLado(lado);
         return gridT;
     }  
 

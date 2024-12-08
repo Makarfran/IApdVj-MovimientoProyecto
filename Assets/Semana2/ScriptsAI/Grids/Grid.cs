@@ -9,6 +9,7 @@ public class Grid : MonoBehaviour
     [SerializeField] public int b;
     [SerializeField] protected float lado;
     [SerializeField] public Tile[,] posiciones;
+    public List<Tile> lista;
     public bool estaInicializado = false;
     // Start is called before the first frame update
     void Start()
@@ -29,6 +30,8 @@ public class Grid : MonoBehaviour
                 
             }
         }
+        lista = posiciones.Cast<Tile>().ToList();
+        Debug.Log("caca");
         estaInicializado = true;
     }
 
@@ -47,11 +50,24 @@ public class Grid : MonoBehaviour
     }
 
     public Tile getTileByVector(Vector3 position){
-
-        List<Tile> lista = posiciones.Cast<Tile>().ToList();
-        
-
-        Tile tile = lista
+        Vector3 posIni = posiciones[0,0].getPosition();
+        Debug.Log("lado " + lado);
+        Debug.Log("pos inix " + posIni.x);
+        int x = (int) ((position.x - (posIni.x-(lado/2))) / lado);
+        Debug.Log(x);
+        if(x==getAncho()){
+            x=x-1;
+        }
+        int z = (int) ((position.z - (posIni.z-(lado/2))) / lado);
+        Debug.Log(z);
+        if(z==getAlto()){
+            z=z-1;
+        }
+        Tile tile = posiciones[x,z];
+        if(tile.isPasable()){
+            return tile;
+        }
+        tile = lista
             .Where(o => o.pasable)
             .Aggregate((o1, o2) => Vector3.Distance(o1.getPosition(), position) < Vector3.Distance(o2.getPosition(), position) ? o1 : o2);
         return tile;
