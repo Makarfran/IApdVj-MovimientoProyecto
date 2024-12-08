@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Controlador : MonoBehaviour
 {
@@ -16,6 +17,9 @@ public class Controlador : MonoBehaviour
     public List<GameObject> basesInicioTeamA = new List<GameObject>();
     public List<GameObject> basesTeamR = new List<GameObject>();
     public List<GameObject> basesTeamA = new List<GameObject>();
+    public GameObject botonrestart;
+    public GameObject textWA;
+    public GameObject textWR;
 
     // Start is called before the first frame update
     void Start()
@@ -44,9 +48,13 @@ public class Controlador : MonoBehaviour
         Debug.Log("Dominio Rojo " + getDominio("R") );
         if(gameEnded && ganador == A){
             Debug.Log("Victoria Azul");
+            botonrestart.SetActive(true);
+            textWA.SetActive(true);
             //mandar mensaje a canvas para que active elementos de pantalla final
         } else if(gameEnded){
             Debug.Log("Victoria Roja");
+            botonrestart.SetActive(true);
+            textWR.SetActive(true);
             //mandar mensaje a canvas que active
         }
         
@@ -116,6 +124,10 @@ public class Controlador : MonoBehaviour
             ganador = R;
             gameEnded = true;
        }
+    }
+
+    public void restartScene(){
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
 }

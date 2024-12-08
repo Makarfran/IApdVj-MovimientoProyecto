@@ -11,6 +11,7 @@ public class KeypointCura : Keypoint
     // Start is called before the first frame update
     void Start()
     {
+        
         infman = FindObjectOfType<InfluenceManager>();
         infmap = FindObjectOfType<InfluenceMap>();
     }
