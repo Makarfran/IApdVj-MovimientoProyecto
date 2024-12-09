@@ -123,4 +123,8 @@ public class Tile : MonoBehaviour
         Renderer renderer = GetComponent<Renderer>();
         renderer.material.color = defaultColor;
     }
+
+    public bool isPasable(){
+        return pasable;
+    }
 }
