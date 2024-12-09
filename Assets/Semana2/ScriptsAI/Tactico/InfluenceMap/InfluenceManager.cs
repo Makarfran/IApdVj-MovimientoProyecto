@@ -79,7 +79,7 @@ public class InfluenceManager : MonoBehaviour
     {
         while (true)
         {
-            Debug.Log("corrutina1");
+            //Debug.Log("corrutina1");
             // Verificamos si el Grid está inicializado antes de calcular influencias
             if (!gridInicializado)
             {

@@ -26,6 +26,9 @@ public class InfluenceGrid : MonoBehaviour
                 //esto se asegura que las posiciones de las casillas esten bien
                 posiciones[i,j].setPos(a.transform.position);
                 //Debug.Log(posiciones[i,j]);
+                if(!posiciones[i,j].isPasable()){
+                    a.SetActive(false);
+                }
                 
             }
         }

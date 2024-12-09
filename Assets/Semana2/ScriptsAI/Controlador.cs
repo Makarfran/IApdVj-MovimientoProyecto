@@ -44,8 +44,8 @@ public class Controlador : MonoBehaviour
             hasRWon();
 
         }
-        Debug.Log("Dominio Azul " + getDominio("A") );
-        Debug.Log("Dominio Rojo " + getDominio("R") );
+        //Debug.Log("Dominio Azul " + getDominio("A") );
+        //Debug.Log("Dominio Rojo " + getDominio("R") );
         if(gameEnded && ganador == A){
             Debug.Log("Victoria Azul");
             botonrestart.SetActive(true);

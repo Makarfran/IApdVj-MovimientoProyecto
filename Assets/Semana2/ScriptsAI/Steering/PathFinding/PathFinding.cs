@@ -28,10 +28,13 @@ public class PathFinding : MonoBehaviour
         this.generateGrid();
         lrta.setGrid(gird);
         astart.setGrid(gird);
+        
         lrta.costeMovimientoLineal = costeMovimientoLineal;
         astart.costeMovimientoLineal = costeMovimientoLineal;
         lrta.maxDepth = maxDepth;
     }
+
+    
 
     public void generateGrid()
     {
@@ -56,7 +59,8 @@ public class PathFinding : MonoBehaviour
     }
 
     void Update()
-    {
+    {   
+        astart.setGrid(gird);
 
         if (camino.Count > 0)
         {
@@ -92,6 +96,7 @@ public class PathFinding : MonoBehaviour
     {
         Tile goal = gird.getTileByVector(newTarget);
         Tile start = gird.getTileByVector(transform.position);
+        Debug.Log("Grid " + gird.getAncho() + " " + gird.getAlto());
         if (pathFindingTactico)
         {   
             astart.setAgent(this.GetComponent<AgentNPC>());

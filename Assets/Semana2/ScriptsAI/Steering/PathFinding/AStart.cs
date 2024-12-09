@@ -19,7 +19,9 @@ public class AStart
 
     public List<Tile> buscarCamino(Tile startTile, Tile endTile)
     {
-
+        Debug.Log(startTile.getFila() + " " +startTile.getColumna());
+        Debug.Log(endTile.getFila() + " " +endTile.getColumna());
+        Debug.Log(gird.name);
         // inicialización de valores g y h de Tiles
         for (int i = 0; i < gird.a; i++)
         {
