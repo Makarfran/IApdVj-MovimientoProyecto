@@ -40,6 +40,7 @@ public class Tile : MonoBehaviour
                     // Debug.Log("Tile: "+fila +" "+columna+" choca");
                     pasable = false;
                     CambiarColorARojo();
+                    
                     break;
                 }
                 else if (collider.gameObject.CompareTag("Camino"))
@@ -61,7 +62,9 @@ public class Tile : MonoBehaviour
         //GetComponent<MeshRenderer>().enabled = false;
 
         defaultColor = GetComponent<Renderer>().material.color;
+        
     }
+
 
     public void setPasable(bool pasable)
     {
@@ -126,5 +129,12 @@ public class Tile : MonoBehaviour
 
     public bool isPasable(){
         return pasable;
+    }
+
+    public int getFila(){
+        return fila;
+    }
+    public int getColumna(){
+        return columna;
     }
 }

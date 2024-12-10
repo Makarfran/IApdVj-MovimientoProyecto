@@ -51,8 +51,6 @@ public class Grid : MonoBehaviour
 
     public Tile getTileByVector(Vector3 position){
         Vector3 posIni = posiciones[0,0].getPosition();
-        //Debug.Log("lado " + lado);
-        //Debug.Log("pos inix " + posIni.x);
         int x = (int) ((position.x - (posIni.x-(lado/2))) / lado);
         //Debug.Log(x);
         if(x==getAncho()){
