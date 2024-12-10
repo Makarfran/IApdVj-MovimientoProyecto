@@ -47,15 +47,15 @@ public class Controlador : MonoBehaviour
             hasRWon();
 
         }
-        Debug.Log("Dominio Azul " + getDominio("A") );
-        Debug.Log("Dominio Rojo " + getDominio("R") );
+        //Debug.Log("Dominio Azul " + getDominio("A") );
+        //Debug.Log("Dominio Rojo " + getDominio("R") );
         if(gameEnded && ganador == A){
-            Debug.Log("Victoria Azul");
+            //Debug.Log("Victoria Azul");
             botonrestart.SetActive(true);
             textWA.SetActive(true);
             //mandar mensaje a canvas para que active elementos de pantalla final
         } else if(gameEnded){
-            Debug.Log("Victoria Roja");
+            //Debug.Log("Victoria Roja");
             botonrestart.SetActive(true);
             textWR.SetActive(true);
             //mandar mensaje a canvas que active

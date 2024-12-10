@@ -18,7 +18,7 @@ public class InfluenceManager : MonoBehaviour
 
     // Tiempo total en segundos para que la influencia se reduzca a cero
     [SerializeField]
-    public float maxInfluenceTime = 10.0f;
+    public float maxInfluenceTime = 5;
 
     [SerializeField] public float visualUpdate = 5f;
 
@@ -160,11 +160,16 @@ public class InfluenceManager : MonoBehaviour
     // Método para actualizar el color del tile visual basado en las influencias
     private void ActualizarVisualTile(Tile position)
     {
-
+        //if (!position.pasable) return;
         // Obtener las influencias de las dos facciones
+        float rojo = influenciaRojo.TryGetValue(position, out rojo) ? rojo / maxInfluence : 0f;
+        float azul = influenciaAzul.TryGetValue(position, out azul) ? azul / maxInfluence :  0f;
+
+
+        /*
         float rojo = influenciaRojo.ContainsKey(position) ? influenciaRojo[position] / maxInfluence : 0f;
         float azul = influenciaAzul.ContainsKey(position) ? influenciaAzul[position] / maxInfluence : 0f;
-
+        */
         // Normalizar las influencias para que sumen 1
         //float totalInfluencia = influenciaRojoVal + influenciaAzulVal;
         //float rojo = totalInfluencia > 0 ? influenciaRojoVal  : 0f;
@@ -185,6 +190,7 @@ public class InfluenceManager : MonoBehaviour
 
         foreach (var tile in influenciaRojo)
         {
+            //if (tile.Key.pasable)
             mapaRojo[tile.Key] = tile.Value - influenciaAzul[tile.Key];
             mapaAzul[tile.Key] = influenciaAzul[tile.Key] - tile.Value;
 

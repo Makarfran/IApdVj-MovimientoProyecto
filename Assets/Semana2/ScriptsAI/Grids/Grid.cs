@@ -31,7 +31,7 @@ public class Grid : MonoBehaviour
             }
         }
         lista = posiciones.Cast<Tile>().ToList();
-        Debug.Log("caca");
+        
         estaInicializado = true;
     }
 
@@ -51,15 +51,15 @@ public class Grid : MonoBehaviour
 
     public Tile getTileByVector(Vector3 position){
         Vector3 posIni = posiciones[0,0].getPosition();
-        Debug.Log("lado " + lado);
-        Debug.Log("pos inix " + posIni.x);
+        //Debug.Log("lado " + lado);
+        //Debug.Log("pos inix " + posIni.x);
         int x = (int) ((position.x - (posIni.x-(lado/2))) / lado);
-        Debug.Log(x);
+        //Debug.Log(x);
         if(x==getAncho()){
             x=x-1;
         }
         int z = (int) ((position.z - (posIni.z-(lado/2))) / lado);
-        Debug.Log(z);
+        //Debug.Log(z);
         if(z==getAlto()){
             z=z-1;
         }
@@ -67,6 +67,7 @@ public class Grid : MonoBehaviour
         if(tile.isPasable()){
             return tile;
         }
+
         tile = lista
             .Where(o => o.pasable)
             .Aggregate((o1, o2) => Vector3.Distance(o1.getPosition(), position) < Vector3.Distance(o2.getPosition(), position) ? o1 : o2);

@@ -68,6 +68,7 @@ public class PathFinding : MonoBehaviour
                 
             }
             */
+            
             if ((camino[posCamino].getPosition() - GetComponent<AgentNPC>().Position).magnitude < 2)
             {
                 posCamino += 1;
@@ -82,20 +83,27 @@ public class PathFinding : MonoBehaviour
     }
 
 
-    private void clearCamino(){
+    public void clearCamino(){
         foreach(Tile tile in camino){
             tile.cambiarDefaultColor();
         }
+        posCamino = 0;
         camino.Clear();
     }
     public void CalcularCamino(Vector3 newTarget)
     {
         Tile goal = gird.getTileByVector(newTarget);
+       
         Tile start = gird.getTileByVector(transform.position);
+
         if (pathFindingTactico)
-        {   
+        {
+
             astart.setAgent(this.GetComponent<AgentNPC>());
             camino = new List<Tile>(astart.buscarCamino(start, goal));
+            
+
+
         }
         else
         {
@@ -128,11 +136,20 @@ public class PathFinding : MonoBehaviour
         pathFindingTactico = false;
     }
 
-    public void cortarCamino() 
+    public Tile GetDestino() 
     {
-        posCamino = 0;
-        camino.Clear();
+        if (hayCamino())
+            return camino.Last();
+        else return null;
     }
+
+    public bool hayCamino() 
+    {
+        return (camino.Count > 0);
+        
+    }
+
+ 
 
 }
 
