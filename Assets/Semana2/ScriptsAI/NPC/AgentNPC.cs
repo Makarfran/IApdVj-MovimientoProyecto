@@ -20,6 +20,7 @@ public class AgentNPC : Agent
 
     protected string tipoUnidad = "";
     [SerializeField] Vector3 respawnPosition;
+    protected int respawnTime;
 
 
     [SerializeField] public GameObject bocadilloCube;
@@ -49,6 +50,12 @@ public class AgentNPC : Agent
         { "Desierto", new Dictionary<string, float> { { "Scout", 0.75f }, { "Infanteria", 1.25f }, { "Elite", 1f } } },
         { "Camino", new Dictionary<string, float> { { "Scout", 0.75f }, { "Infanteria", 0.75f }, { "Elite", 1f } } }
     };
+
+    public string getTipo() 
+    {
+        return tipoUnidad;
+    }
+
     public string getBando()
     {
         return bando;
@@ -186,7 +193,7 @@ public class AgentNPC : Agent
             }
             else
             {
-                auxList.Add(b);
+                if (b.enabled == true) auxList.Add(b);
             }
         }
         kinematicFinal = Arbitro.getKinematicFinal(auxList, this);
@@ -271,22 +278,18 @@ public class AgentNPC : Agent
         vida = Mathf.Max(perdida, 0);
 
         if (vida == 0){
-            respawn();
+            gameObject.SetActive(false);
+            Invoke("respawn", respawnTime);
         }
         return vida;
     }
 
     public void recuperarVida()
     {
-<<<<<<< HEAD
-
         Vector3 boxSize = GetComponent<Collider>().bounds.size;
-=======
->>>>>>> 92f83d917deae01ebe101b4681c6defb284473e7
-
                 // Si este objeto está en contacto con un obstáculo, invoca setImpasable()
                 // Debug.Log("Tile: "+fila +" "+columna+" choca");
-        float gana = vida + 5f;
+        float gana = vida + 0.5f;
         vida = Mathf.Min(gana, maxVida);
         
     
@@ -366,7 +369,10 @@ public class AgentNPC : Agent
 
 
     public void respawn(){
+        
+        vida = maxVida;
         this.transform.position = respawnPosition;
+        gameObject.SetActive(true);
     }
 
 
@@ -400,5 +406,6 @@ public class AgentNPC : Agent
         changeColor(new Color(1,0.5f,0,1));
     }
 
+    public virtual bool vidaBaja() { return false; }
 
 }

@@ -32,10 +32,6 @@ public class KeypointBase : Keypoint
         }
     }
 
-    public string getBando(){
-        return Bando;
-    }
-
     public float getLifeP() 
     {
         return lifeP;

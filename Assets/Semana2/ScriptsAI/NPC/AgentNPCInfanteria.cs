@@ -9,12 +9,13 @@ public class AgentNPCInfanteria : AgentNPC
     protected override void Start()
     {
         base.Start();
-        this.vida = 4000;
-        this.maxVida = 4000;
+        this.vida = 7500;
+        this.maxVida = 7500;
         this.atq = 100;
-        this.range = 7f;
+        this.range = 2f;
         this.tipoUnidad = "Infanteria";
-        
+        this.respawnTime = 15;
+
     }
     
     // Start is called before the first frame update
@@ -67,5 +68,14 @@ public class AgentNPCInfanteria : AgentNPC
         // prefiere el camino más corto a la base, la influencia no se usa.
 
         return (0f, 0f,0f,0f);
-    }       
+    }
+
+    public override bool vidaBaja()
+    {
+        if (vida / maxVida <= 0.2f)
+        {
+            return true;
+        }
+        return false;
+    }
 }

@@ -18,7 +18,8 @@ public class StateFlee : MonoBehaviour, IState
 
         //Metemos Acciones
         //ACCIÓN ENTRADA fijar objetivo y huir
-        //entryAction.Add(GetComponent<FijarObjetivoHeal>())
+        entryAction.Add(GetComponent<FijarObjetivoHeal>());
+        //if (!Elite())
         //entryAction.Add(GetComponent<Flee>());
         //ACCIÓN movimiento
         action.Add(GetComponent<Movimiento>());
@@ -44,11 +45,8 @@ public class StateFlee : MonoBehaviour, IState
 
     public bool condicionIdle() 
     {
-        if (GetComponent<Movimiento>() != null && (GetComponent<Movimiento>().getTarget().transform.position - GetComponent<AgentNPC>().Position).magnitude < 5) 
-        {
-            //cambiar
-            return true;
-        }
-        return false;
+        ComponenteIA ia = GetComponent<ComponenteIA>();
+        // Transicion a heal
+        return ia.fullVida() || (ia.distanciaHeal() && ia.enemigoAgresivo());
     }
 }

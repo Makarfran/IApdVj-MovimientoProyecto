@@ -11,11 +11,12 @@ public class AgentNPCElite : AgentNPC
     protected override void Start()
     {
         base.Start();
-        this.vida = 6000;
-        this.maxVida = 6000;
+        this.vida = 10000;
+        this.maxVida = 10000;
         this.atq = 120;
-        this.range = 2f;
+        this.range = 3f;
         this.tipoUnidad = "Elite";
+        this.respawnTime = 25;
 
     }
     // Start is called before the first frame update
@@ -109,6 +110,15 @@ public class AgentNPCElite : AgentNPC
         }
 
         return newFactor;
-    }  
+    }
+
+    public override bool vidaBaja() 
+    {
+        if (vida / maxVida <= 0.1f)
+        {
+            return true;
+        }
+        return false;
+    }
           
 }

@@ -5,18 +5,17 @@ using System;
 
 public class AgentNPCScout : AgentNPC
 {
-    
-    
     // Start is called before the first frame update
     protected override void Start()
     {
         base.Start();
-        this.vida = 8000;
-        this.maxVida = 8000;
+        this.vida = 5000;
+        this.maxVida = 5000;
         this.atq = 75;
         this.range = 8f;
         this.tipoUnidad = "Scout";
-        
+        this.respawnTime = 15;
+
     }
     
 
@@ -71,6 +70,14 @@ public class AgentNPCScout : AgentNPC
         // comportamiento evidentemente evasivo, siempre elige el camino
         // gobernado por su equipo!
         return (0.1f, 0.3f, 1.20f, 3f);
-    }    
-    
+    }
+
+    public override bool vidaBaja()
+    {
+        if (vida / maxVida <= 0.3f)
+        {
+            return true;
+        }
+        return false;
+    }
 }

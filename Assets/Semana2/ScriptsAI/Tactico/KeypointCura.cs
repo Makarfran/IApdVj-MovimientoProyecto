@@ -11,7 +11,6 @@ public class KeypointCura : Keypoint
     // Start is called before the first frame update
     void Start()
     {
-        
         infman = FindObjectOfType<InfluenceManager>();
         infmap = FindObjectOfType<InfluenceMap>();
     }
@@ -21,12 +20,12 @@ public class KeypointCura : Keypoint
     {
         if (infman != null)
         {
-            int inf = getInfluenceValue(this.transform.position);
-            if (inf == 1)
+            float inf = getInfluenceValue(this.transform.position);
+            if (inf >= 3)
             {
                 Bando = "A";
             }
-            else if (inf == -1)
+            else if (inf <= -3)
             {
                 Bando = "R";
             }
@@ -36,17 +35,19 @@ public class KeypointCura : Keypoint
             }
         }
         foreach(AgentNPC a in agentes){
-            a.recuperarVida();
+            if(a.getBando() == getBando()) a.recuperarVida();
         }
         
     }
 
-    public int getInfluenceValue(Vector3 vec)
+    public float getInfluenceValue(Vector3 vec)
     {
 
         float maxinf = infman.getMaxInf();
 
         float inf = infman.getInfluenceTile(vec, InfluenceMap.Faccion.Azul);
+        return inf;
+        /*
         if (inf < 0)
         {
             if (inf < (3 / 4) * maxinf)
@@ -72,7 +73,7 @@ public class KeypointCura : Keypoint
             {
                 return -1;
             }
-        }
+        }*/
     }
 
 

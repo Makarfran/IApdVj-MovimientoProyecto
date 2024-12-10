@@ -35,6 +35,7 @@ public class SoltarObjetivoBase : Action
     public override void execute()
     {
         GetComponent<Movimiento>().setTarget(null);
+        GetComponent<ComponenteIA>().pararMovimiento();
     }
 
 }

@@ -13,10 +13,9 @@ public class StateAttack : MonoBehaviour, IState
     {
         //Metemos todas las transiciones asociadas al gameObject
         transitions.Add(GetComponent<Tidle>());
-        //transitions.Add(GetComponents<TAntiSuicida>());
-        //Si tenemos path para patrulla
-        //if (GetComponent<PathBasico>() != null)
-        //transitions.Add(GetComponents<TPatrulla>());
+        transitions.Add(GetComponent<TBerserker>());
+        transitions.Add(GetComponent<TFlee>());
+       
 
         //Metemos Acciones
         //ACCIÓN ENTRADA fijar objetivo

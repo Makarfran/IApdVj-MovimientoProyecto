@@ -28,7 +28,7 @@ public class InfluenceMap : MonoBehaviour
         while (true) 
         {
             actinflu();
-            yield return new WaitForSeconds(2);
+            yield return new WaitForSeconds(1);
         }
     }
 
@@ -105,7 +105,7 @@ private void VerificarGridInicializado()
     {
         Vector3 tilePosition = tile.getPosition();  // Posición del tile en el grid
         float distance = Vector3.Distance(new Vector3(agentPosition.x, 0, agentPosition.z), new Vector3(tilePosition.x, 0, tilePosition.z));
-        float influence = distance == 0 ? influenciaBase : (influenciaBase / distance) - 1;
+        float influence = distance == 0 ? influenciaBase : ((influenciaBase / distance) - 1);
         return Mathf.Max(influence, 0);  // Asegura que la influencia no sea negativa
     }
 
@@ -113,10 +113,10 @@ private void VerificarGridInicializado()
     private void ActualizarInfluenciasAux(Tile tile, float influence)
     {
         // Actualizar el diccionario y añadir la influencia en el InfluenceManager
-        if (tilesInfluenciados.ContainsKey(tile))
-        {
+        //if (tilesInfluenciados.ContainsKey(tile))
+        //{
             //InfluenceManager.Instance.EliminarInfluencia(tile, influence, faccion);
-        }
+        //}
         tilesInfluenciados[tile] = influence;
         InfluenceManager.Instance.AgregarInfluencia(tile, influence, faccion);
     }

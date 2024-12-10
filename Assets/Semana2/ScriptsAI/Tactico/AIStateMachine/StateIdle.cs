@@ -13,6 +13,7 @@ public class StateIdle : MonoBehaviour, IState
     void Start()
     {
         //Metemos todas las transiciones asociadas al gameObject
+        transitions.Add(GetComponent<TPatrol>());
         transitions.Add(GetComponent<TAttack>());
         transitions.Add(GetComponent<TDefend>());
         transitions.Add(GetComponent<TCapture>());

@@ -16,4 +16,10 @@ public class Keypoint : MonoBehaviour
     {
         
     }
+
+    public string getBando()
+    {
+        return Bando;
+    }
+
 }

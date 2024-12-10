@@ -29,18 +29,27 @@ public class Movimiento : Action
     public override bool isComplete()
     {
         AgentNPC npcActual = GetComponent<AgentNPC>();
-        if (target == null || comprobarDistancia() || 
-           (target.GetComponent<AgentNPC>() && (target.GetComponent<AgentNPC>().Position - GetComponent<Agent>().Position).magnitude >= 12)) 
+        if (target == null || comprobarDistancia(npcActual) || 
+           (target.GetComponent<AgentNPC>() && (target.GetComponent<AgentNPC>().Position - npcActual.Position).magnitude >= 12)) 
         {
             //Debug.Log("cortar camino");
-            GetComponent<PathFinding>().cortarCamino();
+            GetComponent<ComponenteIA>().pararMovimiento();
             return true;
         }
         return false;
     }
     public override void execute()
     {
-        GetComponent<PathFinding>().CalcularCamino(target.transform.position);
+        if (target != null) 
+        {
+            if (!GetComponent<PathFinding>().hayCamino()) GetComponent<PathFinding>().CalcularCamino(target.transform.position);
+            else 
+            {
+                if ((GetComponent<PathFinding>().GetDestino().getPosition() - target.transform.position).magnitude > 3)
+                    GetComponent<PathFinding>().CalcularCamino(target.transform.position);
+            }
+        } 
+
     }
 
     public void setTarget(GameObject target)
@@ -53,17 +62,21 @@ public class Movimiento : Action
         return target;
     }
 
-    private bool comprobarDistancia() 
+    private bool comprobarDistancia(AgentNPC npcActual) 
     {
-        AgentNPC npcActual = GetComponent<AgentNPC>();
+        //AgentNPC npcActual = GetComponent<AgentNPC>();
         if (target.GetComponent<AgentNPC>())
         {
             return (npcActual.Position - target.transform.position).magnitude < npcActual.getRange();
 
         }
-        else 
+        else if (target.GetComponent<KeypointBase>())
         {
             return target.GetComponent<KeypointBase>().GetNPCS().Contains(npcActual);
+        }
+        else 
+        {
+            return GetComponent<ComponenteIA>().distanciaHeal();
         }
     }
 }
