@@ -8663,7 +8663,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 158447121}
         m_TargetAssemblyTypeName: Controlador, Assembly-CSharp
         m_MethodName: restartScene
         m_Mode: 1
