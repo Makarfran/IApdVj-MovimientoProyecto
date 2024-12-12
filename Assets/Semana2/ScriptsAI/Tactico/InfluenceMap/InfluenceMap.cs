@@ -23,6 +23,11 @@ public class InfluenceMap : MonoBehaviour
         StartCoroutine(ActualizarInfluenciasRoutine());
     }
     
+    public void  onEnable(){
+        Debug.Log("onEnabled");
+        StartCoroutine(ActualizarInfluenciasRoutine());
+    }
+
     IEnumerator ActualizarInfluenciasRoutine()
     {
         while (true) 
