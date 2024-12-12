@@ -41,7 +41,10 @@ public class InfluenceMap : MonoBehaviour
             VerificarGridInicializado();
             return;  // Si no está inicializado, no calculamos nada
         }
-
+        AgentNPC agent = GetComponent<AgentNPC>(); 
+        if ( agent != null  && agent.vida <= 0){
+            return;
+        }
         // Verificar si el personaje ha cambiado de posición y recalcular influencias
         // if (posicionAnterior != transform.position)
         //{

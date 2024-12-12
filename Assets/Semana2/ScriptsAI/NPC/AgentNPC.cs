@@ -11,7 +11,7 @@ public class AgentNPC : Agent
     private List<SteeringBehaviour> listSteerings;
     private bool ModoDep;
     [SerializeField] protected int maxVida;
-    [SerializeField] protected float vida;
+    [SerializeField] public float vida;
     [SerializeField] protected int atq;
     [SerializeField] public float costeAtaque = 200f;
     protected float range;
@@ -289,7 +289,19 @@ public class AgentNPC : Agent
     {
         deadPosition = new Vector3(this.Position.x, this.Position.y, this.Position.z);
         GetComponent<order>().destroy();
-        gameObject.SetActive(false);
+        //gameObject.SetActive(false);
+        //GetComponent<MeshRenderer>().enabled = false;
+        
+                // Busca todos los MeshRenderers en los objetos hijos
+        // Busca todos los SkinnedMeshRenderers en los objetos hijos
+        SkinnedMeshRenderer[] skinnedMeshRenderers = GetComponentsInChildren<SkinnedMeshRenderer>();
+
+        // Itera sobre ellos y deshabilita el componente
+        foreach (SkinnedMeshRenderer renderer in skinnedMeshRenderers)
+        {
+            renderer.enabled = false;
+        }
+        
         Invoke("respawn", respawnTime);
     }
 
@@ -379,9 +391,20 @@ public class AgentNPC : Agent
 
     public void respawn(){
 
-        gameObject.SetActive(true);
+        //gameObject.SetActive(true);
         vida = maxVida;
         this.transform.position = respawnPosition;
+        //GetComponent<MeshRenderer>().enabled = true;
+        
+        // Busca todos los SkinnedMeshRenderers en los objetos hijos
+        SkinnedMeshRenderer[] skinnedMeshRenderers = GetComponentsInChildren<SkinnedMeshRenderer>();
+
+        // Itera sobre ellos y deshabilita el componente
+        foreach (SkinnedMeshRenderer renderer in skinnedMeshRenderers)
+        {
+            renderer.enabled = true;
+        }
+        
         GetComponent<PathFinding>().CalcularCamino(deadPosition);
         /*
         Renderer[] rs = GetComponentsInChildren<Renderer>();
