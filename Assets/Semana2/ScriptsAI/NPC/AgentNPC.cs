@@ -19,7 +19,7 @@ public class AgentNPC : Agent
     [SerializeField] protected Grid grid;
 
     protected string tipoUnidad = "";
-    [SerializeField] Vector3 respawnPosition;
+    public  Vector3 respawnPosition;
     [SerializeField] Vector3 deadPosition;
     protected int respawnTime;
 
@@ -288,7 +288,8 @@ public class AgentNPC : Agent
     private void dead() 
     {
         deadPosition = new Vector3(this.Position.x, this.Position.y, this.Position.z);
-        GetComponent<order>().destroy();
+        GetComponent<order>().respawn();
+        GetComponent<PathFinding>().clearCamino();
         gameObject.SetActive(false);
         Invoke("respawn", respawnTime);
     }

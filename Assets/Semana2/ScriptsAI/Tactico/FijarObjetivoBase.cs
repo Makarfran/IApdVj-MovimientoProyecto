@@ -33,6 +33,8 @@ public class FijarObjetivoBase : Action
     }
     public override void execute()
     {
-        GetComponent<ComponenteIA>().fijarObjetivoBase();
+        GameObject target = null;
+        GetComponent<ComponenteIA>().fijarObjetivoBase(out target);
+        GetComponent<Movimiento>().setTarget(target);
     }
 }

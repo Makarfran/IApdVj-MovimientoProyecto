@@ -33,6 +33,8 @@ public class FijarObjetivoDefend : Action
     }
     public override void execute()
     {
-        GetComponent<ComponenteIA>().fijarObjetivoDefensa();
+        GameObject target;
+        GetComponent<ComponenteIA>().fijarObjetivoDefensa(out target);
+        GetComponent<Movimiento>().setTarget(target);
     }
 }
