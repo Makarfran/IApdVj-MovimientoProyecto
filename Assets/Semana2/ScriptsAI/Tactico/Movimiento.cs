@@ -48,6 +48,7 @@ public class Movimiento : Action
                 if (!comprobarDistancia(GetComponent<AgentNPC>()) && (GetComponent<PathFinding>().GetDestino().getPosition() - target.transform.position).magnitude > 3)
                     GetComponent<PathFinding>().CalcularCamino(target.transform.position);
             }
+            GetComponent<AgentNPC>().changeColorMovimiento();
         } 
 
     }

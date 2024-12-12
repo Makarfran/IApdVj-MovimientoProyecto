@@ -11,7 +11,7 @@ public class AgentNPC : Agent
     private List<SteeringBehaviour> listSteerings;
     private bool ModoDep;
     [SerializeField] protected int maxVida;
-    [SerializeField] protected float vida;
+    [SerializeField] public float vida;
     [SerializeField] protected int atq;
     [SerializeField] public float costeAtaque = 200f;
     protected float range;
@@ -378,9 +378,14 @@ public class AgentNPC : Agent
     }
 
 
-    public void respawn(){
+    void onEnable(){
+        Debug.Log("onEnabled npc");
+        GetComponent<InfluenceMap>().onEnable();
+    }
 
+    public void respawn(){
         gameObject.SetActive(true);
+        onEnable();
         vida = maxVida;
         this.transform.position = respawnPosition;
         GetComponent<PathFinding>().CalcularCamino(deadPosition);

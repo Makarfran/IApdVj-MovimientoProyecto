@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028334, g: 0.2257134, b: 0.30692226, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -59292,11 +59292,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tileVisualPrefab: {fileID: 132189063}
   gird: {fileID: 1415870391}
-  maxInfluenceTime: 50
-  visualUpdate: 10
+  maxInfluenceTime: 20
+  visualUpdate: 1
   gridInicializado: 0
   maxInfluence: 100
-  updateEach: 10
+  updateEach: 1
 --- !u!1 &1975255646 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100070, guid: 3353e4f866c39d043a315b41717c9bb7, type: 3}
