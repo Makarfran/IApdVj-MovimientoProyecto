@@ -48,6 +48,7 @@ public class InfluenceManager : MonoBehaviour
         // Iniciamos la corrutina
         StartCoroutine(UpdateInfluenceMapRoutine());
         StartCoroutine(UpdateInfluenceColorRoutine());
+        
     }
 
     public InfluenceGrid getGrid()

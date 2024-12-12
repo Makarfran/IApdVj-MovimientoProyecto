@@ -22,13 +22,14 @@ public class InfluenceMap : MonoBehaviour
         posicionAnterior = transform.position;
         StartCoroutine(ActualizarInfluenciasRoutine());
     }
+   
     
-    public void  onEnable(){
+    public void  OnEnable(){
         Debug.Log("onEnabled");
         StartCoroutine(ActualizarInfluenciasRoutine());
     }
-
-    IEnumerator ActualizarInfluenciasRoutine()
+    
+    public IEnumerator ActualizarInfluenciasRoutine()
     {
         while (true) 
         {

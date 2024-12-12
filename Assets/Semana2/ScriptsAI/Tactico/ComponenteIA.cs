@@ -594,4 +594,20 @@ public class ComponenteIA : MonoBehaviour
     {
         return controladorJuego.getModo(npc.getBando());
     }
+
+    public void desactivarIA()
+    {
+        npc.GetComponent<StateMachineIA>().enabled = false;
+        npc.GetComponent<ActionManager>().enabled = false;
+        npc.GetComponent<PathFinding>().clearCamino();
+    }
+
+    public void activarIA()
+    {
+        npc.GetComponent<StateMachineIA>().enabled = true;
+        npc.GetComponent<ActionManager>().enabled = true;
+       
+    }
+
+
 }

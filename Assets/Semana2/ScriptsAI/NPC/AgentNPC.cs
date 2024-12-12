@@ -377,15 +377,15 @@ public class AgentNPC : Agent
         return newFactor;
     }
 
-
+    /*
     void onEnable(){
         Debug.Log("onEnabled npc");
         GetComponent<InfluenceMap>().onEnable();
     }
-
+    */
     public void respawn(){
         gameObject.SetActive(true);
-        onEnable();
+        //onEnable();
         vida = maxVida;
         this.transform.position = respawnPosition;
         GetComponent<PathFinding>().CalcularCamino(deadPosition);

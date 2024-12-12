@@ -121,6 +121,7 @@ public class UnitsSelection : MonoBehaviour
         npcsSelected.Add(npc);
         Transform marker = npc.transform.Find("Mark");
         marker.gameObject.SetActive(true);
+        npc.GetComponent<ComponenteIA>().desactivarIA();
     }
 
     public void Deselect(GameObject npc)
@@ -128,6 +129,7 @@ public class UnitsSelection : MonoBehaviour
         npcsSelected.Remove(npc);
         Transform marker = npc.transform.Find("Mark");
         marker.gameObject.SetActive(false);
+        npc.GetComponent<ComponenteIA>().activarIA();
     }
 
     public void DeselectAll()
@@ -136,6 +138,7 @@ public class UnitsSelection : MonoBehaviour
         {
             Transform marker = npc.transform.Find("Mark");
             marker.gameObject.SetActive(false);
+            npc.GetComponent<ComponenteIA>().activarIA();
         }
         npcsSelected.Clear();
     }
