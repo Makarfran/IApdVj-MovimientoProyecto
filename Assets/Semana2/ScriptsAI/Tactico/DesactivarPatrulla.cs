@@ -35,6 +35,7 @@ public class DesactivarPatrulla : Action
     {
         GetComponent<PathFollowing>().camino = null;
         GetComponent<PathFollowing>().target = null;
+        GetComponent<Movimiento>().setTarget(null);
     }
 
 }

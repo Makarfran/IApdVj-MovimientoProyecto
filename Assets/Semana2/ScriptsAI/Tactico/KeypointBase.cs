@@ -11,7 +11,7 @@ public class KeypointBase : Keypoint
     public Material Amat;
     public Material Rmat;
     public float lifeP;
-    private float lifePMax= 1500;
+    private float lifePMax= 3000;
     private BoxCollider range; //tengo que ver como controlar como pierde puntos por ser capturados
     // Start is called before the first frame update
     void Start()
@@ -83,15 +83,19 @@ public class KeypointBase : Keypoint
         int diff = countA-countR;
         if(Bando == "A"){
             if(diff < 0){
-                lifeP = lifeP - 5*countR;
+                lifeP = lifeP - 1f*countR;
+                if (lifeP < 0) lifeP = 0;
             } else if (diff > 0 && lifeP < lifePMax){
                 lifeP = lifeP + 1*countA;
+                if (lifeP > lifePMax) lifeP = lifePMax;
             }
         } else{
             if(diff < 0 && lifeP < lifePMax){
-                lifeP = lifeP + 1*countR;
+                lifeP = lifeP + 1f*countR;
+                if (lifeP > lifePMax) lifeP = lifePMax;
             } else if (diff > 0 ){
-                lifeP = lifeP - 5*countA;
+                lifeP = lifeP - 1*countA;
+                if (lifeP < 0) lifeP = 0;
             }
         }
         //hacer sumatorio de agentnpcs en area de un bando vs otro

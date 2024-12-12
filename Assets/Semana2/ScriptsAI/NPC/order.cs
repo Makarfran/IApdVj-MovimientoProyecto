@@ -6,4 +6,10 @@ public class order : MonoBehaviour
 {
     public Agent arrivalPoint;
     public Agent alignPoint;
+
+    public void destroy()
+    {
+        arrivalPoint = null;
+        alignPoint = null;
+    }
 }

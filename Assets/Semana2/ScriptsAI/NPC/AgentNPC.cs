@@ -20,6 +20,7 @@ public class AgentNPC : Agent
 
     protected string tipoUnidad = "";
     [SerializeField] Vector3 respawnPosition;
+    [SerializeField] Vector3 deadPosition;
     protected int respawnTime;
 
 
@@ -109,6 +110,7 @@ public class AgentNPC : Agent
         } else {
             respawnPosition = new Vector3(52.8f,0f,-9.8f);
         }
+
         bocadilloCube = GameObject.CreatePrimitive(PrimitiveType.Cube);
         bocadilloCube.transform.localScale = new Vector3(0.8f, 0.8f, 0.8f); // Reducir el tamaño del cubo
                 // Hacer que el cubo sea hijo del NPC
@@ -278,10 +280,17 @@ public class AgentNPC : Agent
         vida = Mathf.Max(perdida, 0);
 
         if (vida == 0){
-            gameObject.SetActive(false);
-            Invoke("respawn", respawnTime);
+            dead();
         }
         return vida;
+    }
+
+    private void dead() 
+    {
+        deadPosition = new Vector3(this.Position.x, this.Position.y, this.Position.z);
+        GetComponent<order>().destroy();
+        gameObject.SetActive(false);
+        Invoke("respawn", respawnTime);
     }
 
     public void recuperarVida()
@@ -289,7 +298,7 @@ public class AgentNPC : Agent
         Vector3 boxSize = GetComponent<Collider>().bounds.size;
                 // Si este objeto está en contacto con un obstáculo, invoca setImpasable()
                 // Debug.Log("Tile: "+fila +" "+columna+" choca");
-        float gana = vida + 0.5f;
+        float gana = vida + 2f;
         vida = Mathf.Min(gana, maxVida);
         
     
@@ -369,10 +378,16 @@ public class AgentNPC : Agent
 
 
     public void respawn(){
-        
+
+        gameObject.SetActive(true);
         vida = maxVida;
         this.transform.position = respawnPosition;
-        gameObject.SetActive(true);
+        GetComponent<PathFinding>().CalcularCamino(deadPosition);
+        /*
+        Renderer[] rs = GetComponentsInChildren<Renderer>();
+        foreach (Renderer r in rs)
+            r.enabled = true;
+        */
     }
 
 

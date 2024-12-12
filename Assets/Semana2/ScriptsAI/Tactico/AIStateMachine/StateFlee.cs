@@ -45,6 +45,7 @@ public class StateFlee : MonoBehaviour, IState
 
     public bool condicionIdle() 
     {
+        if (GetComponent<AgentNPC>().getVida() == 0) return true;
         ComponenteIA ia = GetComponent<ComponenteIA>();
         // Transicion a heal
         return ia.fullVida() || (ia.distanciaHeal() && ia.enemigoAgresivo());

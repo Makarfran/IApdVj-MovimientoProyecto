@@ -12,8 +12,8 @@ public class PathFinding : MonoBehaviour
     [SerializeField] public bool pathFindingTactico = true;
     private LRTAStart lrta;
     private AStart astart;
-    private List<Tile> camino;
-    private int posCamino;
+    [SerializeField] private List<Tile> camino;
+    [SerializeField] private int posCamino;
 
     public void setGrid(Grid g)
     {

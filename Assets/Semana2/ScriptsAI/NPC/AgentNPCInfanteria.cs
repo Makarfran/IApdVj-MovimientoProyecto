@@ -9,8 +9,8 @@ public class AgentNPCInfanteria : AgentNPC
     protected override void Start()
     {
         base.Start();
-        this.vida = 7500;
-        this.maxVida = 7500;
+        this.vida = 5000;
+        this.maxVida = 5000;
         this.atq = 100;
         this.range = 2f;
         this.tipoUnidad = "Infanteria";

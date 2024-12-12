@@ -23,6 +23,16 @@ public class Controlador : MonoBehaviour
     public GameObject HRoja;
     public GameObject HAzul;
     public List<GameObject> zonasH = new List<GameObject>();
+    public string ModoAzul;
+    public string ModoRojo;
+    private bool manualRojo = false;
+    private bool manualAzul = false;
+    private bool guerraTotal = false;
+    public GameObject modoDefensivoAzul;
+    public GameObject modoOfensivoAzul;
+    public GameObject modoDefensivoRojo;
+    public GameObject modoOfensivoRojo;
+    public GameObject guerraTotalBoton;
 
     // Start is called before the first frame update
     void Start()
@@ -36,19 +46,25 @@ public class Controlador : MonoBehaviour
         {
             teamA.Add(A.transform.GetChild(i).gameObject);
         }
+        ModoAzul = "Equilibrado";
+        ModoRojo = "Equilibrado";
     }
 
     // Update is called once per frame
     void Update()
     {
         checkBasesBando();
-        if(!gameEnded){
+        checkModo("R");
+        checkModo("A");
+        if (!gameEnded){
+
             hasAWon();
             hasRWon();
 
         }
         //Debug.Log("Dominio Azul " + getDominio("A") );
         //Debug.Log("Dominio Rojo " + getDominio("R") );
+
         if(gameEnded && ganador == A){
             //Debug.Log("Victoria Azul");
             botonrestart.SetActive(true);
@@ -133,4 +149,133 @@ public class Controlador : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
+    public void setModo(string bando, string modo) 
+    {
+        if (!manualAzul)
+            if (bando == "A") ModoAzul = modo;
+        if (!manualRojo)
+            if (bando == "R") ModoRojo = modo;
+    }
+
+    public string getModo(string bando)
+    {
+        string modo = "";
+        if (bando == "A") modo = ModoAzul;
+        if (bando == "R") modo =  ModoRojo;
+        return modo;
+    }
+
+
+    private void checkModo(string bando) 
+    {
+        float dominio = getDominio(bando);
+        if (dominio > 60)
+        {
+            setModo(bando, "Ofensivo");
+            //Debug.Log("bando: " + bando + " Modo: " + getModo(bando));
+        }
+        if (dominio <= 60 && dominio >= 40)
+        {    
+            setModo(bando, "Equilibrado");
+            //Debug.Log("bando: " + bando + " Modo: " + getModo(bando));
+        }
+        if (dominio < 40)
+        {
+            setModo(bando, "Defensivo");
+            //Debug.Log("bando: " + bando + " Modo: " + getModo(bando));
+        }
+            
+    }
+
+    public void activarModoOfensivoRojo() 
+    {
+        
+        if (manualRojo)
+        {
+            manualRojo = false;
+            modoDefensivoRojo.SetActive(true);
+        }
+        else 
+        {
+            manualRojo = true;
+            modoDefensivoRojo.SetActive(false);
+            ModoRojo = "Ofensivo";
+        }
+        
+    }
+
+    public void activarModoDefensivoRojo() 
+    {
+        
+        if (manualRojo)
+        {
+            manualRojo = false;
+            modoOfensivoRojo.SetActive(true);
+        }
+        else
+        {
+            manualRojo = true;
+            modoOfensivoRojo.SetActive(false);
+            ModoRojo = "Defensivo";
+        }
+        
+    }
+
+    public void activarModoOfensivoAzul()
+    {
+        if (manualAzul)
+        {
+            manualAzul = false;
+            modoDefensivoAzul.SetActive(true);
+        }
+        else
+        {
+            manualAzul = true;
+            modoDefensivoAzul.SetActive(false);
+            ModoAzul = "Ofensivo";
+        }
+    }
+
+    public void activarModoDefensivoAzul()
+    {
+        if (manualAzul)
+        {
+            manualAzul = false;
+            modoOfensivoAzul.SetActive(true);
+        }
+        else
+        {
+            manualAzul = true;
+            modoOfensivoAzul.SetActive(false);
+            ModoAzul = "Defensivo";
+        }
+    }
+
+    
+    public void activarGuerraTotal() 
+    {
+        if (guerraTotal)
+        {
+            guerraTotal = false;
+            modoOfensivoAzul.SetActive(true);
+            modoDefensivoAzul.SetActive(true);
+            modoOfensivoRojo.SetActive(true);
+            modoDefensivoRojo.SetActive(true);
+            manualAzul = false;
+            manualRojo = false;
+        }
+        else 
+        {
+            guerraTotal = true;
+            modoOfensivoAzul.SetActive(false);
+            modoDefensivoAzul.SetActive(false);
+            modoOfensivoRojo.SetActive(false);
+            modoDefensivoRojo.SetActive(false);
+            manualAzul = true;
+            manualRojo = true;
+            ModoAzul = "GuerraTotal";
+            ModoRojo = "GuerraTotal";
+        }
+    }
+    
 }

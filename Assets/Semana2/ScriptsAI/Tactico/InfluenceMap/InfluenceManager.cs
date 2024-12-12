@@ -18,7 +18,7 @@ public class InfluenceManager : MonoBehaviour
 
     // Tiempo total en segundos para que la influencia se reduzca a cero
     [SerializeField]
-    public float maxInfluenceTime = 5;
+    public float maxInfluenceTime = 10;
 
     [SerializeField] public float visualUpdate = 5f;
 
@@ -28,7 +28,7 @@ public class InfluenceManager : MonoBehaviour
     [SerializeField]
     public int maxInfluence = 10;
 
-    [SerializeField] public int updateEach = 10; // Tiempo en segundos para actualizar la influencia    
+    [SerializeField] public int updateEach = 5; // Tiempo en segundos para actualizar la influencia    
 
     private void Awake()
     {

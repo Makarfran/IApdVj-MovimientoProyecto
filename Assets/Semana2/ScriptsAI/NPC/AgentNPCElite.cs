@@ -11,8 +11,8 @@ public class AgentNPCElite : AgentNPC
     protected override void Start()
     {
         base.Start();
-        this.vida = 10000;
-        this.maxVida = 10000;
+        this.vida = 7000;
+        this.maxVida = 7000;
         this.atq = 120;
         this.range = 3f;
         this.tipoUnidad = "Elite";
@@ -26,7 +26,7 @@ public class AgentNPCElite : AgentNPC
     public override void Update()
     {
         base.Update();
-        if (grid != null)
+        if (grid != null && vida > 0)
         {
             Tile tile = grid.getTileByVector(this.transform.position);
             String tipo = tile.getTipo();

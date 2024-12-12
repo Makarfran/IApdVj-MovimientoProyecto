@@ -69,14 +69,15 @@ public class StateAttack : MonoBehaviour, IState
     */
     public bool condicionIdle() 
     {
-        if (GetComponent<Atacar>().getTarget() == null) return false;
+        
         AgentNPC enemigo = GetComponent<Atacar>().getTarget();
         //Condicion de pérdida de objetivo
-        if (GetComponent<ComponenteIA>().enemigoMuerto(enemigo) || (enemigo.Position - GetComponent<Agent>().Position).magnitude >= 12)
+        if (enemigo != null &&(GetComponent<ComponenteIA>().enemigoMuerto(enemigo) || (enemigo.Position - GetComponent<Agent>().Position).magnitude >= 12))
         {
             Debug.Log("de atack a idle");
             return true; 
         }
+        if (GetComponent<AgentNPC>().getVida() == 0) return true;
         else return false;
         //El objetivo ha sido eliminado o ha huido
     }

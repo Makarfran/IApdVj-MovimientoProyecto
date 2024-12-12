@@ -145,16 +145,33 @@ public class ComponenteIA : MonoBehaviour
     {
         GameObject objetivo = null;
         string bando = npc.getBando();
+        List<GameObject> basesAtacadas = new List<GameObject>();
 
         if (bando == "R")
         {
             if (comprobarAtaqueBasePrincipal(controladorJuego.baseRoja)) objetivo = controladorJuego.baseRoja;
-            else objetivo = getObjetivo(controladorJuego.basesTeamR);
+            else 
+            {
+                foreach (GameObject baseAtacada in controladorJuego.basesTeamR)
+                {
+                    KeypointBase baseA = baseAtacada.GetComponent<KeypointBase>();
+                    if (baseA.getLifeP() < baseA.getLifePMax()) basesAtacadas.Add(baseAtacada);
+                }
+                objetivo = getObjetivo(basesAtacadas);
+            }
         }
         else
         {
             if (comprobarAtaqueBasePrincipal(controladorJuego.baseAzul)) objetivo = controladorJuego.baseAzul;
-            else objetivo = getObjetivo(controladorJuego.basesTeamA);
+            else
+            {
+                foreach (GameObject baseAtacada in controladorJuego.basesTeamA)
+                {
+                    KeypointBase baseA = baseAtacada.GetComponent<KeypointBase>();
+                    if (baseA.getLifeP() < baseA.getLifePMax()) basesAtacadas.Add(baseAtacada);
+                }
+                objetivo = getObjetivo(basesAtacadas);
+            }
         }
         GetComponent<Movimiento>().setTarget(objetivo);
 
@@ -217,14 +234,19 @@ public class ComponenteIA : MonoBehaviour
 
     public bool condicionPatrol() 
     {
-        
-        if (npc.GetComponent<ActivarPatrulla>().camino != null) 
+
+        if (npc.GetComponent<ActivarPatrulla>().camino != null && comprobarModoParaPatrulla()) 
         {
             //Debug.Log("StatePatrol");
             return true;
         }
         
         return false;
+    }
+
+    public bool comprobarModoParaPatrulla() 
+    {
+        return (controladorJuego.getModo(npc.getBando()) == "Equilibrado" || controladorJuego.getModo(npc.getBando()) == "Defensivo");
     }
 
 

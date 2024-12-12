@@ -8,6 +8,13 @@ public class ActionManager : MonoBehaviour
     [SerializeField]private List<Action> active = new List<Action>();
     public int currTime;
 
+    private void Start()
+    {
+        queue = new List<Action>();
+        active = new List<Action>();
+        currTime = 0;
+    }
+
     public void scheduleAction( List<Action> actions){
         foreach (Action action in actions) 
         {

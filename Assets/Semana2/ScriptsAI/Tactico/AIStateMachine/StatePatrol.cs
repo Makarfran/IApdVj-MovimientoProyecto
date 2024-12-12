@@ -43,7 +43,8 @@ public class StatePatrol : MonoBehaviour, IState
     public List<ITransition> getTransitions() { return transitions; }
 
     public bool condicionIdle() 
-    { 
-        return false; 
+    {
+        if (GetComponent<ComponenteIA>().comprobarModoParaPatrulla()) return false;
+        else return true; 
     }
 }

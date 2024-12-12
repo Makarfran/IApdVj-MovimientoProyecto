@@ -42,10 +42,10 @@ public class Movimiento : Action
     {
         if (target != null) 
         {
-            if (!GetComponent<PathFinding>().hayCamino()) GetComponent<PathFinding>().CalcularCamino(target.transform.position);
+            if (!GetComponent<PathFinding>().hayCamino() && !comprobarDistancia(GetComponent<AgentNPC>())) GetComponent<PathFinding>().CalcularCamino(target.transform.position);
             else 
             {
-                if ((GetComponent<PathFinding>().GetDestino().getPosition() - target.transform.position).magnitude > 3)
+                if (!comprobarDistancia(GetComponent<AgentNPC>()) && (GetComponent<PathFinding>().GetDestino().getPosition() - target.transform.position).magnitude > 3)
                     GetComponent<PathFinding>().CalcularCamino(target.transform.position);
             }
         } 

@@ -33,7 +33,14 @@ public class Atacar : Action
 
     public override bool isComplete()
     {
-      
+        if (target != null) 
+        {
+            Vector3 direction = target.Position - GetComponent<AgentNPC>().Position;
+            float orientation = this.target.Orientation = Bodi.sitienesPiyloquieresengradosPeroalreves(Mathf.Atan2(direction.x, direction.z));
+            GetComponent<Align>().NewTargetOr(orientation);
+        }
+       
+        //GetComponent<Face>().target = target;
         if (target == null || (target.Position - GetComponent<Agent>().Position).magnitude >= 12 || Time.time > timeInicio + 2)
         {
             didyoudoit = false;
@@ -49,6 +56,9 @@ public class Atacar : Action
         {
             //if on range do the next
             //hacer una animacion?
+            Vector3 direction = target.Position - GetComponent<AgentNPC>().Position;
+            float orientation = this.target.Orientation = Bodi.sitienesPiyloquieresengradosPeroalreves(Mathf.Atan2(direction.x, direction.z));
+            GetComponent<Align>().NewTargetOr(orientation);
             GetComponent<AgentNPC>().attackEnemy(target);
             didyoudoit = true;
             timeInicio = Time.time;

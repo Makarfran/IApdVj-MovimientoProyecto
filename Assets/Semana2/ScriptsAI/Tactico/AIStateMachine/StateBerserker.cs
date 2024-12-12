@@ -47,10 +47,11 @@ public class StateBerserker : MonoBehaviour, IState
  
     public bool condicionIdle()
     {
+        if (GetComponent<AgentNPC>().getVida() == 0) return true;
         ComponenteIA ia = GetComponent<ComponenteIA>();
         AgentNPC target = GetComponent<Atacar>().target;
         //Si no hay enemigos cerca sale de estado agresivo
-        return (target != null && (!ia.conditionAttack() || ia.enemigoHuido(target)) || ia.enemigoMuerto(target));
+        return (target != null && (ia.enemigoHuido(target)) || ia.enemigoMuerto(target));
         
     }
 
