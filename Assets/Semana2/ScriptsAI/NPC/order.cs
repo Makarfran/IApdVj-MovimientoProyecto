@@ -7,9 +7,9 @@ public class order : MonoBehaviour
     public Agent arrivalPoint;
     public Agent alignPoint;
 
-    public void destroy()
+    public void respawn()
     {
-        arrivalPoint = null;
-        alignPoint = null;
+        arrivalPoint.Position = GetComponent<AgentNPC>().respawnPosition;
+        
     }
 }

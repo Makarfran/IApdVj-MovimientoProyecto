@@ -79,33 +79,69 @@ public class ComponenteIA : MonoBehaviour
     public bool conditionCapture() 
     {
         string bando = npc.getBando();
-
-        if (bando == "R") { return !comprobarAtaqueBasePrincipal(controladorJuego.baseAzul);}
-        else { return !comprobarAtaqueBasePrincipal(controladorJuego.baseRoja);}
+        GameObject target = null;
+        //Añadir condicion hayObjetivoCaptura
+        if (bando == "R") { return !comprobarAtaqueBasePrincipal(controladorJuego.baseAzul) && fijarObjetivoBase(out target);}
+        else { return !comprobarAtaqueBasePrincipal(controladorJuego.baseRoja) && fijarObjetivoBase(out target); }
     }
 
-    public void fijarObjetivoBase()
+    public bool fijarObjetivoBase(out GameObject objetivo)
     {
-
-        GameObject objetivo = null;
         string bando = npc.getBando();
-        List<GameObject> auxBases;
+        List<GameObject> auxBases = new List<GameObject>();
         //Si no funciona probar getBando
         if (bando == "R")
         {
-            auxBases = new List<GameObject>(controladorJuego.basesTeamA);
-            //auxBases.Remove(controladorJuego.baseAzul);
-            if (condicionAtaqueBasePrincipal(controladorJuego.basesInicioTeamA, bando)) { auxBases.Add(controladorJuego.baseAzul); }
+            if (getModo() == "Defensivo")
+            {
+                foreach (GameObject b in controladorJuego.basesInicioTeamR)
+                {
+                    if (b.GetComponent<KeypointBase>().getBando() != bando) auxBases.Add(b);
+                }
+            }
+            else if (getModo() == "Ofensivo" || getModo() == "GuerraTotal")
+            {
+                foreach (GameObject b in controladorJuego.basesInicioTeamA)
+                {
+                    if (b.GetComponent<KeypointBase>().getBando() != bando) auxBases.Add(b);
+                }
+                if (condicionAtaqueBasePrincipal(controladorJuego.basesInicioTeamA, bando)) { auxBases.Add(controladorJuego.baseAzul); }
+            }
+            else 
+            {
+                auxBases.AddRange(controladorJuego.basesTeamA);
+                if (condicionAtaqueBasePrincipal(controladorJuego.basesInicioTeamA, bando)) { auxBases.Add(controladorJuego.baseAzul); }
+            }
+           
         }
         else
         {
-            auxBases = new List<GameObject>(controladorJuego.basesTeamR);
-            //auxBases.Remove(controladorJuego.baseAzul);
-            if (condicionAtaqueBasePrincipal(controladorJuego.basesInicioTeamR, bando)) { auxBases.Add(controladorJuego.baseRoja); }
+            if (getModo() == "Defensivo")
+            {
+                foreach (GameObject b in controladorJuego.basesInicioTeamA)
+                {
+                    if (b.GetComponent<KeypointBase>().getBando() != bando) auxBases.Add(b);
+                }
+            }
+            else if (getModo() == "Ofensivo" || getModo() == "GuerraTotal")
+            {
+                foreach (GameObject b in controladorJuego.basesInicioTeamR)
+                {
+                    if (b.GetComponent<KeypointBase>().getBando() != bando) auxBases.Add(b);
+                }
+                if (condicionAtaqueBasePrincipal(controladorJuego.basesInicioTeamR, bando)) { auxBases.Add(controladorJuego.baseRoja); }
+            }
+            else
+            {
+                auxBases.AddRange(controladorJuego.basesTeamR);
+                if (condicionAtaqueBasePrincipal(controladorJuego.basesInicioTeamR, bando)) { auxBases.Add(controladorJuego.baseRoja); }
+            }
         }
         objetivo = getObjetivo(auxBases);
         //GetComponent<Atacar>().setTarget(objetivo.GetComponent<AgentNPC>());
-        GetComponent<Movimiento>().setTarget(objetivo);
+        //GetComponent<Movimiento>().setTarget(objetivo);
+        if (objetivo != null) return true;
+        else return false;
     }
 
     private bool condicionAtaqueBasePrincipal(List<GameObject> bases, string bando) 
@@ -126,11 +162,86 @@ public class ComponenteIA : MonoBehaviour
     public bool condicionDefend() 
     {
         //List<GameObject> waypoints = new List<GameObject>();
+        List<GameObject> basesAComprobar = new List<GameObject>();
+        GameObject basePrincipal;
+        string modo = GetComponent<ComponenteIA>().getModo();
+        if (npc.getBando() == "R")
+        {
+            basePrincipal = controladorJuego.baseRoja;
+            switch (modo)
+            {
+                case "Ofensivo":
+                    basesAComprobar.AddRange(controladorJuego.basesInicioTeamA);
+                    break; 
+
+                case "Defensivo":
+                    basesAComprobar.AddRange(controladorJuego.basesInicioTeamR);
+                    break;
+
+                case "Equilibrado":
+                    basesAComprobar.AddRange(controladorJuego.basesTeamR);
+                    break;
+            }
+        }
+        else 
+        {
+            basePrincipal = controladorJuego.baseAzul;
+            switch (modo)
+            {
+                case "Ofensivo":
+                    basesAComprobar.AddRange(controladorJuego.basesInicioTeamR);
+                    break;
+
+                case "Defensivo":
+                    basesAComprobar.AddRange(controladorJuego.basesInicioTeamA);
+                    break;
+
+                default:
+                    basesAComprobar.AddRange(controladorJuego.basesTeamA);
+                    break;
+            }
+        }
+
+        return comprobarAtaqueBasePrincipal(basePrincipal) || comprobarBaseAtacada(basesAComprobar);
+        /*
         if (npc.getBando() == "R")
         {
             //waypoints.Add(controladorJuego.baseRoja);
             //waypoints.AddRange(controladorJuego.basesTeamR);
-            return comprobarAtaqueBasePrincipal(controladorJuego.baseRoja) || comprobarBaseAtacada(controladorJuego.basesTeamR);
+            string modo = GetComponent<ComponenteIA>().getModo();
+            switch (modo)
+            {
+                case "Ofensivo":
+                    {
+                        List<GameObject> bases = new List<GameObject>();
+                        foreach (GameObject b in controladorJuego.basesInicioTeamA)
+                        {
+                            if (b.GetComponent<KeypointBase>().getBando() == npc.getBando()) bases.Add(b);
+                        }
+
+                        return comprobarAtaqueBasePrincipal(controladorJuego.baseRoja) || comprobarBaseAtacada(bases);
+                    }
+
+                case "Defensivo":
+                    {
+                        List<GameObject> bases = new List<GameObject>();
+                        foreach (GameObject b in controladorJuego.basesInicioTeamR) 
+                        {
+                            if (b.GetComponent<KeypointBase>().getBando() == npc.getBando()) bases.Add(b);
+                        }
+
+                        return comprobarAtaqueBasePrincipal(controladorJuego.baseRoja) || comprobarBaseAtacada(bases);
+                    }
+                    
+
+                case "GuerraTotal":
+                    return comprobarAtaqueBasePrincipal(controladorJuego.baseRoja);
+
+                default:
+                    return comprobarAtaqueBasePrincipal(controladorJuego.baseRoja) || comprobarBaseAtacada(controladorJuego.basesTeamR);
+
+            }
+            
         }
         else 
         {
@@ -139,16 +250,18 @@ public class ComponenteIA : MonoBehaviour
             return comprobarAtaqueBasePrincipal(controladorJuego.baseAzul) || comprobarBaseAtacada(controladorJuego.basesTeamA);
         }
         //return baseAtacada(waypoints);
+        */
     }
 
-    public void fijarObjetivoDefensa() 
+    public bool fijarObjetivoDefensa(out GameObject objetivo) 
     {
-        GameObject objetivo = null;
+        //GameObject objetivo = null;
         string bando = npc.getBando();
         List<GameObject> basesAtacadas = new List<GameObject>();
 
         if (bando == "R")
         {
+            /*
             if (comprobarAtaqueBasePrincipal(controladorJuego.baseRoja)) objetivo = controladorJuego.baseRoja;
             else 
             {
@@ -159,9 +272,43 @@ public class ComponenteIA : MonoBehaviour
                 }
                 objetivo = getObjetivo(basesAtacadas);
             }
+            */
+            if (comprobarAtaqueBasePrincipal(controladorJuego.baseRoja)) objetivo = controladorJuego.baseRoja;
+            else 
+            {
+                switch (getModo())
+                {
+                    case "Ofensivo":
+                    case "GuerraTotal":
+                        foreach (GameObject baseAtacada in controladorJuego.basesInicioTeamA)
+                        {
+                            KeypointBase baseA = baseAtacada.GetComponent<KeypointBase>();
+                            if (baseA.getBando() == npc.getBando() && baseA.getLifeP() < baseA.getLifePMax()) basesAtacadas.Add(baseAtacada);
+                        }
+                        break;
+
+                    case "Defensivo":
+                        foreach (GameObject baseAtacada in controladorJuego.basesInicioTeamR)
+                        {
+                            KeypointBase baseA = baseAtacada.GetComponent<KeypointBase>();
+                            if (baseA.getBando() == npc.getBando() && baseA.getLifeP() < baseA.getLifePMax()) basesAtacadas.Add(baseAtacada);
+                        }
+                        break;
+
+                    case "Equilibrado":
+                        foreach (GameObject baseAtacada in controladorJuego.basesTeamR)
+                        {
+                            KeypointBase baseA = baseAtacada.GetComponent<KeypointBase>();
+                            if (baseA.getLifeP() < baseA.getLifePMax()) basesAtacadas.Add(baseAtacada);
+                        }
+                        break;
+                }
+                objetivo = getObjetivo(basesAtacadas);
+            }
         }
         else
         {
+            /*
             if (comprobarAtaqueBasePrincipal(controladorJuego.baseAzul)) objetivo = controladorJuego.baseAzul;
             else
             {
@@ -172,8 +319,44 @@ public class ComponenteIA : MonoBehaviour
                 }
                 objetivo = getObjetivo(basesAtacadas);
             }
+            */
+            if (comprobarAtaqueBasePrincipal(controladorJuego.baseAzul)) objetivo = controladorJuego.baseAzul;
+            else 
+            {
+                switch (getModo())
+                {
+                    case "Ofensivo":
+                    case "GuerraTotal":
+                        foreach (GameObject baseAtacada in controladorJuego.basesInicioTeamR)
+                        {
+                            KeypointBase baseA = baseAtacada.GetComponent<KeypointBase>();
+                            if (baseA.getBando() == npc.getBando() && baseA.getLifeP() < baseA.getLifePMax()) basesAtacadas.Add(baseAtacada);
+                        }
+                        break;
+
+                    case "Defensivo":
+                        foreach (GameObject baseAtacada in controladorJuego.basesInicioTeamA)
+                        {
+                            KeypointBase baseA = baseAtacada.GetComponent<KeypointBase>();
+                            if (baseA.getBando() == npc.getBando() && baseA.getLifeP() < baseA.getLifePMax()) basesAtacadas.Add(baseAtacada);
+                        }
+                        break;
+
+                    default:
+                        foreach (GameObject baseAtacada in controladorJuego.basesTeamA)
+                        {
+                            KeypointBase baseA = baseAtacada.GetComponent<KeypointBase>();
+                            if (baseA.getLifeP() < baseA.getLifePMax()) basesAtacadas.Add(baseAtacada);
+                        }
+                        break;
+                }
+                objetivo = getObjetivo(basesAtacadas);
+            }
         }
-        GetComponent<Movimiento>().setTarget(objetivo);
+
+        if (objetivo != null) return true;
+        else return false;
+        
 
     }
 
@@ -211,22 +394,31 @@ public class ComponenteIA : MonoBehaviour
     {
         GameObject objetivo = null;
         string bando = npc.getBando();
-        List<GameObject> auxZH = new List<GameObject>();
-        foreach (GameObject HPoint in controladorJuego.zonasH) 
-        {
-            if (HPoint.GetComponent<KeypointCura>().getBando() == bando || HPoint.GetComponent<KeypointCura>().getBando() == "None") auxZH.Add(HPoint);
-        }
-
-        objetivo = getObjetivo(auxZH);
-
-        if (objetivo == null || (objetivo.transform.position - npc.Position).magnitude < 3) 
+        if (getModo() == "Defensivo") 
         {
             if (bando == "R")
                 objetivo = controladorJuego.HRoja;
             if (bando == "A")
                 objetivo = controladorJuego.HAzul;
         }
+        else
+        {
+            List<GameObject> auxZH = new List<GameObject>();
+            foreach (GameObject HPoint in controladorJuego.zonasH)
+            {
+                if (HPoint.GetComponent<KeypointCura>().getBando() == bando || HPoint.GetComponent<KeypointCura>().getBando() == "None") auxZH.Add(HPoint);
+            }
 
+            objetivo = getObjetivo(auxZH);
+
+            if (objetivo == null || (objetivo.transform.position - npc.Position).magnitude < 3)
+            {
+                if (bando == "R")
+                    objetivo = controladorJuego.HRoja;
+                if (bando == "A")
+                    objetivo = controladorJuego.HAzul;
+            }
+        }
         GetComponent<Movimiento>().setTarget(objetivo);
     }
 
@@ -235,7 +427,7 @@ public class ComponenteIA : MonoBehaviour
     public bool condicionPatrol() 
     {
 
-        if (npc.GetComponent<ActivarPatrulla>().camino != null && comprobarModoParaPatrulla()) 
+        if (npc.GetComponent<ActivarPatrulla>().camino != null) 
         {
             //Debug.Log("StatePatrol");
             return true;
@@ -284,14 +476,27 @@ public class ComponenteIA : MonoBehaviour
         foreach (GameObject wayPoint in waypoints) 
         {
             KeypointBase keypoint = wayPoint.GetComponent<KeypointBase>();
-            if (keypoint.getLifeP() < keypoint.getLifePMax()) return true;
+            if (keypoint.getBando() == npc.getBando() && keypoint.getLifeP() < keypoint.getLifePMax()) return true;
         }
         return false;
 
     }
 
-    private bool comprobarAtaqueBasePrincipal(GameObject basePrincipal)
+    public bool comprobarAtaqueBasePrincipal(GameObject basePrincipal)
     {
+        KeypointBase keypointBP = basePrincipal.GetComponent<KeypointBase>();
+        if (keypointBP.getLifeP() < keypointBP.getLifePMax())
+        {
+            return true;
+        }
+        else { return false; }
+    }
+    public bool comprobarAtaqueBasePrincipal(string bando)
+    {
+        GameObject basePrincipal;
+        if (bando == "R") basePrincipal = controladorJuego.baseRoja;
+        else basePrincipal = controladorJuego.baseAzul;
+
         KeypointBase keypointBP = basePrincipal.GetComponent<KeypointBase>();
         if (keypointBP.getLifeP() < keypointBP.getLifePMax())
         {
@@ -383,5 +588,10 @@ public class ComponenteIA : MonoBehaviour
     public bool infanteria()
     {
         return npc.getTipo() == "Infanteria";
+    }
+
+    public string getModo() 
+    {
+        return controladorJuego.getModo(npc.getBando());
     }
 }

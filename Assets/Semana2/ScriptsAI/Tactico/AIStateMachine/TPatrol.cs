@@ -9,7 +9,7 @@ public class TPatrol : MonoBehaviour, ITransition
     {
         ComponenteIA ia = GetComponent<ComponenteIA>();
         //solo infanteria
-        return ia.infanteria() && ia.condicionPatrol() && !GetComponent<AgentNPC>().vidaBaja();
+        return ia.infanteria() && ia.condicionPatrol() && ia.comprobarModoParaPatrulla() && !GetComponent<AgentNPC>().vidaBaja(); ;
     }
 
     //Devuelve el estado objetivo de la transición

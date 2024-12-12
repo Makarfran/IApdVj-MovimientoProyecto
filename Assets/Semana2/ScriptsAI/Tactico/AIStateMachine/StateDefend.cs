@@ -52,7 +52,7 @@ public class StateDefend : MonoBehaviour, IState
         if (GetComponent<Movimiento>().getTarget() != null)
         {
             KeypointBase objetivo = GetComponent<Movimiento>().getTarget().GetComponent<KeypointBase>();
-            if (objetivo != null && (objetivo.getBando() != GetComponent<AgentNPC>().getBando() || objetivo.getLifeP() == objetivo.getLifePMax() ))
+            if (objetivo != null && (objetivo.getBando() != GetComponent<AgentNPC>().getBando() || objetivo.getLifeP() == objetivo.getLifePMax()))
             {
                 Debug.Log("de defensa a idle");
                 return true;
@@ -61,3 +61,5 @@ public class StateDefend : MonoBehaviour, IState
         return false;
     }
 }
+//||
+//                !GetComponent<ComponenteIA>().fijarObjetivoDefensa(out GameObject target)

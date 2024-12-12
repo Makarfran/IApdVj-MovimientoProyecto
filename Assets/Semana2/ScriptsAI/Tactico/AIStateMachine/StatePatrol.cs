@@ -15,6 +15,7 @@ public class StatePatrol : MonoBehaviour, IState
         //Metemos todas las transiciones asociadas al gameObject
         transitions.Add(GetComponent<TAttack>());
         transitions.Add(GetComponent<TDefend>());
+        transitions.Add(GetComponent<Tidle>());
 
         //Metemos Acciones
         //ACCIÓN ENTRADA Nos movemos al primer punto de patrulla y activamos patrulla
@@ -34,7 +35,7 @@ public class StatePatrol : MonoBehaviour, IState
     }
 
     //Devuelve la acción o lista de acciones a realizar cuando se entra en el estado
-    public List<Action> getEntryAction() { return entryAction; }
+    public List<Action> getEntryAction() { return entryAction; }    
 
     //Devuelve la acción o lista de acciones a realizar cuando se sale del estado
     public List<Action> getExitAction() { return exitAction; }

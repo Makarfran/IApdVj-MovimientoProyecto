@@ -4,12 +4,10 @@ using UnityEngine;
 
 public class MStartPatrulla : Action
 {
-    
-
     // Start is called before the first frame update
     void Start()
     {
-
+        priority = 0;
     }
 
     // Update is called once per frame
@@ -43,7 +41,7 @@ public class MStartPatrulla : Action
         //Debug.Log("LLegando al punto de patrulla");
         
         Vector3 objetivo = GetComponent<ActivarPatrulla>().camino.getObjetivoInicial().transform.position;
-        if (!GetComponent<PathFinding>().hayCamino())
+        if (!GetComponent<PathFinding>().hayCamino() || (GetComponent<PathFinding>().GetDestino().getPosition() - objetivo).magnitude > 3)
             GetComponent<PathFinding>().CalcularCamino(objetivo);
     }
 

@@ -15,6 +15,7 @@ public class StateCapture : MonoBehaviour, IState
         //Metemos todas las transiciones asociadas al gameObject
         transitions.Add(GetComponent<TAttack>());
         transitions.Add(GetComponent<Tidle>());
+        transitions.Add(GetComponent<TEvitarDerrota>());
         
 
         //Metemos Acciones

@@ -161,7 +161,7 @@ public class Controlador : MonoBehaviour
     {
         string modo = "";
         if (bando == "A") modo = ModoAzul;
-        if (bando == "R") modo =  ModoRojo;
+        if (bando == "R") modo = ModoRojo;
         return modo;
     }
 

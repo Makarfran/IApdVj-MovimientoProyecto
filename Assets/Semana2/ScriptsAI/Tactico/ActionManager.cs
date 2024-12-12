@@ -10,9 +10,7 @@ public class ActionManager : MonoBehaviour
 
     private void Start()
     {
-        queue = new List<Action>();
-        active = new List<Action>();
-        currTime = 0;
+   
     }
 
     public void scheduleAction( List<Action> actions){
@@ -28,12 +26,10 @@ public class ActionManager : MonoBehaviour
         List<Action> temporary = new List<Action>(queue);
         foreach (Action a in temporary){
             if(a.priority <= getHighestPriority(active)){
-                break;
+                continue;
             }
             if(a.canInterrupt()){
                 active.Clear();
-                active.Add(a);
-                queue.Remove(a);
             }
         }
         temporary = new List<Action>(queue);

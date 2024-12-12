@@ -9,7 +9,11 @@ public class TBerserker : MonoBehaviour, ITransition
     {
         ComponenteIA ia = GetComponent<ComponenteIA>();
         //Al ser una mecanica antisuicida la condicion es la misma que para la huida. vida baja. Además comprobamos si hay enemigos cerca
-        return ia.elite() && ia.conditionFlee() && ia.conditionAttack();
+        if (ia.getModo() == "GuerraTotal") 
+        {
+            return ia.conditionFlee() && ia.conditionAttack();
+        }
+        else return ia.elite() && ia.conditionFlee() && ia.conditionAttack();
     }
 
     //Devuelve el estado objetivo de la transición
