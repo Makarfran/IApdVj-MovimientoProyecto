@@ -37,6 +37,7 @@ public class SoltarObjetivo : Action
         GetComponent<Atacar>().setTarget(null);
         GetComponent<Movimiento>().setTarget(null);
         GetComponent<ComponenteIA>().pararMovimiento();
+        GetComponent<AgentNPC>().changeColorSoltarObjetivo();
     }
 
 }

@@ -34,5 +34,6 @@ public class FijarObjetivoBase : Action
     public override void execute()
     {
         GetComponent<ComponenteIA>().fijarObjetivoBase();
+        GetComponent<AgentNPC>().changeColorFijarObjetivo();
     }
 }

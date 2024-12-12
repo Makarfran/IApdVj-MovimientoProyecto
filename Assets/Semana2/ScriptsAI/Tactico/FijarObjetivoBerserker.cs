@@ -36,5 +36,6 @@ public class FijarObjetivoBerserker : Action
     {
         GetComponent<ComponenteIA>().fijarObjetivoBerserker();
         Debug.Log("fijar objetivo Berserker");
+        GetComponent<AgentNPC>().changeColorFijarObjetivo();
     }
 }

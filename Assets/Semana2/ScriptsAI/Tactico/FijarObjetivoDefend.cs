@@ -34,5 +34,6 @@ public class FijarObjetivoDefend : Action
     public override void execute()
     {
         GetComponent<ComponenteIA>().fijarObjetivoDefensa();
+        GetComponent<AgentNPC>().changeColorFijarObjetivo();
     }
 }

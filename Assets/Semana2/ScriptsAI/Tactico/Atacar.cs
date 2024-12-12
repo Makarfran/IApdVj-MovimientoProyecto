@@ -62,6 +62,7 @@ public class Atacar : Action
             GetComponent<AgentNPC>().attackEnemy(target);
             didyoudoit = true;
             timeInicio = Time.time;
+            GetComponent<AgentNPC>().changeColorAtaque();
         }
     }
 

@@ -36,6 +36,7 @@ public class FijarObjetivoHeal : Action
     public override void execute()
     {
         GetComponent<ComponenteIA>().fijarObjetivoHeal();
+        GetComponent<AgentNPC>().changeColorFijarObjetivo();
         //Debug.Log("fijar objetivo");
     }
 
