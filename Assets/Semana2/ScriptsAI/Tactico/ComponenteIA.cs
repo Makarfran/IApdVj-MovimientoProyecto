@@ -81,6 +81,7 @@ public class ComponenteIA : MonoBehaviour
         string bando = npc.getBando();
         GameObject target = null;
         //Añadir condicion hayObjetivoCaptura
+       
         if (bando == "R") { return !comprobarAtaqueBasePrincipal(controladorJuego.baseAzul) && fijarObjetivoBase(out target);}
         else { return !comprobarAtaqueBasePrincipal(controladorJuego.baseRoja) && fijarObjetivoBase(out target); }
     }
@@ -89,7 +90,12 @@ public class ComponenteIA : MonoBehaviour
     {
         string bando = npc.getBando();
         List<GameObject> auxBases = new List<GameObject>();
-        //Si no funciona probar getBando
+
+        if (getModo() == "Equilibrado" && npc.getTipo() == "Scout") 
+        {
+            
+        }
+
         if (bando == "R")
         {
             if (getModo() == "Defensivo")
@@ -109,8 +115,15 @@ public class ComponenteIA : MonoBehaviour
             }
             else 
             {
-                auxBases.AddRange(controladorJuego.basesTeamA);
-                if (condicionAtaqueBasePrincipal(controladorJuego.basesInicioTeamA, bando)) { auxBases.Add(controladorJuego.baseAzul); }
+                if (npc.getTipo() == "Scout")
+                {
+                    auxBases.AddRange(apoyarConquista(controladorJuego.basesTeamA));
+                }
+                else 
+                {
+                    auxBases.AddRange(controladorJuego.basesTeamA);
+                    if (condicionAtaqueBasePrincipal(controladorJuego.basesInicioTeamA, bando)) { auxBases.Add(controladorJuego.baseAzul); }
+                }
             }
            
         }
@@ -133,8 +146,15 @@ public class ComponenteIA : MonoBehaviour
             }
             else
             {
-                auxBases.AddRange(controladorJuego.basesTeamR);
-                if (condicionAtaqueBasePrincipal(controladorJuego.basesInicioTeamR, bando)) { auxBases.Add(controladorJuego.baseRoja); }
+                if (npc.getTipo() == "Scout")
+                {
+                    auxBases.AddRange(apoyarConquista(controladorJuego.basesTeamR));
+                }
+                else 
+                {
+                    auxBases.AddRange(controladorJuego.basesTeamR);
+                    if (condicionAtaqueBasePrincipal(controladorJuego.basesInicioTeamR, bando)) { auxBases.Add(controladorJuego.baseRoja); }
+                }
             }
         }
         objetivo = getObjetivo(auxBases);
@@ -142,6 +162,17 @@ public class ComponenteIA : MonoBehaviour
         //GetComponent<Movimiento>().setTarget(objetivo);
         if (objetivo != null) return true;
         else return false;
+    }
+
+    private List<GameObject> apoyarConquista(List<GameObject> basesEnemigas) 
+    {
+        List<GameObject> basesApoyables = new List<GameObject>();
+        foreach (GameObject b in basesEnemigas) 
+        {
+            if (b.GetComponent<KeypointBase>().hayAliados(npc.getBando())) basesApoyables.Add(b);
+        }
+
+        return basesApoyables;
     }
 
     private bool condicionAtaqueBasePrincipal(List<GameObject> bases, string bando) 
@@ -365,7 +396,7 @@ public class ComponenteIA : MonoBehaviour
 
     public bool conditionFlee()
     {
-        if (npc.vidaBaja()) 
+        if (npc.vidaBaja() && !estoyEnCuraPrincipal(npc.getBando())) 
         {
             return true;
         }
@@ -468,6 +499,22 @@ public class ComponenteIA : MonoBehaviour
         GetComponent<Movimiento>().setTarget(objetivo);
     }
 
+
+    //############### STATESCOUT ###############
+
+    public void fijarObjetivoScout() 
+    {
+        InfluenceManager infuenceManager = GameObject.Find("MapaInfluencia").transform.GetChild(1).gameObject.GetComponent<InfluenceManager>();
+        for (int i = 0; i < 1000; i++)
+        {
+            Tile tile = GetComponent<InfluenceMap>().tileAleatoria();
+            if (tile.pasable && infuenceManager.hayInfluencia(tile, npc.getBando()) && 
+                infuenceManager.getInfluenceTile(tile, npc.getBando()) == 0) 
+            {
+                GetComponent<Exploracion>().setTarget(tile);
+            }
+        }
+    }
 
     //######### GENERAL ############
 
@@ -577,6 +624,28 @@ public class ComponenteIA : MonoBehaviour
         return (enemigo.Position - GetComponent<Agent>().Position).magnitude >= 12;
     }
 
+    public bool objetivoBasePrincipal() 
+    {
+        if (npc.getBando() == "R")
+            return GetComponent<Movimiento>().getTarget() == controladorJuego.baseAzul && 
+            (GetComponent<Movimiento>().getTarget().transform.position - npc.Position).magnitude < 4;
+        else
+            return GetComponent<Movimiento>().getTarget() == controladorJuego.baseRoja &&
+                   (GetComponent<Movimiento>().getTarget().transform.position - npc.Position).magnitude < 4;
+    }
+
+    public bool estoyEnCuraPrincipal(string bando) 
+    {
+        if (bando == "R")
+        {
+            return (controladorJuego.HRoja.transform.position - npc.Position).magnitude < 3;
+        }
+        else 
+        {
+            return (controladorJuego.HAzul.transform.position - npc.Position).magnitude < 3;
+        }
+    }
+
     public bool elite() 
     {
         return npc.getTipo() == "Elite";
@@ -608,6 +677,7 @@ public class ComponenteIA : MonoBehaviour
         npc.GetComponent<ActionManager>().enabled = true;
        
     }
+
 
 
 }

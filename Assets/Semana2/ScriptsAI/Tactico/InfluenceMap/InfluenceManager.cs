@@ -237,6 +237,42 @@ public class InfluenceManager : MonoBehaviour
 
         }
     }
+    public float getInfluenceTile(Tile tile, string bando)
+    {
+
+        float influencia = 0;
+        switch (bando)
+        {
+            case "R":
+                return mapaRojo[tile];
+
+
+            default:
+
+                return mapaAzul[tile];
+
+        }
+    }
+
+    public bool hayInfluencia(Tile tile, string bando)  
+    {
+        switch (bando)
+        {
+            case "R":
+
+                if (gridInicializado && mapsInicializados)
+                    return mapaRojo.ContainsKey(tile);
+                else return false;
+
+
+            default:
+                
+                if (gridInicializado && mapsInicializados)
+                    return mapaAzul.ContainsKey(tile);
+                else return false;
+
+        }
+    }
 
     private void VerificarGridInicializado()
     {

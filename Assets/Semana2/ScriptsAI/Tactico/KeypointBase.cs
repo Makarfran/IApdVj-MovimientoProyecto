@@ -107,6 +107,16 @@ public class KeypointBase : Keypoint
     private List<AgentNPC> nepeces = new List<AgentNPC>();
     public List<AgentNPC> GetNPCS () { return nepeces; }
 
+    public bool hayAliados(string bando) 
+    {
+        foreach (AgentNPC npc in nepeces) 
+        {
+            if (npc.getBando() == bando) 
+                return true;
+        }
+        return false;
+        
+    }
 
     void OnTriggerEnter(Collider collision)
     {

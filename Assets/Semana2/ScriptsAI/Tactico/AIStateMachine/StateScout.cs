@@ -2,23 +2,29 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class StateIdle : MonoBehaviour, IState
+public class StateScout : MonoBehaviour, IState
 {
     public List<Action> action = new List<Action>();
     public List<Action> entryAction = new List<Action>();
     public List<Action> exitAction = new List<Action>();
     public List<ITransition> transitions = new List<ITransition>();
 
-    // Start is called before the first frame update
     void Start()
     {
         //Metemos todas las transiciones asociadas al gameObject
-        transitions.Add(GetComponent<TPatrol>());
+        transitions.Add(GetComponent<Tidle>());
         transitions.Add(GetComponent<TAttack>());
-        transitions.Add(GetComponent<TDefend>());
         transitions.Add(GetComponent<TCapture>());
-        transitions.Add(GetComponent<TScout>());
+        transitions.Add(GetComponent<TDefend>());
 
+        //Metemos Acciones
+        //ACCIÓN ENTRADA fijar objetivo
+        entryAction.Add(GetComponent<ObjetivoExploracion>());
+        //ACCIÓN movimiento, atacar
+        action.Add(GetComponent<Exploracion>());
+        //action.Add(GetComponent<cambiarObjetivo>());
+        //ACCIÓN SALIDA soltar objetivo
+        exitAction.Add(GetComponent<SoltarObjetivoExploracion>());
     }
 
     //Devuelve la acción o lista de acciones a realizar mientras se esta en el estado
@@ -36,5 +42,14 @@ public class StateIdle : MonoBehaviour, IState
     //Devuelve las transiciones que se comprobarán
     public List<ITransition> getTransitions() { return transitions; }
 
-    public bool condicionIdle() { return false; }
+
+    public bool condicionIdle()
+    {
+        AgentNPC npcActual = GetComponent<AgentNPC>();
+        if (GetComponent<Exploracion>().getTarget() != null && (GetComponent<Exploracion>().getTarget().getPosition() - npcActual.Position).magnitude <= 2)
+        {
+            return true;
+        }
+        return false;
+    }
 }

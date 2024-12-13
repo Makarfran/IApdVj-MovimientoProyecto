@@ -27,7 +27,9 @@ public class StateMachineIA : MonoBehaviour
         states.Add(GetComponent<StateCapture>());
         states.Add(GetComponent<StateBerserker>());
         states.Add(GetComponent<StateFlee>());
-        
+        states.Add(GetComponent<StateScout>());
+        //states.Add(GetComponent<StateScout>());
+
     }
 
     // Update is called once per frame

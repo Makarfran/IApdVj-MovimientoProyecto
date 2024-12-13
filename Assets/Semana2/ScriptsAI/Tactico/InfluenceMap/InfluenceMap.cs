@@ -170,6 +170,17 @@ private void VerificarGridInicializado()
         }
     }
 
+    public Tile tileAleatoria() 
+    {   
+        int x = Random.Range(0, grid.getAncho());
+        int y = Random.Range(0, grid.getAlto());
+
+        Tile tile = grid.getTile(x, y);
+
+        return tile;
+
+    }
+
     public void setFaccion(Faccion faccion){
         this.faccion = faccion;
     }
