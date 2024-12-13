@@ -400,14 +400,18 @@ public class AgentNPC : Agent
     public void changeColor (Color color){
         bocadilloCube.GetComponent<Renderer>().material.color= color;
     }
+
+    // rojo
     public void changeColorAtaque(){
         changeColor(new Color(1,0,0,1));
     }
-
+    
+    // azul
     public void changeColorFijarObjetivo(){
         changeColor(new Color(0,0,1,1));
     }
 
+    // verde
     public void changeColorHuir(){
         changeColor(new Color(0,1,0,1));
     }
@@ -423,10 +427,18 @@ public class AgentNPC : Agent
     }
 
     //naranja
-    public void changeColorSinConcretar(){
+    public void changeColorFlee(){
         changeColor(new Color(1,0.5f,0,1));
     }
 
+    // blanco
+    public void changeColorCapture(){
+        changeColor(new Color(1,1,1,1));
+    }
+    // negro
+    public void changeColorDefensa(){
+        changeColor(new Color(0,0,0,1));
+    }    
     public virtual bool vidaBaja() { return false; }
 
 }

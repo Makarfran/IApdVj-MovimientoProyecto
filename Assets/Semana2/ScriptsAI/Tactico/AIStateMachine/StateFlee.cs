@@ -17,30 +17,33 @@ public class StateFlee : MonoBehaviour, IState
         //transitions.Add(GetComponent<THeal>());
 
         //Metemos Acciones
-        //ACCIÓN ENTRADA fijar objetivo y huir
+        //ACCIï¿½N ENTRADA fijar objetivo y huir
         entryAction.Add(GetComponent<FijarObjetivoHeal>());
         //if (!Elite())
         //entryAction.Add(GetComponent<Flee>());
-        //ACCIÓN movimiento
+        //ACCIï¿½N movimiento
         action.Add(GetComponent<Movimiento>());
         
-        //ACCIÓN SALIDA soltar objetivo
+        //ACCIï¿½N SALIDA soltar objetivo
         exitAction.Add(GetComponent<SoltarObjetivoBase>());
     }
 
-    //Devuelve la acción o lista de acciones a realizar mientras se esta en el estado
+    //Devuelve la acciï¿½n o lista de acciones a realizar mientras se esta en el estado
     public List<Action> getAction()
     {
         return action;
     }
 
-    //Devuelve la acción o lista de acciones a realizar cuando se entra en el estado
-    public List<Action> getEntryAction() { return entryAction; }
+    //Devuelve la acciï¿½n o lista de acciones a realizar cuando se entra en el estado
+    public List<Action> getEntryAction() { 
+        GetComponent<AgentNPC>().changeColorFlee();
+        return entryAction; 
+        }
 
-    //Devuelve la acción o lista de acciones a realizar cuando se sale del estado
+    //Devuelve la acciï¿½n o lista de acciones a realizar cuando se sale del estado
     public List<Action> getExitAction() { return exitAction; }
 
-    //Devuelve las transiciones que se comprobarán
+    //Devuelve las transiciones que se comprobarï¿½n
     public List<ITransition> getTransitions() { return transitions; }
 
     public bool condicionIdle() 

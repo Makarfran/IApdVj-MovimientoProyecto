@@ -19,12 +19,12 @@ public class StateCapture : MonoBehaviour, IState
         
 
         //Metemos Acciones
-        //ACCIÓN ENTRADA fijar objetivo
+        //ACCIï¿½N ENTRADA fijar objetivo
         entryAction.Add(GetComponent<FijarObjetivoBase>());
-        //ACCIÓN movimiento, capturar
+        //ACCIï¿½N movimiento, capturar
         action.Add(GetComponent<Movimiento>());
         //action.Add(GetComponent<Capture>());
-        //ACCIÓN SALIDA soltar objetivo
+        //ACCIï¿½N SALIDA soltar objetivo
         exitAction.Add(GetComponent<SoltarObjetivoBase>());
     }
 
@@ -39,13 +39,16 @@ public class StateCapture : MonoBehaviour, IState
         return action;
     }
 
-    //Devuelve la acción o lista de acciones a realizar cuando se entra en el estado
-    public List<Action> getEntryAction() { return entryAction; }
+    //Devuelve la acciï¿½n o lista de acciones a realizar cuando se entra en el estado
+    public List<Action> getEntryAction() { 
+        GetComponent<AgentNPC>().changeColorCapture();
+        return entryAction; 
+        }
 
-    //Devuelve la acción o lista de acciones a realizar cuando se sale del estado
+    //Devuelve la acciï¿½n o lista de acciones a realizar cuando se sale del estado
     public List<Action> getExitAction() { return exitAction; }
 
-    //Devuelve las transiciones que se comprobarán
+    //Devuelve las transiciones que se comprobarï¿½n
     public List<ITransition> getTransitions() { return transitions; }
 
     public bool condicionIdle() 

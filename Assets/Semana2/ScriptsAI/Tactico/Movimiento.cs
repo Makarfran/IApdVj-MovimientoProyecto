@@ -48,7 +48,23 @@ public class Movimiento : Action
                 if (!comprobarDistancia(GetComponent<AgentNPC>()) && (GetComponent<PathFinding>().GetDestino().getPosition() - target.transform.position).magnitude > 3)
                     GetComponent<PathFinding>().CalcularCamino(target.transform.position);
             }
-            GetComponent<AgentNPC>().changeColorMovimiento();
+
+            switch (GetComponent<StateMachineIA>().CurrentState)
+            {   case StateCapture:
+                    GetComponent<AgentNPC>().changeColorCapture();
+                    break;
+                case StateDefend:
+                    GetComponent<AgentNPC>().changeColorDefensa(); 
+                    break;
+                case StateFlee:
+                    GetComponent<AgentNPC>().changeColorFlee();
+                    break;
+                default:
+                    GetComponent<AgentNPC>().changeColorMovimiento();
+                    break;
+            }
+
+            
         } 
 
     }
