@@ -439,6 +439,12 @@ public class AgentNPC : Agent
     public void changeColorDefensa(){
         changeColor(new Color(0,0,0,1));
     }    
+
+    // marron
+    public void changeColorExploracion(){
+        changeColor(new Color(0.40f,0.20f,0,1));
+    }  
+
     public virtual bool vidaBaja() { return false; }
 
 }
